@@ -1,0 +1,390 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Carbon.io Microservices Framework</title>
+  <link href="css/main.css" rel="stylesheet" type="text/css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+</head>
+
+<body>
+  <section class="splash" id="splash">
+    <div class="splash--particles" id="particles"></div>
+    
+    <%- include components/_navigation %>
+
+    <div class="splash--content-section">
+      <div js-header-group class="splash--header-group">
+        <div class="splash--header-logo-container">
+          <img src="/images/logo--light.svg" alt="Carbon.io logo" class="splash--header-logo" />
+        </div>
+
+        <div class="splash--header-text-container">
+          <h1 class="splash--header-text">An application framework based on Node.js and MongoDB for building <strong>microservices</strong> and <strong>APIs</strong>.</h1>
+        </div>
+      </div>
+
+      <div js-header-cta class="splash--cta">
+        <a href="http://docs.carbon.io/" class="splash--cta-primary">Read the Documentation</a>
+        <a href="https://github.com/carbon-io/carbon-io/" class="splash--cta-secondary">View Carbon.io on Github</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="carousel">
+    <div class="carousel--triple-feature">
+      <div class="carousel--triple-feature-group">
+        <img class="carousel--triple-feature-icon" src="/images/beautiful-code.svg" alt="">
+        Beautiful Code
+      </div>
+
+      <div class="carousel--triple-feature-group">
+        <img class="carousel--triple-feature-icon" src="/images/beautiful-tests.svg" alt="">
+        Beautiful Tests
+      </div>
+
+      <div class="carousel--triple-feature-group">
+        <img class="carousel--triple-feature-icon" src="/images/beautiful-docs.svg" alt="">
+        Beautiful Docs
+      </div>
+    </div>
+
+    <div class="carousel--control m-back" js-carousel-previous>
+      <img src="/images/chevron-left.svg" alt="Previous" title="Previous feature">
+    </div>
+
+    <div class="carousel--control m-forward" js-carousel-next>
+      <img src="/images/chevron-right.svg" alt="Next" title="Next feature">
+    </div>
+
+    <div js-feature-carousel class="carousel--group-wrapper">
+      <article class="carousel--group" js-carousel-group="code">
+        <h2 class="carousel--header m-mobile">
+          <div class="carousel--header-keyline"></div>
+          Create simple, database-centric microservices with virtually no code.
+          <div class="carousel--header-keyline"></div>
+        </h2>
+
+        <div class="carousel--column m-large">
+          <div class="carousel--code-wrapper">
+            <pre class="carousel--code language-js line-numbers">
+              <code><%-include code-examples/index/beautiful-code.js%></code>
+            </pre>
+            <div class="carousel--window-chrome m-code">
+              <span>lib/ZipcodeService</span>
+
+              <div class="carousel--window-controls">
+                <div class="carousel--window-control m-red"></div>
+                <div class="carousel--window-control m-yellow"></div>
+                <div class="carousel--window-control m-green"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel--column m-small">
+          <h2 class="carousel--header">
+            <div class="carousel--header-keyline"></div>
+            Create simple, database-centric microservices with virtually no code.
+            <div class="carousel--header-keyline"></div>
+          </h2>
+
+          <div class="carousel--terminal-wrapper">
+            <pre class="carousel--terminal">
+              <code js-terminal="code"></code>
+            </pre>
+
+            <div class="carousel--window-chrome m-terminal">
+              <span>bash</span>
+
+              <div class="carousel--window-controls">
+                <div class="carousel--window-control m-red"></div>
+                <div class="carousel--window-control m-yellow"></div>
+                <div class="carousel--window-control m-green"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="carousel--group s-inactive" js-carousel-group="tests">
+        <h2 class="carousel--header m-mobile">
+          <div class="carousel--header-keyline"></div>
+          Easily write unit tests for your service with the built-in testing library.
+          <div class="carousel--header-keyline"></div>
+        </h2>
+
+        <div class="carousel--column m-large">
+          <div class="carousel--code-wrapper">
+            <pre class="carousel--code language-js line-numbers">
+              <code><%-include code-examples/index/beautiful-tests.js%></code>
+            </pre>
+
+            <div class="carousel--window-chrome m-code">
+              <span>lib/ZipcodeServiceTest</span>
+              <div class="carousel--window-controls">
+                <div class="carousel--window-control m-red"></div>
+                <div class="carousel--window-control m-yellow"></div>
+                <div class="carousel--window-control m-green"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="carousel--column m-small">
+          <h2 class="carousel--header">
+            <div class="carousel--header-keyline"></div>
+            Easily write unit tests for your service with the built-in testing library.
+            <div class="carousel--header-keyline"></div>
+          </h2>
+
+          <div class="carousel--terminal-wrapper">
+            <pre class="carousel--terminal">
+              <code js-terminal="tests"></code>
+            </pre>
+
+            <div class="carousel--window-chrome m-terminal">
+              <span>bash</span>
+              <div class="carousel--window-controls">
+                <div class="carousel--window-control m-red"></div>
+                <div class="carousel--window-control m-yellow"></div>
+                <div class="carousel--window-control m-green"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="carousel--group s-inactive" js-carousel-group="docs">
+        <h2 class="carousel--header m-mobile">
+          <div class="carousel--header-keyline"></div>
+          Generate docs straight from your code with no extra hassle.
+          <div class="carousel--header-keyline"></div>
+        </h2>
+
+        <div class="carousel--column m-small">
+          <h2 class="carousel--header">
+            <div class="carousel--header-keyline"></div>
+            Generate docs straight from your code with no extra hassle.
+            <div class="carousel--header-keyline"></div>
+          </h2>
+
+          <div class="carousel--terminal-wrapper">
+            <pre class="carousel--terminal">
+              <code js-terminal="docs"></code>
+            </pre>
+            
+            <div class="carousel--window-chrome">
+              <span>bash</span>
+              <div class="carousel--window-controls m-terminal">
+                <div class="carousel--window-control m-red"></div>
+                <div class="carousel--window-control m-yellow"></div>
+                <div class="carousel--window-control m-green"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel--column m-large">
+          <pre class="carousel--code language-js line-numbers">
+            <code><%-include code-examples/index/beautiful-tests.js%></code>
+          </pre>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <header js-scroll-header class="scroll-header">
+    <div>
+      <a js-page-link href="#hello-example" class="scroll-header--link">Hello, World!</a>
+      <a js-page-link href="#mongodb-example" class="scroll-header--link">MongoDB</a>
+      <a js-page-link href="#collections-example" class="scroll-header--link">Collections</a>
+      <a js-page-link href="#chaining-example" class="scroll-header--link">Chaining</a>
+      <a js-page-link href="#authentication-example" class="scroll-header--link">Authentication & Access Control</a>
+      <a js-page-link href="#testing-example" class="scroll-header--link">Testing</a>
+      <a js-page-link href="#documentation-example" class="scroll-header--link">Documentation Generation</a>
+    </div>
+
+    <div>
+      <a js-page-link href="#splash" class="scroll-header--link">Back to top</a>
+    </div>
+  </header>
+
+  <div class="keyline"></div>
+
+  <section js-example-section class="example" id="hello-example">
+    <div class="example--left">
+      <h1 class="example--header">Hello, World!</h1>
+      <a class="example--link" href="https://github.com/carbon-io/example__hello-world-service">View Example on Github</a>
+    </div>
+
+    <div class="example--right">
+      <p class="example--body">A simple Carbon.io service that returns "Hello, World!" at the <code>/hello</code> endpoint.</p>
+      <pre class="language-js line-numbers example--code">
+        <code><%-include code-examples/index/hello-world.js%></code>
+      </pre>
+    </div>
+  </section>
+
+  <section js-example-section class="example" id="mongodb-example">
+    <div class="example--left">
+      <h1 class="example--header">MongoDB</h1>
+      <a class="example--link" href="https://github.com/carbon-io/example__hello-world-service-mongodb">View Example on Github</a>
+    </div>
+
+    <div class="example--right">
+      <p class="example--body">While one can use Carbon.io with any database technology, Carbon.io makes it easy to work with MongoDB. The MongoDB connection lifecycle and connection pools are managed for you. Both asynchronous and <a href="https://github.com/carbon-io/leafnode">synchronous MongoDB</a> calling styles are supported.</p>
+      
+      <pre class="language-js line-numbers example--code">
+        <code><%-include code-examples/index/mongodb.js%></code>
+      </pre>
+    </div>
+  </section>
+
+  <section js-example-section class="example" id="collections-example">
+    <div class="example--left">
+      <h1 class="example--header">Collections</h1>
+      <a class="example--link" href="https://github.com/carbon-io-guides/example__zipcode-service">View Example on Github</a>
+    </div>
+
+    <div class="example--right">
+      <p class="example--body">Collections are an abstraction on top of Endpoints that provide a higher-level interface for implementing access to a collection of resources. You can create custom Collections that implement the Collection interface however you like.</p>
+      <p class="example--body">For example: The <code>MongoDBCollection</code> class is a <code>Collection</code> that is backed by a MongoDB database collection.</p>
+
+      <pre class="language-js line-numbers example--code">
+        <code><%-include code-examples/index/collections.js%></code>
+      </pre>
+
+      <p>
+        This supports the following operations:
+
+        <ul>
+          <li><code>/&#60;zipcodes&#62;</code></li>
+          <ul>
+            <li><code>POST</code></li>
+            <li><code>GET</code></li>
+            <li><code>PATCH</code></li>
+            <li><code>DELETE</code></li>
+          </ul>
+          <li><code>/&#60;zipcodes&#62;/:_id</code></li>
+          <ul>
+            <li><code>PUT</code></li>
+            <li><code>GET</code></li>
+            <li><code>PATCH</code></li>
+            <li><code>DELETE</code></li>
+          </ul>
+        </ul>
+      </p>
+    </div>
+  </section>
+
+  <section js-example-section class="example" id="chaining-example">
+    <div class="example--left">
+      <h1 class="example--header">Chaining</h1>
+      <a class="example--link" href="https://github.com/carbon-io/example__hello-world-service-chaining">View Example on Github</a>
+    </div>
+
+    <div class="example--right">
+      <p class="example--body">Carbon.io makes it very easy to write Services that talk to other Services.</p>
+      <p class="example--body">
+        This example defines two services:
+
+        <ul>
+          <li><strong>PublicHelloService</strong>: defines a simple <code>/hello</code> endpoint that delegates to our PrivateHelloService</li>
+          <li><strong>PrivateHelloService</strong>: defines a simple <code>/hello</code> endpoint that returns <code>{ msg: "Hello world!" }</code></li>
+        </ul>
+      </p>
+      
+      <pre class="language-js line-numbers example--code">
+        <code><%-include code-examples/index/chaining--private.js%></code>
+      </pre>
+
+      <pre class="language-js line-numbers example--code">
+        <code><%-include code-examples/index/chaining--public.js%></code>
+      </pre>
+    </div>
+  </section>
+
+  <section js-example-section class="example" id="authentication-example">
+    <div class="example--left">
+      <h1 class="example--header">Authentication & Access Control</h1>
+      <a class="example--link" href="https://github.com/carbon-io/example__hello-world-service-chaining">View Example on Github</a>
+    </div>
+
+    <div class="example--right">
+      <p class="example--body">
+        Every Carbon.io Service can be configured with an Authenticator. You can configure your own instance of the Authenticator class or use one of the several built-in Authenticators:
+
+        <ul>
+          <li>
+            <strong>HttpBasicAuthenticator</strong>: Base class for implementing HTTP basic authentication
+
+            <ul>
+              <li><strong>MongoDBHttpBasicAuthenticator</strong>: An HttpBasicAuthenticator backed by MongoDB</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>ApiKeyAuthenticator</strong>: Base class for implementing API-key based authentication
+
+            <ul>
+              <li><strong>MongoDBApiKeyAuthenticator</strong>: An ApiKeyAuthenticator backed by MongoDB</li>
+            </ul>
+          </li>
+
+          <li><strong>OauthAuthenticator</strong>: Coming soon...</li>
+        </ul>
+      </p>
+      
+      <pre class="language-js line-numbers example--code">
+        <code><%-include code-examples/index/auth.js%></code>
+      </pre>
+
+      <p>Endpoints can configure an Access Control List (ACL) to govern which users can perform each HTTP operation.</p>
+
+      <pre class="language-js line-numbers example--code">
+        <code><%-include code-examples/index/access-control.js%></code>
+      </pre>
+    </div>
+  </section>
+
+  <section js-example-section class="example" id="testing-example">
+    <div class="example--left">
+      <h1 class="example--header">Testing</h1>
+      <a class="example--link" href="https://github.com/carbon-io-guides/example__test-suites">View Example on Github</a>
+    </div>
+
+    <div class="example--right">
+      <p class="example--body">Carbon.io comes with a testing library that makes it easy to manage large test suites. Here's an example of a HTTP-based test.</p>
+      
+      <pre class="language-js line-numbers example--code">
+        <code><%-include code-examples/index/testing.js%></code>
+      </pre>
+    </div>
+  </section>
+
+  <section js-example-section class="example" id="documentation-example">
+    <div class="example--left">
+      <h1 class="example--header">Documentation Generation</h1>
+      <a class="example--link" href="https://github.com/carbon-io-guides/example__contact-service">Check Out Our Official Tutorial</a>
+    </div>
+
+    <div class="example--right">
+      <p class="example--body">Every Carbon.io Service is capable of generating its own docs. You can currently choose between Github-flavored Markdown or static HTML using Aglio. The docs here are auto generated from <a href="https://github.com/carbon-io-guides/example__contact-service">our official tutorial</a>.</p>
+      
+      <pre class="language-js line-numbers example--code">
+        <code><%-include code-examples/index/testing.js%></code>
+      </pre>
+    </div>
+  </section>
+
+  <%- include components/_footer %>
+
+  <script type="application/javascript" src="/js/lib/three.min.js"></script>
+  <script type="application/javascript" src="/js/lib/jquery-3.0.0.min.js"></script>
+  <script type="application/javascript" src="/js/lib/prism.min.js"></script>
+  <script type="application/javascript" src="/js/lib/fastclick.min.js"></script>
+  <script type="application/javascript" src="js/index.js"></script>
+</body>
+</html>

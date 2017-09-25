@@ -1,0 +1,95 @@
+
+// Colors
+$color--white:     #F9FAFC;
+$color--off-white: #DBE1E8;
+$color--gray:      #747E8B;
+$color--gray-tint: #ACA8AB;
+$color--black:     #232323;
+
+$color--blue:      #3190EF;
+$color--blue-pale: #7BABD7;
+$color--orange:    #D15324;
+$color--green:     #5FBE9D;
+
+
+// Syntax highlight colors
+$syntax--background:    #3D475A;
+$syntax--default-color: $color--off-white;
+$syntax--gray:          $color--gray;
+
+$syntax--blue:          #6EB0F3;
+$syntax--blue-pale:     $color--blue-pale;
+$syntax--green:         $color--green;
+$syntax--yellow:        #E4B62C;
+$syntax--red:           #DC0A34;
+
+
+// Golden ratio multipliers
+$multiplier--xsmall: 0.382;
+$multiplier--small:  0.618;
+$multiplier--normal: 1;
+$multiplier--medium: 1.618;
+$multiplier--large:  2.618;
+$multiplier--xlarge: 4.236;
+
+
+// Fonts
+$font-size--normal: 15px * $multiplier--normal;
+$font-size--small:  $font-size--normal * $multiplier--small;
+$font-size--medium: $font-size--normal * $multiplier--medium;
+$font-size--large:  $font-size--normal * $multiplier--large;
+
+$font-family--sans-serif: Helvetica, Arial, Ubuntu, sans-serif;
+$font-family--monospace: Monaco, "Roboto Mono", "Andale Mono", "Ubuntu Mono", monospace;
+
+
+// Vertical spacing
+$vertical-spacing--normal: $font-size--normal * $multiplier--normal;
+$vertical-spacing--xsmall: $vertical-spacing--normal * $multiplier--xsmall;
+$vertical-spacing--small:  $vertical-spacing--normal * $multiplier--small;
+$vertical-spacing--medium: $vertical-spacing--normal * $multiplier--medium;
+$vertical-spacing--large:  $vertical-spacing--normal * $multiplier--large;
+$vertical-spacing--xlarge: $vertical-spacing--normal * $multiplier--xlarge;
+
+
+// Horizontal Spacing
+$horizontal-spacing--normal: ($vertical-spacing--normal + 3px) * $multiplier--normal;
+$horizontal-spacing--xsmall: $horizontal-spacing--normal * $multiplier--xsmall;
+$horizontal-spacing--small:  $horizontal-spacing--normal * $multiplier--small;
+$horizontal-spacing--medium: $horizontal-spacing--normal * $multiplier--medium;
+$horizontal-spacing--large:  $horizontal-spacing--normal * $multiplier--large;
+$horizontal-spacing--xlarge:  $horizontal-spacing--normal * $multiplier--xlarge;
+
+
+// Container size
+$container-width--small:  calc(100vw - #{$horizontal-spacing--small} * 2);
+$container-width--medium: 768px;
+$container-width--large:  992px;
+$container-width--xlarge: 1170px;
+
+
+// Device media query strings
+$device--small:  "screen and (max-width: #{$container-width--medium - 1px})";
+$device--medium: "screen and (min-width: #{$container-width--medium}) and (max-width: #{$container-width--large - 1px})";
+$device--large:  "screen and (min-width: #{$container-width--large}) and (max-width: #{$container-width--xlarge - 1px})";
+$device--xlarge: "screen and (min-width: #{$container-width--xlarge})";
+$device--tall:   "screen and (min-height: 955px)";
+
+$device--retina: "only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi)";
+
+// Device size multipliers
+$media-multiplier--small: $multiplier--small;
+
+// Opacity
+$opacity--low: $multiplier--xsmall * $multiplier--small;
+$opacity--medium: $multiplier--xsmall;
+$opacity--high: $multiplier--small;
+
+$border-radius--small: 4px;
+$border-radius--large: 6px;
+
+// Shadows
+$text-shadow--light: 0 1px 1px rgba(#000000, $opacity--low);
+
+// Navigation
+$navigation--height: $horizontal-spacing--medium * 2 + $font-size--large;

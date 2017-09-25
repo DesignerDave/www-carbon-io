@@ -1,0 +1,38 @@
+
+%container {
+  width: 100%;
+
+  @include media--small {
+    padding: {
+      left: $horizontal-spacing--small;
+      right: $horizontal-spacing--small;
+    }
+  }
+
+  @include media--medium {
+    $padding: calc((100% - #{$container-width--medium}) / 2);
+
+    padding: {
+      left: $padding;
+      right: $padding;
+    }
+  }
+
+  @include media--large {
+    $padding: calc((100% - #{$container-width--large}) / 2);
+
+    padding: {
+      left: $padding;
+      right: $padding;
+    }
+  }
+
+  @include media--xlarge {
+    $padding: calc((100% - #{$container-width--xlarge}) / 2);
+
+    padding: {
+      left: $padding;
+      right: $padding;
+    }
+  }
+}

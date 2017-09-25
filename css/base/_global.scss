@@ -1,0 +1,131 @@
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+html {
+  box-sizing: border-box;
+  font-size: 15px;
+  overflow-x: hidden;
+}
+
+
+body {
+  margin: 0;
+  font-family: $font-family--sans-serif;
+  background-color: $color--white;
+  overflow-x: hidden;
+}
+
+
+pre,
+code {
+  font-family: $font-family--monospace;
+}
+
+
+a {
+  color: $color--blue;
+  font-weight: bold;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  @include media--small {
+    font-size: $font-size--normal * 1.1;
+  }
+}
+
+
+h1 {
+  font: {
+    weight: bold;
+    size: $font-size--large;
+  }
+  line-height: 1.3em;
+  color: $color--blue-pale;
+  margin-bottom: 0;
+  padding-bottom: $vertical-spacing--large;
+
+  @include media--small {
+    $font-size: $font-size--large;
+    
+    font-size: $font-size;
+  }
+}
+
+
+h2 {
+  font-size: $font-size--medium;
+  line-height: $font-size--medium * $multiplier--medium;
+}
+
+
+p {
+  color: $color--gray;
+  font-size: $font-size--normal;
+  line-height: #{$multiplier--medium}em;
+
+  code {
+    font-size: 0.9em;
+  }
+
+  @include media--small {
+    font-size: $font-size--normal * 1.1;
+  }
+}
+
+
+ul {
+  color: $color--gray;
+  font-size: $font-size--normal;
+  line-height: #{$multiplier--medium}em;
+  padding-left: $horizontal-spacing--medium;
+
+  code {
+    font-size: 0.9em;
+  }
+
+  @include media--small {
+    font-size: $font-size--normal * 1.1;
+  }
+}
+
+li {
+  @include media--small {
+    margin-top: $vertical-spacing--normal;
+
+    & + & {
+      margin-top: 0;
+    }
+  }
+}
+
+
+pre {
+  margin: 0;
+  padding: 0;
+  display: flex;
+
+  code {
+    margin: {
+      top: 1rem;
+      bottom: 1rem;
+    }
+  }
+
+  @include media--small {
+    font-size: $font-size--normal * 0.9;
+  }
+}
+
+.keyline {
+  @include keyline();
+  display: block;
+  margin: auto {
+    top: $vertical-spacing--large;
+  }
+}

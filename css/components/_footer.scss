@@ -1,0 +1,77 @@
+
+.footer {
+  padding: {
+    left: $horizontal-spacing--medium;
+    right: $horizontal-spacing--medium;
+  }
+  background: {
+    color: $color--white;
+    image: linear-gradient($color--white, rgba($color--white, 0.8)),
+           linear-gradient(-130deg, $color--blue, $color--orange);
+  }
+
+
+  &--content {
+    padding: {
+      top: $vertical-spacing--medium;
+      bottom: $vertical-spacing--medium;
+    }
+    border-top: 1px solid rgba($color--gray-tint, 0.15);
+  }
+
+
+  &--top-row,
+  &--bottom-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    color: $color--gray
+  }
+
+
+  &--bottom-row {
+    margin-top: $vertical-spacing--normal;
+  }
+
+
+  &--logo {
+    height: $font-size--medium;
+  }
+
+
+  &--link {
+    & + & {
+      margin-left: $horizontal-spacing--medium;
+    }
+  }
+
+
+  &--cta {
+    text-align: center;
+    margin: {
+      top: $vertical-spacing--xlarge;
+      bottom: $vertical-spacing--xlarge;
+    }
+
+
+    &-primary {
+      @include button($color--white, $color--blue, false);
+
+      width: 240px;
+    }
+
+
+    &-secondary {
+      @include button($color--blue, $color--white, true);
+
+      width: 240px;
+      margin-left: $horizontal-spacing--normal;
+
+      @include media--small {
+        margin-left: 0;
+        margin-top: $vertical-spacing--normal;
+      }
+    }
+  }
+}

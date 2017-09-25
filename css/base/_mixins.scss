@@ -1,0 +1,155 @@
+
+// Media queries
+@mixin media--small {
+  @media #{$device--small} {
+    @content;
+  }
+}
+
+@mixin media--medium {
+  @media #{$device--medium} {
+    @content;
+  }
+}
+
+@mixin media--large {
+  @media #{$device--large} {
+    @content;
+  }
+}
+
+@mixin media--xlarge {
+  @media #{$device--xlarge} {
+    @content;
+  }
+}
+
+@mixin media--tall {
+  @media #{$device--tall} {
+    @content;
+  }
+}
+
+@mixin media--retina {
+  @media #{$device--retina} {
+    @content;
+  }
+}
+
+
+// Shadows
+@mixin text-shadow--small($color, $light: null) {
+  @if $light {
+    text-shadow: 0 1px 1px rgba($color, $opacity--medium);
+
+  } @else {
+    text-shadow: 0 1px 1px rgba($color, $opacity--high);
+  }
+}
+
+@mixin box-shadow--small($color: $color--black, $light: null, $hover: false) {
+  @if $light {
+    box-shadow: 0 1px 1px rgba($color, $opacity--low);
+
+    @if $hover {
+      &:hover {
+        box-shadow: 0 2px 5px rgba($color, $opacity--medium);
+
+        &:active {
+          box-shadow: 0 1px 2px rgba($color, $opacity--high);
+        }
+      }
+    }
+
+  } @else {
+    box-shadow: 0 1px 1px rgba($color, $opacity--medium);
+  }
+}
+
+
+@mixin box-shadow--large($color: $color--black, $light: null) {
+  @if $light {
+    box-shadow: 0 0px 50px rgba($color, $opacity--medium);
+
+  } @else {
+    box-shadow: 0 0px 50px rgba($color, $opacity--high);
+  }
+}
+
+
+// Buttons
+@mixin button($color: $color--white, $background-color: $color--blue, $secondary: false) {
+  $height: $vertical-spacing--normal * 2 + $font-size--normal;
+
+  @if ($background-color != $color--white) {
+    @include box-shadow--small($background-color, true, true);
+  
+  } @else {
+    @include box-shadow--small($color, true, true);
+  }
+
+  transition: box-shadow 0.15s ease-out, background-color 0.1s ease-out, background-position 0.1s ease-out;
+  height: $height;
+  padding: $vertical-spacing--normal $horizontal-spacing--normal;
+  display: inline-block;
+  color: $color;
+  line-height: $font-size--normal;
+  font: {
+    size: $font-size--normal;
+    weight: bold;
+  }
+  border: {
+    width: 1px;
+    style: solid;
+    radius: $border-radius--small;
+  }
+  text-decoration: none;
+  user-select: none;
+
+  @if $secondary {
+    background-color: rgba($background-color, $multiplier--small);
+    border-color: $color;
+    position: relative;
+
+    &:after {
+      content: "";
+      transition: opacity 0.1s ease-out;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      background-image: linear-gradient(145deg, rgba($color--white, 0.1), transparent);
+    }
+
+  } @else {
+    background-color: $background-color;
+    border-color: transparent;
+  }
+
+  &:hover {
+    text-decoration: none;
+    background-color: lighten($background-color, 5%);
+
+    @if $secondary {
+      background-position: center;
+
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+
+  &:active {
+    background-color: darken($background-color, 3%);
+  }
+}
+
+
+@mixin keyline($color: $color--orange) {
+  width: $horizontal-spacing--large;
+  height: 1px;
+  background-color: $color;
+  display: inline-block;
+}

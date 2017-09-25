@@ -1,0 +1,205 @@
+
+[class*="language-"] {
+	color: $syntax--default-color;
+	background: none;
+	font-family: Monaco, "Roboto Mono", "Andale Mono", "Ubuntu Mono", monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+	tab-size: 4;
+	border-radius: $border-radius--large;
+	hyphens: none;
+
+	&::selection,
+	& ::selection {
+		background: #b3d4fc;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	@include box-shadow--large();
+	
+	background: $syntax--background;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token {
+	&.comment,
+	&.prolog,
+	&.doctype,
+	&.cdata {
+		color: $syntax--gray;
+	}
+
+	&.punctuation {
+		color: $syntax--default-color;
+	}
+
+	&.property,
+	&.tag,
+	&.boolean,
+	&.constant,
+	&.symbol,
+	&.deleted {
+		color: $syntax--yellow;
+	}
+	
+	&.number {
+		color: $syntax--green;
+	}
+
+	&.selector,
+	&.attr-name,
+	&.char,
+	&.builtin,
+	&.inserted {
+		color: #690;
+	}
+
+	&.operator,
+	&.entity,
+	&.url,
+	.language-css &.string,
+	.style &.string {
+		color: $syntax--yellow;
+	}
+
+	&.atrule,
+	&.attr-value,
+	&.keyword {
+		color: $syntax--blue;
+	}
+
+	&.string {
+		color: $syntax--green;
+	}
+
+	&.function {
+		color: $syntax--default-color;
+	}
+
+	&.regex,
+	&.important,
+	&.variable {
+		color: $syntax--red;
+	}
+
+	&.important,
+	&.bold {
+		font-weight: bold;
+	}
+
+	&.italic {
+		font-style: italic;
+	}
+
+	&.entity {
+		cursor: help;
+	}
+}
+
+.namespace {
+	opacity: .7;
+}
+
+pre[data-line] {
+	position: relative;
+	padding: 1em 0 1em 3em;
+}
+
+.line-highlight {
+	position: absolute;
+	left: 0;
+	right: 0;
+	padding: inherit 0;
+	margin-top: 1em; /* Same as .prism’s padding-top */
+	background: {
+		color: hsla(24, 20%, 50%,.08);
+		image: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+	}
+	pointer-events: none;
+	line-height: inherit;
+	white-space: pre;
+
+	&:before,
+	[data-end]:after {
+		content: attr(data-start);
+		position: absolute;
+		top: .4em;
+		left: .6em;
+		min-width: 1em;
+		padding: 0 .5em;
+		background-color: hsla(24, 20%, 50%,.4);
+		color: hsl(24, 20%, 95%);
+		font: bold 65%/1.5 sans-serif;
+		text-align: center;
+		vertical-align: .3em;
+		border-radius: 999px;
+		box-shadow: 0 1px white;
+	}
+
+	&[data-end]:after {
+		content: attr(data-end);
+		top: auto;
+		bottom: .4em;
+	}
+}
+
+pre {
+	&.line-numbers {
+		position: relative;
+		padding-left: 3.8em;
+		counter-reset: linenumber;
+	}
+
+	&.line-numbers > code {
+		position: relative;
+		white-space: inherit;
+		display: block;
+	}
+}
+
+.line-numbers-rows {
+	.line-numbers & {
+		position: absolute;
+		pointer-events: none;
+		top: 0;
+		font-size: 100%;
+		left: -3.8em;
+		width: 3em; /* works for line-numbers below 1000 lines */
+		letter-spacing: -1px;
+		user-select: none;
+	}
+
+	& > span {
+		pointer-events: none;
+		display: block;
+		counter-increment: linenumber;
+
+		&:before {
+			content: counter(linenumber);
+			display: block;
+			padding-right: 0.8em;
+			text-align: right;
+			color: $syntax--gray;
+		}
+	}
+
+}
