@@ -21,7 +21,7 @@
 
 /* Code blocks */
 pre[class*="language-"] {
-	padding: 1em;
+	padding: 1em 2em;
 	margin: 0;
 	overflow: auto;
 }
@@ -30,7 +30,8 @@ pre[class*="language-"] {
 pre[class*="language-"] {
 	@include box-shadow--large();
 	
-	background: $syntax--background;
+	background-color: $syntax--background;
+	background-image: linear-gradient($syntax--background, lighten($syntax--background, 5%));
 }
 
 /* Inline code */
@@ -62,7 +63,7 @@ pre[class*="language-"] {
 	}
 	
 	&.number {
-		color: $syntax--green;
+		color: $syntax--blue;
 	}
 
 	&.selector,
@@ -82,9 +83,12 @@ pre[class*="language-"] {
 	}
 
 	&.atrule,
-	&.attr-value,
-	&.keyword {
+	&.attr-value {
 		color: $syntax--blue;
+	}
+
+	&.keyword {
+		color: $syntax--yellow;
 	}
 
 	&.string {
@@ -162,44 +166,44 @@ pre[data-line] {
 	}
 }
 
-pre {
-	&.line-numbers {
-		position: relative;
-		padding-left: 3.8em;
-		counter-reset: linenumber;
-	}
+// pre {
+// 	&.line-numbers {
+// 		position: relative;
+// 		padding-left: 3.8em;
+// 		counter-reset: linenumber;
+// 	}
 
-	&.line-numbers > code {
-		position: relative;
-		white-space: inherit;
-		display: block;
-	}
-}
+// 	&.line-numbers > code {
+// 		position: relative;
+// 		white-space: inherit;
+// 		display: block;
+// 	}
+// }
 
-.line-numbers-rows {
-	.line-numbers & {
-		position: absolute;
-		pointer-events: none;
-		top: 0;
-		font-size: 100%;
-		left: -3.8em;
-		width: 3em; /* works for line-numbers below 1000 lines */
-		letter-spacing: -1px;
-		user-select: none;
-	}
+// .line-numbers-rows {
+// 	.line-numbers & {
+// 		position: absolute;
+// 		pointer-events: none;
+// 		top: 0;
+// 		font-size: 100%;
+// 		left: -3.8em;
+// 		width: 3em; /* works for line-numbers below 1000 lines */
+// 		letter-spacing: -1px;
+// 		user-select: none;
+// 	}
 
-	& > span {
-		pointer-events: none;
-		display: block;
-		counter-increment: linenumber;
+// 	& > span {
+// 		pointer-events: none;
+// 		display: block;
+// 		counter-increment: linenumber;
 
-		&:before {
-			content: counter(linenumber);
-			display: block;
-			padding-right: 0.8em;
-			text-align: right;
-			color: $syntax--gray;
-		}
-	}
+// 		&:before {
+// 			content: counter(linenumber);
+// 			display: block;
+// 			padding-right: 0.8em;
+// 			text-align: right;
+// 			color: $syntax--gray;
+// 		}
+// 	}
 
-}
+// }

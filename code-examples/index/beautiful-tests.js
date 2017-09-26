@@ -1,8 +1,8 @@
 __(function() {
   module.exports = o({
     _type: carbon.carbond.test.ServiceTest,
-    name: “ZipcodeServiceTest”,
-    service: _o(“../lib/ZipcodeService”),
+    name: "ZipcodeServiceTest",
+    service: _o("../lib/ZipcodeService"),
 
     setup: function() {
       carbon.carbond.test.ServiceTest.prototype.setup.call(this)
@@ -19,8 +19,8 @@ __(function() {
       {
         reqSpec: {
           url: ‘/zipcodes’,
-          method: “POST”,
-          body: { “_id”: “94110”, state: “CA” }
+          method: "POST",
+          body: { "_id": "94110", state: "CA" }
         },
         resSpec: {
           statusCode: 201,
@@ -31,8 +31,8 @@ __(function() {
       {
         reqSpec: {
           url: ‘/zipcodes’,
-          method: “POST”,
-          body: { _id: “1”, state: “NY” } // Malformed zipcode
+          method: "POST",
+          body: { _id: "1", state: "NY" } // Malformed zipcode
         },
         resSpec: {
           statusCode: 400
