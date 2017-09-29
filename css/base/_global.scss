@@ -1,6 +1,8 @@
 
 *, *:before, *:after {
   box-sizing: inherit;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
 }
 
 
@@ -16,6 +18,10 @@ body {
   font-family: $font-family--sans-serif;
   background-color: $color--white;
   overflow-x: hidden;
+
+  @include media--small {
+    cursor: pointer;
+  }
 }
 
 

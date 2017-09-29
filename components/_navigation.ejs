@@ -1,10 +1,28 @@
 
 <nav js-navigation class="navigation">
-  <img class="navigation--logo" src="/images/logo-mark--light.svg" alt="Carbon.io logo mark">
+  <a href="/" title="Carbon.io home">
+    <%- include("images/logo-mark--light.svg", { className: "navigation--logo" })%>
+  </a>
+  
   <div class="navigation--links">
-    <a class="navigation--link" href="http://docs.carbon.io/">Documentation</a>
-    <a class="navigation--link" href="">Community</a>
-    <a class="navigation--link" href="https://github.com/carbon-io/carbon-io/">Github</a>
-    <a class="navigation--link" href="">Support</a>
+    <a class="navigation--link" href="http://docs.carbon.io/" title="Carbon.io documentation">Documentation</a>
+    <a class="navigation--link" href="" title="Carbon.io community">Community</a>
+    <a class="navigation--link" href="https://github.com/carbon-io/carbon-io/" title="Carbon.io on Github">Github</a>
+    <a class="navigation--link" href="" title="Carbon.io Support">Support</a>
+  </div>
+
+  <div class="navigation--mobile">
+    <div class="navigation--mobile-toggle" js-toggle-mobile-navigation>
+      <div class="navigation--mobile-toggle-line"></div>
+      <div class="navigation--mobile-toggle-line"></div>
+      <div class="navigation--mobile-toggle-line"></div>
+    </div>
+
+    <div class="navigation--mobile-links" js-mobile-navigation>
+      <a class="navigation--mobile-link" href="http://docs.carbon.io/" title="Carbon.io documentation">Documentation</a>
+      <a class="navigation--mobile-link" href="" title="Carbon.io community">Community</a>
+      <a class="navigation--mobile-link" href="https://github.com/carbon-io/carbon-io/" title="Carbon.io on Github">Github</a>
+      <a class="navigation--mobile-link" href="" title="Carbon.io Support">Support</a>
+    </div>
   </div>
 </nav>

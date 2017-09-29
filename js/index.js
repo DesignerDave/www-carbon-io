@@ -605,20 +605,20 @@ function scrollHandler () {
       }
     });
 
-    var scrollHeaderTop = $scrollHeader.offset().top;
-    var viewportTop = $(window).scrollTop();
+    // var scrollHeaderTop = $scrollHeader.offset().top;
+    // var viewportTop = $(window).scrollTop();
 
-    if (viewportTop >= scrollHeaderTop && !scrollHeaderVisible) {
-      $("body").append($scrollHeaderClone);
-      setTimeout(function () {
-        $scrollHeaderClone.addClass("s-visible");
-      }, 10);
-      scrollHeaderVisible = true;
-    } else if (viewportTop < scrollHeaderTop && scrollHeaderVisible) {
-      $scrollHeaderClone.removeClass("s-visible");
-      $scrollHeaderClone.remove();
-      scrollHeaderVisible = false;
-    }
+    // if (viewportTop >= scrollHeaderTop && !scrollHeaderVisible) {
+    //   $("body").append($scrollHeaderClone);
+    //   setTimeout(function () {
+    //     $scrollHeaderClone.addClass("s-visible");
+    //   }, 10);
+    //   scrollHeaderVisible = true;
+    // } else if (viewportTop < scrollHeaderTop && scrollHeaderVisible) {
+    //   $scrollHeaderClone.removeClass("s-visible");
+    //   $scrollHeaderClone.remove();
+    //   scrollHeaderVisible = false;
+    // }
   }
 }
 
@@ -642,28 +642,69 @@ $(document).ready(function () {
   // Initialize fastclick on mobile
   // FastClick.attach(document.body);
 
-  if (!isMobile()) {
-    $("body").on("click", "[js-page-link]", function (e) {
-      e.preventDefault();
+  // if (!isMobile()) {
+  //   $("body").on("click", "[js-page-link]", function (e) {
+  //     e.preventDefault();
 
-      var link = $(this).attr("href");
-      var viewportTop = $(window).scrollTop();
-      var elOffsetTop = $(link).offset().top;
+  //     var link = $(this).attr("href");
+  //     var viewportTop = $(window).scrollTop();
+  //     var elOffsetTop = $(link).offset().top;
       
-      var animationTime;
-      if (viewportTop > elOffsetTop) {
-        animationTime = (viewportTop - elOffsetTop) / 3;
-      } else if (viewportTop < elOffsetTop) {
-        animationTime = (elOffsetTop - viewportTop) / 3;
-      } else {
-        animationTime = 0;
-      }
+  //     var animationTime;
+  //     if (viewportTop > elOffsetTop) {
+  //       animationTime = (viewportTop - elOffsetTop) / 3;
+  //     } else if (viewportTop < elOffsetTop) {
+  //       animationTime = (elOffsetTop - viewportTop) / 3;
+  //     } else {
+  //       animationTime = 0;
+  //     }
 
-      $("html, body").animate({
-          scrollTop: elOffsetTop
-      }, animationTime, "swing");
-    });
-  }
+  //     $("html, body").animate({
+  //         scrollTop: elOffsetTop
+  //     }, animationTime, "swing");
+  //   });
+  // }
+
+  $("[js-code-toggle]").click(function () {
+    var $this = $(this);
+    
+    if (!$this.hasClass("s-active")) {
+      var $parent = $this.parent();
+      var $selectedExample = $parent.siblings("[js-code-block='" + $this.attr("js-code-toggle") + "']");
+
+      $("[js-code-toggle]").not($this).removeClass("s-active");
+      $this.addClass("s-active");
+
+      var $notSelectedExample = $parent.siblings("[js-code-block]").not($selectedExample);
+      $notSelectedExample.removeClass("s-in");
+
+      setTimeout(function () {
+        $notSelectedExample.removeClass("s-visible");
+
+        $selectedExample.addClass("s-visible");
+
+        setTimeout(function () {
+          $selectedExample.addClass("s-in");
+        }, 25);
+      }, 150);
+
+    }
+  });
+
+  $("body").click(function () {
+    var $mobileNav = $("[js-toggle-mobile-navigation]");
+    if ($mobileNav.hasClass("s-active")) {
+      $mobileNav.removeClass("s-active");
+      $("[js-mobile-navigation]").removeClass("s-active");
+    }
+  });
+
+  $("[js-toggle-mobile-navigation]").click(function (e) {
+    e.stopPropagation();
+
+    $(this).toggleClass("s-active");
+    $("[js-mobile-navigation]").toggleClass("s-active");
+  });
 
   $(window).scroll(scrollHandler);
 });

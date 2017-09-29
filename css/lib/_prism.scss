@@ -24,6 +24,10 @@ pre[class*="language-"] {
 	padding: 1em 2em;
 	margin: 0;
 	overflow: auto;
+
+	@include media--small {
+		padding: 1em;
+	}
 }
 
 :not(pre) > code[class*="language-"],
