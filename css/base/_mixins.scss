@@ -36,6 +36,12 @@
   }
 }
 
+@mixin media--mobile-landscape {
+  @media #{$device--mobile-landscape} {
+    @content;
+  }
+}
+
 
 // Shadows
 @mixin text-shadow--small($color, $light: null) {

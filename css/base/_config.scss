@@ -41,7 +41,7 @@ $font-size--medium: $font-size--normal * $multiplier--medium;
 $font-size--large:  $font-size--normal * $multiplier--large;
 
 $font-family--sans-serif: Helvetica, Arial, Ubuntu, sans-serif;
-$font-family--monospace: Monaco, "Roboto Mono", "Andale Mono", "Ubuntu Mono", monospace;
+$font-family--monospace: "Roboto Mono", "Andale Mono", "Ubuntu Mono", monospace, monospace;
 
 
 // Vertical spacing
@@ -76,7 +76,8 @@ $device--large:  "screen and (min-width: #{$container-width--large}) and (max-wi
 $device--xlarge: "screen and (min-width: #{$container-width--xlarge})";
 $device--tall:   "screen and (min-height: 955px)";
 
-$device--retina: "only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi)";
+$device--retina: "screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi)";
+$device--mobile-landscape: "screen and (orientation: landscape) and (min-device-width: 319px) and (max-device-width: 480px)";
 
 // Device size multipliers
 $media-multiplier--small: $multiplier--small;

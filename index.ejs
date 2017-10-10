@@ -68,20 +68,28 @@
 
   <section class="carousel">
     <div class="carousel--triple-feature">
-      <div class="carousel--triple-feature-group">
+      <div class="carousel--triple-feature-group" js-carousel-feature="code">
         <img class="carousel--triple-feature-icon" src="/images/beautiful-code.svg" alt="">
         Beautiful Code
       </div>
 
-      <div class="carousel--triple-feature-group">
+      <div class="carousel--triple-feature-group" js-carousel-feature="tests">
         <img class="carousel--triple-feature-icon" src="/images/beautiful-tests.svg" alt="">
         Beautiful Tests
       </div>
 
-      <div class="carousel--triple-feature-group">
+      <div class="carousel--triple-feature-group" js-carousel-feature="docs">
         <img class="carousel--triple-feature-icon" src="/images/beautiful-docs.svg" alt="">
         Beautiful Docs
       </div>
+    </div>
+
+    <div class="carousel--control m-back m-mobile" js-carousel-previous  title="Previous feature">
+      <%- include("images/chevron-left.svg", { height: "25px" })%>
+    </div>
+
+    <div class="carousel--control m-forward m-mobile" js-carousel-next  title="Next feature">
+      <%- include("images/chevron-right.svg", { height: "25px" })%>
     </div>
 
     <div class="carousel--control m-back" js-carousel-previous  title="Previous feature">
@@ -103,7 +111,10 @@
         <div class="carousel--column m-large">
           <div class="carousel--code-wrapper">
             <pre class="carousel--code language-js line-numbers">
-              <code><%-include code-examples/index/beautiful-code.js%></code>
+              <code>
+                <%-include code-examples/index/beautiful-code.js%>
+              <br>
+            </code>
             </pre>
             <div class="carousel--window-chrome m-code">
               <span>lib/ZipcodeService</span>
@@ -145,14 +156,17 @@
       <article class="carousel--group s-inactive" js-carousel-group="tests">
         <h2 class="carousel--header m-mobile">
           <div class="carousel--header-keyline"></div>
-          Easily write unit tests for your service with the built-in testing library.
+          Easily create unit tests for your service with the built-in testing library.
           <div class="carousel--header-keyline"></div>
         </h2>
 
         <div class="carousel--column m-large">
           <div class="carousel--code-wrapper">
             <pre class="carousel--code language-js line-numbers">
-              <code><%-include code-examples/index/beautiful-tests.js%></code>
+              <code>
+                <%-include code-examples/index/beautiful-tests.js%>
+                <br>
+              </code>
             </pre>
 
             <div class="carousel--window-chrome m-code">
@@ -247,12 +261,12 @@
 
   <section js-example-section class="example" id="hello-example">
     <div class="example--left">
-      <h1 class="example--header">Hello, World!</h1>
+      <h1 class="example--header">Hello World</h1>
       <a class="example--link" href="https://github.com/carbon-io/example__hello-world-service" title="Hello world example">View Example on Github</a>
     </div>
 
     <div class="example--right">
-      <p class="example--body">A simple Carbon.io service that returns "Hello, World!" at the <code>/hello</code> endpoint.</p>
+      <p class="example--body">With Carbon.io, APIs are defined via Services. A Service is an HTTP server that exposes a JSON REST API and which is defined as a tree of Endpoints. This Service defines a HTTP GET method on an Endpoint called "hello".</p>
       <pre class="language-js line-numbers example--code">
         <code><%-include code-examples/index/hello-world.js%></code>
       </pre>
@@ -261,12 +275,12 @@
 
   <section js-example-section class="example" id="mongodb-example">
     <div class="example--left">
-      <h1 class="example--header">MongoDB</h1>
+      <h1 class="example--header">MongoDB Integration</h1>
       <a class="example--link" href="https://github.com/carbon-io/example__hello-world-service-mongodb" title="MongoDB example">View Example on Github</a>
     </div>
 
     <div class="example--right">
-      <p class="example--body">While one can use Carbon.io with any database technology, Carbon.io makes it easy to work with MongoDB. The MongoDB connection lifecycle and connection pools are managed for you. Both asynchronous and <a href="https://github.com/carbon-io/leafnode">synchronous MongoDB</a> calling styles are supported.</p>
+      <p class="example--body">While one can use Carbon.io with any database technology, Carbon.io makes it easy to work with MongoDB. The MongoDB connection lifecycle and connection pools are managed for you. Both asynchronous and <a href="https://github.com/carbon-io/leafnode">synchronous MongoDB</a> calling styles are supported. This Service defines a HTTP GET method on an Endpoint called "messages" that queries a collection called "messages" on a local MongoDB database.</p>
       
       <pre class="language-js line-numbers example--code">
         <code><%-include code-examples/index/mongodb.js%></code>
@@ -276,20 +290,21 @@
 
   <section js-example-section class="example" id="collections-example">
     <div class="example--left">
-      <h1 class="example--header">Collections</h1>
+      <h1 class="example--header">MongoDB Collections - database CRUD with virtually no code</h1>
+      <h2></h2>
       <a class="example--link" href="https://github.com/carbon-io-guides/example__zipcode-service" title="Collections example">View Example on Github</a>
     </div>
 
     <div class="example--right">
-      <p class="example--body">Collections are an abstraction on top of Endpoints that provide a higher-level interface for implementing access to a collection of resources. You can create custom Collections that implement the Collection interface however you like.</p>
-      <p class="example--body">For example: The <code>MongoDBCollection</code> class is a <code>Collection</code> that is backed by a MongoDB database collection.</p>
+      <p class="example--body">Collections are a high-level abstraction on top of Endpoints that provide a higher-level interface for implementing access to a collection of resources.</p>
+      <p class="example--body"> A common use case is implementing a "users" Endpoint.</p>
 
       <pre class="language-js line-numbers example--code">
         <code><%-include code-examples/index/collections.js%></code>
       </pre>
 
       <p>
-        This supports the following operations:
+        This supports the following HTTP methods and Endpoints:
 
         <ul>
           <li><code>/&#60;zipcodes&#62;</code></li>
@@ -313,12 +328,12 @@
 
   <section js-example-section class="example" id="chaining-example">
     <div class="example--left">
-      <h1 class="example--header">Chaining</h1>
+      <h1 class="example--header">Microservice Chaining</h1>
       <a class="example--link" href="https://github.com/carbon-io/example__hello-world-service-chaining" title="Chaining example">View Example on Github</a>
     </div>
 
     <div class="example--right">
-      <p class="example--body">Carbon.io makes it very easy to write Services that talk to other Services.</p>
+      <p class="example--body">Microservices often need to communicate with other microservices. Carbon.io makes it easy to communicate between two Services.</p>
       <p class="example--body">
         This example defines two services:
 
@@ -421,7 +436,7 @@
 
   <script type="application/javascript" src="/js/lib/three.min.js"></script>
   <script type="application/javascript" src="/js/lib/jquery-3.0.0.slim.min.js"></script>
-  <script type="application/javascript" src="/js/lib/prism.min.js"></script>
+  <script type="application/javascript" src="/js/lib/prism.js"></script>
   <script type="application/javascript" src="/js/lib/fastclick.min.js"></script>
   <script type="application/javascript" src="js/index.js"></script>
 </body>

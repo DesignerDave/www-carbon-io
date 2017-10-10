@@ -17,6 +17,7 @@
 
 
   @include media--small {
+    opacity: 1;
     padding: {
       left: $horizontal-spacing--normal;
       right: $horizontal-spacing--normal;
@@ -50,9 +51,15 @@
     }
   }
 
+  $toggle-height: $font-size--medium - 5px;
+  $toggle-button-size: $toggle-height * $multiplier--large;
   &--mobile {
-    position: relative;
-    z-index: 1;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    height: $toggle-button-size;
+    width: $toggle-button-size;
+    z-index: 2;
     display: none;
 
     @include media--small {
@@ -60,16 +67,28 @@
     }
   }
 
-  $toggle-height: $font-size--medium - 5px;
   &--mobile-toggle {
+    transition: transform 0.1s ease-out, background-color 0.1s ease-out;
     display: none;
-    height: $toggle-height;
-    width: $font-size--medium;
+    height: $toggle-button-size;
+    width: $toggle-button-size;
     position: relative;
+    border-radius: 100%;
     cursor: pointer;
-    
+    background-color: rgba($color--white, 0.95);
+    box-shadow: 0 0 10px rgba($color--black, 0.2);
+
     @include media--small {
       display: inline-block;
+    }
+
+    &:active {
+      background-color: $color--off-white;
+      transform: scale(0.9);
+    }
+
+    &.s-active {
+      background-color: $color--white;
     }
   }
 
@@ -78,8 +97,8 @@
     $line-height: 3px;
     transition: all 0.15s ease-out;
     height: 3px;
-    width: 100%;
-    background-color: $color--white;
+    width: $font-size--medium;
+    background-color: $color--gray-tint;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -91,7 +110,7 @@
     .s-active > & {
       opacity: 0;
       transform: scaleX(0);
-      background-color: $color--off-white;
+      background-color: lighten($color--red, 40%);
     }
 
     &:first-of-type {
@@ -121,7 +140,7 @@
     opacity: 0;
     pointer-events: none;
     position: absolute;
-    top: calc(100% + #{$vertical-spacing--small});
+    top: calc(#{$toggle-button-size} + 0.5rem);
     right: 0;
     transform: translate3d(0, -#{$vertical-spacing--small}, 0) scale(0.8);
     transform-origin: top right;
@@ -147,15 +166,11 @@
       left: $horizontal-spacing--normal;
       right: $horizontal-spacing--normal;
     }
-    background-color: rgba($color--white, 0.97);
+    background-color: $color--white;
 
     &:hover,
     &:active {
       text-decoration: none;
-    }
-
-    &:hover {
-      background-color: $color--white;
     }
 
     &:active {
