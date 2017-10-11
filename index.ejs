@@ -280,7 +280,7 @@
     </div>
 
     <div class="example--right">
-      <p class="example--body">While one can use Carbon.io with any database technology, Carbon.io makes it easy to work with MongoDB. The MongoDB connection lifecycle and connection pools are managed for you. Both asynchronous and <a href="https://github.com/carbon-io/leafnode">synchronous MongoDB</a> calling styles are supported. This Service defines a HTTP GET method on an Endpoint called "messages" that queries a collection called "messages" on a local MongoDB database.</p>
+      <p class="example--body">While one can use Carbon.io with any database technology, Carbon.io makes it easy to work with MongoDB. The MongoDB connection lifecycle and connection pools are managed for you. Both asynchronous and <a href="https://github.com/carbon-io/leafnode">synchronous MongoDB</a> calling styles are supported.</p>
       
       <pre class="language-js line-numbers example--code">
         <code><%-include code-examples/index/mongodb.js%></code>
@@ -290,14 +290,14 @@
 
   <section js-example-section class="example" id="collections-example">
     <div class="example--left">
-      <h1 class="example--header">MongoDB Collections - database CRUD with virtually no code</h1>
+      <h1 class="example--header">MongoDB Collections</h1>
       <h2></h2>
       <a class="example--link" href="https://github.com/carbon-io-guides/example__zipcode-service" title="Collections example">View Example on Github</a>
     </div>
 
     <div class="example--right">
-      <p class="example--body">Collections are a high-level abstraction on top of Endpoints that provide a higher-level interface for implementing access to a collection of resources.</p>
-      <p class="example--body"> A common use case is implementing a "users" Endpoint.</p>
+      <p class="example--body">Collections are a high-level abstraction on top of Endpoints that provide a higher-level interface for implementing access to a collection of resources. You can easily implement full database CRUD with virtually no code.</p>
+      <p class="example--body"> A common use case is implementing a "users" Endpoint:</p>
 
       <pre class="language-js line-numbers example--code">
         <code><%-include code-examples/index/collections.js%></code>
@@ -333,7 +333,7 @@
     </div>
 
     <div class="example--right">
-      <p class="example--body">Microservices often need to communicate with other microservices. Carbon.io makes it easy to communicate between two Services.</p>
+      <p class="example--body">Microservices often need to communicate with other microservices. Carbon.io makes it easy to communicate between multiple Services.</p>
       <p class="example--body">
         This example defines two services:
 
@@ -387,8 +387,6 @@
               <li><strong>MongoDBApiKeyAuthenticator</strong>: An ApiKeyAuthenticator backed by MongoDB</li>
             </ul>
           </li>
-
-          <li><strong>OauthAuthenticator</strong>: Coming soon...</li>
         </ul>
       </p>
       
