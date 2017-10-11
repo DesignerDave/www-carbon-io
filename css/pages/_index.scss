@@ -259,13 +259,18 @@
   }
 
   &--triple-feature-group {
-    transition: opacity 0.5s ease-in;
+    transition: opacity 0.1s ease-in;
+    cursor: pointer;
     opacity: 0.3;
     display: flex;
     align-items: center;
     color: $color--gray;
     font-size: $font-size--medium;
     font-weight: lighter;
+
+    &:hover {
+      opacity: 0.5;
+    }
 
     &.s-active {
       opacity: 1;
@@ -770,21 +775,28 @@
   
 
   &--toggle {
+    transition: background-color 0.1s ease-out, color 0.1s ease-out;
     display: inline-block;
     color: $color--blue;
     cursor: pointer;
     font-weight: bold;
     position: relative;
     z-index: 1;
+    padding: $vertical-spacing--small $horizontal-spacing--small;
+    border-radius: $border-radius--small;
 
     &:hover {
-      text-decoration: underline;
+      background-color: rgba($color--orange, 0.12);
+    }
+
+    &:active {
+      background-color: rgba($color--orange, 0.3);
     }
 
     &.s-active {
-      color: $syntax--background;
+      background-color: $color--orange;
+      color: $color--white;
       cursor: default;
-      border-bottom: 1px solid $color--orange;
 
       &:hover {
         text-decoration: none;
@@ -792,7 +804,7 @@
     }
 
     & + & {
-      margin-left: $horizontal-spacing--medium;
+      margin-left: $horizontal-spacing--small;
     }
   }
 

@@ -349,13 +349,13 @@ function initTerminals () {
 }
 
 
-function setActiveFeature (feature) {
-  $features = $("[js-carousel-feature]");
-  $feature = $("[js-carousel-feature='" + feature + "']");
+// function setActiveFeature (feature) {
+//   $features = $("[js-carousel-feature]");
+//   $feature = $("[js-carousel-feature='" + feature + "']");
 
-  $features.not($feature).removeClass("s-active");
-  $feature.addClass("s-active");
-}
+//   $features.not($feature).removeClass("s-active");
+//   $feature.addClass("s-active");
+// }
 
 function initCarousel () {
   if (!window.carouselIsInitialized) {
@@ -610,8 +610,6 @@ Carousel.prototype = {
 
   afterTransitionCallback: function ($nextActiveChild) {
     $nextActiveChild = $($nextActiveChild);
-
-    setActiveFeature($nextActiveChild.attr("js-carousel-group"));
 
     setTimeout(function () {
       if (this.options.afterTransition && this.options.afterTransition.length) {
