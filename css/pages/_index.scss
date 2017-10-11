@@ -855,6 +855,47 @@
       }
     }
   }
+
+  &--triple-details {
+    display: flex;
+
+    @include media--small {
+      flex-direction: column;
+    }
+  }
+
+
+  &--triple-detail {
+    background-color: $color--gray-light;
+    border-radius: $border-radius--large;
+    flex-grow: 1;
+    width: 50%;
+    padding: $vertical-spacing--normal $horizontal-spacing--normal;
+
+    & + & {
+      margin-left: $horizontal-spacing--normal;
+    }
+
+    @include media--small {
+      width: 100%;
+
+      & + & {
+        margin-left: 0;
+        margin-top: $vertical-spacing--small;
+      }
+    }
+  }
+  
+  &--triple-detail-header {
+    font-weight: bold;
+    margin-bottom: $vertical-spacing--small;
+    display: block;
+  }
+
+  &--triple-detail-list-item {
+    display: block;
+    margin-left: $horizontal-spacing--small;
+  }
 }
 
 // .scroll-header {
