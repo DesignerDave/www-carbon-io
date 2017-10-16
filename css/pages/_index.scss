@@ -229,6 +229,14 @@
   }
 
 
+  &--command:before {
+    content: "$";
+    display: inline;
+    color: $color--gray-tint;
+    margin-right: 0.5em;
+  }
+
+
   &--check {
     color: $color--green;
     font-weight: bold;

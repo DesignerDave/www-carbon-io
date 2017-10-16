@@ -10,16 +10,6 @@ __(function() {
     name: "ZipcodeServiceTest",
     service: _o("../lib/ZipcodeService"),
 
-    setup: function() {
-      carbon.carbond.test.ServiceTest.prototype.setup.call(this)
-      this.service.db.command({dropDatabase: 1})
-    },
-
-    teardown: function() {
-      this.service.db.command({dropDatabase: 1})
-      carbon.carbond.test.ServiceTest.prototype.teardown.call(this)
-    },
-
     tests: [
       // Test POST by inserting some zipcodes
       {
@@ -44,6 +34,16 @@ __(function() {
           statusCode: 400
         }
       }
-    ]
+    ],
+
+    setup: function() {
+      carbon.carbond.test.ServiceTest.prototype.setup.call(this)
+      this.service.db.command({dropDatabase: 1})
+    },
+
+    teardown: function() {
+      this.service.db.command({dropDatabase: 1})
+      carbon.carbond.test.ServiceTest.prototype.teardown.call(this)
+    }
   })
 })

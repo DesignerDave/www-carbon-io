@@ -218,7 +218,7 @@ Terminal.prototype = {
           this.options.onComplete.call(this);
         }
       }
-    }.bind(this), 200);
+    }.bind(this), 0);
   },
 
 
@@ -228,12 +228,10 @@ Terminal.prototype = {
 
 
   renderCommand: function (options) {
-    string = options.string ? options.string.split("") : [""];
-    prefix = options.prefix ? options.prefix : "$&nbsp;";
-    var $commandEl = $("<div class='terminal--command s-active s-blink'><span>" + prefix + "</span></div>");
-    $commandEl.css({
-      "white-space": "normal"
-    });
+    string = this.processCommandString(options.string);
+    var $commandEl = $("<div class='terminal--command s-active s-blink'></div>");
+    $commandEl.css({ "white-space": "normal" });
+
     this.$el.append($commandEl);
     this.scrollToBottom();
 
@@ -246,7 +244,7 @@ Terminal.prototype = {
         setTimeout(function () {
           var currentText = $commandEl.text();
 
-          $commandEl.text(currentText + item);
+          $commandEl.append(item);
           this.scrollToBottom();
 
           if (index === string.length - 1) {
@@ -256,6 +254,22 @@ Terminal.prototype = {
         }.bind(this), timeout);
       }.bind(this));
     }.bind(this), 2000);
+  },
+
+
+  processCommandString: function (string) {
+    if (!string) return [""];
+
+    if (typeof string === "string") {
+      string = string.split("");
+    
+    } else {
+      string.forEach(function (val, i) {
+        if (val.charAt(0) !== "<") string[i] = val.split("");
+      });
+    }
+
+    return [].concat.apply([], string);;
   },
 
 
@@ -273,6 +287,8 @@ Terminal.prototype = {
     this.$el.append($feedbackEl);
     this.scrollToBottom();
 
+    var wait = options.waitBefore !== null ? options.waitBefore : 600;
+
     setTimeout(function () {
       $feedbackEl.removeClass("s-blink");
       $feedbackEl.removeClass("s-active");
@@ -280,19 +296,17 @@ Terminal.prototype = {
       this.scrollToBottom();
 
       this.advanceQueue();
-    }.bind(this), options.waitBefore || 600);
+    }.bind(this), wait);
   },
 
 
-  finish: function (prefix) {
-    prefix = prefix || "";
-    this.queue.push([this.renderFinish, [prefix]]);
+  finish: function () {
+    this.queue.push([this.renderFinish, []]);
   },
 
 
-  renderFinish: function (prefix) {
-    prefix = prefix || "$&nbsp;";
-    var $commandEl = $("<div class='terminal--command s-active s-blink'><span>" + prefix + "</span></div>");
+  renderFinish: function () {
+    var $commandEl = $("<div class='terminal--command s-active s-blink'></div>");
     $commandEl.css({
       "white-space": "normal"
     });
@@ -366,50 +380,40 @@ function initCarousel () {
           $el: $("[js-carousel-group='code']"),
           callback: function (node) {
             window.beautifulCodeTerminal.start(function () {
-              var prefix = "~/carbon-proj $&nbsp;";
-
               this.command({
-                string: "ls",
-                prefix: prefix
+                string: "ls"
               });
               this.feedback({
                 string: "docs&nbsp;&nbsp;&nbsp;lib&nbsp;&nbsp;&nbsp;test&nbsp;&nbsp;&nbsp;package.json",
                 waitBefore: 10
               });
               this.command({
-                string: "mongod --fork",
-                prefix: prefix
+                string: "node lib/ZipcodeService & "
               });
               this.feedback({
-                string: "Waiting for connections on port 27017",
-                waitBefore: 800
-              });
-              this.command({
-                string: "node lib/ZipcodeService",
-                prefix: prefix
-              });
-              this.feedback({
-                string: "[2017-10-06T21:27:34.910Z] Service starting...",
+                string: "[2017-10-06T21:27:34] Service starting...",
                 waitBefore: 500
               });
               this.feedback({
-                string: "[2017-10-06T21:27:34.926Z] Service creating http server",
+                string: "[2017-10-06T21:27:34] Service creating http server",
                 waitBefore: 500
               });
               this.feedback({
-                string: "[2017-10-06T21:27:34.938Z] Service listening on port 8888",
+                string: "[2017-10-06T21:27:34] Service listening on port 8888",
                 waitBefore: 1500
               });
               this.command({
-                string: "curl localhost:8888/zipcodes -H \"Content-Type: application/json\" -d '{\"_id\":\"94110\", \"state\":\"CA\"}",
-                prefix: prefix
+                string: [ "curl localhost:8888/zipcodes \\",
+                          "<br />",
+                          "-H \"Content-Type: application/json\" \\",
+                          "<br />",
+                          "-d '{\"_id\":\"94110\", \"state\":\"CA\"}" ]
               });
               this.command({
-                string: "curl localhost:8888/zipcodes/94110",
-                prefix: prefix
+                string: "curl localhost:8888/zipcodes/94110"
               });
               this.feedback({ string: "{\"_id\":\"94110\", \"state\":\"CA\"}" });
-              this.finish(prefix);
+              this.finish();
             });
           }
         
@@ -417,41 +421,37 @@ function initCarousel () {
           $el: $("[js-carousel-group='tests']"),
           callback: function (node) {
             window.beautifulTestsTerminal.start(function () {
-              var prefix = "~/carbon-proj $&nbsp;";
-
               this.command({
-                string: "node test/ZipcodeServiceTest.js",
-                prefix: prefix
+                string: "node test/ZipcodeServiceTest"
               });
               this.feedback({ string: "<strong>Running ZipcodeServiceTest...</strong>" });
               this.feedback({
                 string: "&nbsp;[<span class='terminal--check'>*</span>] POST /zipcodes (130ms)",
-                waitBefore: 130
+                waitBefore: 260
               });
               this.feedback({
                 string: "&nbsp;[<span class='terminal--check'>*</span>] POST /zipcodes (12ms)",
-                waitBefore: 12
+                waitBefore: 24
               });
               this.feedback({
                 string: "&nbsp;[<span class='terminal--check'>*</span>] ZipcodeServiceTest (142ms)",
-                waitBefore: 142
+                waitBefore: 284
               });
 
               this.feedback({ string: "<br><strong>Test Report</strong>" });
               this.feedback({
                 string: "[<span class='terminal--check'>*</span>] Test: ZipcodeServiceTest (142ms)",
-                waitBefore: 2
+                waitBefore: 0
               });
               this.feedback({
                 string: "&nbsp;[<span class='terminal--check'>*</span>] Test: POST /zipcodes (130ms)",
-                waitBefore: 2
+                waitBefore: 0
               });
               this.feedback({
                 string: "&nbsp;[<span class='terminal--check'>*</span>] Test: POST /zipcodes (12ms)",
-                waitBefore: 2
+                waitBefore: 0
               });
-
-              this.finish(prefix);
+              this.finish();
             });
           }
 
@@ -459,20 +459,16 @@ function initCarousel () {
           $el: $("[js-carousel-group='docs']"),
           callback: function (node) {
             window.beautifulDocsTerminal.start(function () {
-              var prefix = "~/carbon-proj $&nbsp;";
-
               this.command({
-                string: "node lib/ZipcodeService.js gen-static-docs --flavor aglio --out docs/index.html",
-                prefix: prefix
+                string: "node lib/ZipcodeService gen-static-docs --flavor aglio --out docs/index.html"
               });
-
               this.feedback({ string: "<strong>carbon-io.carbond.Service:INFO:</strong> Service creating http server" });
               this.feedback({
                 string: "<strong>carbon-io.carbond.Service:INFO:</strong> Writing API documentation to docs/index.html",
                 waitBefore: 1000
               });
 
-              this.finish(prefix);
+              this.finish();
             });
           }
         }

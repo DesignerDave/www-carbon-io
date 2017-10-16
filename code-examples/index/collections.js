@@ -10,9 +10,9 @@ __(function() {
     port: 8888,
     dbUri: 'mongodb://localhost:27017/mydb',
     endpoints: {
-      users: o({
+      articles: o({
         _type: carbon.carbond.mongodb.MongoDBCollection,
-        collection: 'users'
+        collection: 'articles'
       })
     }
   })
