@@ -407,7 +407,7 @@ function initCarousel () {
                           "<br />",
                           "-H \"Content-Type: application/json\" \\",
                           "<br />",
-                          "-d '{\"_id\":\"94110\", \"state\":\"CA\"}" ]
+                          "-d '{\"_id\":\"94110\", \"state\":\"CA\"}'" ]
               });
               this.command({
                 string: "curl localhost:8888/zipcodes/94110"
