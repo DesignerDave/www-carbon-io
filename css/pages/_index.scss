@@ -201,6 +201,7 @@
 .terminal {
   display: block;
   white-space: normal;
+  font-size: $font-size--normal * 0.85;
 
   &--command,
   &--feedback {
@@ -229,11 +230,19 @@
   }
 
 
-  &--command:before {
-    content: "$";
-    display: inline;
-    color: $color--gray-tint;
-    margin-right: 0.5em;
+  &--command {
+    margin-bottom: $vertical-spacing--xsmall;
+    
+    &:not(:first-child) {
+      margin-top: $vertical-spacing--xsmall;
+    }
+
+    &:before {
+      content: "$";
+      display: inline;
+      color: $color--gray-tint;
+      margin-right: 0.5em;
+    }
   }
 
 

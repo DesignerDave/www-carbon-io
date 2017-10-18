@@ -110,7 +110,7 @@
 
         <div class="carousel--column m-large">
           <div class="carousel--code-wrapper">
-            <pre class="carousel--code language-js line-numbers">
+            <pre class="carousel--code language-js">
               <code>
                 <%-include code-examples/index/beautiful-code.js%>
               <br>
@@ -162,7 +162,7 @@
 
         <div class="carousel--column m-large">
           <div class="carousel--code-wrapper">
-            <pre class="carousel--code language-js line-numbers">
+            <pre class="carousel--code language-js">
               <code>
                 <%-include code-examples/index/beautiful-tests.js%>
                 <br>
@@ -267,23 +267,22 @@
 
     <div class="example--right">
       <p class="example--body">With Carbon.io, APIs are defined via Services. A Service is an HTTP server that exposes a JSON REST API and which is defined as a tree of Endpoints. This Service defines a HTTP GET method on an Endpoint called "hello".</p>
-      <pre class="language-js line-numbers example--code">
+      <pre class="language-js example--code">
         <code><%-include code-examples/index/hello-world.js%></code>
       </pre>
     </div>
   </section>
 
-  <section js-example-section class="example" id="mongodb-example">
+  <section js-example-section class="example" id="endpoints-example">
     <div class="example--left">
-      <h1 class="example--header">MongoDB Integration</h1>
-      <a class="example--link" href="https://github.com/carbon-io/example__hello-world-service-mongodb" title="MongoDB example">View Example on Github</a>
+      <h1 class="example--header">Endpoints & Operations</h1>
     </div>
 
     <div class="example--right">
-      <p class="example--body">While one can use Carbon.io with any database technology, Carbon.io makes it easy to work with MongoDB. The MongoDB connection lifecycle and connection pools are managed for you. Both asynchronous and <a href="https://github.com/carbon-io/leafnode">synchronous MongoDB</a> calling styles are supported.</p>
+      <p class="example--body">Each Endpoint is made up of Operations, which can formally define request parameters and responses. Operation definitions can use JSON Schemas to automatically validate input parameters and output responses.</p>
       
-      <pre class="language-js line-numbers example--code">
-        <code><%-include code-examples/index/mongodb.js%></code>
+      <pre class="language-js example--code">
+        <code><%-include code-examples/index/endpoints-operations.js%></code>
       </pre>
     </div>
   </section>
@@ -298,7 +297,7 @@
     <div class="example--right">
       <p class="example--body">Collections are a high-level abstraction on top of Endpoints that provide a higher-level interface for implementing access to a collection of resources. You can easily implement full database CRUD with virtually no code.</p>
 
-      <pre class="language-js line-numbers example--code">
+      <pre class="language-js example--code">
         <code><%-include code-examples/index/collections.js%></code>
       </pre>
 
@@ -349,11 +348,11 @@
         <div js-code-toggle="chaining--private" class="example--toggle">PrivateHelloService</div>
       </div>
 
-      <pre js-code-block="chaining--public" class="language-js line-numbers example--code s-visible s-in">
+      <pre js-code-block="chaining--public" class="language-js example--code s-visible s-in">
         <code> <%- include code-examples/index/chaining--public.js%></code>
       </pre>
 
-      <pre js-code-block="chaining--private" class="language-js line-numbers example--code">
+      <pre js-code-block="chaining--private" class="language-js example--code">
         <code><%- include code-examples/index/chaining--private.js%></code>
       </pre>
 
@@ -389,13 +388,13 @@
         </ul>
       </p>
       
-      <pre class="language-js line-numbers example--code">
+      <pre class="language-js example--code">
         <code><%-include code-examples/index/auth.js%></code>
       </pre>
 
       <p>Endpoints can configure an Access Control List (ACL) to govern which users can perform each HTTP operation.</p>
 
-      <pre class="language-js line-numbers example--code">
+      <pre class="language-js example--code">
         <code><%-include code-examples/index/access-control.js%></code>
       </pre>
     </div>
@@ -410,7 +409,7 @@
     <div class="example--right">
       <p class="example--body">Carbon.io comes with a testing library that makes it easy to manage large test suites. Here's an example of a HTTP-based test.</p>
       
-      <pre class="language-js line-numbers example--code">
+      <pre class="language-js example--code">
         <code><%-include code-examples/index/testing.js%></code>
       </pre>
     </div>
