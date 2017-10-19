@@ -15,7 +15,7 @@ __(function() {
         <mark class="no-highlight">get</mark>: {
           parameters: { 
             who: {
-              location: 'query',  // Parameters can be passed via query, header, path, or body
+              location: 'query',  // Parameters can be query, header, path, or body
               required: false,
               <mark class="no-highlight">default</mark>: 'world',
               schema: { type: 'string' } 

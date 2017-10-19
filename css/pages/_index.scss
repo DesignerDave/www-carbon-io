@@ -599,6 +599,10 @@
   &--terminal-wrapper,
   &--code-wrapper {
     position: relative;
+
+    code {
+      margin-top: 1rem;
+    }
   }
 
 
