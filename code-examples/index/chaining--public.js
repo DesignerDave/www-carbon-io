@@ -1,8 +1,8 @@
 
-var carbon = require('carbon-io')
-var __     = carbon.fibers.__(module)
-var _o     = carbon.bond._o(module)
-var o      = carbon.atom.o(module).main
+const carbon = require('carbon-io')
+const __     = carbon.fibers.__(module)
+const o      = carbon.atom.o(module).main
+const _o     = carbon.bond._o(module)
 
 __(function() {
   module.exports = o({
@@ -14,11 +14,11 @@ __(function() {
       hello: o({
         _type: carbon.carbond.Endpoint,
         
-        get: {
+        <mark class="no-highlight">get</mark>: {
           responses: [
             {
               statusCode: 200,
-              description: "Success",
+              description: 'Success',
               schema: {
                 type: 'object',
                 properties: {
@@ -31,7 +31,7 @@ __(function() {
           ],
           
           service: function(req, res) {
-            return this.getService().privateHelloService.getEndpoint("hello").get().body
+            return this.getService().privateHelloService.getEndpoint('hello').<mark class="no-highlight">get</mark>().body
           }
         }
 

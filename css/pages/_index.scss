@@ -231,12 +231,6 @@
 
 
   &--command {
-    margin-bottom: $vertical-spacing--xsmall;
-    
-    &:not(:first-child) {
-      margin-top: $vertical-spacing--xsmall;
-    }
-
     &:before {
       content: "$";
       display: inline;

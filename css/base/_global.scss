@@ -189,3 +189,10 @@ pre[class*="language-"] {
     top: $vertical-spacing--large;
   }
 }
+
+mark {
+  &.no-highlight {
+    background-color: rgba(0, 0, 0, 0);
+    color: $syntax--default-color;
+  }
+}

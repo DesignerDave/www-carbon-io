@@ -1,8 +1,8 @@
 
-var carbon = require('carbon-io')
-var __     = carbon.fibers.__(module)
-var _o     = carbon.bond._o(module)
-var o      = carbon.atom.o(module).main
+const carbon = require('carbon-io')
+const __     = carbon.fibers.__(module)
+const o      = carbon.atom.o(module).main
+const _o     = carbon.bond._o(module)
 
 __(function() {
   module.exports = o({
@@ -11,8 +11,8 @@ __(function() {
     endpoints : {
       hello: o({
         _type: carbon.carbond.Endpoint,
-        get: function(req, res) {
-          return { msg: “Hello, world!” }
+        <mark class="no-highlight">get</mark>: function(req, res) {
+          return { msg: 'Hello, world!' }
         }
       })
     }

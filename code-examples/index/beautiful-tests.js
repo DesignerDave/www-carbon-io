@@ -1,22 +1,22 @@
 
-var carbon = require('carbon-io')  
-var __ = carbon.fibers.__(module) 
-var _o = carbon.bond._o(module) 
-var o = carbon.atom.o(module)
+const carbon = require('carbon-io')  
+const __     = carbon.fibers.__(module) 
+const o      = carbon.atom.o(module).main
+const _o     = carbon.bond._o(module)
 
 __(function() {
   module.exports = o({
     _type: carbon.carbond.test.ServiceTest,
-    name: "ZipcodeServiceTest",
-    service: _o("../lib/ZipcodeService"),
+    name: 'ZipcodeServiceTest',
+    service: _o('../lib/ZipcodeService'),
 
     tests: [
       // Test POST by inserting some zipcodes
       {
         reqSpec: {
-          url: ‘/zipcodes’,
-          method: "POST",
-          body: { "_id": "94110", state: "CA" }
+          url: '/zipcodes',
+          method: 'POST',
+          body: { _id: '94110', state: 'CA' }
         },
         resSpec: {
           statusCode: 201,
@@ -26,9 +26,9 @@ __(function() {
       // Test invalid POST. These should get a 400 status code (Bad Request)
       {
         reqSpec: {
-          url: ‘/zipcodes’,
-          method: "POST",
-          body: { _id: "1", state: "NY" } // Malformed zipcode
+          url: '/zipcodes',
+          method: 'POST',
+          body: { _id: '1', state: 'NY' } // Malformed zipcode
         },
         resSpec: {
           statusCode: 400

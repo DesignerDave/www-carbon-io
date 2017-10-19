@@ -8,22 +8,22 @@ o({
       }
       entries: [
         {
-          user: { role: "Admin" },
+          user: { role: 'Admin' },
           permissions: {
-            "*": true // "*" grants all permissions
+            '*': true // '*' grants all permissions
           }
         },
         {
-          user: { role: "Reader" },
-          permissions: { // We could have used "*" here but are being explicit.
-            get: true,
-            "*": false
+          user: { role: 'Reader' },
+          permissions: { // We could have used '*' here but are being explicit.
+            <mark class="no-highlight">get</mark>: true,
+            '*': false
           }
         }      
       ]
     }),
-    get: function(req) {
-      return { msg: "Hello World!" }
+    <mark class="no-highlight">get</mark>: function(req) {
+      return { msg: 'Hello World!' }
     },
     post: function(req) {
       return { msg: `Hello ${req.body}!` } 
