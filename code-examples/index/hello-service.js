@@ -11,9 +11,9 @@ __(function() {
     authenticator: o({
       _type: carbon.carbond.security.MongoDBApiKeyAuthenticator,
       apiKeyParameterName: 'api_key',
-      apiKeyLocation: 'header',   // can be 'header' or 'query'
-      userCollection: 'users',       // MongoDB collection where user objects are stored
-      apiKeyField: 'apiKey'         // field that contains user api keys
+      apiKeyLocation: 'header', // can be 'header' or 'query'
+      userCollection: 'users',  // MongoDB collection where user objects are stored
+      apiKeyField: 'apiKey'     // field that contains user api keys
     }),
     dbUri: 'mongodb://localhost:27017/mydb',
     endpoints : {

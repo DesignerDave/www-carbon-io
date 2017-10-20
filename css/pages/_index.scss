@@ -656,6 +656,14 @@
       align-self: flex-end;
       overflow-y: auto;
       padding-top: 80px;
+
+      // Hide overflow scrollbar
+      &::-webkit-scrollbar-track,
+      &::-webkit-scrollbar,
+      &::-webkit-scrollbar-thumb {
+        -webkit-box-shadow: inset 0 0 0 rgba($color--white, 0);
+        background-color: rgba($color--white, 0);
+      }
     }
 
     @include media--small {

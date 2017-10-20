@@ -15,20 +15,20 @@ module.exports = o({
       {
         user: { role: 'Writer' },
         permissions: {
-          get: true,
+          <mark class="no-highlight">get</mark>: true,
           post: true
         }
       },
       {
         user: { role: 'Reader' },
         permissions: {
-          get: true,
+          <mark class="no-highlight">get</mark>: true,
           post: false
         }
       }
     ]
   }),
-  get: function(req) {
+  <mark class="no-highlight">get</mark>: function(req) {
     return { msg: 'Hello World!' }
   },
   post: function(req) {
