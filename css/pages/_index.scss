@@ -651,6 +651,11 @@
       bottom: 0;
     }
 
+    // Firefox hide scrollbar hack
+    @-moz-document url-prefix() {
+      overflow-x: hidden;
+    }
+
     > code {
       max-height: 100%;
       align-self: flex-end;
@@ -663,6 +668,13 @@
       &::-webkit-scrollbar-thumb {
         -webkit-box-shadow: inset 0 0 0 rgba($color--white, 0);
         background-color: rgba($color--white, 0);
+      }
+
+      // Firefox hide scrollbar hack
+      @-moz-document url-prefix() {
+        width: calc(100% + 14px);
+        padding-right: 14px;
+        margin-right: -14px;
       }
     }
 
