@@ -139,16 +139,6 @@
             <pre class="carousel--terminal">
               <code js-terminal="code"></code>
             </pre>
-
-            <div class="carousel--window-chrome m-terminal">
-              <span>bash</span>
-
-              <div class="carousel--window-controls">
-                <div class="carousel--window-control m-red"></div>
-                <div class="carousel--window-control m-yellow"></div>
-                <div class="carousel--window-control m-green"></div>
-              </div>
-            </div>
           </div>
         </div>
       </article>
@@ -168,15 +158,6 @@
                 <br>
               </code>
             </pre>
-
-            <div class="carousel--window-chrome m-code">
-              <span>lib/ZipcodeServiceTest</span>
-              <div class="carousel--window-controls">
-                <div class="carousel--window-control m-red"></div>
-                <div class="carousel--window-control m-yellow"></div>
-                <div class="carousel--window-control m-green"></div>
-              </div>
-            </div>
           </div>
         </div>
         
@@ -191,15 +172,6 @@
             <pre class="carousel--terminal">
               <code js-terminal="tests"></code>
             </pre>
-
-            <div class="carousel--window-chrome m-terminal">
-              <span>bash</span>
-              <div class="carousel--window-controls">
-                <div class="carousel--window-control m-red"></div>
-                <div class="carousel--window-control m-yellow"></div>
-                <div class="carousel--window-control m-green"></div>
-              </div>
-            </div>
           </div>
         </div>
       </article>
@@ -222,15 +194,6 @@
             <pre class="carousel--terminal">
               <code js-terminal="docs"></code>
             </pre>
-            
-            <div class="carousel--window-chrome">
-              <span>bash</span>
-              <div class="carousel--window-controls m-terminal">
-                <div class="carousel--window-control m-red"></div>
-                <div class="carousel--window-control m-yellow"></div>
-                <div class="carousel--window-control m-green"></div>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -387,15 +350,20 @@
           </li>
         </ul>
       </p>
-      
-      <pre class="language-js example--code">
-        <code><%-include code-examples/index/auth.js%></code>
-      </pre>
 
       <p>Endpoints can configure an Access Control List (ACL) to govern which users can perform each HTTP operation.</p>
 
-      <pre class="language-js example--code">
-        <code><%-include code-examples/index/access-control.js%></code>
+      <div class="example--toggles">
+        <div js-code-toggle="hello-service" class="example--toggle s-active">HelloService</div>
+        <div js-code-toggle="hello-endpoint" class="example--toggle">HelloEndpoint</div>
+      </div>
+      
+      <pre js-code-block="hello-service" class="language-js example--code s-visible s-in">
+        <code><%-include code-examples/index/hello-service.js%></code>
+      </pre>
+
+      <pre js-code-block="hello-endpoint" class="language-js example--code">
+        <code><%-include code-examples/index/hello-endpoint.js%></code>
       </pre>
     </div>
   </section>

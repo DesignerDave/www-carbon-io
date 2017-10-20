@@ -195,7 +195,7 @@ Terminal.prototype = {
 
 
   scrollToBottom: function () {
-    this.$el.parent().scrollTop(this.$el.parent().prop("scrollHeight"));
+    this.$el.scrollTop(this.$el.parent().prop("scrollHeight"));
   },
 
 
@@ -770,7 +770,7 @@ $(document).ready(function () {
       var $parent = $this.parent();
       var $selectedExample = $parent.siblings("[js-code-block='" + $this.attr("js-code-toggle") + "']");
 
-      $("[js-code-toggle]").not($this).removeClass("s-active");
+      $(this).siblings("[js-code-toggle]").removeClass("s-active");
       $this.addClass("s-active");
 
       var $notSelectedExample = $parent.siblings("[js-code-block]").not($selectedExample);

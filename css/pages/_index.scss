@@ -220,7 +220,7 @@
       display: inline-block;
       height: $font-size--normal * 0.9;
       margin-top: auto;
-      background-color: $color--white;
+      background-color: $color--black;
       transform: translateY(2px) scaleY(1.2);
     }
 
@@ -553,14 +553,6 @@
     color: $color--blue-pale;
     max-width: 350px;
 
-    &:first-child {
-      padding-left: $horizontal-spacing--normal;
-
-      @include media--small {
-        padding-left: 0;
-      }
-    }
-
     @include media--small {
       display: none;
     }
@@ -606,6 +598,21 @@
   }
 
 
+  &--terminal-wrapper {
+    &:after {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      bottom: 50%;
+      left: 0;
+      right: 0;
+      background-image: linear-gradient(rgba($color--white, 1), rgba($color--white, 0));
+      pointer-events: none;
+    }
+  }
+
+
   &--code,
   &--code[class*="language-"] {
     max-height: 550px;
@@ -629,20 +636,26 @@
 
 
   &--terminal {
-    @include box-shadow--large();
-
-    padding: 0 $horizontal-spacing--normal;
-    background-color: black;
+    padding: 0;
+    background-color: rgba($color--white, 0);
     height: 250px;
-    overflow-y: auto;
-    color: $color--white;
+    color: $color--black;
     line-height: $font-size--normal * $multiplier--medium;
     border-radius: $border-radius--large;
     position: relative;
     font-size: $font-size--normal * 0.9;
+    display: flex;
+    align-items: flex-end;
     margin: {
       top: 0;
       bottom: 0;
+    }
+
+    > code {
+      max-height: 100%;
+      align-self: flex-end;
+      overflow-y: auto;
+      padding-top: 80px;
     }
 
     @include media--small {
