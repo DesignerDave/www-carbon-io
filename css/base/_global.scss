@@ -126,17 +126,15 @@ pre {
   padding: 0;
   display: flex;
   font-size: $font-size--normal * 0.85;
+  padding: $vertical-spacing--small $horizontal-spacing--normal;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0;
+  border-radius: $border-radius--large;
 
-  &[class*="language-"] {
-    padding: $vertical-spacing--small $horizontal-spacing--normal;
-    margin: 0;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-
-    @include media--small {
-      margin-left: -$horizontal-spacing--normal;
-      margin-right: -$horizontal-spacing--normal;
-    }
+  @include media--small {
+    margin-left: -$horizontal-spacing--normal;
+    margin-right: -$horizontal-spacing--normal;
   }
 
   @include media--small {
@@ -149,7 +147,7 @@ pre {
 [class*="language-"] {
   color: $syntax--default-color;
   background: none;
-  font-family: Monaco, "Roboto Mono", "Andale Mono", "Ubuntu Mono", monospace;
+  font-family: $font-family--monospace;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -157,7 +155,6 @@ pre {
   word-wrap: normal;
   line-height: 1.5;
   tab-size: 4;
-  border-radius: $border-radius--large;
   hyphens: none;
 
   &::selection,
