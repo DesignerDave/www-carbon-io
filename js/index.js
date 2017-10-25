@@ -707,6 +707,207 @@ function isMobile () {
 }
 
 
+function Highlight (options) {
+  if (!options.preID ||
+      !options.highlightID ||
+      !options.lines ||
+      !options.title ||
+      !options.body) {
+    
+    console.error("Highlight requires 'preID', 'lines', 'title', and 'body' as options.");
+  }
+
+  this["$preWrapper"] = $("pre[js-highlight-id='" + options.preID + "']");
+  this["$inlineHighlights"] = options.highlightID ? $("[js-inline-highlight='" + options.highlightID + "']") : null;
+  this["$highlightedCode"] = $("[js-highlighted-code='" + options.highlightID + "']");
+  this["lines"] = options.lines;
+  this["title"] = options.title;
+  this["body"] = options.body;
+  this["readMore"] = options.readMore || null;
+  this["active"] = false;
+
+  this.init();
+}
+
+Highlight.prototype = {
+  init: function () {
+    this.renderHighlight(this.$preWrapper);
+
+    function toggleActive () {
+      this.$lineHighlight.toggleClass("s-active");
+      this.$inlineHighlights.toggleClass("s-active");
+      this.$highlightedCode.toggleClass("s-active");
+      this.$tooltip.toggleClass("s-active");
+    }
+
+    var boundOnHover = this.onHover.bind(this);
+    var boundOffHover = this.offHover.bind(this);
+    this.$lineHighlight.hover(boundOnHover, boundOffHover);
+    this.$highlightedCode.hover(boundOnHover, boundOffHover);
+    this.$inlineHighlights.hover(boundOnHover, boundOffHover);
+
+    
+    var boundToggleActive = this.toggleActive.bind(this);
+    this.$lineHighlight.click(boundToggleActive);
+    this.$highlightedCode.click(boundToggleActive);
+    this.$inlineHighlights.click(boundToggleActive);
+
+    var boundDeactivate = this.deactivate.bind(this);
+    $("body").click(boundDeactivate);
+    $(window).on("keydown", function (e) {
+      if (e.keyCode == 27 || e.key === "Escape") {
+        this.deactivate(e);
+      }
+    }.bind(this));
+  },
+
+
+  onHover: function () {
+    this.$lineHighlight.addClass("s-hover");
+    this.$inlineHighlights.addClass("s-hover");
+    this.$highlightedCode.addClass("s-hover");
+  },
+
+
+  offHover: function () {
+    this.$lineHighlight.removeClass("s-hover");
+    this.$inlineHighlights.removeClass("s-hover");
+    this.$highlightedCode.removeClass("s-hover");
+  },
+
+
+  toggleActive: function (e) {
+    if (!this.active) {
+      this.activate();
+    } else {
+      this.deactivate(e);
+    }
+  },
+
+
+  activate: function () {
+    this.$lineHighlight.addClass("s-active");
+    this.$inlineHighlights.addClass("s-active");
+    this.$highlightedCode.addClass("s-active");
+    this.$tooltip.addClass("s-active");
+
+    setTimeout(function () {
+      this.active = true;
+    }.bind(this), 20)
+  },
+
+
+  deactivate: function (e) {
+    if (!$.contains(this.$tooltip[0], e.target) && this.$tooltip[0] !== e.target && this.active) {
+      this.$lineHighlight.removeClass("s-active");
+      this.$inlineHighlights.removeClass("s-active");
+      this.$highlightedCode.removeClass("s-active");
+      this.$tooltip.removeClass("s-active");
+
+      setTimeout(function () {
+        this.active = false;
+      }.bind(this), 20)
+    }
+  },
+
+
+  renderHighlight: function () {
+    var ranges = this.lines.replace(/\s+/g, '').split(',');
+    var offset = this.$preWrapper.attr('data-line-offset') || 0;
+
+    var parseMethod = this.isLineHeightRounded() ? parseInt : parseFloat;
+    var lineHeight = parseMethod(this.$preWrapper.css("line-height"));
+
+    for (var i = 0, range; range = ranges[i++];) {
+      range = range.split('-');
+
+      var start = +range[0],
+          end = +range[1] || start;
+
+      var $line = $("<div aria-hidden='true' class='line-highlight'></div>");
+
+      $line.text(Array(end - start + 2).join(' \n'));
+
+      //if the line-numbers plugin is enabled, then there is no reason for this plugin to display the line numbers
+      if (!this.$preWrapper.hasClass('line-numbers')) {
+        $line.attr('data-start', start);
+
+        if (end > start) {
+          $line.attr('data-end', end);
+        }
+      }
+
+      $line.css("top", (start - offset - 1) * lineHeight + 'px');
+
+      $line.append(this.createHighlightArrow());
+      $line.append(this.createTooltip());
+
+      this.$lineHighlight = $line;
+
+      this.$preWrapper.append(this.$lineHighlight);
+    }
+  },
+
+
+  isLineHeightRounded: function () {
+    var res;
+
+    if (typeof res === 'undefined') {
+      var $d = $("<div>&nbsp;<br />&nbsp;</div>");
+
+      $d.css({
+        "font-size": "13px",
+        "line-height": "1.5",
+        "padding": 0,
+        "border": 0
+      });
+      $("body").append($d);
+
+      // Browsers that round the line-height should have offsetHeight === 38
+      // The others should have 39.
+      res = $d[0].offsetHeight === 38;
+      $d.remove();
+    }
+
+    return res;
+  },
+
+
+  createTooltip: function () {
+    this.$tooltip = $("<div class='highlight-tooltip'><label>" + this.title + "</label><p>" + this.body + "</p></label>");
+    if (this.readMore) {
+      this.$tooltip.append($("<a class='highlight-read-more' href='" + this.readMore + "'>Read More</a>"));
+    }
+
+    return this.$tooltip;
+  },
+
+
+  createHighlightArrow: function () {
+    function makeSVG (tag, attrs) {
+      var el= document.createElementNS("http://www.w3.org/2000/svg", tag);
+      for (var k in attrs)
+          el.setAttribute(k, attrs[k]);
+
+      return el;
+    }
+
+    var $svg = $("<svg class='highlight-arrow-wrapper' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px'\
+                viewBox='0 0 21 13.9' style='enable-background:new 0 0 21 13.9;' xml:space='preserve'></svg>");
+    var path = makeSVG("path", {
+      class: "highlight-arrow",
+      d: "M20.2,5.2L20.2,5.2c-0.6-0.8-3.4-3.6-3.4-3.6c-1-1-2.3-1.6-3.8-1.6C9.2,0,3.9,0,3,0.1l0,0\
+          C1.4,0.1,0.1,1.4,0.1,3l0,0C0,4.3,0,5.6,0,7c0,1.3,0,2.7,0.1,4l0,0c0,1.6,1.3,2.8,2.8,2.8l0,0c1,0.1,6.2,0.1,10.1,0.1\
+          c1.4,0,2.8-0.6,3.8-1.6c0,0,3.2-3.3,3.4-3.6l0,0C21.2,7.8,21.2,6.2,20.2,5.2z"
+    });
+
+    $svg.append(path);
+
+    return $svg;
+  }
+}
+
+
 var codeHighlights = [
   {
     preID: "hello-world",
@@ -715,133 +916,22 @@ var codeHighlights = [
     title: "Fibers",
     body: "Fibers allow you to write code that is logically synchronous.",
     readMore: "https://docs.carbon.io/en/latest/packages/carbon-core/docs/packages/fibers/docs/guide/index.html"
+  },
+
+  {
+    preID: "hello-world",
+    highlightID: "hello-2",
+    lines: "3",
+    title: "Atom",
+    body: "Atom is the universal object factory, used to instantiate objects and create components."
   }
 ];
 
 
-function createHighlightArrow () {
-  function makeSVG (tag, attrs) {
-    var el= document.createElementNS("http://www.w3.org/2000/svg", tag);
-    for (var k in attrs)
-        el.setAttribute(k, attrs[k]);
-
-    return el;
-  }
-
-  var $svg = $("<svg class='highlight-arrow-wrapper' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px'\
-              viewBox='0 0 21 13.9' style='enable-background:new 0 0 21 13.9;' xml:space='preserve'></svg>");
-  var path = makeSVG("path", {
-    class: "highlight-arrow",
-    d: "M20.2,5.2L20.2,5.2c-0.6-0.8-3.4-3.6-3.4-3.6c-1-1-2.3-1.6-3.8-1.6C9.2,0,3.9,0,3,0.1l0,0\
-        C1.4,0.1,0.1,1.4,0.1,3l0,0C0,4.3,0,5.6,0,7c0,1.3,0,2.7,0.1,4l0,0c0,1.6,1.3,2.8,2.8,2.8l0,0c1,0.1,6.2,0.1,10.1,0.1\
-        c1.4,0,2.8-0.6,3.8-1.6c0,0,3.2-3.3,3.4-3.6l0,0C21.2,7.8,21.2,6.2,20.2,5.2z"
-  });
-
-  $svg.append(path);
-
-  return $svg;
-}
-
-
-var isLineHeightRounded = (function() {
-  var res;
-  return function() {
-    if(typeof res === 'undefined') {
-      var $d = $("<div>&nbsp;<br />&nbsp;</div>");
-      $d.css({
-        "font-size": "13px",
-        "line-height": "1.5",
-        "padding": 0,
-        "border": 0
-      });
-      $("body").append($d);
-      // Browsers that round the line-height should have offsetHeight === 38
-      // The others should have 39.
-      res = $d[0].offsetHeight === 38;
-      $d.remove();
-    }
-    return res;
-  }
-}());
-
-
-function highlightLines(pre, lines, classes) {
-  var $pre = $(pre);
-  var ranges = lines.replace(/\s+/g, '').split(',');
-  var offset = $pre.attr('data-line-offset') || 0;
-
-  var parseMethod = isLineHeightRounded() ? parseInt : parseFloat;
-  var lineHeight = parseMethod($pre.css("line-height"));
-
-  for (var i = 0, range; range = ranges[i++];) {
-    range = range.split('-');
-
-    var start = +range[0],
-        end = +range[1] || start;
-
-    var $line = $("<div aria-hidden='true' class=" + (classes || '') + ' line-highlight' + "></div>");
-
-    $line.text(Array(end - start + 2).join(' \n'));
-
-    //if the line-numbers plugin is enabled, then there is no reason for this plugin to display the line numbers
-    if(!$pre.hasClass('line-numbers')) {
-      $line.attr('data-start', start);
-
-      if(end > start) {
-        $line.attr('data-end', end);
-      }
-    }
-
-    $line.css("top", (start - offset - 1) * lineHeight + 'px');
-
-    $pre.append($line);
-
-    return $line;
-  }
-}
-
-
 function initCodeHighlights () {
-  codeHighlights.forEach(function (highlight) {
-    var $pre = $("pre[js-highlight-id='" + highlight.preID + "']");
-    var $inlineHighlights = $("[js-inline-highlight='" + highlight.highlightID + "']");
-    var $highlightedCode = $("[js-highlighted-code='" + highlight.highlightID + "']");
-    var $line = highlightLines($pre, highlight.lines);
-    $line.append(createHighlightArrow());
-
-    var $tooltip = $("<div class='highlight-tooltip'><label>" + highlight.title + "</label><p>" + highlight.body + "</p></label>");
-    if (highlight.readMore) {
-      $tooltip.append($("<a class='highlight-read-more' href='" + highlight.readMore + "'>Read More</a>"));
-    }
-    $line.append($tooltip);
-
-    function toggleActive () {
-      $line.toggleClass("s-active");
-      $inlineHighlights.toggleClass("s-active");
-      $highlightedCode.toggleClass("s-active");
-      $tooltip.toggleClass("s-active");
-      $backdrop.toggleClass("s-active");
-    }
-
-    function onHover () {
-      $line.addClass("s-hover");
-      $inlineHighlights.addClass("s-hover");
-      $highlightedCode.addClass("s-hover");
-    }
-
-    function offHover () {
-      $line.removeClass("s-hover");
-      $inlineHighlights.removeClass("s-hover");
-      $highlightedCode.removeClass("s-hover");
-    }
-
-    $line.hover(onHover, offHover);
-    $highlightedCode.hover(onHover, offHover);
-    $inlineHighlights.hover(onHover, offHover);
-
-    $line.click(toggleActive);
-    $highlightedCode.click(toggleActive);
-    $inlineHighlights.click(toggleActive);
+  var highlights = [];
+  codeHighlights.forEach(function (options) {
+    highlights.push(new Highlight(options));
   });
 }
 

@@ -1,7 +1,7 @@
 
 const carbon = require('carbon-io')
 <mark js-highlighted-code="hello-1">const <mark js-inline-highlight="hello-1">__</mark>     = carbon.fibers.__(module)</mark>
-const o      = carbon.atom.o(module).main
+<mark js-highlighted-code="hello-2">const <mark js-inline-highlight="hello-2">o</mark>      = carbon.atom.o(module).main</mark>
 
 __(function() {
   module.exports = o({
