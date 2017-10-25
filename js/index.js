@@ -59,7 +59,7 @@ var windowHalfX = window.innerWidth / 2;
 var windowHalfY = window.innerHeight / 2;
 
 
-function init() {
+function init () {
   container = document.getElementById("particles");
 
   camera = new THREE.PerspectiveCamera(120, window.innerWidth / window.innerHeight, 1, 10000);
@@ -672,15 +672,6 @@ Carousel.prototype = {
   }
 }
 
-// var $t            = $(this),
-//     $w            = $(window),
-//     viewTop       = $w.scrollTop(),
-//     viewBottom    = viewTop + $w.height(),
-//     // Offset top by 200px for more natural transitions
-//     _top          = $t.offset().top + 200,
-//     _bottom       = _top + $t.height(),
-//     compareTop    = partial === true ? _bottom : _top,
-//     compareBottom = partial === true ? _top : _bottom;
 
 var $carousel = $("[js-feature-carousel]");
 var $examples = $("[js-example-section]");
@@ -689,7 +680,7 @@ var $scrollHeaderClone = $scrollHeader.clone().addClass("m-fixed");
 var scrollHeaderVisible = false;
 
 function scrollHandler () {
-  if ($carousel.isVisible(true) && (!window.carouselIsInitialized || window.terminalsAreInitialized)) {
+  if (!isMobile() && $carousel.isVisible(true) && (!window.carouselIsInitialized || window.terminalsAreInitialized)) {
     initTerminals();
     initCarousel();
   }
@@ -702,21 +693,6 @@ function scrollHandler () {
         $el.addClass("s-visible");
       }
     });
-
-    // var scrollHeaderTop = $scrollHeader.offset().top;
-    // var viewportTop = $(window).scrollTop();
-
-    // if (viewportTop >= scrollHeaderTop && !scrollHeaderVisible) {
-    //   $("body").append($scrollHeaderClone);
-    //   setTimeout(function () {
-    //     $scrollHeaderClone.addClass("s-visible");
-    //   }, 10);
-    //   scrollHeaderVisible = true;
-    // } else if (viewportTop < scrollHeaderTop && scrollHeaderVisible) {
-    //   $scrollHeaderClone.removeClass("s-visible");
-    //   $scrollHeaderClone.remove();
-    //   scrollHeaderVisible = false;
-    // }
   }
 }
 
@@ -724,7 +700,149 @@ function scrollHandler () {
 function isMobile () {
   window.isMobileDevice = window.isMobileDevice || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-  return window.isMobileDevice;
+  var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+  var isSmall = width < 480;
+
+  return window.isMobileDevice || isSmall;
+}
+
+
+var codeHighlights = [
+  {
+    preID: "hello-world",
+    highlightID: "hello-1",
+    lines: "2",
+    title: "Fibers",
+    body: "Fibers allow you to write code that is logically synchronous.",
+    readMore: "https://docs.carbon.io/en/latest/packages/carbon-core/docs/packages/fibers/docs/guide/index.html"
+  }
+];
+
+
+function createHighlightArrow () {
+  function makeSVG (tag, attrs) {
+    var el= document.createElementNS("http://www.w3.org/2000/svg", tag);
+    for (var k in attrs)
+        el.setAttribute(k, attrs[k]);
+
+    return el;
+  }
+
+  var $svg = $("<svg class='highlight-arrow-wrapper' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px'\
+              viewBox='0 0 21 13.9' style='enable-background:new 0 0 21 13.9;' xml:space='preserve'></svg>");
+  var path = makeSVG("path", {
+    class: "highlight-arrow",
+    d: "M20.2,5.2L20.2,5.2c-0.6-0.8-3.4-3.6-3.4-3.6c-1-1-2.3-1.6-3.8-1.6C9.2,0,3.9,0,3,0.1l0,0\
+        C1.4,0.1,0.1,1.4,0.1,3l0,0C0,4.3,0,5.6,0,7c0,1.3,0,2.7,0.1,4l0,0c0,1.6,1.3,2.8,2.8,2.8l0,0c1,0.1,6.2,0.1,10.1,0.1\
+        c1.4,0,2.8-0.6,3.8-1.6c0,0,3.2-3.3,3.4-3.6l0,0C21.2,7.8,21.2,6.2,20.2,5.2z"
+  });
+
+  $svg.append(path);
+
+  return $svg;
+}
+
+
+var isLineHeightRounded = (function() {
+  var res;
+  return function() {
+    if(typeof res === 'undefined') {
+      var $d = $("<div>&nbsp;<br />&nbsp;</div>");
+      $d.css({
+        "font-size": "13px",
+        "line-height": "1.5",
+        "padding": 0,
+        "border": 0
+      });
+      $("body").append($d);
+      // Browsers that round the line-height should have offsetHeight === 38
+      // The others should have 39.
+      res = $d[0].offsetHeight === 38;
+      $d.remove();
+    }
+    return res;
+  }
+}());
+
+
+function highlightLines(pre, lines, classes) {
+  var $pre = $(pre);
+  var ranges = lines.replace(/\s+/g, '').split(',');
+  var offset = $pre.attr('data-line-offset') || 0;
+
+  var parseMethod = isLineHeightRounded() ? parseInt : parseFloat;
+  var lineHeight = parseMethod($pre.css("line-height"));
+
+  for (var i = 0, range; range = ranges[i++];) {
+    range = range.split('-');
+
+    var start = +range[0],
+        end = +range[1] || start;
+
+    var $line = $("<div aria-hidden='true' class=" + (classes || '') + ' line-highlight' + "></div>");
+
+    $line.text(Array(end - start + 2).join(' \n'));
+
+    //if the line-numbers plugin is enabled, then there is no reason for this plugin to display the line numbers
+    if(!$pre.hasClass('line-numbers')) {
+      $line.attr('data-start', start);
+
+      if(end > start) {
+        $line.attr('data-end', end);
+      }
+    }
+
+    $line.css("top", (start - offset - 1) * lineHeight + 'px');
+
+    $pre.append($line);
+
+    return $line;
+  }
+}
+
+
+function initCodeHighlights () {
+  codeHighlights.forEach(function (highlight) {
+    var $pre = $("pre[js-highlight-id='" + highlight.preID + "']");
+    var $inlineHighlights = $("[js-inline-highlight='" + highlight.highlightID + "']");
+    var $highlightedCode = $("[js-highlighted-code='" + highlight.highlightID + "']");
+    var $line = highlightLines($pre, highlight.lines);
+    $line.append(createHighlightArrow());
+
+    var $tooltip = $("<div class='highlight-tooltip'><label>" + highlight.title + "</label><p>" + highlight.body + "</p></label>");
+    if (highlight.readMore) {
+      $tooltip.append($("<a class='highlight-read-more' href='" + highlight.readMore + "'>Read More</a>"));
+    }
+    $line.append($tooltip);
+
+    function toggleActive () {
+      $line.toggleClass("s-active");
+      $inlineHighlights.toggleClass("s-active");
+      $highlightedCode.toggleClass("s-active");
+      $tooltip.toggleClass("s-active");
+      $backdrop.toggleClass("s-active");
+    }
+
+    function onHover () {
+      $line.addClass("s-hover");
+      $inlineHighlights.addClass("s-hover");
+      $highlightedCode.addClass("s-hover");
+    }
+
+    function offHover () {
+      $line.removeClass("s-hover");
+      $inlineHighlights.removeClass("s-hover");
+      $highlightedCode.removeClass("s-hover");
+    }
+
+    $line.hover(onHover, offHover);
+    $highlightedCode.hover(onHover, offHover);
+    $inlineHighlights.hover(onHover, offHover);
+
+    $line.click(toggleActive);
+    $highlightedCode.click(toggleActive);
+    $inlineHighlights.click(toggleActive);
+  });
 }
 
 
@@ -733,35 +851,14 @@ $(document).ready(function () {
   positionParticles();
   animate();
 
+  initCodeHighlights();
+
   // Fire once on page load to ensure content in
   // viewport is visible
   scrollHandler();
 
   // Initialize fastclick on mobile
   // FastClick.attach(document.body);
-
-  // if (!isMobile()) {
-  //   $("body").on("click", "[js-page-link]", function (e) {
-  //     e.preventDefault();
-
-  //     var link = $(this).attr("href");
-  //     var viewportTop = $(window).scrollTop();
-  //     var elOffsetTop = $(link).offset().top;
-      
-  //     var animationTime;
-  //     if (viewportTop > elOffsetTop) {
-  //       animationTime = (viewportTop - elOffsetTop) / 3;
-  //     } else if (viewportTop < elOffsetTop) {
-  //       animationTime = (elOffsetTop - viewportTop) / 3;
-  //     } else {
-  //       animationTime = 0;
-  //     }
-
-  //     $("html, body").animate({
-  //         scrollTop: elOffsetTop
-  //     }, animationTime, "swing");
-  //   });
-  // }
 
   $("[js-code-toggle]").click(function () {
     var $this = $(this);

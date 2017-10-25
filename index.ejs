@@ -84,14 +84,6 @@
       </div>
     </div>
 
-    <div class="carousel--control m-back m-mobile" js-carousel-previous  title="Previous feature">
-      <%- include("images/chevron-left.svg", { height: "25px" })%>
-    </div>
-
-    <div class="carousel--control m-forward m-mobile" js-carousel-next  title="Next feature">
-      <%- include("images/chevron-right.svg", { height: "25px" })%>
-    </div>
-
     <div class="carousel--control m-back" js-carousel-previous  title="Previous feature">
       <%- include("images/chevron-left.svg", { height: "25px" })%>
     </div>
@@ -117,7 +109,7 @@
             </code>
             </pre>
             <div class="carousel--window-chrome m-code">
-              <span>lib/ZipcodeService</span>
+              <span>lib/ZipcodeService.js</span>
 
               <div class="carousel--window-controls">
                 <div class="carousel--window-control m-red"></div>
@@ -160,7 +152,7 @@
             </pre>
 
             <div class="carousel--window-chrome m-code">
-              <span>test/ZipcodeServiceTest</span>
+              <span>test/ZipcodeServiceTest.js</span>
 
               <div class="carousel--window-controls">
                 <div class="carousel--window-control m-red"></div>
@@ -214,24 +206,6 @@
     </div>
   </section>
 
-<!--   <header js-scroll-header class="scroll-header">
-    <div>
-      <a js-page-link href="#hello-example" class="scroll-header--link">Hello, World!</a>
-      <a js-page-link href="#mongodb-example" class="scroll-header--link">MongoDB</a>
-      <a js-page-link href="#collections-example" class="scroll-header--link">Collections</a>
-      <a js-page-link href="#chaining-example" class="scroll-header--link">Chaining</a>
-      <a js-page-link href="#authentication-example" class="scroll-header--link">Authentication & Access Control</a>
-      <a js-page-link href="#testing-example" class="scroll-header--link">Testing</a>
-      <a js-page-link href="#documentation-example" class="scroll-header--link">Documentation Generation</a>
-    </div>
-
-    <div>
-      <a js-page-link href="#splash" class="scroll-header--link">Back to top</a>
-    </div>
-  </header>
-
-  <div class="keyline"></div> -->
-
   <section js-example-section class="example" id="hello-example">
     <div class="example--left">
       <h1 class="example--header">Hello World</h1>
@@ -240,7 +214,7 @@
 
     <div class="example--right">
       <p class="example--body">With Carbon.io, APIs are defined via Services. A Service is an HTTP server that exposes a JSON REST API and which is defined as a tree of Endpoints. This Service defines a HTTP GET method on an Endpoint called "hello".</p>
-      <pre class="language-js example--code">
+      <pre class="language-js example--code" js-highlight-id="hello-world">
         <code><%-include code-examples/index/hello-world.js%></code>
       </pre>
     </div>
@@ -264,7 +238,6 @@
   <section js-example-section class="example" id="collections-example">
     <div class="example--left">
       <h1 class="example--header">MongoDB Collections</h1>
-      <h2></h2>
       <a class="example--link" href="https://github.com/carbon-io-guides/example__zipcode-service" title="Collections example">View Example on Github</a>
     </div>
 
@@ -318,8 +291,8 @@
       <%- include("images/chaining-diagram.svg", { className: "example--diagram" })%>
 
       <div class="example--toggles">
-        <div js-code-toggle="chaining--public" class="example--toggle s-active">PublicHelloService</div>
-        <div js-code-toggle="chaining--private" class="example--toggle">PrivateHelloService</div>
+        <div js-code-toggle="chaining--public" class="example--toggle s-active">PublicHelloService.js</div>
+        <div js-code-toggle="chaining--private" class="example--toggle">PrivateHelloService.js</div>
       </div>
 
       <pre js-code-block="chaining--public" class="language-js example--code s-visible s-in">
@@ -336,7 +309,7 @@
   <section js-example-section class="example" id="authentication-example">
     <div class="example--left">
       <h1 class="example--header">Authentication & Access Control</h1>
-      <a class="example--link" href="https://github.com/carbon-io/example__hello-world-service-chaining" title="Authentication & access control example">View Example on Github</a>
+      <a class="example--link" href="https://github.com/carbon-io-guides/example__hello-world-service-aac/" title="Authentication & access control example">View Example on Github</a>
     </div>
 
     <div class="example--right">
@@ -365,8 +338,8 @@
       <p>Endpoints can configure an Access Control List (ACL) to govern which users can perform each HTTP operation.</p>
 
       <div class="example--toggles">
-        <div js-code-toggle="hello-service" class="example--toggle s-active">HelloService</div>
-        <div js-code-toggle="hello-endpoint" class="example--toggle">HelloEndpoint</div>
+        <div js-code-toggle="hello-service" class="example--toggle s-active">HelloService.js</div>
+        <div js-code-toggle="hello-endpoint" class="example--toggle">HelloEndpoint.js</div>
       </div>
       
       <pre js-code-block="hello-service" class="language-js example--code s-visible s-in">
@@ -411,7 +384,7 @@
 
   <script type="application/javascript" src="/js/lib/three.min.js"></script>
   <script type="application/javascript" src="/js/lib/jquery-3.0.0.slim.min.js"></script>
-  <script type="application/javascript" src="/js/lib/prism.js"></script>
+  <script type="application/javascript" src="/js/lib/prism.min.js"></script>
   <script type="application/javascript" src="/js/lib/fastclick.min.js"></script>
   <script type="application/javascript" src="js/index.js"></script>
 </body>

@@ -18,6 +18,7 @@ body {
   font-family: $font-family--sans-serif;
   background-color: $color--white;
   overflow-x: hidden;
+  position: relative;
 
   @include media--small {
     cursor: pointer;
@@ -28,10 +29,18 @@ body {
 pre,
 code {
   font-family: $font-family--monospace;
+  z-index: 1;
+  position: relative;
 
   @include media--mobile-landscape {
     font-size: $font-size--normal * 0.8;
   }
+}
+
+
+mark {
+  background-color: transparent;
+  color: inherit;
 }
 
 
@@ -120,13 +129,12 @@ pre {
   font-size: $font-size--normal * 0.85;
 
   &[class*="language-"] {
-    padding: 1em $horizontal-spacing--normal;
+    padding: $vertical-spacing--small $horizontal-spacing--normal;
     margin: 0;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
 
     @include media--small {
-      padding: 1em;
       margin-left: -$horizontal-spacing--normal;
       margin-right: -$horizontal-spacing--normal;
     }

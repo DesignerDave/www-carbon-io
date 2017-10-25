@@ -81,87 +81,148 @@
 	opacity: .7;
 }
 
-pre[data-line] {
-	position: relative;
-	padding: 1em 0 1em 3em;
-}
-
 .line-highlight {
+	transition: all 0.1s ease-in-out;
 	position: absolute;
 	left: 0;
 	right: 0;
 	padding: inherit 0;
-	margin-top: 1em; /* Same as .prism’s padding-top */
-	background: {
-		color: hsla(24, 20%, 50%,.08);
-		image: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
-	}
-	pointer-events: none;
+	margin-top: $vertical-spacing--small;
+	background-color: lighten($syntax--background, 6%);
 	line-height: inherit;
 	white-space: pre;
+	cursor: pointer;
+	box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 
-	&:before,
-	[data-end]:after {
-		content: attr(data-start);
-		position: absolute;
-		top: .4em;
-		left: .6em;
-		min-width: 1em;
-		padding: 0 .5em;
-		background-color: hsla(24, 20%, 50%,.4);
-		color: hsl(24, 20%, 95%);
-		font: bold 65%/1.5 sans-serif;
-		text-align: center;
-		vertical-align: .3em;
-		border-radius: 999px;
-		box-shadow: 0 1px white;
+	&.s-hover {
+		.highlight-arrow-wrapper {
+			transform: translate3d(-$horizontal-spacing--small / 3, 0, 0);
+		}
 	}
 
-	&[data-end]:after {
-		content: attr(data-end);
-		top: auto;
-		bottom: .4em;
+	&.s-active {
+		.highlight-arrow-wrapper {
+			transform: translate3d(-$horizontal-spacing--normal, 0, 0);
+		}
+
+		.highlight-arrow {
+			fill: lighten($syntax--background, 15%);
+		}
+	}
+
+	&.s-hover,
+	&.s-active {
+		background-color: lighten($syntax--background, 15%);
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 	}
 }
 
-// pre {
-// 	&.line-numbers {
-// 		position: relative;
-// 		padding-left: 3.8em;
-// 		counter-reset: linenumber;
-// 	}
+.highlight-arrow-wrapper {
+	transition: all 0.1s ease-in-out;
+  height: $font-size--normal * 0.8;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: -$horizontal-spacing--small;
+}
 
-// 	&.line-numbers > code {
-// 		position: relative;
-// 		white-space: inherit;
-// 		display: block;
-// 	}
-// }
+.highlight-arrow {
+	transition: fill 0.1s ease-in-out;
+  fill: #E4B62C;
+}
 
-// .line-numbers-rows {
-// 	.line-numbers & {
-// 		position: absolute;
-// 		pointer-events: none;
-// 		top: 0;
-// 		font-size: 100%;
-// 		left: -3.8em;
-// 		width: 3em; /* works for line-numbers below 1000 lines */
-// 		letter-spacing: -1px;
-// 		user-select: none;
-// 	}
+pre[js-highlight-id] {
+	overflow: initial;
+	position: relative;
+	z-index: 2;
+}
 
-// 	& > span {
-// 		pointer-events: none;
-// 		display: block;
-// 		counter-increment: linenumber;
+[js-inline-highlight] {
+	transition: all 0.1s ease-in-out;
+	background-color: transparent;
+	color: $syntax--default-color;
+	display: inline-block;
+	cursor: pointer;
+	height: 19px;
+	margin: {
+		top: -1px;
+		bottom: -5px;
+	}
 
-// 		&:before {
-// 			content: counter(linenumber);
-// 			display: block;
-// 			padding-right: 0.8em;
-// 			text-align: right;
-// 			color: $syntax--gray;
-// 		}
-// 	}
+	&.s-hover,
+	&.s-active {
+		color: $color--white;
+		background-color: rgba(255, 255, 255, 0.2);
+	}
+}
 
-// }
+[js-highlighted-code] {
+	display: inline-block;
+  width: 100%;
+  cursor: pointer;
+}
+
+.highlight-tooltip {
+	transition: all 0.1s ease-in-out;
+	font-family: $font-family--sans-serif;
+	position: absolute;
+	top: 0;
+	right: calc(100% + #{$horizontal-spacing--large});
+	background-color: lighten($syntax--background, 15%);
+	opacity: 0;
+	box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+	transform: translate3d($horizontal-spacing--medium, 0, 0);
+	padding: $vertical-spacing--normal $horizontal-spacing--normal;
+	border-radius: $border-radius--small;
+	width: 300px;
+	cursor: default;
+	z-index: 2;
+
+	&.s-active {
+		@include box-shadow--small();
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+
+	label {
+		font: {
+			size: $font-size--normal;
+			weight: bold;
+		}
+		color: $color--white;
+		display: block;
+		padding-bottom: $vertical-spacing--small;
+		border-bottom: 1px solid $color--gray-light;
+	}
+
+	p {
+		white-space: normal;
+		color: $color--gray-light;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.highlight-tooltip-backdrop {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	opacity: 0;
+	pointer-events: none;
+
+	&.s-active {
+		pointer-events: initial;
+	}
+}
+
+.highlight-read-more {
+	display: block;
+	text-align: right;
+	margin-top: $vertical-spacing--small;
+	color: $color--white;
+}
