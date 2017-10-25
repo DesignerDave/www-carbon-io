@@ -500,6 +500,7 @@
     align-items: center;
     justify-content: center;
     color: $color--gray;
+    z-index: 2;
 
     &.m-terminal {
       background-color: black;
