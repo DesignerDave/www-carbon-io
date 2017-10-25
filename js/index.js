@@ -912,23 +912,30 @@ var codeHighlights = [
   {
     preID: "hello-world",
     highlightID: "hello-1",
-    lines: "2",
+    lines: "5",
     title: "Fibers",
     body: "Fibers allow you to write code that is logically synchronous.",
     readMore: "https://docs.carbon.io/en/latest/packages/carbon-core/docs/packages/fibers/docs/guide/index.html"
   }, {
     preID: "hello-world",
     highlightID: "hello-2",
-    lines: "3",
+    lines: "10",
     title: "Atom",
     body: "Atom is the universal object factory, used to instantiate objects and create components."
   }, {
     preID: "chaining-public",
     highlightID: "chaining-public-1",
-    lines: "4",
+    lines: "10",
     title: "Bond",
-    body: "Bond is the name resolver component for Carbon.io. Bond exposes one operator, _o, that \
-          allows for objects to be resolved from names in a variety of namespaces."
+    body: "Bond is the name resolver component that allows for objects to be resolved from names in a variety of \
+          namespaces. Here we resolve the URL of the private microservice (PrivateHelloService)."
+  }, {
+    preID: "hello-service",
+    highlightID: "hello-service-1",
+    lines: "19",
+    title: "Bond",
+    body: "Bond is the name resolver component that allows for objects to be resolved from names in a variety of \
+          namespaces. Here we resolve the filename that contains the Endpoint for our Service."
   } 
 ];
 

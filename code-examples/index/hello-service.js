@@ -17,7 +17,7 @@ __(function() {
     }),
     dbUri: 'mongodb://localhost:27017/mydb',
     endpoints : {
-      hello: _o('./HelloEndpoint')
+      <mark js-highlighted-code="hello-service-1">hello: <mark js-inline-highlight="hello-service-1">_o</mark>('./HelloEndpoint')</mark>
     }
   })
 })

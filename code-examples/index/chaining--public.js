@@ -2,13 +2,13 @@
 const carbon = require('carbon-io')
 const __     = carbon.fibers.__(module)
 const o      = carbon.atom.o(module).main
-<mark js-highlighted-code="chaining-public-1">const <mark js-inline-highlight="chaining-public-1">_o</mark>     = carbon.bond._o(module)</mark>
+const _o     = carbon.bond._o(module)
 
 __(function() {
   module.exports = o({
     _type: carbon.carbond.Service,
     port: 8888,
-    privateHelloService: _o('http://localhost:9999'), 
+    <mark js-highlighted-code="chaining-public-1">privateHelloService: <mark js-inline-highlight="chaining-public-1">_o</mark>('http://localhost:9999'),</mark>
     
     endpoints : {
       hello: o({
