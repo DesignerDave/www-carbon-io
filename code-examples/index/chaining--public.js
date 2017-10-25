@@ -2,7 +2,7 @@
 const carbon = require('carbon-io')
 const __     = carbon.fibers.__(module)
 const o      = carbon.atom.o(module).main
-const _o     = carbon.bond._o(module)
+<mark js-highlighted-code="chaining-public-1">const <mark js-inline-highlight="chaining-public-1">_o</mark>     = carbon.bond._o(module)</mark>
 
 __(function() {
   module.exports = o({

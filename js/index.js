@@ -731,7 +731,7 @@ function Highlight (options) {
 
 Highlight.prototype = {
   init: function () {
-    this.renderHighlight(this.$preWrapper);
+    this.renderHighlight();
 
     function toggleActive () {
       this.$lineHighlight.toggleClass("s-active");
@@ -916,22 +916,27 @@ var codeHighlights = [
     title: "Fibers",
     body: "Fibers allow you to write code that is logically synchronous.",
     readMore: "https://docs.carbon.io/en/latest/packages/carbon-core/docs/packages/fibers/docs/guide/index.html"
-  },
-
-  {
+  }, {
     preID: "hello-world",
     highlightID: "hello-2",
     lines: "3",
     title: "Atom",
     body: "Atom is the universal object factory, used to instantiate objects and create components."
-  }
+  }, {
+    preID: "chaining-public",
+    highlightID: "chaining-public-1",
+    lines: "4",
+    title: "Bond",
+    body: "Bond is the name resolver component for Carbon.io. Bond exposes one operator, _o, that \
+          allows for objects to be resolved from names in a variety of namespaces."
+  } 
 ];
 
 
 function initCodeHighlights () {
-  var highlights = [];
   codeHighlights.forEach(function (options) {
-    highlights.push(new Highlight(options));
+    var highlight = new Highlight(options);
+    console.log(highlight);
   });
 }
 
