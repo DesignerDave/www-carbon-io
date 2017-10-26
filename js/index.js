@@ -876,7 +876,7 @@ Highlight.prototype = {
   createTooltip: function () {
     this.$tooltip = $("<div class='highlight-tooltip'><label>" + this.title + "</label><p>" + this.body + "</p></label>");
     if (this.readMore) {
-      this.$tooltip.append($("<a class='highlight-read-more' href='" + this.readMore + "'>Read More</a>"));
+      this.$tooltip.append($("<a class='highlight-read-more' target='_blank' href='" + this.readMore + "'>Read More</a>"));
     }
 
     return this.$tooltip;
