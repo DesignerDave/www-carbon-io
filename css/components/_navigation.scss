@@ -59,7 +59,7 @@
     right: 1rem;
     height: $toggle-button-size;
     width: $toggle-button-size;
-    z-index: 2;
+    z-index: 3;
     display: none;
 
     @include media--small {

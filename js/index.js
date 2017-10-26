@@ -943,7 +943,6 @@ var codeHighlights = [
 function initCodeHighlights () {
   codeHighlights.forEach(function (options) {
     var highlight = new Highlight(options);
-    console.log(highlight);
   });
 }
 

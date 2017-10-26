@@ -638,6 +638,7 @@
     padding-top: $vertical-spacing--medium;
 
     @include media--small {
+      max-height: 10000px;
       padding-top: $vertical-spacing--large;
     }
   }
