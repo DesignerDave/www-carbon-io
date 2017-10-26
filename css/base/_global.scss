@@ -40,6 +40,10 @@ code {
 mark {
   background-color: transparent;
   color: inherit;
+
+  &.no-select {
+    user-select: none;
+  }
 }
 
 

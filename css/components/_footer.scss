@@ -101,4 +101,10 @@
       }
     }
   }
+
+  &--heart {
+    height: $font-size--normal;
+    position: relative;
+    top: 2px;
+  }
 }

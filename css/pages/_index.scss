@@ -650,10 +650,11 @@
     height: 100%;
     max-height: 550px;
     background: {
-      color: $syntax--background;
+      color: white;
       image: url("../images/docs.png");
-      position: center;
-      size: cover;
+      position: center $vertical-spacing--normal;
+      size: 90%;
+      repeat: no-repeat;
     }
     border-radius: $border-radius--large;
 
@@ -905,6 +906,10 @@
       }
     }
 
+    @include media--small {
+      display: flex;
+    }
+
     &.s-visible {
       display: block;
     }
@@ -929,10 +934,11 @@
     margin-top: $vertical-spacing--large;
     height: 550px;
     background: {
-      color: $syntax--background;
+      color: white;
       image: url("../images/docs.png");
-      position: center;
-      size: cover;
+      position: center $vertical-spacing--normal;
+      size: 90%;
+      repeat: no-repeat;
     }
     border-radius: $border-radius--large;
 
