@@ -846,10 +846,31 @@
     top: 1px;
     z-index: 5;
 
+    @include media--small {
+      margin-left: -$horizontal-spacing--normal;
+      margin-right: -$horizontal-spacing--normal;
+      top: 2px;
+    }
+
     & ~ .example--code,
     & ~ .example--code[class*="language-"] {
       margin-top: 0;
-      border-radius: 0 0 $border-radius--large $border-radius--large;
+      border-radius: 0 $border-radius--large $border-radius--large $border-radius--large;
+      padding: {
+        left: 0;
+        right: 0;
+      }
+
+      > code {
+        overflow-x: auto;
+        display: block;
+
+        padding: {
+          left: $horizontal-spacing--small;
+          right: $horizontal-spacing--small;
+        }
+
+      }
     }
   }
 
@@ -861,7 +882,7 @@
 
   &--toggle {
     transition: background-color 0.1s ease-out, color 0.1s ease-out;
-    background-color: darken($syntax--background, 3%);
+    background-color: darken($syntax--background, 5%);
     display: inline-block;
     color: $color--gray;
     cursor: pointer;
@@ -877,10 +898,27 @@
     font-family: $font-family--monospace;
     font-size: $font-size--normal * 0.8;
 
+    @include media--small {
+      padding: {
+        top: $vertical-spacing--small;
+        bottom: $vertical-spacing--small;
+        left: $horizontal-spacing--normal;
+        right: $horizontal-spacing--small;
+      }
+
+      > span {
+        display: inline-block;
+        max-width: 140px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+
     &:after {
       transition: background-color 0.1s ease-out;
       content: "";
-      background-color: darken($syntax--background, 3%);
+      background-color: darken($syntax--background, 5%);
       position: absolute;
       right: -10px;
       top: 0;
@@ -894,10 +932,14 @@
     &:not(:first-of-type) {
       padding-left: $horizontal-spacing--normal;
 
+      @include media--small {
+        padding-left: $horizontal-spacing--small;
+      }
+
       &:before {
         transition: background-color 0.1s ease-out;
         content: "";
-        background-color: darken($syntax--background, 3%);
+        background-color: darken($syntax--background, 5%);
         position: absolute;
         left: -10px;
         top: 0;
@@ -915,7 +957,7 @@
       }
 
       &:hover:before {
-        background-color: darken($syntax--background, 5%);
+        background-color: darken($syntax--background, 8%);
       }
 
       &:active:before {
@@ -924,11 +966,11 @@
     }
 
     &:hover {
-      background-color: darken($syntax--background, 5%);
+      background-color: darken($syntax--background, 8%);
       color: lighten($color--gray, 10%);
 
       &:after {
-        background-color: darken($syntax--background, 5%);
+        background-color: darken($syntax--background, 8%);
       }
     }
 
