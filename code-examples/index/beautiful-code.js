@@ -13,8 +13,7 @@ __(function() {
         _type: carbon.carbond.mongodb.MongoDBCollection,
         collection: 'zipcodes',
 
-        // JSON schema objects managed by this endpoint must
-        // conform to. 
+        // JSON schema objects managed by this endpoint must conform to. 
         schema: {
           type: 'object',
           properties: {

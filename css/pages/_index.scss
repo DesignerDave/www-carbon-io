@@ -842,10 +842,14 @@
   
   &--toggles {
     margin-top: $vertical-spacing--xlarge;
+    position: relative;
+    top: 1px;
+    z-index: 5;
 
     & ~ .example--code,
     & ~ .example--code[class*="language-"] {
-      margin-top: $vertical-spacing--normal;
+      margin-top: 0;
+      border-radius: 0 0 $border-radius--large $border-radius--large;
     }
   }
 
@@ -857,35 +861,103 @@
 
   &--toggle {
     transition: background-color 0.1s ease-out, color 0.1s ease-out;
+    background-color: darken($syntax--background, 3%);
     display: inline-block;
-    color: $color--blue;
+    color: $color--gray;
     cursor: pointer;
-    font-weight: bold;
     position: relative;
     z-index: 1;
-    padding: $vertical-spacing--small $horizontal-spacing--small;
-    border-radius: $border-radius--small;
+    padding: {
+      top: $vertical-spacing--small;
+      bottom: $vertical-spacing--small;
+      left: $horizontal-spacing--medium;
+      right: $horizontal-spacing--normal;
+    }
+    border-radius: $border-radius--large $border-radius--large 0 0;
+    font-family: $font-family--monospace;
+    font-size: $font-size--normal * 0.8;
+
+    &:after {
+      transition: background-color 0.1s ease-out;
+      content: "";
+      background-color: darken($syntax--background, 3%);
+      position: absolute;
+      right: -10px;
+      top: 0;
+      bottom: 1px;
+      border-radius: 0 $border-radius--large 0 0;
+      width: 20px;
+      -webkit-transform: skewX(10deg);
+      transform: skewX(10deg);
+    }
+
+    &:not(:first-of-type) {
+      padding-left: $horizontal-spacing--normal;
+
+      &:before {
+        transition: background-color 0.1s ease-out;
+        content: "";
+        background-color: darken($syntax--background, 3%);
+        position: absolute;
+        left: -10px;
+        top: 0;
+        bottom: 1px;
+        border-radius: $border-radius--large 0 0 0;
+        width: 20px;
+        -webkit-transform: skewX(-10deg);
+        transform: skewX(-10deg);
+      }
+
+      &.s-active:before,
+      &.s-active:hover:before,
+      &.s-active:active:before {
+        background-color: $syntax--background;
+      }
+
+      &:hover:before {
+        background-color: darken($syntax--background, 5%);
+      }
+
+      &:active:before {
+        background-color: darken($syntax--background, 10%);
+      }
+    }
 
     &:hover {
-      background-color: rgba($color--orange, 0.12);
+      background-color: darken($syntax--background, 5%);
+      color: lighten($color--gray, 10%);
+
+      &:after {
+        background-color: darken($syntax--background, 5%);
+      }
     }
 
     &:active {
-      background-color: rgba($color--orange, 0.3);
+      background-color: darken($syntax--background, 10%);
+      color: lighten($color--gray, 30%);
+
+      &:after {
+        background-color: darken($syntax--background, 10%);
+      }
     }
 
     &.s-active {
-      background-color: $color--orange;
+      background-color: $syntax--background;
       color: $color--white;
       cursor: default;
+      z-index: 2;
 
       &:hover {
         text-decoration: none;
       }
+
+      &:after {
+        background-color: $syntax--background;
+      }
     }
 
     & + & {
-      margin-left: $horizontal-spacing--small;
+      margin-left: $horizontal-spacing--small + 1px;
     }
   }
 
@@ -896,12 +968,6 @@
     
     &[js-code-block] {
       display: none;
-      opacity: 0;
-      transition: opacity 0.3s ease-in-out;
-
-      &.s-in {
-        opacity: 1;
-      }
     }
 
     @include media--small {
@@ -919,8 +985,8 @@
     &.m-terminal {
       @include box-shadow--large();
 
-      background-color: $color--black;
-      color: $color--white;
+      background-color: $syntax--background;
+      color: $syntax--default-color;
       font-family: $font-family--monospace;
     }
   }

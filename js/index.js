@@ -971,18 +971,9 @@ $(document).ready(function () {
       $(this).siblings("[js-code-toggle]").removeClass("s-active");
       $this.addClass("s-active");
 
-      var $notSelectedExample = $parent.siblings("[js-code-block]").not($selectedExample);
-      $notSelectedExample.removeClass("s-in");
+      $parent.siblings("[js-code-block]").not($selectedExample).removeClass("s-visible");
 
-      setTimeout(function () {
-        $notSelectedExample.removeClass("s-visible");
-
-        $selectedExample.addClass("s-visible");
-
-        setTimeout(function () {
-          $selectedExample.addClass("s-in");
-        }, 25);
-      }, 150);
+      $selectedExample.addClass("s-visible");
 
     }
   });
