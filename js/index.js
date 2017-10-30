@@ -680,20 +680,18 @@ var $scrollHeaderClone = $scrollHeader.clone().addClass("m-fixed");
 var scrollHeaderVisible = false;
 
 function scrollHandler () {
-  if (!isMobile() && $carousel.isVisible(true) && (!window.carouselIsInitialized || window.terminalsAreInitialized)) {
+  if ($carousel.isVisible(true) && (!window.carouselIsInitialized || window.terminalsAreInitialized)) {
     initTerminals();
     initCarousel();
   }
 
-  if (!isMobile()) {
-    $examples.each(function (i, node) {
-      var $el = $(node);
+  $examples.each(function (i, node) {
+    var $el = $(node);
 
-      if ($el.isVisible(true)) {
-        $el.addClass("s-visible");
-      }
-    });
-  }
+    if ($el.isVisible(true)) {
+      $el.addClass("s-visible");
+    }
+  });
 }
 
 
@@ -703,7 +701,7 @@ function isMobile () {
   var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
   var isSmall = width < 480;
 
-  return window.isMobileDevice || isSmall;
+  return window.isMobileDevice;
 }
 
 
@@ -956,7 +954,9 @@ $(document).ready(function () {
 
   // Fire once on page load to ensure content in
   // viewport is visible
-  scrollHandler();
+  if (!isMobile()) {
+    scrollHandler();
+  }
 
   // Initialize fastclick on mobile
   // FastClick.attach(document.body);
@@ -993,5 +993,7 @@ $(document).ready(function () {
     $("[js-mobile-navigation]").toggleClass("s-active");
   });
 
-  $(window).scroll(scrollHandler);
+  if (!isMobile()) {
+    $(window).scroll(scrollHandler);
+  }
 });

@@ -1,6 +1,16 @@
 
 @import "../lib/prism";
 
+.landscape-test {
+  @include media--mobile-landscape {
+    &:after {
+      content: "Hello Landscape";
+      display: block;
+      font-size: 50px;
+    }
+  }
+}
+
 .splash {
   min-height: 110vh;
   display: flex;
@@ -179,6 +189,7 @@
 
     @include media--small {
       width: 100%;
+      max-width: 300px;
     }
   }
 
@@ -193,6 +204,7 @@
       margin-left: 0;
       margin-top: $vertical-spacing--normal;
       width: 100%;
+      max-width: 300px;
     }
   }
 }
@@ -640,6 +652,8 @@
     @include media--small {
       max-height: 10000px;
       padding-top: $vertical-spacing--large;
+      transform: translateZ(0);
+      overflow: hidden;
     }
   }
 
@@ -675,7 +689,6 @@
     color: $color--black;
     line-height: $font-size--normal * $multiplier--medium;
     border-radius: $border-radius--large;
-    position: relative;
     font-size: $font-size--normal * 0.9;
     display: flex;
     align-items: flex-end;
@@ -773,6 +786,11 @@
   transform: translate3d(0, 20px, 0);
 
   @include media--small {
+    opacity: 1;
+    transform: none;
+  }
+
+  @include media--mobile-landscape {
     opacity: 1;
     transform: none;
   }
@@ -877,6 +895,24 @@
 
   &--diagram {
     margin-top: $vertical-spacing--medium;
+
+    &.m-mobile {
+      display: none;
+      max-width: 220px;
+      margin-top: $vertical-spacing--large;
+      margin: {
+        left: auto;
+        right: auto;
+      }
+    }
+
+    @include media--small {
+      display: none;
+
+      &.m-mobile {
+        display: block;
+      }
+    }
   }
   
 
@@ -899,6 +935,7 @@
     font-size: $font-size--normal * 0.8;
 
     @include media--small {
+      max-width: 40%;
       padding: {
         top: $vertical-spacing--small;
         bottom: $vertical-spacing--small;
@@ -908,7 +945,7 @@
 
       > span {
         display: inline-block;
-        max-width: 140px;
+        max-width: 100%;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;

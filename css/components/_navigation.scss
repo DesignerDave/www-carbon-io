@@ -68,6 +68,7 @@
   }
 
   &--mobile-toggle {
+    @include box-shadow--large($color--black, true)
     transition: transform 0.1s ease-out, background-color 0.1s ease-out;
     display: none;
     height: $toggle-button-size;
@@ -75,8 +76,8 @@
     position: relative;
     border-radius: 100%;
     cursor: pointer;
-    background-color: rgba($color--white, 0.95);
-    box-shadow: 0 0 10px rgba($color--black, 0.2);
+    background-color: white;
+    border: 1px solid rgba($color--gray-tint, 0.1);
 
     @include media--small {
       display: inline-block;
@@ -147,6 +148,7 @@
     border-radius: $border-radius--large;
     width: 220px;
     overflow: hidden;
+    border: 1px solid rgba($color--gray-tint, 0.1);
 
     @include media--small {
       &.s-active {
@@ -166,7 +168,7 @@
       left: $horizontal-spacing--normal;
       right: $horizontal-spacing--normal;
     }
-    background-color: $color--white;
+    background-color: white;
 
     &:hover,
     &:active {
@@ -178,7 +180,7 @@
     }
 
     & + & {
-      border-top: 1px solid rgba($color--gray-tint, 0.15);
+      border-top: 1px solid rgba($color--gray-tint, 0.1);
     }
   }
 }

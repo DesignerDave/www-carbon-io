@@ -71,8 +71,8 @@ $container-width--xlarge: 1170px;
 
 
 // Device media query strings
-$device--small:  "screen and (max-width: #{$container-width--medium - 1px})";
-$device--medium: "screen and (min-width: #{$container-width--medium}) and (max-width: #{$container-width--large - 1px})";
+$device--small:  "screen and (min-width: 319px) and (max-width: 480px), screen and (min-device-height: 319px) and (max-device-height: 480px)";
+$device--medium: "screen and (min-width: #{$container-width--medium}) and (max-width: #{$container-width--large - 1px}) and (min-device-height: 481px)";
 $device--large:  "screen and (min-width: #{$container-width--large}) and (max-width: #{$container-width--xlarge - 1px})";
 $device--xlarge: "screen and (min-width: #{$container-width--xlarge})";
 $device--tall:   "screen and (min-height: 955px)";

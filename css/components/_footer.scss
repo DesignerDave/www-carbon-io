@@ -83,6 +83,10 @@
       @include media--small {
         width: 100%;
       }
+      
+      @include media--mobile-landscape {
+        max-width: 300px;
+      }
     }
 
 
@@ -98,6 +102,10 @@
           top: $vertical-spacing--normal;
         }
         width: 100%;
+      }
+
+      @include media--mobile-landscape {
+        max-width: 250px;
       }
     }
   }
