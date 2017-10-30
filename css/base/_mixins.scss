@@ -76,9 +76,11 @@
 @mixin box-shadow--large($color: $color--black, $light: null) {
   @if $light {
     box-shadow: 0 0px 50px rgba($color, $opacity--low);
+    box-shadow: 0 8px 10px -6px rgba($color, $opacity--low);
 
   } @else {
     box-shadow: 0 0px 50px rgba($color, $opacity--high);
+    box-shadow: 0 8px 10px -6px rgba($color, $opacity--high);
   }
 }
 

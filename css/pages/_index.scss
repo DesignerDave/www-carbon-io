@@ -922,7 +922,7 @@
       position: absolute;
       right: -10px;
       top: 0;
-      bottom: 1px;
+      bottom: 0;
       border-radius: 0 $border-radius--large 0 0;
       width: 20px;
       -webkit-transform: skewX(10deg);
@@ -943,7 +943,7 @@
         position: absolute;
         left: -10px;
         top: 0;
-        bottom: 1px;
+        bottom: 0;
         border-radius: $border-radius--large 0 0 0;
         width: 20px;
         -webkit-transform: skewX(-10deg);
