@@ -10,5 +10,10 @@ $ npm install -g harp
 $ harp server
 ```
 
+## To compile...
+```bash
+$ harp compile . docs/
+```
+
 [Harp Documentation](http://http://harpjs.com/)
 
