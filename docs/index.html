@@ -1,0 +1,1290 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  <title>Carbon.io - API & Microservice App Framework</title>
+  <meta name="Description" content="Quickly build, test, and document database-centric microservices and APIs with Carbon.io."/>
+  <meta name='Keywords' content="carbon, carbon io, node.js, nodejs, microservice, microservices, api, framework, documentation, MongoDB" />
+  <link rel="canonical" href="https://carbon.io/" />
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#3190ef">
+  <meta name="theme-color" content="#3190ef">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Carbon.io | Microservice & API Framework" />
+  <meta property="og:description" content="Quickly build, test, and document database-centric microservices and APIs with Carbon.io." />
+  <meta property="og:url" content="https://carbon.io/" />
+  <meta property="og:updated_time" content="${updatedAt}" />
+  <meta property="og:image" content="https://carbon.io/images/open-graph.png" />
+  <meta property="og:image:url" content="https://carbon.io/images/open-graph.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Carbon.io" />
+  <meta property="og:type" content="website" />
+  <meta property="og:card" content="summary" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Open Graph -->
+  <meta property="twitter:title" content="Carbon.io | Microservice & API Framework" />
+  <meta property="twitter:description" content="Quickly build, test, and document database-centric microservices and APIs with Carbon.io." />
+  <meta property="twitter:url" content="https://carbon.io/" />
+  <meta property="twitter:image" content="https://carbon.io/images/open-graph.png" />
+  <meta property="twitter:image:alt" content="Carbon.io | Microservice & API Framework" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@mlab" />
+  <meta name="twitter:creator" content="@mlab" />
+  <link rel="me" href="https://twitter.com/mlab" />
+
+  <!-- Styles -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body ontouchstart="">
+  <section class="splash" id="splash">
+    <div class="splash--particles" id="particles"></div>
+    
+    
+<nav js-navigation class="navigation">
+  <a href="/" title="Carbon.io home">
+    <?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg class="navigation--logo" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 649.5 498.7" style="enable-background:new 0 0 649.5 498.7;" xml:space="preserve">
+<style type="text/css">
+	.svg-logo-mark--light{fill:#F9FAFC;}
+</style>
+<path class="svg-logo-mark--light" d="M283.2,270.9v-47.6c0-38.8,16.4-49.2,56.5-49.2c26.8,0,44.6,6,59.6,13.3V122c-14.9-6-34.2-13.3-61-13.3
+	c-81.8,0-123.5,44.6-123.5,113.1v50.6c0,72.9,38.8,113.1,126.5,113.1c25.3,0,43.2-6,64-11.9v-64c-19.3,6-37.2,10.4-59.6,10.4
+	C301.1,321.6,283.2,309.6,283.2,270.9z"/>
+<path class="svg-logo-mark--light" d="M633.1,215.9c-28.3,0-43.2-29.7-43.2-75.9v-34.2c0-68.5-38.8-105.7-95.3-105.7h-31.3v56.5h23.8
+	c28.3,0,40.2,19.3,40.2,61v32.8c0,35.7,8.9,74.5,43.2,93.8c-34.2,17.9-43.2,56.5-43.2,93.8v43.2c0,41.7-11.9,61-40.2,61h-23.8v56.5
+	h31.3c55,0,95.3-37.2,95.3-105.7v-44.6c0-46.1,14.9-75.9,43.2-75.9h16.4V216C649.5,215.9,633.1,215.9,633.1,215.9z"/>
+<path class="svg-logo-mark--light" d="M59.6,105.7v34.2c0,46.1-14.9,75.9-43.2,75.9H0v56.5h16.4c28.3,0,43.2,28.3,43.2,75.9v44.6
+	c0,68.5,40.2,105.7,95.3,105.7h31.3v-56.5h-23.8c-28.3,0-40.2-19.3-40.2-61v-43.2c0-37.2-8.9-77.4-43.2-93.8
+	c35.7-19.3,43.2-58.1,43.2-93.8v-32.5c0-41.7,11.9-61,40.2-61h23.8V0h-31.3C98.2,0,59.6,35.8,59.6,105.7z"/>
+</svg>
+
+  </a>
+  
+  <div class="navigation--links">
+    <a class="navigation--link" href="https://docs.carbon.io/en/latest" title="Carbon.io documentation">Documentation</a>
+    <a class="navigation--link" href="https://github.com/carbon-io/carbon-io/" title="Carbon.io on Github">Github</a>
+    <a class="navigation--link" href="https://docs.carbon.io/en/latest/support.html" title="Carbon.io Support">Support</a>
+  </div>
+
+  <div class="navigation--mobile">
+    <div class="navigation--mobile-toggle" js-toggle-mobile-navigation>
+      <div class="navigation--mobile-toggle-line"></div>
+      <div class="navigation--mobile-toggle-line"></div>
+      <div class="navigation--mobile-toggle-line"></div>
+    </div>
+
+    <div class="navigation--mobile-links" js-mobile-navigation>
+      <a class="navigation--mobile-link" href="https://docs.carbon.io/en/latest" title="Carbon.io documentation">Documentation</a>
+      <a class="navigation--mobile-link" href="https://github.com/carbon-io/carbon-io/" title="Carbon.io on Github">Github</a>
+      <a class="navigation--mobile-link" href="https://docs.carbon.io/en/latest/support.html" title="Carbon.io Support">Support</a>
+    </div>
+  </div>
+</nav>
+
+
+    <div class="splash--content-section">
+      <div js-header-group class="splash--header-group">
+        <div class="splash--header-logo-container">
+          <?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg class="splash--header-logo" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 168 34" style="enable-background:new 0 0 168 34;" xml:space="preserve">
+<style type="text/css">
+	.svg-logo--light{fill:#F9FAFC;}
+</style>
+<g>
+	<g>
+		<path class="svg-logo--light" d="M19.9,18.5v-3.2c0-2.6,1.1-3.3,3.8-3.3c1.8,0,3,0.4,4,0.9V8.5c-1-0.4-2.3-0.9-4.1-0.9c-5.5,0-8.3,3-8.3,7.6
+			v3.4c0,4.9,2.6,7.6,8.5,7.6c1.7,0,2.9-0.4,4.3-0.8v-4.3c-1.3,0.4-2.5,0.7-4,0.7C21.1,21.9,19.9,21.1,19.9,18.5z M36.4,7.7
+			c-1.8,0-3.5,0.2-4.7,0.6v4c1-0.4,2.9-0.7,5-0.7c2.2,0,3.6,0.3,3.6,2.2v1.3h-3.5c-4.1,0-7.1,1.4-7.1,5.5c0,3.7,2.2,5.6,7.6,5.6
+			s7.6-1.9,7.6-5.7v-6.8C44.9,9.1,41.6,7.7,36.4,7.7z M40.4,20.3c0,2-1.5,2.1-3.1,2.1s-3-0.1-3-1.8c0-1.3,0.8-1.9,2.5-1.9h3.6V20.3z
+			 M48,14.1v11.7h4.6V14.5c0-1.6,0.4-2.4,2.7-2.4c0.9,0,1.7,0.1,2.2,0.3V7.9c-0.7-0.2-1.2-0.3-2.2-0.3C50.4,7.7,48,9.9,48,14.1z
+			 M69.1,7.7c-2.4,0-3.9,0.8-4.8,2V1h-4.5v17.5c0,5.6,3.7,7.8,8.3,7.8c5.2,0,8.3-2.2,8.3-7.8v-2.8C76.4,10.6,74,7.7,69.1,7.7z
+			 M71.9,18.4c0,2.3-0.5,3.5-3.7,3.5c-3.1,0-3.8-1.2-3.8-3.5v-2.8c0-2.3,0.7-3.5,3.8-3.5c3.1,0,3.7,1.2,3.7,3.5V18.4z M87.5,7.7
+			c-5.4,0-8.4,2.8-8.4,7.9v2.8c0,5.2,2.6,7.9,8.4,7.9c5.4,0,8.3-2.8,8.3-7.9v-2.8C95.8,10.3,93.2,7.7,87.5,7.7z M91.2,18.4
+			c0,2.3-0.6,3.5-3.7,3.5s-3.8-1.2-3.8-3.5v-2.8c0-2.3,0.7-3.5,3.8-3.5c3.1,0,3.7,1.2,3.7,3.5V18.4z M106.8,7.7
+			c-5.3,0-7.9,2.5-7.9,7.2v11h4.6v-11c0-1.8,0.5-2.8,3.4-2.8s3.3,1,3.3,2.8v11h4.6v-11C114.7,10.1,112.3,7.7,106.8,7.7z M120.6,7.6
+			c-1.5,0-2.7,1.2-2.7,2.8c0,1.5,1.2,2.8,2.7,2.8s2.7-1.3,2.7-2.8C123.3,8.9,122.1,7.6,120.6,7.6z M120.6,20.7
+			c-1.5,0-2.7,1.2-2.7,2.8c0,1.5,1.2,2.8,2.7,2.8s2.7-1.2,2.7-2.8C123.3,22,122.1,20.7,120.6,20.7z M126.8,25.8h4.5V8.1h-4.5V25.8z
+			 M129.1,0c-1.5,0-2.7,1.2-2.7,2.8c0,1.5,1.2,2.8,2.7,2.8s2.7-1.3,2.7-2.8S130.6,0,129.1,0z M143.2,7.7c-5.4,0-8.4,2.8-8.4,7.9v2.8
+			c0,5.2,2.6,7.9,8.4,7.9c5.4,0,8.3-2.8,8.3-7.9v-2.8C151.5,10.3,148.9,7.7,143.2,7.7z M146.9,18.4c0,2.3-0.6,3.5-3.7,3.5
+			c-3.1,0-3.8-1.2-3.8-3.5v-2.8c0-2.3,0.7-3.5,3.8-3.5s3.7,1.2,3.7,3.5V18.4z M165.8,14.8c-1.9,0-2.9-2-2.9-5.1V7.4
+			c0-4.6-2.6-7.1-6.4-7.1h-2.1v3.8h1.6c1.9,0,2.7,1.3,2.7,4.1v2.2c0,2.4,0.6,5,2.9,6.3c-2.3,1.2-2.9,3.8-2.9,6.3v2.9
+			c0,2.8-0.8,4.1-2.7,4.1h-1.6v3.8h2.1c3.7,0,6.4-2.5,6.4-7.1v-3c0-3.1,1-5.1,2.9-5.1h1.1v-3.8C166.9,14.8,165.8,14.8,165.8,14.8z
+			 M4,7.4v2.3c0,3.1-1,5.1-2.9,5.1H0v3.8h1.1C3,18.6,4,20.5,4,23.7v3c0,4.6,2.7,7.1,6.4,7.1h2.1V30h-1.6c-1.9,0-2.7-1.3-2.7-4.1V23
+			c0-2.5-0.6-5.2-2.9-6.3c2.4-1.3,2.9-3.9,2.9-6.3V8.2c0-2.8,0.8-4.1,2.7-4.1h1.6V0.3h-2.1C6.6,0.3,4,2.7,4,7.4z"/>
+	</g>
+</g>
+</svg>
+
+        </div>
+
+        <div class="splash--header-text-container">
+          <h1 class="splash--header-text">An application framework based on Node.js and MongoDB for building <strong>microservices</strong> and <strong>APIs</strong>.</h1>
+          <div class="landscape-test"></div>
+        </div>
+      </div>
+
+      <div js-header-cta class="splash--cta">
+        <a href="https://docs.carbon.io/en/latest" class="splash--cta-primary" title="Carbon.io documentation">Read the Documentation</a>
+        <a href="https://github.com/carbon-io/carbon-io/" class="splash--cta-secondary" title="Carbon.io on GitHub">View Carbon.io on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="carousel">
+    <div class="carousel--triple-feature">
+      <div class="carousel--triple-feature-group s-active" js-page-indicator="0">
+        <img class="carousel--triple-feature-icon" src="/images/beautiful-code.svg" alt="">
+        Beautiful Code
+      </div>
+
+      <div class="carousel--triple-feature-group" js-page-indicator="1">
+        <img class="carousel--triple-feature-icon" src="/images/beautiful-tests.svg" alt="">
+        Beautiful Tests
+      </div>
+
+      <div class="carousel--triple-feature-group" js-page-indicator="2">
+        <img class="carousel--triple-feature-icon" src="/images/beautiful-docs.svg" alt="">
+        Beautiful Docs
+      </div>
+    </div>
+
+    <div class="carousel--control m-back" js-carousel-previous  title="Previous feature">
+      <?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" height="25px">
+<style type="text/css">
+	.st0{fill:#3190EF;}
+</style>
+<title>chevron-left</title>
+<path class="st0" d="M143.4,256L143.4,256c0-6.9,2.9-13.5,7.9-18.3L331.5,69.2c10-9.5,25.8-9.1,35.3,0.9c9.5,10,9.1,25.8-0.9,35.3
+	c-0.1,0.1-0.2,0.2-0.2,0.2L205,256l160.7,150.3c10,9.5,10.4,25.3,0.9,35.3c-9.4,9.9-25,10.4-35.1,1.2L151.4,274.3
+	C146.3,269.5,143.4,262.9,143.4,256z"/>
+</svg>
+
+    </div>
+
+    <div class="carousel--control m-forward" js-carousel-next  title="Next feature">
+      <?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" height="25px">
+<style type="text/css">
+	.st0{fill:#3190EF;}
+</style>
+<title>chevron-right</title>
+<path class="st0" d="M373.6,256L373.6,256c0,6.9-2.9,13.5-7.9,18.3L185.5,442.8c-10,9.5-25.8,9.1-35.3-0.9
+	c-9.5-10-9.1-25.8,0.9-35.3c0.1-0.1,0.2-0.2,0.2-0.2L312,256L151.4,105.7c-10-9.5-10.4-25.3-0.9-35.3c9.4-9.9,25-10.4,35.1-1.2
+	l180.2,168.5C370.7,242.5,373.6,249.1,373.6,256z"/>
+</svg>
+
+    </div>
+
+    <div js-feature-carousel class="carousel--group-wrapper">
+      <article class="carousel--group" js-carousel-group="code">
+        <h2 class="carousel--header m-mobile">
+          <div class="carousel--header-keyline"></div>
+          Create simple, database-centric microservices with virtually no code.
+          <div class="carousel--header-keyline"></div>
+        </h2>
+
+        <div class="carousel--column m-large">
+          <div class="carousel--code-wrapper">
+            <pre class="carousel--code language-js">
+              <code>
+                
+const carbon = require('carbon-io')  
+const __     = carbon.fibers.__(module) 
+const o      = carbon.atom.o(module).main
+
+__(function() {
+  module.exports = o({
+    _type: carbon.carbond.Service,
+    port: 8888,
+    dbUri: 'mongodb://localhost:27017/zipcodes',
+    endpoints : {
+      zipcodes: o({
+        _type: carbon.carbond.mongodb.MongoDBCollection,
+        collection: 'zipcodes',
+
+        // JSON schema objects managed by this endpoint must conform to. 
+        schema: {
+          type: 'object',
+          properties: {
+            _id: { type: 'string', pattern: '^[0-9]{5}$' },
+            state: { type: 'string', pattern: '^[A-Z]{2}$' },
+          },
+          required: ['_id', 'state'],
+          additionalProperties: false
+        }
+      })
+    }
+  })
+})
+              <br>
+            </code>
+            </pre>
+            <div class="carousel--window-chrome m-code">
+              <span>lib/ZipcodeService.js</span>
+
+              <div class="carousel--window-controls">
+                <div class="carousel--window-control m-red"></div>
+                <div class="carousel--window-control m-yellow"></div>
+                <div class="carousel--window-control m-green"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel--column m-small">
+          <h2 class="carousel--header">
+            <div class="carousel--header-keyline"></div>
+            Create simple, database-centric microservices with virtually no code.
+            <div class="carousel--header-keyline"></div>
+          </h2>
+
+          <div class="carousel--terminal-wrapper">
+            <pre class="carousel--terminal">
+              <code js-terminal="code"></code>
+            </pre>
+          </div>
+        </div>
+      </article>
+
+      <article class="carousel--group s-inactive" js-carousel-group="tests">
+        <h2 class="carousel--header m-mobile">
+          <div class="carousel--header-keyline"></div>
+          Easily create unit tests for your service with the built-in testing library.
+          <div class="carousel--header-keyline"></div>
+        </h2>
+
+        <div class="carousel--column m-large">
+          <div class="carousel--code-wrapper">
+            <pre class="carousel--code language-js">
+              <code>
+                
+const carbon = require('carbon-io')  
+const __     = carbon.fibers.__(module) 
+const o      = carbon.atom.o(module).main
+const _o     = carbon.bond._o(module)
+
+__(function() {
+  module.exports = o({
+    _type: carbon.carbond.test.ServiceTest,
+    name: 'ZipcodeServiceTest',
+    service: _o('../lib/ZipcodeService'),
+
+    tests: [
+      // Test POST by inserting some zipcodes
+      {
+        reqSpec: {
+          url: '/zipcodes',
+          method: 'POST',
+          body: { _id: '94110', state: 'CA' }
+        },
+        resSpec: {
+          statusCode: 201,
+        }
+      },
+
+      // Test invalid POST. These should get a 400 status code (Bad Request)
+      {
+        reqSpec: {
+          url: '/zipcodes',
+          method: 'POST',
+          body: { _id: '1', state: 'NY' } // Malformed zipcode
+        },
+        resSpec: {
+          statusCode: 400
+        }
+      }
+    ],
+
+    setup: function() {
+      carbon.carbond.test.ServiceTest.prototype.setup.call(this)
+      this.service.db.command({dropDatabase: 1})
+    },
+
+    teardown: function() {
+      this.service.db.command({dropDatabase: 1})
+      carbon.carbond.test.ServiceTest.prototype.teardown.call(this)
+    }
+  })
+})
+                <br>
+              </code>
+            </pre>
+
+            <div class="carousel--window-chrome m-code">
+              <span>test/ZipcodeServiceTest.js</span>
+
+              <div class="carousel--window-controls">
+                <div class="carousel--window-control m-red"></div>
+                <div class="carousel--window-control m-yellow"></div>
+                <div class="carousel--window-control m-green"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="carousel--column m-small">
+          <h2 class="carousel--header">
+            <div class="carousel--header-keyline"></div>
+            Easily write unit tests for your service with the built-in testing library.
+            <div class="carousel--header-keyline"></div>
+          </h2>
+
+          <div class="carousel--terminal-wrapper">
+            <pre class="carousel--terminal">
+              <code js-terminal="tests"></code>
+            </pre>
+          </div>
+        </div>
+      </article>
+
+      <article class="carousel--group s-inactive" js-carousel-group="docs">
+        <h2 class="carousel--header m-mobile">
+          <div class="carousel--header-keyline"></div>
+          Generate docs straight from your code with no extra hassle.
+          <div class="carousel--header-keyline"></div>
+        </h2>
+
+        <div class="carousel--column m-small">
+          <h2 class="carousel--header">
+            <div class="carousel--header-keyline"></div>
+            Generate docs straight from your code with no extra hassle.
+            <div class="carousel--header-keyline"></div>
+          </h2>
+
+          <div class="carousel--terminal-wrapper">
+            <pre class="carousel--terminal">
+              <code js-terminal="docs"></code>
+            </pre>
+          </div>
+        </div>
+
+        <div class="carousel--column m-large">
+          <div class="carousel--docs-image"></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section js-example-section class="example" id="npm-example">
+    <div class="example--left">
+      <h1 class="example--header">Install Carbon.io</h1>
+      <a class="example--link" href="https://www.npmjs.com/package/carbon-io" target="_blank" title="Hello world example">View package on npm</a>
+    </div>
+
+    <div class="example--right">
+      <p class="example--body">Install the latest stable version of Carbon.io with npm.</p>
+      <pre class="example--code m-terminal">
+        <code><mark class="no-select">$ </mark>npm install carbon-io</code>
+      </pre>
+    </div>
+  </section>
+
+  <section js-example-section class="example" id="hello-example">
+    <div class="example--left">
+      <h1 class="example--header">Hello World</h1>
+      <a class="example--link" href="https://github.com/carbon-io/example__hello-world-service" target="_blank" title="Hello world example">View example on GitHub</a>
+    </div>
+
+    <div class="example--right">
+      <p class="example--body">With Carbon.io, APIs are defined via Services. A Service is an HTTP server that exposes a JSON REST API and which is defined as a tree of Endpoints. This Service defines a HTTP GET method on an Endpoint called "hello".</p>
+      <pre class="language-js example--code" js-highlight-id="hello-world">
+        <code>
+const carbon = require('carbon-io')
+const __     = carbon.fibers.__(module)
+const o      = carbon.atom.o(module).main
+
+<mark js-highlighted-code="hello-1"><mark js-inline-highlight="hello-1">__</mark>(function() {</mark>
+  module.exports = o({
+    _type: carbon.carbond.Service,
+    port: 8888,
+    endpoints : {
+<mark js-highlighted-code="hello-2">      hello: <mark js-inline-highlight="hello-2">o</mark>({</mark>
+        _type: carbon.carbond.Endpoint,
+        <mark class="no-highlight">get</mark>: function(req, res) {
+          return { msg: 'Hello, world!' }
+        }
+      })
+    }
+  })
+})
+</code>
+      </pre>
+    </div>
+  </section>
+
+  <section js-example-section class="example" id="endpoints-example">
+    <div class="example--left">
+      <h1 class="example--header">Endpoints & Operations</h1>
+      <a class="example--link" href="https://github.com/carbon-io-guides/example__hello-world-service-parameter-parsing" target="_blank" title="Endpoints and operations example">View example on GitHub</a>
+    </div>
+
+    <div class="example--right">
+      <p class="example--body">Each Endpoint is made up of Operations, which can formally define request parameters and responses. Operation definitions can use JSON Schemas to automatically validate input parameters and output responses.</p>
+      
+      <pre class="language-js example--code">
+        <code>
+const carbon = require('carbon-io')
+const __     = carbon.fibers.__(module)
+const o      = carbon.atom.o(module).main
+
+__(function() {
+  module.exports = o({
+    _type: carbon.carbond.Service,
+    port: 8888,
+    endpoints : {
+      hello: o({
+        _type: carbon.carbond.Endpoint,
+
+        <mark class="no-highlight">get</mark>: {
+          parameters: { 
+            who: {
+              location: 'query',  // Parameters can be query, header, path, or body
+              required: false,
+              <mark class="no-highlight">default</mark>: 'world',
+              schema: { type: 'string' } 
+            }           
+          },
+          responses: [
+            {
+              statusCode: 200,
+              description: 'Success',
+              schema: {
+                type: 'object',
+                properties: {
+                  msg: { type: 'string' }
+                },
+                required: [ 'msg' ],
+                additionalProperties: false
+              }
+            }
+          ],
+          
+          service: function(req, res) {
+            return { msg: `Hello ${req.parameters.who}!` }
+          }
+        }
+      })
+    }
+  })
+})
+</code>
+      </pre>
+    </div>
+  </section>
+
+  <section js-example-section class="example" id="collections-example">
+    <div class="example--left">
+      <h1 class="example--header">MongoDB Collections</h1>
+      <a class="example--link" href="https://github.com/carbon-io-guides/example__zipcode-service" target="_blank" title="Collections example">View example on GitHub</a>
+    </div>
+
+    <div class="example--right">
+      <p class="example--body">Collections are a high-level abstraction on top of Endpoints that provide a higher-level interface for implementing access to a collection of resources. You can easily implement full database CRUD with virtually no code.</p>
+
+      <pre class="language-js example--code">
+        <code>
+const carbon = require('carbon-io')
+const __     = carbon.fibers.__(module)
+const o      = carbon.atom.o(module).main
+
+__(function() {
+  module.exports = o({
+    _type: carbon.carbond.Service,
+    port: 8888,
+    dbUri: 'mongodb://localhost:27017/mydb',
+    endpoints: {
+      articles: o({
+        _type: carbon.carbond.mongodb.MongoDBCollection,
+        collection: 'articles'
+      })
+    }
+  })
+})
+</code>
+      </pre>
+
+      <p>
+        This supports the following HTTP methods and Endpoints:
+
+        <div class="example--triple-details">
+          <div class="example--triple-detail">
+            <code class="example--triple-detail-header">/&#60;zipcodes&#62;</code>
+            <div class="example--triple-detail-list-item"><code>POST</code></div>
+            <div class="example--triple-detail-list-item"><code>GET</code></div>
+            <div class="example--triple-detail-list-item"><code>PATCH</code></div>
+            <div class="example--triple-detail-list-item"><code>DELETE</code></div>
+          </div>
+          <div class="example--triple-detail">
+            <code class="example--triple-detail-header">/&#60;zipcodes&#62;/:_id</code>
+            <div class="example--triple-detail-list-item"><code>PUT</code></div>
+            <div class="example--triple-detail-list-item"><code>GET</code></div>
+            <div class="example--triple-detail-list-item"><code>PATCH</code></div>
+            <div class="example--triple-detail-list-item"><code>DELETE</code></div>
+        </div>
+        
+      </p>
+    </div>
+  </section>
+
+  <section js-example-section class="example" id="chaining-example">
+    <div class="example--left">
+      <h1 class="example--header">Microservice Chaining</h1>
+      <a class="example--link" href="https://github.com/carbon-io/example__hello-world-service-chaining" target="_blank" title="Chaining example">View example on GitHub</a>
+    </div>
+
+    <div class="example--right">
+      <p class="example--body">Microservices often need to communicate with other microservices. Carbon.io makes it easy to communicate between multiple Services.</p>
+      <p class="example--body">
+        This example defines two services:
+
+        <ul>
+          <li><strong>PublicHelloService</strong>: defines a simple <code>/hello</code> endpoint that delegates to our PrivateHelloService</li>
+          <li><strong>PrivateHelloService</strong>: defines a simple <code>/hello</code> endpoint that returns <code>{ msg: "Hello world!" }</code></li>
+        </ul>
+      </p>
+
+      <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 954.7 175.96" class="example--diagram"><defs><style>.cls-1{fill:#e8ebef;}.cls-2{fill:#72849d;}.cls-3{fill:#397eff;}.cls-4{fill:#fff;}</style></defs><title>Artboard 1</title><path class="cls-1" d="M189.2,151.76V48a100,100,0,0,0-.4-13.4h0a11,11,0,0,0-9.6-9.6h0c-4.5-.6-9.1-.3-13.6-.4H23.5a100,100,0,0,0-13.4.4h0a11,11,0,0,0-9.6,9.6h0C-.2,39.06,0,43.36,0,48v103.9a102.5,102.5,0,0,0,.4,13.6h0a11,11,0,0,0,9.6,9.6h0c4.5.6,8.8.3,13.4.4H165.5a102.5,102.5,0,0,0,13.6-.4h0a11,11,0,0,0,9.6-9.6h0C189.3,160.86,189.1,156.36,189.2,151.76Z"/><path class="cls-1" d="M584.2,151.76V48a100,100,0,0,0-.4-13.4h0a11,11,0,0,0-9.6-9.6h0c-4.5-.6-9.1-.3-13.6-.4H418.5a100,100,0,0,0-13.4.4h0a11,11,0,0,0-9.6,9.6h0c-.6,4.5-.3,8.8-.4,13.4v103.9a102.5,102.5,0,0,0,.4,13.6h0a11,11,0,0,0,9.6,9.6h0c4.5.6,8.8.3,13.4.4H560.6a102.5,102.5,0,0,0,13.6-.4h0a11,11,0,0,0,9.6-9.6h0A104.52,104.52,0,0,0,584.2,151.76Z"/><path class="cls-1" d="M954.7,151.76V48a100,100,0,0,0-.4-13.4h0a11,11,0,0,0-9.6-9.6h0c-4.5-.6-9.1-.3-13.6-.4H789a100,100,0,0,0-13.4.4h0a11,11,0,0,0-9.6,9.6h0c-.6,4.5-.3,8.8-.4,13.4v103.9a102.5,102.5,0,0,0,.4,13.6h0a11,11,0,0,0,9.6,9.6h0c4.5.6,8.8.3,13.4.4H931.1a102.5,102.5,0,0,0,13.6-.4h0a11,11,0,0,0,9.6-9.6h0C954.9,160.86,954.6,156.36,954.7,151.76Z"/><path class="cls-2" d="M74.7,2.06A4.83,4.83,0,0,1,78.2.66a4.72,4.72,0,0,1,4.2,1.9,3.68,3.68,0,0,1,.8,2.1H80.8c-.2-.6-.3-1-.6-1.2a2.41,2.41,0,0,0-1.9-.8,2.31,2.31,0,0,0-2,1.1,5.13,5.13,0,0,0-.7,3,4.56,4.56,0,0,0,.8,2.9,2.61,2.61,0,0,0,2,1,2.41,2.41,0,0,0,1.9-.8,5.35,5.35,0,0,0,.6-1.3h2.4a4.92,4.92,0,0,1-1.6,3.1,4.46,4.46,0,0,1-3.3,1.2,5,5,0,0,1-3.9-1.6,6.63,6.63,0,0,1-1.4-4.4A6.33,6.33,0,0,1,74.7,2.06Z"/><path class="cls-2" d="M87.2,12.36H85V.86h2.2Z"/><path class="cls-2" d="M91.7,2.86H89.4V.76h2.3Zm-2.3,1h2.3v8.5H89.4Z"/><path class="cls-2" d="M99.4,4a3.74,3.74,0,0,1,1.5,1.3,4.84,4.84,0,0,1,.7,1.8,8.12,8.12,0,0,1,.1,1.7H95.5a1.81,1.81,0,0,0,.9,1.8,2.13,2.13,0,0,0,1.2.3,1.59,1.59,0,0,0,1.2-.4c.2-.1.3-.3.5-.6h2.3a2.78,2.78,0,0,1-.8,1.5,4.22,4.22,0,0,1-3.2,1.2,4.72,4.72,0,0,1-3-1,4,4,0,0,1-1.3-3.4,4.55,4.55,0,0,1,1.2-3.4,4.07,4.07,0,0,1,3-1.2A6.46,6.46,0,0,1,99.4,4ZM96.1,6a2.62,2.62,0,0,0-.6,1.3h3.8A1.49,1.49,0,0,0,98.7,6a2.11,2.11,0,0,0-1.3-.5A1.43,1.43,0,0,0,96.1,6Z"/><path class="cls-2" d="M109.6,4.36a2.7,2.7,0,0,1,.8,2.3v5.7h-2.3V7.16a2.51,2.51,0,0,0-.2-1,1.27,1.27,0,0,0-1.2-.7,1.35,1.35,0,0,0-1.5,1,4.44,4.44,0,0,0-.2,1.3v4.6h-2.2V3.86H105v1.2a3.78,3.78,0,0,1,.8-.9,3.1,3.1,0,0,1,1.7-.5A3,3,0,0,1,109.6,4.36Z"/><path class="cls-2" d="M111.6,5.46V3.86h1.2V1.46H115v2.4h1.4v1.6H115V10c0,.3,0,.6.1.7s.4.1.8.1h.4v1.7h-1.1c-1.1,0-1.8-.1-2.2-.5a1.9,1.9,0,0,1-.4-1.2V5.56h-1Z"/><path class="cls-3" d="M765.5,56.36v-5H554.2v-2.9a52.51,52.51,0,0,0-.2-6.9h0a5.73,5.73,0,0,0-5-5h0a55.61,55.61,0,0,0-7.1-.2H440.4a52.51,52.51,0,0,0-6.9.2h0a5.73,5.73,0,0,0-5,5h0a53,53,0,0,0-.2,6.9v10.1a56.13,56.13,0,0,0,.2,7.1,5.73,5.73,0,0,0,5,5h0a53,53,0,0,0,6.9.2H541.9a56.13,56.13,0,0,0,7.1-.2h0a5.73,5.73,0,0,0,5-5,55.61,55.61,0,0,0,.2-7.1v-2.2Z"/><path class="cls-4" d="M453.1,50.66a2.14,2.14,0,0,0-1.3-1.6,2.77,2.77,0,0,0-1.3-.3,2.9,2.9,0,0,0-2.3,1,4.89,4.89,0,0,0-.9,3.2,3.75,3.75,0,0,0,1,3,3.1,3.1,0,0,0,2.2.9,2.72,2.72,0,0,0,2-.7,4,4,0,0,0,1-1.8h-2.7v-1.9h4.8v6.2H454l-.2-1.4-1.2,1.2a4.14,4.14,0,0,1-2.3.6,4.92,4.92,0,0,1-3.8-1.6,6.18,6.18,0,0,1-1.5-4.4,6.44,6.44,0,0,1,1.5-4.5,5.35,5.35,0,0,1,4.1-1.7,5.42,5.42,0,0,1,3.5,1.1,3.93,3.93,0,0,1,1.5,2.8h-2.5Z"/><path class="cls-4" d="M466.3,49.16h-6.1v2.4h5.6v2h-5.6v3h6.4v2.1h-8.7V47.06h8.4v2.1Z"/><path class="cls-4" d="M476.9,47.06v2h-3.4v9.5H471v-9.5h-3.5v-2Z"/><path class="cls-3" d="M405.6,52.86l-15.2-8.4a2.25,2.25,0,0,0-3.3,2v4.9H157.5v-2.9a52.51,52.51,0,0,0-.2-6.9h0a5.73,5.73,0,0,0-5-5,55.61,55.61,0,0,0-7.1-.2H43.8a52.51,52.51,0,0,0-6.9.2,5.73,5.73,0,0,0-5,5h0a53,53,0,0,0-.2,6.9v10.1a56.13,56.13,0,0,0,.2,7.1,5.73,5.73,0,0,0,5,5,53,53,0,0,0,6.9.2H145.3a56.13,56.13,0,0,0,7.1-.2,5.73,5.73,0,0,0,5-5,55.61,55.61,0,0,0,.2-7.1v-2.2H387.2v4.9a2.25,2.25,0,0,0,3.3,2l15.2-8.4A1.17,1.17,0,0,0,405.6,52.86Z"/><path class="cls-4" d="M490,59.06h-1.3l6.7-11.2h1.2Z"/><path class="cls-4" d="M498,58.76v-11h1.3v5.1a5.84,5.84,0,0,1,1.3-1.4,2.26,2.26,0,0,1,1.5-.5,2.66,2.66,0,0,1,1.2.3,1.34,1.34,0,0,1,.7.8,1.88,1.88,0,0,1,.2.8c0,.3.1.8.1,1.7v4.3H503v-4.4a5.76,5.76,0,0,0-.1-1.5,2.09,2.09,0,0,0-.4-.6.73.73,0,0,0-.6-.2,2.38,2.38,0,0,0-1.4.6,7,7,0,0,0-1.3,1.6v4.5H498Z"/><path class="cls-4" d="M512.7,58.26a6.48,6.48,0,0,1-2.9.7,3.45,3.45,0,0,1-1.8-.5,3.24,3.24,0,0,1-1.3-1.5,4.25,4.25,0,0,1,0-4,3.74,3.74,0,0,1,1.3-1.5,3.2,3.2,0,0,1,1.9-.5,2.7,2.7,0,0,1,2.2,1,4.68,4.68,0,0,1,.8,3v.3h-5.3a4,4,0,0,0,.3,1.5,2.19,2.19,0,0,0,.9,1,2.66,2.66,0,0,0,1.2.3,6.29,6.29,0,0,0,2.7-.8Zm-5.1-4.1h3.8V54a2.46,2.46,0,0,0-.5-1.5,1.43,1.43,0,0,0-1.2-.6,1.61,1.61,0,0,0-1.3.6A3.85,3.85,0,0,0,507.6,54.16Z"/><path class="cls-4" d="M516.8,58.76v-10h-2.3v-1.1h3.6v10h2.4v1.1Z"/><path class="cls-4" d="M525.2,58.76v-10h-2.3v-1.1h3.6v10h2.4v1.1Z"/><path class="cls-4" d="M534.7,59a3.31,3.31,0,0,1-2.6-1.1,4.71,4.71,0,0,1,0-5.8,3.14,3.14,0,0,1,2.6-1.1,3.31,3.31,0,0,1,2.6,1.1,4.7,4.7,0,0,1,0,5.8A3.31,3.31,0,0,1,534.7,59Zm0-1.1a1.94,1.94,0,0,0,1.6-.8,3.59,3.59,0,0,0,.6-2.2,3.8,3.8,0,0,0-.6-2.2,2,2,0,0,0-3.2,0,4.33,4.33,0,0,0,0,4.4A1.94,1.94,0,0,0,534.7,57.86Z"/><path class="cls-4" d="M56.5,50.66a2.14,2.14,0,0,0-1.3-1.6,2.77,2.77,0,0,0-1.3-.3,2.9,2.9,0,0,0-2.3,1,4.89,4.89,0,0,0-.9,3.2,3.75,3.75,0,0,0,1,3,3.1,3.1,0,0,0,2.2.9,2.72,2.72,0,0,0,2-.7,4,4,0,0,0,1-1.8H54.2v-1.9H59v6.2H57.4l-.4-1.5-1.2,1.2a4.14,4.14,0,0,1-2.3.6,4.92,4.92,0,0,1-3.8-1.6A6.18,6.18,0,0,1,48.2,53a6.44,6.44,0,0,1,1.5-4.5,5.35,5.35,0,0,1,4.1-1.7,5.42,5.42,0,0,1,3.5,1.1,3.93,3.93,0,0,1,1.5,2.8Z"/><path class="cls-4" d="M69.7,49.16H63.6v2.4h5.6v2H63.6v3H70v2.1H61.3V47.06h8.4Z"/><path class="cls-4" d="M80.2,47.06v2H76.8v9.5H74.4v-9.5H70.9v-2Z"/><path class="cls-4" d="M93.3,59.06H92l6.7-11.2h1.2Z"/><path class="cls-4" d="M101.3,58.76v-11h1.3v5.1a5.84,5.84,0,0,1,1.3-1.4,2.26,2.26,0,0,1,1.5-.5,2.66,2.66,0,0,1,1.2.3,1.34,1.34,0,0,1,.7.8,1.88,1.88,0,0,1,.2.8c0,.3.1.8.1,1.7v4.3h-1.3v-4.4a5.76,5.76,0,0,0-.1-1.5,2.09,2.09,0,0,0-.4-.6.73.73,0,0,0-.6-.2,2.38,2.38,0,0,0-1.4.6,7,7,0,0,0-1.3,1.6v4.5h-1.2Z"/><path class="cls-4" d="M116.1,58.26a6.48,6.48,0,0,1-2.9.7,3.45,3.45,0,0,1-1.8-.5,3.24,3.24,0,0,1-1.3-1.5,4.25,4.25,0,0,1,0-4,3.74,3.74,0,0,1,1.3-1.5,3.2,3.2,0,0,1,1.9-.5,2.7,2.7,0,0,1,2.2,1,4.68,4.68,0,0,1,.8,3v.3H111a4,4,0,0,0,.3,1.5,2.19,2.19,0,0,0,.9,1,2.66,2.66,0,0,0,1.2.3,6.29,6.29,0,0,0,2.7-.8Zm-5.1-4.1h3.8V54a2.46,2.46,0,0,0-.5-1.5,1.43,1.43,0,0,0-1.2-.6,1.61,1.61,0,0,0-1.3.6A3,3,0,0,0,111,54.16Z"/><path class="cls-4" d="M120.2,58.76v-10h-2.3v-1.1h3.6v10h2.4v1.1Z"/><path class="cls-4" d="M128.6,58.76v-10h-2.3v-1.1h3.6v10h2.4v1.1Z"/><path class="cls-4" d="M138.1,59a3.31,3.31,0,0,1-2.6-1.1,4.71,4.71,0,0,1,0-5.8,3.14,3.14,0,0,1,2.6-1.1,3.31,3.31,0,0,1,2.6,1.1,4.7,4.7,0,0,1,0,5.8A3.63,3.63,0,0,1,138.1,59Zm0-1.1a1.94,1.94,0,0,0,1.6-.8,3.59,3.59,0,0,0,.6-2.2,3.8,3.8,0,0,0-.6-2.2,2,2,0,0,0-3.2,0,4.33,4.33,0,0,0,0,4.4A1.94,1.94,0,0,0,138.1,57.86Z"/><path class="cls-2" d="M836.4,60.86h-1.3l6.7-11.2H843Z"/><path class="cls-2" d="M844.4,60.46v-11h1.3v5.1a5.84,5.84,0,0,1,1.3-1.4,2.26,2.26,0,0,1,1.5-.5,2.66,2.66,0,0,1,1.2.3,1.34,1.34,0,0,1,.7.8,1.88,1.88,0,0,1,.2.8c0,.3.1.8.1,1.7v4.3h-1.3v-4.4a5.76,5.76,0,0,0-.1-1.5,2.09,2.09,0,0,0-.4-.6.73.73,0,0,0-.6-.2,2.38,2.38,0,0,0-1.4.6,7,7,0,0,0-1.3,1.6v4.5h-1.2Z"/><path class="cls-2" d="M859.1,60a6.48,6.48,0,0,1-2.9.7,3.45,3.45,0,0,1-1.8-.5,3.24,3.24,0,0,1-1.3-1.5,4.25,4.25,0,0,1,0-4,3.74,3.74,0,0,1,1.3-1.5,3.2,3.2,0,0,1,1.9-.5,2.7,2.7,0,0,1,2.2,1,4.68,4.68,0,0,1,.8,3V57H854a4,4,0,0,0,.3,1.5,2.19,2.19,0,0,0,.9,1,2.66,2.66,0,0,0,1.2.3,6.29,6.29,0,0,0,2.7-.8v1ZM854,56h3.8v-.2a2.46,2.46,0,0,0-.5-1.5,1.43,1.43,0,0,0-1.2-.6,1.61,1.61,0,0,0-1.3.6A3.38,3.38,0,0,0,854,56Z"/><path class="cls-2" d="M863.2,60.46v-10h-2.3v-1.1h3.6v10h2.4v1.1Z"/><path class="cls-2" d="M871.6,60.46v-10h-2.3v-1.1h3.6v10h2.4v1.1Z"/><path class="cls-2" d="M881.1,60.66a3.31,3.31,0,0,1-2.6-1.1,4.7,4.7,0,0,1,0-5.8,3.14,3.14,0,0,1,2.6-1.1,3.31,3.31,0,0,1,2.6,1.1,4.41,4.41,0,0,1,1,2.9,4.1,4.1,0,0,1-1,2.9A3,3,0,0,1,881.1,60.66Zm0-1a1.94,1.94,0,0,0,1.6-.8,3.59,3.59,0,0,0,.6-2.2,3.8,3.8,0,0,0-.6-2.2,1.72,1.72,0,0,0-1.6-.8,1.94,1.94,0,0,0-1.6.8,4.33,4.33,0,0,0,0,4.4A1.94,1.94,0,0,0,881.1,59.66Z"/><path class="cls-2" d="M427.8,7.36a4.18,4.18,0,0,1-2.9.8h-2.4v4.2h-2.4V.86H425a4,4,0,0,1,2.7.9,3.43,3.43,0,0,1,1,2.8A3.4,3.4,0,0,1,427.8,7.36Zm-1.9-4.1a1.7,1.7,0,0,0-1.3-.4h-2.2v3.4h2.2a1.84,1.84,0,0,0,1.3-.4,1.73,1.73,0,0,0,.5-1.3A1.45,1.45,0,0,0,425.9,3.26Z"/><path class="cls-2" d="M432.8,3.86V9a3.09,3.09,0,0,0,.2,1.1,1.21,1.21,0,0,0,1.2.6,1.6,1.6,0,0,0,1.6-.9,4.44,4.44,0,0,0,.2-1.3V3.86h2.3v8.5H436v-1.2l-.2.2-.3.3a2.66,2.66,0,0,1-1,.6,3.59,3.59,0,0,1-1.1.2,2.45,2.45,0,0,1-2.5-1.4,5.74,5.74,0,0,1-.4-2.2V3.76h2.3Z"/><path class="cls-2" d="M447.6,4.86a5,5,0,0,1,1,3.1,5.82,5.82,0,0,1-.9,3.3,2.93,2.93,0,0,1-2.6,1.3,2.86,2.86,0,0,1-1.7-.4,3.63,3.63,0,0,1-.8-.9v1.1h-2.2V.86h2.2V5a3.82,3.82,0,0,1,.9-.9,2.41,2.41,0,0,1,1.5-.4A3.22,3.22,0,0,1,447.6,4.86Zm-1.9,5.2a3.45,3.45,0,0,0,.5-1.8,6.05,6.05,0,0,0-.2-1.5,1.63,1.63,0,0,0-1.7-1.1,1.75,1.75,0,0,0-1.7,1.1,3.42,3.42,0,0,0-.2,1.5,3.45,3.45,0,0,0,.5,1.8,1.58,1.58,0,0,0,1.5.7A1.56,1.56,0,0,0,445.7,10.06Z"/><path class="cls-2" d="M452.4,12.36h-2.2V.86h2.2Z"/><path class="cls-2" d="M456.8,2.86h-2.3V.76h2.3Zm-2.2,1h2.3v8.5h-2.3Z"/><path class="cls-2" d="M464.1,6.86a1.61,1.61,0,0,0-.3-.9,1.5,1.5,0,0,0-1.2-.5,1.43,1.43,0,0,0-1.5,1.1,6.27,6.27,0,0,0-.2,1.6,6.05,6.05,0,0,0,.2,1.5,1.59,1.59,0,0,0,1.5,1.1,1.25,1.25,0,0,0,1.1-.4,1.82,1.82,0,0,0,.4-1.1h2.3a4.38,4.38,0,0,1-.7,1.9,4.13,4.13,0,0,1-6.1.3,5.3,5.3,0,0,1-1-3.2,5,5,0,0,1,1.1-3.4,3.77,3.77,0,0,1,3-1.2,4.21,4.21,0,0,1,2.6.7,3.17,3.17,0,0,1,1.2,2.5Z"/><path class="cls-2" d="M468,12.36V.86h2.4v4.4h4.5V.86h2.4v11.5h-2.4V7.26h-4.5v5.1Z"/><path class="cls-2" d="M485,4a3.74,3.74,0,0,1,1.5,1.3,4.84,4.84,0,0,1,.7,1.8,8.12,8.12,0,0,1,.1,1.7H481a1.81,1.81,0,0,0,.9,1.8,2.13,2.13,0,0,0,1.2.3,1.59,1.59,0,0,0,1.2-.4c.2-.1.3-.3.5-.6h2.3a2.78,2.78,0,0,1-.8,1.5,4.22,4.22,0,0,1-3.2,1.2,4.72,4.72,0,0,1-3-1,4,4,0,0,1-1.3-3.4,4.55,4.55,0,0,1,1.2-3.4,4.07,4.07,0,0,1,3-1.2A6.47,6.47,0,0,1,485,4Zm-3.4,2a2.62,2.62,0,0,0-.6,1.3h3.8a1.49,1.49,0,0,0-.6-1.3,2.11,2.11,0,0,0-1.3-.5A1.66,1.66,0,0,0,481.6,6Z"/><path class="cls-2" d="M490.6,12.36h-2.2V.86h2.2Z"/><path class="cls-2" d="M495,12.36h-2.2V.86H495Z"/><path class="cls-2" d="M504.3,11.26a4.84,4.84,0,0,1-6.6,0,5.2,5.2,0,0,1,0-6.4,4.59,4.59,0,0,1,6.6,0,5.17,5.17,0,0,1,1.1,3.2A4.77,4.77,0,0,1,504.3,11.26Zm-1.8-1.2a3.68,3.68,0,0,0,.5-2,3.68,3.68,0,0,0-.5-2,2,2,0,0,0-3,0,3.68,3.68,0,0,0-.5,2,3.68,3.68,0,0,0,.5,2,2,2,0,0,0,3,0Z"/><path class="cls-2" d="M508.9,8.76a3.37,3.37,0,0,0,.4,1.2,2.44,2.44,0,0,0,2,.7,4.64,4.64,0,0,0,1.4-.2,1.27,1.27,0,0,0,1-1.3,1.05,1.05,0,0,0-.5-.9,4.3,4.3,0,0,0-1.6-.5l-1.2-.3a8.35,8.35,0,0,1-2.5-.9,2.79,2.79,0,0,1-1.2-2.5,3.63,3.63,0,0,1,1.1-2.6,4.83,4.83,0,0,1,3.3-1,4.62,4.62,0,0,1,3.1,1,3.5,3.5,0,0,1,1.4,2.8h-2.3a1.72,1.72,0,0,0-.9-1.5,3.19,3.19,0,0,0-1.4-.3,2.41,2.41,0,0,0-1.5.4,1.22,1.22,0,0,0-.6,1,1,1,0,0,0,.6.9,12.43,12.43,0,0,0,1.5.5l2,.5a6.37,6.37,0,0,1,2,.8A2.72,2.72,0,0,1,516,9a3.22,3.22,0,0,1-1.2,2.6,5.11,5.11,0,0,1-3.4,1,5.7,5.7,0,0,1-3.6-1,3.29,3.29,0,0,1-1.3-2.8Z"/><path class="cls-2" d="M523.2,4a3.74,3.74,0,0,1,1.5,1.3,4.84,4.84,0,0,1,.7,1.8,8.12,8.12,0,0,1,.1,1.7h-6.2a1.81,1.81,0,0,0,.9,1.8,2.13,2.13,0,0,0,1.2.3,1.59,1.59,0,0,0,1.2-.4c.2-.1.3-.3.5-.6h2.3a2.78,2.78,0,0,1-.8,1.5,4.22,4.22,0,0,1-3.2,1.2,4.72,4.72,0,0,1-3-1,4,4,0,0,1-1.3-3.4,4.55,4.55,0,0,1,1.2-3.4,4.07,4.07,0,0,1,3-1.2A6.46,6.46,0,0,1,523.2,4Zm-3.3,2a2.62,2.62,0,0,0-.6,1.3h3.8a1.49,1.49,0,0,0-.6-1.3,2.11,2.11,0,0,0-1.3-.5A1.43,1.43,0,0,0,519.9,6Z"/><path class="cls-2" d="M531.3,3.66h.2V6h-.7a1.81,1.81,0,0,0-1.8.9,2.81,2.81,0,0,0-.3,1.5v4h-2.2V3.86h2.1v1.5a3.09,3.09,0,0,1,.9-1.2,2.77,2.77,0,0,1,1.6-.5Z"/><path class="cls-2" d="M538,3.86h2.4l-3.1,8.5H535l-3.1-8.5h2.5l1.8,6.3Z"/><path class="cls-2" d="M544,2.86h-2.3V.76H544Zm-2.3,1H544v8.5h-2.3Z"/><path class="cls-2" d="M551.2,6.86a1.61,1.61,0,0,0-.3-.9,1.5,1.5,0,0,0-1.2-.5,1.43,1.43,0,0,0-1.5,1.1,6.27,6.27,0,0,0-.2,1.6,6.05,6.05,0,0,0,.2,1.5,1.59,1.59,0,0,0,1.5,1.1,1.25,1.25,0,0,0,1.1-.4,1.82,1.82,0,0,0,.4-1.1h2.3a4.38,4.38,0,0,1-.7,1.9,4.13,4.13,0,0,1-6.1.3,5.3,5.3,0,0,1-1-3.2,5,5,0,0,1,1.1-3.4,3.77,3.77,0,0,1,3-1.2,4.21,4.21,0,0,1,2.6.7,3.17,3.17,0,0,1,1.2,2.5Z"/><path class="cls-2" d="M560.6,4a3.74,3.74,0,0,1,1.5,1.3,4.84,4.84,0,0,1,.7,1.8,8.12,8.12,0,0,1,.1,1.7h-6.2a1.81,1.81,0,0,0,.9,1.8,2.13,2.13,0,0,0,1.2.3,1.59,1.59,0,0,0,1.2-.4c.2-.1.3-.3.5-.6h2.3a2.78,2.78,0,0,1-.8,1.5,4.22,4.22,0,0,1-3.2,1.2,4.72,4.72,0,0,1-3-1,4,4,0,0,1-1.3-3.4,4.55,4.55,0,0,1,1.2-3.4,4.07,4.07,0,0,1,3-1.2A6.46,6.46,0,0,1,560.6,4Zm-3.4,2a2.62,2.62,0,0,0-.6,1.3h3.8a1.49,1.49,0,0,0-.6-1.3,2.11,2.11,0,0,0-1.3-.5A1.66,1.66,0,0,0,557.2,6Z"/><path class="cls-2" d="M794.3,7.36a4.18,4.18,0,0,1-2.9.8H789v4.2h-2.4V.86h4.9a4,4,0,0,1,2.7.9,3.43,3.43,0,0,1,1,2.8A3.11,3.11,0,0,1,794.3,7.36Zm-1.8-4.1a1.7,1.7,0,0,0-1.3-.4H789v3.4h2.2a1.84,1.84,0,0,0,1.3-.4,1.73,1.73,0,0,0,.5-1.3A1.45,1.45,0,0,0,792.5,3.26Z"/><path class="cls-2" d="M801.8,3.66h.2V6h-.7a1.81,1.81,0,0,0-1.8.9,2.81,2.81,0,0,0-.3,1.5v4H797V3.86h2.1v1.5a3.09,3.09,0,0,1,.9-1.2,2.77,2.77,0,0,1,1.6-.5Z"/><path class="cls-2" d="M805.6,2.86h-2.3V.76h2.3Zm-2.2,1h2.3v8.5h-2.3Z"/><path class="cls-2" d="M813,3.86h2.4l-3.1,8.5H810l-3.1-8.5h2.5l1.8,6.3Z"/><path class="cls-2" d="M820,7.16a6.37,6.37,0,0,0,.9-.2.63.63,0,0,0,.5-.6.67.67,0,0,0-.4-.7,3.09,3.09,0,0,0-1.1-.2,1.25,1.25,0,0,0-1.1.4,1.14,1.14,0,0,0-.3.8h-2.1a3.22,3.22,0,0,1,.6-1.8,3.78,3.78,0,0,1,3-1.1,5.14,5.14,0,0,1,2.5.6,2.25,2.25,0,0,1,1.1,2.1v4.9a3.54,3.54,0,0,0,.1.6c0,.1.2.2.3.3v.1h-2.4a.9.9,0,0,1-.1-.5.9.9,0,0,0-.1-.5,10.63,10.63,0,0,1-1.1.9,2.93,2.93,0,0,1-1.6.4,2.49,2.49,0,0,1-1.9-.7,2.41,2.41,0,0,1-.8-1.9,2.56,2.56,0,0,1,1.2-2.3,4.44,4.44,0,0,1,2-.5Zm1.4,1a.76.76,0,0,1-.4.2c-.1.1-.3.1-.6.2l-.5.1a4.05,4.05,0,0,0-1,.3.87.87,0,0,0-.5.9c0,.4.1.7.3.8a1.91,1.91,0,0,0,.8.3,2,2,0,0,0,1.3-.4,1.75,1.75,0,0,0,.6-1.5v-.9Z"/><path class="cls-2" d="M824.7,5.46V3.86h1.2V1.46h2.2v2.4h1.4v1.6h-1.4V10c0,.3,0,.6.1.7s.4.1.8.1h.4v1.7h-1.1c-1.1,0-1.8-.1-2.2-.5a1.9,1.9,0,0,1-.4-1.2V5.56h-1Z"/><path class="cls-2" d="M836.4,4a3.74,3.74,0,0,1,1.5,1.3,4.84,4.84,0,0,1,.7,1.8,8.12,8.12,0,0,1,.1,1.7h-6.2a1.81,1.81,0,0,0,.9,1.8,2.13,2.13,0,0,0,1.2.3,1.59,1.59,0,0,0,1.2-.4c.2-.1.3-.3.5-.6h2.3a2.78,2.78,0,0,1-.8,1.5,4.22,4.22,0,0,1-3.2,1.2,4.72,4.72,0,0,1-3-1,4,4,0,0,1-1.3-3.4,4.55,4.55,0,0,1,1.2-3.4,4.07,4.07,0,0,1,3-1.2A5.33,5.33,0,0,1,836.4,4Zm-3.3,2a2.62,2.62,0,0,0-.6,1.3h3.8a1.49,1.49,0,0,0-.6-1.3,2.11,2.11,0,0,0-1.3-.5A1.54,1.54,0,0,0,833.1,6Z"/><path class="cls-2" d="M840,12.36V.86h2.4v4.4h4.5V.86h2.4v11.5h-2.4V7.26h-4.5v5.1Z"/><path class="cls-2" d="M856.9,4a3.74,3.74,0,0,1,1.5,1.3,4.84,4.84,0,0,1,.7,1.8,8.12,8.12,0,0,1,.1,1.7H853a1.81,1.81,0,0,0,.9,1.8,2.13,2.13,0,0,0,1.2.3,1.59,1.59,0,0,0,1.2-.4c.2-.1.3-.3.5-.6h2.3a2.78,2.78,0,0,1-.8,1.5,4.22,4.22,0,0,1-3.2,1.2,4.72,4.72,0,0,1-3-1,4,4,0,0,1-1.3-3.4,4.55,4.55,0,0,1,1.2-3.4,4.07,4.07,0,0,1,3-1.2A6.46,6.46,0,0,1,856.9,4Zm-3.3,2a2.62,2.62,0,0,0-.6,1.3h3.8a1.49,1.49,0,0,0-.6-1.3,2.11,2.11,0,0,0-1.3-.5A1.43,1.43,0,0,0,853.6,6Z"/><path class="cls-2" d="M862.5,12.36h-2.2V.86h2.2Z"/><path class="cls-2" d="M867,12.36h-2.2V.86H867Z"/><path class="cls-2" d="M876.2,11.26a4.84,4.84,0,0,1-6.6,0,5.2,5.2,0,0,1,0-6.4,4.59,4.59,0,0,1,6.6,0,5.17,5.17,0,0,1,1.1,3.2A4.32,4.32,0,0,1,876.2,11.26Zm-1.7-1.2a3.68,3.68,0,0,0,.5-2,3.68,3.68,0,0,0-.5-2,2,2,0,0,0-3,0,3.68,3.68,0,0,0-.5,2,3.68,3.68,0,0,0,.5,2,1.68,1.68,0,0,0,1.5.7A1.8,1.8,0,0,0,874.5,10.06Z"/><path class="cls-2" d="M880.8,8.76a3.37,3.37,0,0,0,.4,1.2,2.44,2.44,0,0,0,2,.7,4.64,4.64,0,0,0,1.4-.2,1.27,1.27,0,0,0,1-1.3,1.05,1.05,0,0,0-.5-.9,4.3,4.3,0,0,0-1.6-.5l-1.2-.3a8.35,8.35,0,0,1-2.5-.9,2.79,2.79,0,0,1-1.2-2.5,3.63,3.63,0,0,1,1.1-2.6,4.83,4.83,0,0,1,3.3-1,4.62,4.62,0,0,1,3.1,1,3.5,3.5,0,0,1,1.4,2.8h-2.3a1.72,1.72,0,0,0-.9-1.5,3.19,3.19,0,0,0-1.4-.3,2.41,2.41,0,0,0-1.5.4,1.22,1.22,0,0,0-.6,1,1,1,0,0,0,.6.9,12.43,12.43,0,0,0,1.5.5l2,.5a6.37,6.37,0,0,1,2,.8,2.72,2.72,0,0,1,1,2.4,3.22,3.22,0,0,1-1.2,2.6,5.11,5.11,0,0,1-3.4,1,5.7,5.7,0,0,1-3.6-1,3.29,3.29,0,0,1-1.3-2.8Z"/><path class="cls-2" d="M895.1,4a3.74,3.74,0,0,1,1.5,1.3,4.84,4.84,0,0,1,.7,1.8,8.12,8.12,0,0,1,.1,1.7h-6.2a1.81,1.81,0,0,0,.9,1.8,2.13,2.13,0,0,0,1.2.3,1.59,1.59,0,0,0,1.2-.4c.2-.1.3-.3.5-.6h2.3a2.78,2.78,0,0,1-.8,1.5,4.22,4.22,0,0,1-3.2,1.2,4.72,4.72,0,0,1-3-1,4,4,0,0,1-1.3-3.4,4.55,4.55,0,0,1,1.2-3.4,4.07,4.07,0,0,1,3-1.2A5.85,5.85,0,0,1,895.1,4Zm-3.3,2a2.62,2.62,0,0,0-.6,1.3H895a1.49,1.49,0,0,0-.6-1.3,2.11,2.11,0,0,0-1.3-.5A1.54,1.54,0,0,0,891.8,6Z"/><path class="cls-2" d="M903.2,3.66h.2V6h-.7a1.81,1.81,0,0,0-1.8.9,2.81,2.81,0,0,0-.3,1.5v4h-2.2V3.86h2.1v1.5a3.09,3.09,0,0,1,.9-1.2,2.77,2.77,0,0,1,1.6-.5Z"/><path class="cls-2" d="M910,3.86h2.4l-3.1,8.5H907l-3.1-8.5h2.5l1.8,6.3Z"/><path class="cls-2" d="M915.9,2.86h-2.3V.76h2.3Zm-2.3,1h2.3v8.5h-2.3Z"/><path class="cls-2" d="M923.1,6.86a1.61,1.61,0,0,0-.3-.9,1.5,1.5,0,0,0-1.2-.5,1.43,1.43,0,0,0-1.5,1.1,6.27,6.27,0,0,0-.2,1.6,6.05,6.05,0,0,0,.2,1.5,1.59,1.59,0,0,0,1.5,1.1,1.25,1.25,0,0,0,1.1-.4,1.82,1.82,0,0,0,.4-1.1h2.3a4.38,4.38,0,0,1-.7,1.9,4.13,4.13,0,0,1-6.1.3,5.3,5.3,0,0,1-1-3.2,5,5,0,0,1,1.1-3.4,3.77,3.77,0,0,1,3-1.2,4.21,4.21,0,0,1,2.6.7,3.17,3.17,0,0,1,1.2,2.5Z"/><path class="cls-2" d="M932.5,4a3.74,3.74,0,0,1,1.5,1.3,4.84,4.84,0,0,1,.7,1.8,8.12,8.12,0,0,1,.1,1.7h-6.2a1.81,1.81,0,0,0,.9,1.8,2.13,2.13,0,0,0,1.2.3,1.59,1.59,0,0,0,1.2-.4c.2-.1.3-.3.5-.6h2.3a2.78,2.78,0,0,1-.8,1.5,4.22,4.22,0,0,1-3.2,1.2,4.72,4.72,0,0,1-3-1,4,4,0,0,1-1.3-3.4,4.55,4.55,0,0,1,1.2-3.4,4.07,4.07,0,0,1,3-1.2A6.46,6.46,0,0,1,932.5,4Zm-3.3,2a2.62,2.62,0,0,0-.6,1.3h3.8a1.49,1.49,0,0,0-.6-1.3,2.11,2.11,0,0,0-1.3-.5A1.43,1.43,0,0,0,929.2,6Z"/><path class="cls-3" d="M946.6,121.06a52.51,52.51,0,0,0-.2-6.9,5.73,5.73,0,0,0-5-5,55.61,55.61,0,0,0-7.1-.2h-147a52.51,52.51,0,0,0-6.9.2,5.73,5.73,0,0,0-5,5,53,53,0,0,0-.2,6.9v20.8H521.1V137a2.25,2.25,0,0,0-3.3-2l-12.4,6.8h-5v-4.9a2.25,2.25,0,0,0-3.3-2l-12.4,6.8h-3.3v-4.9a2.25,2.25,0,0,0-3.3-2l-12.4,6.8h-267v-4.9a2.25,2.25,0,0,0-3.3-2l-15.2,8.4a1.13,1.13,0,0,0,0,2l15.2,8.4a2.25,2.25,0,0,0,3.3-2v-4.9H465.5l12.4,6.8a2.25,2.25,0,0,0,3.3-2v-4.9h3.3l12.4,6.8a2.25,2.25,0,0,0,3.3-2v-4.9h5l12.4,6.8a2.25,2.25,0,0,0,3.3-2v-4.9H775v2.5a56.13,56.13,0,0,0,.2,7.1,5.73,5.73,0,0,0,5,5,53,53,0,0,0,6.9.2h147a56.13,56.13,0,0,0,7.1-.2,5.73,5.73,0,0,0,5-5,55.61,55.61,0,0,0,.2-7.1v-27.7Z"/><path class="cls-3" d="M774.5,54.86l-15.2,8.4a2.25,2.25,0,0,1-3.3-2V46.46a2.25,2.25,0,0,1,3.3-2l15.2,8.4A1.13,1.13,0,0,1,774.5,54.86Z"/><path class="cls-4" d="M850,130.26a6.23,6.23,0,0,1,2.4-2.6,19.8,19.8,0,0,0,2.1-1.7,2.34,2.34,0,0,0,.7-1.7,2,2,0,0,0-.4-1.3,1.76,1.76,0,0,0-2.7.3,4.31,4.31,0,0,0-.3,1.5h-2.3a4.63,4.63,0,0,1,.6-2.5,3.5,3.5,0,0,1,3.4-1.8,4.5,4.5,0,0,1,3.1,1.1,3.55,3.55,0,0,1,1.1,2.8,4.07,4.07,0,0,1-.8,2.4,8.94,8.94,0,0,1-1.7,1.6l-1,.7a8.94,8.94,0,0,0-1.2.9,4.35,4.35,0,0,0-.6.7h5.3v2.1h-8.4A8.23,8.23,0,0,1,850,130.26Z"/><path class="cls-4" d="M866.5,122a9.79,9.79,0,0,1,.9,4.7,9.09,9.09,0,0,1-.9,4.6,3.39,3.39,0,0,1-3.3,1.6,3.49,3.49,0,0,1-3.3-1.6,9.62,9.62,0,0,1-.9-4.6,10.06,10.06,0,0,1,.9-4.7,4.2,4.2,0,0,1,6.6,0Zm-4.7,7.9a1.44,1.44,0,0,0,2.8,0,12.75,12.75,0,0,0,.3-3.2,13.11,13.11,0,0,0-.3-3.3,1.44,1.44,0,0,0-2.8,0,13.11,13.11,0,0,0-.3,3.3A12.75,12.75,0,0,0,861.8,129.86Z"/><path class="cls-4" d="M876.1,122a9.79,9.79,0,0,1,.9,4.7,9.09,9.09,0,0,1-.9,4.6,3.39,3.39,0,0,1-3.3,1.6,3.49,3.49,0,0,1-3.3-1.6,9.62,9.62,0,0,1-.9-4.6,10.06,10.06,0,0,1,.9-4.7,3.39,3.39,0,0,1,3.3-1.6A3.49,3.49,0,0,1,876.1,122Zm-4.7,7.9a1.44,1.44,0,0,0,2.8,0,12.75,12.75,0,0,0,.3-3.2,13.11,13.11,0,0,0-.3-3.3,1.44,1.44,0,0,0-2.8,0,13.11,13.11,0,0,0-.3,3.3A9.3,9.3,0,0,0,871.4,129.86Z"/><path class="cls-4" d="M792.87,148.46a3.13,3.13,0,0,1,.8.56,2.36,2.36,0,0,1,.38.57,1.69,1.69,0,0,1,.12.66,4.86,4.86,0,0,1-.11.88l-.15.67a4.15,4.15,0,0,0-.12.8.81.81,0,0,0,.28.61,1.82,1.82,0,0,0,1.15.25h.9v.91h-.91a2.85,2.85,0,0,1-2.07-.52,1.68,1.68,0,0,1-.46-1.16,3.47,3.47,0,0,1,.09-.75l.1-.47.1-.51.07-.31a2,2,0,0,0,0-.42,1.32,1.32,0,0,0-.36-.93,1.75,1.75,0,0,0-1.29-.39h-.52V148h.52a1.72,1.72,0,0,0,1.28-.38,1.29,1.29,0,0,0,.37-1,1.9,1.9,0,0,0,0-.41L793,146l-.1-.51-.1-.47a3.47,3.47,0,0,1-.09-.75,1.68,1.68,0,0,1,.46-1.16,2.85,2.85,0,0,1,2.07-.52h.91v.91h-.9a1.82,1.82,0,0,0-1.15.25.8.8,0,0,0-.28.61,4.33,4.33,0,0,0,.12.81l.15.67a4.77,4.77,0,0,1,.11.87,1.69,1.69,0,0,1-.12.66,2,2,0,0,1-.38.57A3.13,3.13,0,0,1,792.87,148.46Z"/><path class="cls-4" d="M799.08,152.19v-6.55h1v1.5a4.7,4.7,0,0,1,.84-1.32,1.16,1.16,0,0,1,.79-.36.92.92,0,0,1,.76.37,1.65,1.65,0,0,1,.29,1.06v.35a3.51,3.51,0,0,1,.47-1,2.9,2.9,0,0,1,.56-.59,1.09,1.09,0,0,1,.68-.22.91.91,0,0,1,.72.36,2.35,2.35,0,0,1,.3,1.42v4.95h-1v-4.47a6.3,6.3,0,0,0,0-.76.6.6,0,0,0-.14-.3.33.33,0,0,0-.23-.11c-.2,0-.42.16-.65.47a5.72,5.72,0,0,0-.72,1.54v3.63h-.9v-4.47c0-.58-.06-.91-.18-1a.47.47,0,0,0-.3-.15c-.2,0-.42.17-.64.52a7.27,7.27,0,0,0-.66,1.34v3.78Z"/><path class="cls-4" d="M806.79,151.84v-1.15a4.61,4.61,0,0,0,1.39.6,5.94,5.94,0,0,0,1.25.17,2,2,0,0,0,1.18-.27.76.76,0,0,0,.37-.66.64.64,0,0,0-.17-.45,2.61,2.61,0,0,0-.85-.46l-.37-.16-.76-.3a3.79,3.79,0,0,1-1.53-.87,1.48,1.48,0,0,1-.32-1,1.64,1.64,0,0,1,.62-1.33,3.21,3.21,0,0,1,2-.52,6.23,6.23,0,0,1,2,.31v1a6,6,0,0,0-2-.39,2.07,2.07,0,0,0-1.09.24.71.71,0,0,0-.39.61.65.65,0,0,0,.34.56,7.12,7.12,0,0,0,1.09.49l.74.27a3.71,3.71,0,0,1,1.43.8,1.52,1.52,0,0,1,.4,1.08,1.72,1.72,0,0,1-.65,1.4,3.19,3.19,0,0,1-2.09.55A7,7,0,0,1,806.79,151.84Z"/><path class="cls-4" d="M817.76,150.72a3.63,3.63,0,0,1-1.2,1.23,2.57,2.57,0,0,1-1.29.42,2,2,0,0,1-1.48-.71,3.11,3.11,0,0,1-.65-2.15,4.58,4.58,0,0,1,.43-2,3.62,3.62,0,0,1,1.16-1.41,3,3,0,0,1,1.81-.52q.3,0,.93.06l.28,0h1.1v4.63c0,1.1,0,1.78-.05,2a4,4,0,0,1-.14.74,2.24,2.24,0,0,1-1.07,1.38,3.88,3.88,0,0,1-2,.5,5.35,5.35,0,0,1-2.41-.61v-1.1a5,5,0,0,0,1.14.56,4,4,0,0,0,1.31.24,3,3,0,0,0,.95-.15,1.76,1.76,0,0,0,.72-.46,1.65,1.65,0,0,0,.38-.7,4.77,4.77,0,0,0,.1-1.05Zm0-1.3v-2.81a4.37,4.37,0,0,0-1.08-.15,2.14,2.14,0,0,0-1.69.78,3.19,3.19,0,0,0-.67,2.12,2.42,2.42,0,0,0,.37,1.47,1,1,0,0,0,.84.5,1.85,1.85,0,0,0,1.12-.52A5,5,0,0,0,817.76,149.42Z"/><path class="cls-4" d="M822.73,147.37a.89.89,0,0,1-.67-.28.93.93,0,0,1,0-1.35,1,1,0,0,1,1.34,1.35A.89.89,0,0,1,822.73,147.37Zm0,5.09a.89.89,0,0,1-.67-.28.93.93,0,0,1,0-1.35.94.94,0,0,1,1.34,0,1,1,0,0,1,0,1.35A.89.89,0,0,1,822.73,152.46Z"/><path class="cls-4" d="M833.74,146H833l-.38-3.28h1.47Zm2.53,0h-.74l-.34-3.28h1.43Z"/><path class="cls-4" d="M838.41,152.19v-9.1h1.19V147H843v-3.92h1.18v9.1H843v-4.27H839.6v4.27Z"/><path class="cls-4" d="M850.69,151.75a5.84,5.84,0,0,1-2.47.62,3,3,0,0,1-1.59-.44,3.12,3.12,0,0,1-1.11-1.26,3.73,3.73,0,0,1-.42-1.74,3.84,3.84,0,0,1,.4-1.72,3,3,0,0,1,1.11-1.29,2.87,2.87,0,0,1,1.59-.46,2.36,2.36,0,0,1,1.88.83,3.91,3.91,0,0,1,.7,2.56v.24h-4.51a2.7,2.7,0,0,0,.29,1.24,1.94,1.94,0,0,0,.74.85,2,2,0,0,0,1.06.28,4.89,4.89,0,0,0,2.33-.7Zm-4.35-3.48h3.26v-.15a2,2,0,0,0-.39-1.28,1.3,1.3,0,0,0-1.05-.47,1.58,1.58,0,0,0-1.15.48A2.7,2.7,0,0,0,846.34,148.27Z"/><path class="cls-4" d="M853.66,152.19v-8.55h-1.95v-.91h3v8.55h2v.91Z"/><path class="cls-4" d="M860.33,152.19v-8.55h-2v-.91h3v8.55h2v.91Z"/><path class="cls-4" d="M867.92,152.37a2.85,2.85,0,0,1-2.25-1,4.07,4.07,0,0,1,0-4.95,2.85,2.85,0,0,1,2.25-1,2.82,2.82,0,0,1,2.24,1,4,4,0,0,1,0,4.95A2.82,2.82,0,0,1,867.92,152.37Zm0-.91a1.67,1.67,0,0,0,1.39-.68,3.67,3.67,0,0,0,0-3.73,1.76,1.76,0,0,0-2.78,0,3.6,3.6,0,0,0,0,3.73A1.66,1.66,0,0,0,867.92,151.46Z"/><path class="cls-4" d="M878.83,152.19l-1.07-6.55h1l.62,4,.16.92.16-.92,1-4h1l1.18,4,.2.92.14-.92.63-4h.83l-1.06,6.55h-1L881.39,148l-.2-.92h0L881,148l-1.09,4.22Z"/><path class="cls-4" d="M887.91,152.37a2.82,2.82,0,0,1-2.25-1,4,4,0,0,1,0-4.95,3.06,3.06,0,0,1,4.49,0,4.07,4.07,0,0,1,0,4.95A2.83,2.83,0,0,1,887.91,152.37Zm0-.91a1.64,1.64,0,0,0,1.38-.68,3.6,3.6,0,0,0,0-3.73,1.64,1.64,0,0,0-1.38-.68,1.68,1.68,0,0,0-1.4.68,3.67,3.67,0,0,0,0,3.73A1.68,1.68,0,0,0,887.91,151.46Z"/><path class="cls-4" d="M892.43,152.19v-6.55h1.09v1.43a3.68,3.68,0,0,1,1.17-1.21,2.84,2.84,0,0,1,1.47-.4,4,4,0,0,1,1.18.18V148h-1.05v-1.49a3,3,0,0,0-.43,0,1.88,1.88,0,0,0-1.2.48,5.15,5.15,0,0,0-1.14,1.45v3.8Z"/><path class="cls-4" d="M900.29,152.19v-8.55h-1.95v-.91h3v8.55h2v.91Z"/><path class="cls-4" d="M909.57,150.72a3.46,3.46,0,0,1-1.2,1.23,2.51,2.51,0,0,1-1.28.42,2,2,0,0,1-1.48-.71,3.06,3.06,0,0,1-.65-2.15,4.58,4.58,0,0,1,.43-2,3.62,3.62,0,0,1,1.16-1.41,3,3,0,0,1,1.8-.52c.21,0,.52,0,.94.06l.28,0v-2.91h1.09v9.46h-1.09Zm0-1.3v-2.81a4.25,4.25,0,0,0-1.08-.15,2.13,2.13,0,0,0-1.68.78,3.13,3.13,0,0,0-.67,2.12,2.42,2.42,0,0,0,.37,1.47,1,1,0,0,0,.83.5,1.87,1.87,0,0,0,1.13-.52A4.8,4.8,0,0,0,909.57,149.42Z"/><path class="cls-4" d="M914.55,152.46a.84.84,0,0,1,0-1.68.81.81,0,0,1,.59.24.84.84,0,0,1-.59,1.44ZM914,149.6l-.27-6.51h1.46L915,149.6Z"/><path class="cls-4" d="M920.34,146h-.76l-.37-3.28h1.46Zm2.53,0h-.75l-.33-3.28h1.43Z"/><path class="cls-4" d="M930.12,148.46a3.13,3.13,0,0,1-.8-.56,1.8,1.8,0,0,1-.37-.57,1.53,1.53,0,0,1-.13-.66,4.77,4.77,0,0,1,.11-.87l.15-.67a4.33,4.33,0,0,0,.12-.81.8.8,0,0,0-.28-.61,1.82,1.82,0,0,0-1.15-.25h-.91v-.91h.92a2.86,2.86,0,0,1,2.08.52,1.68,1.68,0,0,1,.46,1.16,3.33,3.33,0,0,1-.09.75l-.11.47-.1.51-.07.3a3.44,3.44,0,0,0,0,.43,1.29,1.29,0,0,0,.37.93,1.72,1.72,0,0,0,1.29.38h.52v.91h-.52a1.75,1.75,0,0,0-1.29.39,1.33,1.33,0,0,0-.37.95,2.58,2.58,0,0,0,0,.4l.07.31.1.51.11.47a3.47,3.47,0,0,1,.09.75,1.66,1.66,0,0,1-.46,1.16,2.86,2.86,0,0,1-2.08.52h-.92v-.91h.91a1.82,1.82,0,0,0,1.15-.25.81.81,0,0,0,.28-.61,4.15,4.15,0,0,0-.12-.8l-.15-.67a4.86,4.86,0,0,1-.11-.88,1.53,1.53,0,0,1,.13-.66,2,2,0,0,1,.37-.57A3.13,3.13,0,0,1,930.12,148.46Z"/><path class="cls-2" d="M22.53,143.89a3,3,0,0,1,.8.56,2.1,2.1,0,0,1,.38.57,1.74,1.74,0,0,1,.13.67,4.22,4.22,0,0,1-.12.87l-.15.67a4.84,4.84,0,0,0-.11.8.79.79,0,0,0,.27.61,1.82,1.82,0,0,0,1.15.25h.91v.91h-.92a2.85,2.85,0,0,1-2.07-.52,1.72,1.72,0,0,1-.46-1.16,3.47,3.47,0,0,1,.09-.75l.1-.47.1-.51.07-.31a2,2,0,0,0,.05-.42,1.33,1.33,0,0,0-.37-.93,1.71,1.71,0,0,0-1.29-.39h-.52v-.9h.52a1.7,1.7,0,0,0,1.28-.39,1.29,1.29,0,0,0,.38-.94,1.93,1.93,0,0,0-.05-.42l-.07-.3-.1-.51-.1-.47a3.47,3.47,0,0,1-.09-.75,1.72,1.72,0,0,1,.46-1.16,2.85,2.85,0,0,1,2.07-.52h.92v.91h-.91a1.78,1.78,0,0,0-1.14.25.78.78,0,0,0-.28.61,4.93,4.93,0,0,0,.11.81l.15.67a4.22,4.22,0,0,1,.12.87,1.69,1.69,0,0,1-.13.66,1.83,1.83,0,0,1-.38.57A3,3,0,0,1,22.53,143.89Z"/><path class="cls-2" d="M28.75,147.62v-6.55h.95v1.5a4.47,4.47,0,0,1,.84-1.31,1.15,1.15,0,0,1,.79-.37,1,1,0,0,1,.77.37,1.71,1.71,0,0,1,.29,1.06v.35a3.51,3.51,0,0,1,.46-1,2.92,2.92,0,0,1,.57-.59,1.12,1.12,0,0,1,.67-.22.91.91,0,0,1,.72.36,2.35,2.35,0,0,1,.3,1.42v5h-1v-4.47a5.42,5.42,0,0,0,0-.75.53.53,0,0,0-.14-.31.33.33,0,0,0-.23-.11c-.2,0-.42.16-.65.47a5.76,5.76,0,0,0-.71,1.54v3.63h-.91v-4.47a1.78,1.78,0,0,0-.17-1A.52.52,0,0,0,31,142c-.2,0-.41.18-.64.52a7.27,7.27,0,0,0-.66,1.34v3.78Z"/><path class="cls-2" d="M36.46,147.27v-1.15a4.51,4.51,0,0,0,1.39.6,5.77,5.77,0,0,0,1.24.17,2.12,2.12,0,0,0,1.19-.26.81.81,0,0,0,.36-.67.64.64,0,0,0-.17-.45,2.42,2.42,0,0,0-.84-.46l-.38-.16-.75-.29a3.88,3.88,0,0,1-1.54-.88,1.54,1.54,0,0,1-.32-1,1.67,1.67,0,0,1,.62-1.33,3.23,3.23,0,0,1,2-.52,6.23,6.23,0,0,1,2,.31v1a6,6,0,0,0-2-.39,2.06,2.06,0,0,0-1.08.24.72.72,0,0,0-.39.61.63.63,0,0,0,.34.56,5.61,5.61,0,0,0,1.09.49L40,144a3.66,3.66,0,0,1,1.42.8,1.54,1.54,0,0,1,.41,1.09,1.72,1.72,0,0,1-.66,1.39,3.18,3.18,0,0,1-2.08.55A7,7,0,0,1,36.46,147.27Z"/><path class="cls-2" d="M47.42,146.15a3.46,3.46,0,0,1-1.2,1.23,2.57,2.57,0,0,1-1.29.42,2,2,0,0,1-1.47-.71,3.06,3.06,0,0,1-.66-2.15,4.59,4.59,0,0,1,.44-2,3.6,3.6,0,0,1,1.16-1.41,3,3,0,0,1,1.8-.52c.21,0,.52,0,.94.06l.28,0h1.09v4.63c0,1.1,0,1.78,0,2a6.42,6.42,0,0,1-.14.74,2.32,2.32,0,0,1-1.07,1.38,3.81,3.81,0,0,1-2,.5,5.28,5.28,0,0,1-2.41-.61v-1.1a4.84,4.84,0,0,0,1.14.56,3.94,3.94,0,0,0,1.31.25,2.9,2.9,0,0,0,.94-.16,1.76,1.76,0,0,0,.72-.46,1.57,1.57,0,0,0,.38-.69,4.37,4.37,0,0,0,.1-1.06Zm0-1.3V142a4.37,4.37,0,0,0-1.08-.15,2.13,2.13,0,0,0-1.68.78,3.13,3.13,0,0,0-.67,2.12,2.49,2.49,0,0,0,.36,1.47,1.07,1.07,0,0,0,.84.5,1.81,1.81,0,0,0,1.13-.52A5,5,0,0,0,47.42,144.85Z"/><path class="cls-2" d="M52.39,142.8a1,1,0,0,1-.67-1.63.92.92,0,0,1,.67-.28.91.91,0,0,1,.67.28.92.92,0,0,1,.29.68,1,1,0,0,1-.28.67A.93.93,0,0,1,52.39,142.8Zm0,5.09a.91.91,0,0,1-.67-.28.89.89,0,0,1-.28-.67.91.91,0,0,1,.28-.68,1,1,0,0,1,.67-.28,1,1,0,0,1,.67.28,1,1,0,0,1-.67,1.63Z"/><path class="cls-2" d="M63.41,141.44h-.76l-.37-3.28h1.46Zm2.52,0h-.74l-.33-3.28h1.43Z"/><path class="cls-2" d="M68.08,147.62v-9.1h1.18v3.92h3.35v-3.92H73.8v9.1H72.61v-4.27H69.26v4.27Z"/><path class="cls-2" d="M80.35,147.18a5.81,5.81,0,0,1-2.47.62,2.91,2.91,0,0,1-1.58-.44,3.1,3.1,0,0,1-1.12-1.25,3.79,3.79,0,0,1-.42-1.75,4,4,0,0,1,.4-1.72,3.19,3.19,0,0,1,1.11-1.29,3,3,0,0,1,1.6-.46,2.34,2.34,0,0,1,1.87.83,3.91,3.91,0,0,1,.71,2.56v.24H75.93a2.7,2.7,0,0,0,.29,1.24,2,2,0,0,0,.75.85,1.94,1.94,0,0,0,1,.28,4.89,4.89,0,0,0,2.33-.7ZM76,143.7h3.26v-.15a2,2,0,0,0-.39-1.28,1.3,1.3,0,0,0-1.05-.47,1.56,1.56,0,0,0-1.14.48A2.7,2.7,0,0,0,76,143.7Z"/><path class="cls-2" d="M83.33,147.62v-8.55h-2v-.91h3v8.55h2v.91Z"/><path class="cls-2" d="M90,147.62v-8.55H88v-.91h3v8.55h2v.91Z"/><path class="cls-2" d="M97.58,147.8a2.82,2.82,0,0,1-2.24-1,4,4,0,0,1,0-4.95,3.06,3.06,0,0,1,4.49,0,4.07,4.07,0,0,1,0,4.95A2.84,2.84,0,0,1,97.58,147.8Zm0-.91a1.62,1.62,0,0,0,1.39-.68,3.6,3.6,0,0,0,0-3.73,1.65,1.65,0,0,0-1.39-.68,1.67,1.67,0,0,0-1.39.68,3.67,3.67,0,0,0,0,3.73A1.65,1.65,0,0,0,97.58,146.89Z"/><path class="cls-2" d="M108.49,147.62l-1.07-6.55h1l.62,4,.17.92.15-.92,1-4h1l1.18,4,.21.92.13-.92.63-4h.83l-1.06,6.55h-1l-1.25-4.21-.2-.93h0l-.18.92-1.09,4.22Z"/><path class="cls-2" d="M117.57,147.8a2.82,2.82,0,0,1-2.25-1,4.07,4.07,0,0,1,0-4.95,3.06,3.06,0,0,1,4.49,0,4.07,4.07,0,0,1,0,4.95A2.82,2.82,0,0,1,117.57,147.8Zm0-.91a1.65,1.65,0,0,0,1.39-.68,3.67,3.67,0,0,0,0-3.73,1.67,1.67,0,0,0-1.39-.68,1.65,1.65,0,0,0-1.39.68,3.6,3.6,0,0,0,0,3.73A1.62,1.62,0,0,0,117.57,146.89Z"/><path class="cls-2" d="M122.09,147.62v-6.55h1.09v1.43a3.68,3.68,0,0,1,1.17-1.21,2.84,2.84,0,0,1,1.47-.4,4,4,0,0,1,1.18.18v2.37h-1v-1.5a3.09,3.09,0,0,0-.44-.05,1.88,1.88,0,0,0-1.19.48,5.31,5.31,0,0,0-1.15,1.45v3.8Z"/><path class="cls-2" d="M130,147.62v-8.55h-2v-.91h3.05v8.55h2v.91Z"/><path class="cls-2" d="M139.24,146.15a3.63,3.63,0,0,1-1.2,1.23,2.57,2.57,0,0,1-1.29.42,2,2,0,0,1-1.48-.71,3.11,3.11,0,0,1-.65-2.15,4.58,4.58,0,0,1,.43-2,3.69,3.69,0,0,1,1.16-1.41A3,3,0,0,1,138,141c.2,0,.52,0,.94.06l.28,0v-2.91h1.09v9.46h-1.09Zm0-1.3V142a4.37,4.37,0,0,0-1.08-.15,2.14,2.14,0,0,0-1.69.78,3.19,3.19,0,0,0-.67,2.12,2.42,2.42,0,0,0,.37,1.47,1,1,0,0,0,.84.5,1.79,1.79,0,0,0,1.12-.52A5,5,0,0,0,139.24,144.85Z"/><path class="cls-2" d="M144.22,147.89a.85.85,0,0,1-.6-.24.86.86,0,0,1-.25-.6.85.85,0,0,1,.85-.84.85.85,0,0,1,.83.84.84.84,0,0,1-.83.84Zm-.51-2.86-.27-6.51h1.46l-.27,6.51Z"/><path class="cls-2" d="M150,141.44h-.75l-.38-3.28h1.47Zm2.53,0h-.74l-.34-3.28h1.43Z"/><path class="cls-2" d="M159.79,143.89a3,3,0,0,1-.8-.56,1.83,1.83,0,0,1-.38-.57,1.69,1.69,0,0,1-.12-.66,4.09,4.09,0,0,1,.11-.87l.14-.67a4.33,4.33,0,0,0,.12-.81.78.78,0,0,0-.28-.61,1.78,1.78,0,0,0-1.14-.25h-.91V138h.92a2.85,2.85,0,0,1,2.07.52,1.69,1.69,0,0,1,.47,1.16,3.37,3.37,0,0,1-.1.75l-.1.47-.1.51-.07.3a2.22,2.22,0,0,0,0,.43,1.32,1.32,0,0,0,.36.93,1.75,1.75,0,0,0,1.29.39h.52v.9h-.52a1.72,1.72,0,0,0-1.28.39,1.29,1.29,0,0,0-.37,1,1.75,1.75,0,0,0,0,.4l.07.31.1.51.1.47a3.52,3.52,0,0,1,.1.75,1.71,1.71,0,0,1-.47,1.17,2.91,2.91,0,0,1-2.07.51h-.92v-.91h.91a1.78,1.78,0,0,0,1.14-.25.77.77,0,0,0,.28-.61,4.15,4.15,0,0,0-.12-.8l-.14-.67a4.09,4.09,0,0,1-.11-.87,1.74,1.74,0,0,1,.12-.67,2.1,2.1,0,0,1,.38-.57A3,3,0,0,1,159.79,143.89Z"/></svg>
+      <?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 261.7 675.1" style="enable-background:new 0 0 261.7 675.1;" xml:space="preserve" class="example--diagram m-mobile">
+<style type="text/css">
+	.chaining-mobile-0{fill:#E8EBEF;}
+	.chaining-mobile-1{fill:#72849D;}
+	.chaining-mobile-2{fill:#397EFF;}
+	.chaining-mobile-3{fill:#FFFFFF;}
+</style>
+<title>Artboard 1 copy</title>
+<path class="chaining-mobile-0" d="M261.7,141.9V38.1c0.2-4.5,0-8.9-0.4-13.4l0,0c-0.6-5-4.6-9-9.6-9.6l0,0c-4.5-0.6-9.1-0.3-13.6-0.4H23.6
+	c-4.5-0.2-8.9,0-13.4,0.4l0,0c-5,0.6-9,4.6-9.6,9.6l0,0c-0.7,4.5-0.5,8.8-0.5,13.4V142c-0.2,4.5,0,9.1,0.4,13.6l0,0
+	c0.6,5,4.6,9,9.6,9.6l0,0c4.5,0.6,8.8,0.3,13.4,0.4H238c4.5,0.2,9.1,0,13.6-0.4l0,0c5-0.6,9-4.6,9.6-9.6l0,0
+	C261.8,151,261.6,146.5,261.7,141.9z"/>
+<path class="chaining-mobile-0" d="M261.7,651.1V547.3c0.2-4.5,0-8.9-0.4-13.4l0,0c-0.6-5-4.6-9-9.6-9.6l0,0c-4.5-0.6-9.1-0.3-13.6-0.4H23.5
+	c-4.5-0.2-8.9,0-13.4,0.4l0,0c-5,0.6-9,4.6-9.6,9.6l0,0c-0.6,4.5-0.3,8.8-0.4,13.4v103.9c-0.2,4.5,0,9.1,0.4,13.6l0,0
+	c0.6,5,4.6,9,9.6,9.6l0,0c4.5,0.6,8.8,0.3,13.4,0.4h214.6c4.5,0.2,9.1,0,13.6-0.4l0,0c5-0.6,9-4.6,9.6-9.6l0,0
+	C261.8,660.2,261.6,655.7,261.7,651.1z"/>
+<path class="chaining-mobile-0" d="M261.7,396.1V292.3c0.2-4.5,0-8.9-0.4-13.4l0,0c-0.6-5-4.6-9-9.6-9.6l0,0c-4.5-0.6-9.1-0.3-13.6-0.4H23.5
+	c-4.5-0.2-8.9,0-13.4,0.4l0,0c-5,0.6-9,4.6-9.6,9.6l0,0c-0.6,4.5-0.3,8.8-0.4,13.4v103.9c-0.2,4.5,0,9.1,0.4,13.6l0,0
+	c0.6,5,4.6,9,9.6,9.6l0,0c4.5,0.6,8.8,0.3,13.4,0.4h214.6c4.5,0.2,9.1,0,13.6-0.4l0,0c5-0.6,9-4.6,9.6-9.6l0,0
+	C261.9,405.2,261.6,400.7,261.7,396.1z"/>
+<g>
+	<path class="chaining-mobile-1" d="M118.5,1.2c0.7-0.7,1.8-1.1,2.8-1.1c1.3-0.1,2.6,0.5,3.4,1.5c0.4,0.5,0.6,1.1,0.6,1.7h-1.9
+		c-0.2-0.5-0.2-0.8-0.5-1c-0.4-0.4-0.9-0.6-1.5-0.6c-0.7,0-1.3,0.3-1.6,0.9c-0.4,0.7-0.6,1.6-0.6,2.4c-0.1,0.8,0.2,1.6,0.6,2.3
+		c0.4,0.5,1,0.8,1.6,0.8c0.6,0,1.1-0.2,1.5-0.6c0.2-0.3,0.4-0.6,0.5-1h1.9c-0.1,0.9-0.6,1.8-1.3,2.4c-0.7,0.7-1.7,1-2.6,1
+		c-1.2,0.1-2.3-0.4-3.1-1.3c-0.8-1-1.2-2.3-1.1-3.6C117.1,3.6,117.5,2.2,118.5,1.2z"/>
+	<path class="chaining-mobile-1" d="M128.5,9.4h-1.8V0.2h1.8V9.4z"/>
+	<path class="chaining-mobile-1" d="M132.1,1.8h-1.8V0.1h1.8V1.8z M130.2,2.6h1.8v6.8h-1.8V2.6z"/>
+	<path class="chaining-mobile-1" d="M138.2,2.7c0.5,0.2,0.9,0.6,1.2,1c0.3,0.4,0.5,0.9,0.6,1.4c0.1,0.4,0.1,0.9,0.1,1.4h-5
+		c-0.1,0.6,0.2,1.2,0.8,1.5c0.3,0.2,0.6,0.3,1,0.2c0.4,0,0.7-0.1,1-0.3c0.2-0.1,0.2-0.2,0.4-0.5h1.8c-0.1,0.5-0.3,0.9-0.6,1.2
+		c-0.7,0.7-1.6,1-2.6,1c-0.9,0-1.7-0.3-2.4-0.8c-0.8-0.7-1.1-1.7-1-2.7c-0.1-1,0.3-2,1-2.7c0.6-0.7,1.5-1,2.4-1
+		C137.3,2.4,137.8,2.5,138.2,2.7z M135.6,4.3c-0.2,0.3-0.4,0.6-0.5,1h3c0-0.4-0.2-0.8-0.5-1c-0.3-0.2-0.6-0.4-1-0.4
+		C136.3,3.8,135.9,4,135.6,4.3z"/>
+	<path class="chaining-mobile-1" d="M146.4,3c0.5,0.5,0.7,1.2,0.6,1.8v4.6h-1.8V5.3c0-0.3-0.1-0.5-0.2-0.8c-0.2-0.4-0.6-0.6-1-0.6
+		c-0.5-0.1-1.1,0.3-1.2,0.8c-0.1,0.3-0.2,0.7-0.2,1v3.7h-1.8V2.6h1.8v1c0.2-0.3,0.4-0.5,0.6-0.7c0.4-0.3,0.9-0.4,1.4-0.4
+		C145.3,2.4,145.9,2.6,146.4,3z"/>
+	<path class="chaining-mobile-1" d="M148,3.9V2.6h1V0.7h1.8v1.9h1.1v1.3h-1.1v3.6c0,0.2,0,0.5,0.1,0.6s0.3,0.1,0.6,0.1h0.3v1.4h-0.9
+		c-0.9,0-1.4-0.1-1.8-0.4c-0.2-0.3-0.3-0.6-0.3-1V4L148,3.9L148,3.9z"/>
+</g>
+<g>
+	<path class="chaining-mobile-1" d="M83.6,259.5c-0.7,0.5-1.5,0.7-2.3,0.6h-1.9v3.4h-1.9v-9.2h3.9c0.8,0,1.5,0.2,2.2,0.7
+		C84.5,256.3,84.6,258.1,83.6,259.5L83.6,259.5z M82.1,256.2c-0.3-0.2-0.6-0.4-1-0.3h-1.8v2.7H81c0.4,0,0.7-0.1,1-0.3
+		c0.3-0.3,0.4-0.6,0.4-1C82.5,256.9,82.4,256.5,82.1,256.2z"/>
+	<path class="chaining-mobile-1" d="M87.6,256.7v4.1c0,0.3,0.1,0.6,0.2,0.9c0.2,0.3,0.6,0.5,1,0.5c0.5,0.1,1-0.2,1.3-0.7c0.1-0.3,0.2-0.7,0.2-1
+		v-3.7H92v6.8h-1.9v-1l-0.2,0.2l-0.2,0.2c-0.2,0.2-0.5,0.4-0.8,0.5c-0.3,0.1-0.6,0.2-0.9,0.2c-0.8,0.1-1.6-0.4-2-1.1
+		c-0.2-0.6-0.3-1.2-0.3-1.8v-4.1h1.8V256.7z"/>
+	<path class="chaining-mobile-1" d="M99.4,257.5c0.5,0.7,0.8,1.6,0.8,2.5c0,0.9-0.2,1.9-0.7,2.6c-0.5,0.7-1.3,1.1-2.1,1c-0.5,0-1-0.1-1.4-0.3
+		c-0.3-0.2-0.5-0.4-0.6-0.7v0.9h-1.8v-9.2h1.8v3.3c0.2-0.3,0.4-0.5,0.7-0.7c0.4-0.2,0.8-0.3,1.2-0.3
+		C98.1,256.5,98.9,256.9,99.4,257.5z M97.9,261.7c0.3-0.4,0.4-0.9,0.4-1.4c0-0.4-0.1-0.8-0.2-1.2c-0.2-0.6-0.8-0.9-1.4-0.9
+		c-0.6,0-1.1,0.3-1.4,0.9c-0.1,0.4-0.2,0.8-0.2,1.2c0,0.5,0.1,1,0.4,1.4c0.3,0.4,0.7,0.6,1.2,0.6C97.3,262.2,97.7,262,97.9,261.7z"
+		/>
+	<path class="chaining-mobile-1" d="M103.3,263.5h-1.8v-9.2h1.8L103.3,263.5z"/>
+	<path class="chaining-mobile-1" d="M106.8,255.9h-1.8v-1.7h1.8L106.8,255.9z M105,256.7h1.8v6.8H105V256.7z"/>
+	<path class="chaining-mobile-1" d="M112.6,259.1c0-0.3-0.1-0.5-0.2-0.7c-0.3-0.3-0.6-0.4-1-0.4c-0.6,0-1.1,0.3-1.2,0.9c-0.1,0.4-0.2,0.8-0.2,1.3
+		c0,0.4,0.1,0.8,0.2,1.2c0.2,0.5,0.7,0.9,1.2,0.9c0.3,0,0.7-0.1,0.9-0.3c0.2-0.3,0.3-0.6,0.3-0.9h1.9c-0.1,0.5-0.3,1.1-0.6,1.5
+		c-1.2,1.4-3.3,1.6-4.7,0.4c-0.1-0.1-0.1-0.1-0.2-0.2c-0.5-0.7-0.8-1.6-0.8-2.6c-0.1-1,0.3-2,0.9-2.7c0.6-0.7,1.5-1,2.4-1
+		c0.7,0,1.5,0.2,2.1,0.6c0.6,0.5,1,1.2,1,2L112.6,259.1z"/>
+	<path class="chaining-mobile-1" d="M115.7,263.5v-9.2h1.9v3.5h3.6v-3.5h1.9v9.2h-1.9v-4.1h-3.6v4.1H115.7z"/>
+	<path class="chaining-mobile-1" d="M129.3,256.8c0.5,0.2,0.9,0.6,1.2,1c0.3,0.4,0.5,0.9,0.6,1.4c0.1,0.4,0.1,0.9,0.1,1.4h-5
+		c-0.1,0.6,0.2,1.1,0.7,1.4c0.3,0.2,0.6,0.3,1,0.2c0.4,0,0.7-0.1,1-0.3c0.2-0.1,0.2-0.2,0.4-0.5h1.8c-0.1,0.5-0.3,0.9-0.6,1.2
+		c-0.7,0.7-1.6,1-2.6,1c-0.9,0-1.7-0.3-2.4-0.8c-0.8-0.7-1.1-1.7-1-2.7c-0.1-1,0.3-2,1-2.7c0.6-0.7,1.5-1,2.4-1
+		C128.4,256.5,128.9,256.6,129.3,256.8z M126.6,258.4c-0.2,0.3-0.4,0.6-0.5,1h3c0-0.4-0.2-0.8-0.5-1c-0.3-0.2-0.6-0.4-1-0.4
+		C127.3,258,126.9,258.1,126.6,258.4z"/>
+	<path class="chaining-mobile-1" d="M133.8,263.5h-1.8v-9.2h1.8V263.5z"/>
+	<path class="chaining-mobile-1" d="M137.3,263.5h-1.8v-9.2h1.8V263.5z"/>
+	<path class="chaining-mobile-1" d="M144.8,262.6c-1.5,1.4-3.8,1.4-5.3,0c-1.2-1.5-1.2-3.6,0-5.1c1.4-1.5,3.7-1.5,5.2-0.1c0,0,0.1,0.1,0.1,0.1
+		c0.6,0.7,0.9,1.6,0.9,2.6C145.7,261,145.4,261.9,144.8,262.6z M143.3,261.6c0.5-1,0.5-2.2,0-3.2c-0.6-0.7-1.5-0.7-2.2-0.2
+		c-0.1,0.1-0.1,0.1-0.2,0.2c-0.5,1-0.5,2.2,0,3.2c0.6,0.7,1.5,0.7,2.2,0.2C143.2,261.8,143.3,261.7,143.3,261.6z"/>
+	<path class="chaining-mobile-1" d="M148.5,260.6c0,0.4,0.1,0.7,0.3,1c0.4,0.4,1,0.6,1.6,0.6c0.4,0,0.7-0.1,1.1-0.2c0.5-0.1,0.8-0.5,0.8-1
+		c0-0.3-0.2-0.6-0.4-0.7c-0.4-0.2-0.8-0.4-1.3-0.4l-1-0.2c-0.7-0.1-1.4-0.4-2-0.7c-0.7-0.4-1-1.2-1-2c0-0.8,0.3-1.5,0.9-2.1
+		c0.8-0.6,1.7-0.9,2.6-0.8c0.9,0,1.8,0.2,2.5,0.8c0.7,0.5,1.1,1.4,1.1,2.2h-1.8c0-0.5-0.3-1-0.7-1.2c-0.4-0.2-0.7-0.2-1.1-0.2
+		c-0.4,0-0.8,0.1-1.2,0.3c-0.3,0.2-0.5,0.5-0.5,0.8c0,0.3,0.2,0.6,0.5,0.7c0.4,0.2,0.8,0.3,1.2,0.4l1.6,0.4c0.6,0.1,1.1,0.3,1.6,0.6
+		c0.6,0.5,0.9,1.2,0.8,1.9c0,0.8-0.4,1.6-1,2.1c-0.8,0.6-1.7,0.9-2.7,0.8c-1,0.1-2-0.2-2.9-0.8c-0.7-0.5-1.1-1.4-1-2.2L148.5,260.6z
+		"/>
+	<path class="chaining-mobile-1" d="M159.9,256.8c0.5,0.2,0.9,0.6,1.2,1c0.3,0.4,0.5,0.9,0.6,1.4c0.1,0.4,0.1,0.9,0.1,1.4h-5
+		c-0.1,0.6,0.2,1.1,0.7,1.4c0.3,0.2,0.6,0.3,1,0.2c0.4,0,0.7-0.1,1-0.3c0.2-0.1,0.2-0.2,0.4-0.5h1.8c-0.1,0.5-0.3,0.9-0.6,1.2
+		c-0.7,0.7-1.6,1-2.6,1c-0.9,0-1.7-0.3-2.4-0.8c-0.8-0.7-1.1-1.7-1-2.7c-0.1-1,0.3-2,1-2.7c0.6-0.7,1.5-1,2.4-1
+		C159,256.5,159.4,256.6,159.9,256.8z M157.3,258.4c-0.2,0.3-0.4,0.6-0.5,1h3c0-0.4-0.2-0.8-0.5-1c-0.3-0.2-0.6-0.4-1-0.4
+		C157.9,257.9,157.5,258.1,157.3,258.4z"/>
+	<path class="chaining-mobile-1" d="M166.4,256.5h0.2v1.8H166c-0.6-0.1-1.1,0.2-1.4,0.7c-0.2,0.4-0.3,0.8-0.2,1.2v3.2h-1.8v-6.8h1.7v1.2
+		c0.2-0.4,0.4-0.7,0.7-1c0.4-0.3,0.8-0.4,1.3-0.4L166.4,256.5z"/>
+	<path class="chaining-mobile-1" d="M171.7,256.7h1.9l-2.5,6.8h-1.8l-2.5-6.8h2l1.4,5L171.7,256.7z"/>
+	<path class="chaining-mobile-1" d="M176.5,255.9h-1.8v-1.7h1.8V255.9z M174.7,256.7h1.8v6.8h-1.8V256.7z"/>
+	<path class="chaining-mobile-1" d="M182.3,259.1c0-0.3-0.1-0.5-0.2-0.7c-0.3-0.3-0.6-0.4-1-0.4c-0.6,0-1.1,0.3-1.2,0.9c-0.1,0.4-0.2,0.8-0.2,1.3
+		c0,0.4,0.1,0.8,0.2,1.2c0.2,0.5,0.7,0.9,1.2,0.9c0.3,0,0.7-0.1,0.9-0.3c0.2-0.3,0.3-0.6,0.3-0.9h1.8c-0.1,0.5-0.3,1.1-0.6,1.5
+		c-1.2,1.4-3.3,1.6-4.7,0.4c-0.1-0.1-0.1-0.1-0.2-0.2c-0.5-0.7-0.8-1.6-0.8-2.6c-0.1-1,0.3-2,0.9-2.7c0.6-0.7,1.5-1,2.4-1
+		c0.7,0,1.5,0.2,2.1,0.6c0.6,0.5,1,1.2,1,2L182.3,259.1z"/>
+	<path class="chaining-mobile-1" d="M189.8,256.8c0.5,0.2,0.9,0.6,1.2,1c0.3,0.4,0.5,0.9,0.6,1.4c0.1,0.4,0.1,0.9,0.1,1.4h-5
+		c-0.1,0.6,0.2,1.1,0.7,1.4c0.3,0.2,0.6,0.3,1,0.2c0.4,0,0.7-0.1,1-0.3c0.2-0.1,0.2-0.2,0.4-0.5h1.8c-0.1,0.5-0.3,0.9-0.6,1.2
+		c-0.7,0.7-1.6,1-2.6,1c-0.9,0-1.7-0.3-2.4-0.8c-0.8-0.7-1.1-1.7-1-2.7c-0.1-1,0.3-2,1-2.7c0.6-0.7,1.5-1,2.4-1
+		C188.9,256.5,189.4,256.6,189.8,256.8z M187.1,258.4c-0.2,0.3-0.4,0.6-0.5,1h3c0-0.4-0.2-0.8-0.5-1c-0.3-0.2-0.6-0.4-1-0.4
+		C187.7,258,187.4,258.1,187.1,258.4z"/>
+</g>
+<g>
+	<path class="chaining-mobile-1" d="M81.4,514.4c-0.7,0.5-1.5,0.7-2.3,0.6h-2v3.4h-1.9v-9.2h3.9c0.8,0,1.6,0.2,2.2,0.7c0.6,0.6,0.9,1.4,0.8,2.2
+		C82.3,513,82,513.8,81.4,514.4z M80,511.1c-0.3-0.2-0.6-0.4-1-0.3h-1.8v2.7h1.8c0.4,0,0.7-0.1,1-0.3c0.3-0.3,0.4-0.6,0.4-1
+		C80.4,511.8,80.3,511.4,80,511.1L80,511.1z"/>
+	<path class="chaining-mobile-1" d="M87.4,511.5h0.2v1.8H87c-0.6-0.1-1.1,0.2-1.4,0.7c-0.2,0.4-0.3,0.8-0.2,1.2v3.2h-1.8v-6.8h1.7v1.2
+		c0.2-0.4,0.4-0.7,0.7-1c0.4-0.3,0.8-0.4,1.3-0.4L87.4,511.5z"/>
+	<path class="chaining-mobile-1" d="M90.5,510.8h-1.8v-1.7h1.8V510.8z M88.7,511.6h1.8v6.8h-1.8V511.6z"/>
+	<path class="chaining-mobile-1" d="M96.4,511.6h1.9l-2.5,6.8H94l-2.5-6.8h2l1.4,5L96.4,511.6z"/>
+	<path class="chaining-mobile-1" d="M102,514.3c0.2,0,0.5-0.1,0.7-0.2c0.2-0.1,0.4-0.2,0.4-0.5c0-0.2-0.1-0.5-0.3-0.6c-0.3-0.1-0.6-0.2-0.9-0.2
+		c-0.3,0-0.7,0.1-0.9,0.3c-0.2,0.2-0.2,0.4-0.2,0.6h-1.6c0-0.5,0.2-1,0.5-1.4c0.6-0.6,1.5-1,2.4-0.9c0.7,0,1.4,0.2,2,0.5
+		c0.6,0.3,0.9,1,0.9,1.7v3.9c0,0.2,0,0.3,0.1,0.5c0,0.1,0.2,0.2,0.2,0.2v0.1h-2c-0.1-0.1-0.1-0.3-0.1-0.4c0-0.1,0-0.3-0.1-0.4
+		c-0.3,0.3-0.6,0.5-0.9,0.7c-0.4,0.2-0.8,0.3-1.3,0.3c-0.6,0-1.1-0.2-1.5-0.6c-0.4-0.4-0.7-0.9-0.6-1.5c0-0.8,0.3-1.5,1-1.8
+		c0.5-0.3,1-0.4,1.6-0.4L102,514.3z M103.1,515.1c-0.1,0.1-0.2,0.1-0.3,0.2c-0.1,0.1-0.2,0.1-0.5,0.2l-0.4,0.1
+		c-0.3,0-0.5,0.1-0.8,0.2c-0.3,0.1-0.4,0.4-0.4,0.7c0,0.3,0.1,0.6,0.2,0.6c0.2,0.1,0.4,0.2,0.6,0.2c0.4,0,0.7-0.1,1-0.3
+		c0.3-0.3,0.5-0.7,0.5-1.2L103.1,515.1L103.1,515.1z"/>
+	<path class="chaining-mobile-1" d="M105.7,512.9v-1.3h1v-1.9h1.8v1.9h1.1v1.3h-1.2v3.6c0,0.2,0,0.5,0.1,0.6s0.3,0.1,0.6,0.1h0.3v1.4h-0.9
+		c-0.9,0-1.4-0.1-1.8-0.4c-0.2-0.3-0.3-0.6-0.3-1V513L105.7,512.9L105.7,512.9z"/>
+	<path class="chaining-mobile-1" d="M115.1,511.7c0.5,0.2,0.9,0.6,1.2,1c0.3,0.4,0.5,0.9,0.6,1.4c0.1,0.4,0.1,0.9,0.1,1.4h-5
+		c-0.1,0.6,0.2,1.1,0.7,1.4c0.3,0.2,0.6,0.3,1,0.2c0.4,0,0.7-0.1,1-0.3c0.2-0.1,0.2-0.2,0.4-0.5h1.8c-0.1,0.5-0.3,0.9-0.6,1.2
+		c-0.7,0.7-1.6,1-2.6,1c-0.9,0-1.7-0.3-2.4-0.8c-0.8-0.7-1.1-1.7-1-2.7c-0.1-1,0.3-2,1-2.7c0.6-0.7,1.5-1,2.4-1
+		C114.2,511.4,114.7,511.5,115.1,511.7z M112.5,513.3c-0.2,0.3-0.4,0.6-0.5,1h3c0-0.4-0.2-0.8-0.5-1c-0.3-0.2-0.6-0.4-1-0.4
+		C113.1,512.8,112.7,513,112.5,513.3L112.5,513.3z"/>
+	<path class="chaining-mobile-1" d="M118,518.4v-9.2h1.9v3.5h3.6v-3.5h1.9v9.2h-1.9v-4.1h-3.6v4.1H118z"/>
+	<path class="chaining-mobile-1" d="M131.5,511.7c0.5,0.2,0.9,0.6,1.2,1c0.3,0.4,0.5,0.9,0.6,1.4c0.1,0.4,0.1,0.9,0.1,1.4h-5
+		c-0.1,0.6,0.2,1.2,0.8,1.5c0.3,0.2,0.6,0.3,1,0.2c0.4,0,0.7-0.1,1-0.3c0.2-0.1,0.2-0.2,0.4-0.5h1.8c-0.1,0.5-0.3,0.9-0.6,1.2
+		c-0.7,0.7-1.6,1-2.6,1c-0.9,0-1.7-0.3-2.4-0.8c-0.8-0.7-1.1-1.7-1-2.7c-0.1-1,0.3-2,1-2.7c0.6-0.7,1.5-1,2.4-1
+		C130.6,511.4,131.1,511.5,131.5,511.7z M128.9,513.3c-0.2,0.3-0.4,0.6-0.5,1h3c0-0.4-0.2-0.8-0.5-1c-0.3-0.2-0.6-0.4-1-0.4
+		C129.5,512.8,129.1,513,128.9,513.3z"/>
+	<path class="chaining-mobile-1" d="M136,518.4h-1.8v-9.2h1.8L136,518.4z"/>
+	<path class="chaining-mobile-1" d="M139.6,518.4h-1.8v-9.2h1.8V518.4z"/>
+	<path class="chaining-mobile-1" d="M146.9,517.5c-1.5,1.4-3.8,1.4-5.3,0c-1.2-1.5-1.2-3.6,0-5.1c1.4-1.5,3.7-1.5,5.2-0.1c0,0,0.1,0.1,0.1,0.1
+		c0.6,0.7,0.9,1.6,0.9,2.6C147.9,515.9,147.6,516.8,146.9,517.5z M145.6,516.5c0.5-1,0.5-2.2,0-3.2c-0.6-0.7-1.5-0.7-2.2-0.2
+		c-0.1,0.1-0.1,0.1-0.2,0.2c-0.5,1-0.5,2.2,0,3.2c0.3,0.4,0.7,0.6,1.2,0.6C144.8,517.1,145.3,516.9,145.6,516.5L145.6,516.5z"/>
+	<path class="chaining-mobile-1" d="M150.6,515.5c0,0.4,0.1,0.7,0.3,1c0.4,0.4,1,0.6,1.6,0.6c0.4,0,0.8,0,1.1-0.2c0.5-0.1,0.8-0.5,0.8-1
+		c0-0.3-0.2-0.6-0.4-0.7c-0.4-0.2-0.8-0.4-1.3-0.4l-1-0.2c-0.7-0.1-1.4-0.4-2-0.7c-0.7-0.4-1-1.2-1-2c0-0.8,0.3-1.5,0.9-2.1
+		c0.8-0.6,1.7-0.9,2.6-0.8c0.9,0,1.8,0.2,2.5,0.8c0.7,0.5,1.1,1.4,1.1,2.2h-1.8c0-0.5-0.3-1-0.7-1.2c-0.4-0.2-0.7-0.2-1.1-0.2
+		c-0.4,0-0.8,0.1-1.2,0.3c-0.3,0.2-0.5,0.5-0.5,0.8c0,0.3,0.2,0.6,0.5,0.7c0.4,0.2,0.8,0.3,1.2,0.4l1.6,0.4c0.6,0.1,1.1,0.3,1.6,0.6
+		c0.6,0.5,0.9,1.2,0.8,1.9c0,0.8-0.4,1.6-1,2.1c-0.8,0.6-1.7,0.9-2.7,0.8c-1,0.1-2-0.2-2.9-0.8c-0.7-0.5-1.1-1.4-1-2.2L150.6,515.5z
+		"/>
+	<path class="chaining-mobile-1" d="M162.1,511.7c0.5,0.2,0.9,0.6,1.2,1c0.3,0.4,0.5,0.9,0.6,1.4c0.1,0.4,0.1,0.9,0.1,1.4h-5
+		c-0.1,0.6,0.2,1.1,0.7,1.4c0.3,0.2,0.6,0.3,1,0.2c0.4,0,0.7-0.1,1-0.3c0.2-0.1,0.2-0.2,0.4-0.5h1.8c-0.1,0.5-0.3,0.9-0.6,1.2
+		c-0.7,0.7-1.6,1-2.6,1c-0.9,0-1.7-0.3-2.4-0.8c-0.8-0.7-1.1-1.7-1-2.7c-0.1-1,0.3-2,1-2.7c0.6-0.7,1.5-1,2.4-1
+		C161.1,511.4,161.6,511.5,162.1,511.7z M159.4,513.3c-0.2,0.3-0.4,0.6-0.5,1h3c0-0.4-0.2-0.8-0.5-1c-0.3-0.2-0.6-0.4-1-0.4
+		C160.1,512.9,159.7,513,159.4,513.3z"/>
+	<path class="chaining-mobile-1" d="M168.5,511.5h0.2v1.8h-0.6c-0.6-0.1-1.1,0.2-1.4,0.7c-0.2,0.4-0.3,0.8-0.2,1.2v3.2h-1.8v-6.8h1.7v1.2
+		c0.2-0.4,0.4-0.7,0.7-1c0.4-0.3,0.8-0.4,1.3-0.4L168.5,511.5z"/>
+	<path class="chaining-mobile-1" d="M174,511.6h1.9l-2.5,6.8h-1.8l-2.5-6.8h2l1.4,5L174,511.6z"/>
+	<path class="chaining-mobile-1" d="M178.7,510.8h-1.8v-1.7h1.8V510.8z M176.9,511.6h1.8v6.8h-1.8V511.6z"/>
+	<path class="chaining-mobile-1" d="M184.5,514c0-0.3-0.1-0.5-0.2-0.7c-0.3-0.3-0.6-0.4-1-0.4c-0.6,0-1.1,0.3-1.2,0.9c-0.1,0.4-0.2,0.8-0.2,1.3
+		c0,0.4,0.1,0.8,0.2,1.2c0.2,0.5,0.7,0.9,1.2,0.9c0.3,0,0.7-0.1,0.9-0.3c0.2-0.3,0.3-0.6,0.3-0.9h1.8c-0.1,0.5-0.3,1.1-0.6,1.5
+		c-1.2,1.4-3.3,1.6-4.7,0.4c-0.1-0.1-0.1-0.1-0.2-0.2c-0.5-0.7-0.8-1.6-0.8-2.6c-0.1-1,0.3-2,0.9-2.7c0.6-0.7,1.5-1,2.4-1
+		c0.7,0,1.5,0.2,2.1,0.6c0.6,0.5,1,1.2,1,2L184.5,514z"/>
+	<path class="chaining-mobile-1" d="M192,511.7c0.5,0.2,0.9,0.6,1.2,1c0.3,0.4,0.5,0.9,0.6,1.4c0.1,0.4,0.1,0.9,0.1,1.4h-5
+		c-0.1,0.6,0.2,1.1,0.7,1.4c0.3,0.2,0.6,0.3,1,0.2c0.4,0,0.7-0.1,1-0.3c0.2-0.1,0.2-0.2,0.4-0.5h1.8c-0.1,0.5-0.3,0.9-0.6,1.2
+		c-0.7,0.7-1.6,1-2.6,1c-0.9,0-1.7-0.3-2.4-0.8c-0.8-0.7-1.1-1.7-1-2.7c-0.1-1,0.3-2,1-2.7c0.6-0.7,1.5-1,2.4-1
+		C191.1,511.4,191.5,511.5,192,511.7z M189.3,513.3c-0.2,0.3-0.4,0.6-0.5,1h3c0-0.4-0.2-0.8-0.5-1c-0.3-0.2-0.6-0.4-1-0.4
+		C190,512.8,189.6,513,189.3,513.3z"/>
+</g>
+<g>
+	<path class="chaining-mobile-2" d="M155.9,43c-0.3-2.6-2.4-4.7-5-5c-2.4-0.2-4.7-0.3-7.1-0.2H40.1c-2.3-0.1-4.6,0-6.9,0.2c-2.6,0.3-4.7,2.4-5,5
+		c-0.2,2.3-0.3,4.6-0.2,6.9V60c-0.1,2.4,0,4.7,0.2,7.1c0.3,2.6,2.4,4.7,5,5c2.3,0.2,4.6,0.3,6.9,0.2h103.9c2.4,0.1,4.7,0,7.1-0.2
+		c2.4-0.3,4.4-2.1,4.9-4.5V43z"/>
+	<g>
+		<path class="chaining-mobile-3" d="M53.4,52.1c-0.1-0.7-0.6-1.3-1.3-1.6c-0.4-0.2-0.8-0.3-1.3-0.3c-0.9,0-1.7,0.3-2.3,1c-0.7,0.9-1,2.1-0.9,3.2
+			c-0.1,1.1,0.2,2.2,1,3c0.6,0.6,1.4,0.9,2.2,0.9c0.7,0,1.5-0.2,2-0.7c0.5-0.5,0.8-1.1,1-1.8h-2.7v-1.9h4.8v6.2h-1.6l-0.4-1.5
+			l-1.2,1.2c-0.7,0.4-1.5,0.6-2.3,0.6c-1.4,0-2.8-0.5-3.8-1.6c-1.1-1.2-1.6-2.8-1.5-4.4c-0.1-1.6,0.4-3.2,1.5-4.5
+			c1.1-1.1,2.6-1.8,4.1-1.7c1.3-0.1,2.5,0.3,3.5,1.1c0.9,0.7,1.4,1.7,1.5,2.8H53.4z"/>
+		<path class="chaining-mobile-3" d="M66.6,50.6h-6.1V53h5.6v2h-5.6v3h6.4v2.1h-8.7V48.5h8.4V50.6z"/>
+		<path class="chaining-mobile-3" d="M77.1,48.5v2h-3.4V60h-2.4v-9.5h-3.5v-2L77.1,48.5z"/>
+	</g>
+	<g>
+		<path class="chaining-mobile-3" d="M90.2,60.5h-1.3l6.7-11.2h1.2L90.2,60.5z"/>
+		<path class="chaining-mobile-3" d="M98.2,60.2v-11h1.3v5.1c0.4-0.5,0.8-1,1.3-1.4c0.4-0.3,1-0.5,1.5-0.5c0.4,0,0.8,0.1,1.2,0.3
+			c0.3,0.2,0.6,0.4,0.7,0.8c0.1,0.2,0.2,0.5,0.2,0.8c0,0.3,0.1,0.8,0.1,1.7v4.3h-1.3v-4.4c0-0.5,0-1-0.1-1.5
+			c-0.1-0.2-0.2-0.4-0.4-0.6c-0.2-0.2-0.4-0.2-0.6-0.2c-0.5,0-1,0.3-1.4,0.6c-0.5,0.5-0.9,1-1.3,1.6v4.5L98.2,60.2L98.2,60.2z"/>
+		<path class="chaining-mobile-3" d="M113,59.7c-0.9,0.5-1.9,0.7-2.9,0.7c-0.6,0-1.3-0.2-1.8-0.5c-0.6-0.4-1-0.9-1.3-1.5c-0.7-1.2-0.7-2.8,0-4
+			c0.3-0.6,0.7-1.1,1.3-1.5c0.6-0.4,1.2-0.5,1.9-0.5c0.8,0,1.7,0.3,2.2,1c0.6,0.9,0.9,1.9,0.8,3v0.3h-5.3c0,0.5,0.1,1,0.3,1.5
+			c0.2,0.4,0.5,0.8,0.9,1c0.4,0.2,0.8,0.3,1.2,0.3c0.9-0.1,1.9-0.3,2.7-0.8L113,59.7z M107.9,55.6h3.8v-0.2c0-0.5-0.2-1.1-0.5-1.5
+			c-0.3-0.4-0.7-0.6-1.2-0.6c-0.5,0-1,0.2-1.3,0.6C108.2,54.4,107.9,55,107.9,55.6z"/>
+		<path class="chaining-mobile-3" d="M117.1,60.2v-10h-2.3v-1.1h3.6v10h2.4v1.1H117.1z"/>
+		<path class="chaining-mobile-3" d="M125.5,60.2v-10h-2.3v-1.1h3.6v10h2.4v1.1H125.5z"/>
+		<path class="chaining-mobile-3" d="M135,60.4c-1,0-1.9-0.4-2.6-1.1c-1.3-1.7-1.3-4.1,0-5.8c0.6-0.8,1.6-1.2,2.6-1.1c1,0,1.9,0.4,2.6,1.1
+			c1.3,1.7,1.3,4.1,0,5.8C136.9,60,135.9,60.4,135,60.4z M135,59.3c0.6,0,1.2-0.3,1.6-0.8c0.4-0.6,0.6-1.4,0.6-2.2
+			c0-0.8-0.2-1.5-0.6-2.2c-0.7-0.9-1.9-1.1-2.8-0.4c-0.2,0.1-0.3,0.2-0.4,0.4c-0.8,1.4-0.8,3,0,4.4C133.7,59.1,134.3,59.3,135,59.3z
+			"/>
+	</g>
+	<path class="chaining-mobile-2" d="M31.5,277.4l8.4-15.2c0.6-1.1,0.2-2.5-0.9-3c-0.3-0.2-0.7-0.3-1.1-0.3h-4.8V60l-5,0.1V259h-4.9
+		c-1.2,0-2.3,1-2.3,2.2c0,0.4,0.1,0.7,0.3,1.1l8.4,15.2c0.4,0.5,1.1,0.6,1.6,0.2C31.3,277.6,31.4,277.5,31.5,277.4z"/>
+</g>
+<g>
+	<path class="chaining-mobile-1" d="M100.7,129.6c0.3,0.1,0.6,0.3,0.8,0.6c0.2,0.2,0.3,0.4,0.4,0.6c0.1,0.2,0.1,0.4,0.1,0.7c0,0.3,0,0.6-0.1,0.9
+		l-0.1,0.7c-0.1,0.3-0.1,0.5-0.1,0.8c0,0.2,0.1,0.5,0.3,0.6c0.3,0.2,0.7,0.3,1.1,0.2h0.9v0.9h-0.9c-0.7,0.1-1.5-0.1-2.1-0.5
+		c-0.3-0.3-0.5-0.7-0.5-1.2c0-0.2,0-0.5,0.1-0.7l0.1-0.5l0.1-0.5l0.1-0.3c0-0.1,0-0.3,0-0.4c0-0.3-0.1-0.7-0.4-0.9
+		c-0.4-0.3-0.8-0.4-1.3-0.4h-0.5v-0.9h0.5c0.5,0,0.9-0.1,1.3-0.4c0.3-0.3,0.4-0.6,0.4-1c0-0.1,0-0.3,0-0.4l-0.1-0.3l-0.1-0.5
+		l-0.1-0.5c-0.1-0.2-0.1-0.5-0.1-0.8c0-0.4,0.2-0.9,0.5-1.2c0.6-0.4,1.3-0.6,2.1-0.5h0.9v0.9h-0.9c-0.4,0-0.8,0-1.1,0.2
+		c-0.2,0.2-0.3,0.4-0.3,0.6c0,0.3,0.1,0.5,0.1,0.8l0.1,0.7c0.1,0.3,0.1,0.6,0.1,0.9c0,0.2,0,0.5-0.1,0.7c-0.1,0.2-0.2,0.4-0.4,0.6
+		C101.3,129.2,101,129.5,100.7,129.6z"/>
+	<path class="chaining-mobile-1" d="M106.9,133.3v-6.5h1v1.5c0.2-0.5,0.5-0.9,0.8-1.3c0.2-0.2,0.5-0.3,0.8-0.4c0.3,0,0.6,0.1,0.8,0.4
+		c0.2,0.3,0.3,0.7,0.3,1v0.4c0.1-0.4,0.3-0.7,0.5-1c0.2-0.2,0.3-0.4,0.6-0.6c0.2-0.1,0.4-0.2,0.7-0.2c0.3,0,0.5,0.1,0.7,0.4
+		c0.2,0.4,0.4,0.9,0.3,1.4v4.9h-1v-4.5c0-0.2,0-0.5,0-0.8c0-0.1-0.1-0.2-0.1-0.3c-0.1-0.1-0.1-0.1-0.2-0.1c-0.2,0-0.4,0.2-0.7,0.5
+		c-0.3,0.5-0.6,1-0.7,1.6v3.6h-0.9v-4.5c0-0.6-0.1-0.9-0.2-1c-0.1-0.1-0.2-0.1-0.3-0.2c-0.2,0-0.4,0.2-0.7,0.5
+		c-0.3,0.4-0.5,0.9-0.7,1.3v3.8L106.9,133.3z"/>
+	<path class="chaining-mobile-1" d="M114.7,133v-1.2c0.4,0.3,0.9,0.5,1.4,0.6c0.4,0.1,0.8,0.2,1.2,0.2c0.4,0,0.8-0.1,1.2-0.3
+		c0.2-0.1,0.4-0.4,0.4-0.7c0-0.2-0.1-0.3-0.2-0.5c-0.3-0.2-0.5-0.4-0.8-0.5l-0.4-0.1l-0.8-0.3c-0.6-0.2-1.1-0.5-1.5-0.9
+		c-0.2-0.3-0.3-0.6-0.3-1c0-0.5,0.2-1,0.6-1.3c0.6-0.4,1.3-0.6,2-0.5c0.7,0,1.4,0.1,2,0.3v1c-0.6-0.2-1.3-0.4-2-0.4
+		c-0.4,0-0.7,0.1-1.1,0.2c-0.2,0.1-0.4,0.3-0.4,0.6c0,0.2,0.1,0.5,0.3,0.6c0.3,0.2,0.7,0.4,1.1,0.5l0.7,0.3c0.5,0.2,1,0.4,1.4,0.8
+		c0.3,0.3,0.4,0.7,0.4,1.1c0,0.5-0.2,1.1-0.7,1.4c-0.6,0.4-1.4,0.6-2.1,0.6C116.4,133.5,115.5,133.3,114.7,133z"/>
+	<path class="chaining-mobile-1" d="M125.6,131.9c-0.3,0.5-0.7,0.9-1.2,1.2c-0.4,0.3-0.8,0.4-1.3,0.4c-0.6,0-1.1-0.3-1.5-0.7
+		c-0.5-0.6-0.7-1.4-0.7-2.1c0-0.7,0.1-1.4,0.4-2c0.3-0.6,0.7-1.1,1.2-1.4c0.5-0.4,1.2-0.5,1.8-0.5c0.2,0,0.5,0,0.9,0.1h0.3h1.1v4.6
+		c0,1.1,0,1.8,0,2c0,0.2-0.1,0.5-0.1,0.7c-0.2,0.6-0.5,1.1-1.1,1.4c-0.6,0.4-1.3,0.5-2,0.5c-0.8,0-1.7-0.2-2.4-0.6v-1.1
+		c0.4,0.2,0.7,0.4,1.1,0.6c0.4,0.2,0.9,0.2,1.3,0.2c0.3,0,0.6-0.1,0.9-0.2c0.3-0.1,0.5-0.2,0.7-0.4c0.2-0.2,0.3-0.4,0.4-0.7
+		c0.1-0.3,0.1-0.7,0.1-1.1L125.6,131.9z M125.6,130.6v-2.8c-0.4-0.1-0.7-0.2-1.1-0.2c-0.6,0-1.3,0.3-1.7,0.8
+		c-0.5,0.6-0.7,1.4-0.7,2.1c0,0.5,0.1,1,0.4,1.5c0.2,0.3,0.5,0.5,0.8,0.5c0.4,0,0.8-0.2,1.1-0.5C125,131.6,125.3,131.1,125.6,130.6z
+		"/>
+	<path class="chaining-mobile-1" d="M130.6,128.5c-0.6,0-1-0.4-1-1c0-0.6,0.4-1,1-1c0.3,0,0.5,0.1,0.7,0.3c0.2,0.2,0.3,0.4,0.3,0.7
+		c0,0.3-0.1,0.5-0.3,0.7C131.1,128.4,130.9,128.5,130.6,128.5z M130.6,133.6c-0.3,0-0.5-0.1-0.7-0.3c-0.2-0.2-0.3-0.4-0.3-0.7
+		c0-0.6,0.4-1,1-1c0.3,0,0.5,0.1,0.7,0.3c0.2,0.2,0.3,0.4,0.3,0.7C131.6,133.2,131.1,133.6,130.6,133.6L130.6,133.6z"/>
+	<path class="chaining-mobile-1" d="M141.6,127.1h-0.8l-0.4-3.3h1.5L141.6,127.1z M144.1,127.1h-0.8l-0.3-3.3h1.4L144.1,127.1z"/>
+	<path class="chaining-mobile-1" d="M146.3,133.3v-9.1h1.2v3.9h3.3v-3.9h1.2v9.1h-1.2v-4.3h-3.3v4.3H146.3z"/>
+	<path class="chaining-mobile-1" d="M158.6,132.9c-0.8,0.4-1.6,0.6-2.5,0.6c-0.6,0-1.1-0.1-1.6-0.4c-0.5-0.3-0.9-0.7-1.1-1.3
+		c-0.3-0.5-0.4-1.1-0.4-1.8c0-0.6,0.1-1.2,0.4-1.7c0.2-0.5,0.6-1,1.1-1.3c0.5-0.3,1-0.5,1.6-0.5c0.7,0,1.4,0.3,1.9,0.8
+		c0.5,0.7,0.8,1.6,0.7,2.6v0.2h-4.5c0,0.4,0.1,0.9,0.3,1.2c0.2,0.3,0.4,0.6,0.8,0.9c0.3,0.2,0.6,0.3,1,0.3c0.8,0,1.6-0.3,2.3-0.7
+		V132.9z M154.2,129.4h3.3v-0.2c0-0.5-0.1-0.9-0.4-1.3c-0.2-0.3-0.6-0.5-1-0.5c-0.4,0-0.8,0.2-1.2,0.5
+		C154.5,128.4,154.3,128.9,154.2,129.4z"/>
+	<path class="chaining-mobile-1" d="M161.5,133.3v-8.5h-2v-0.9h3.1v8.5h2v0.9L161.5,133.3z"/>
+	<path class="chaining-mobile-1" d="M168.2,133.3v-8.5h-2v-0.9h3v8.5h2v0.9L168.2,133.3z"/>
+	<path class="chaining-mobile-1" d="M175.8,133.5c-0.9,0-1.7-0.3-2.2-1c-1.1-1.5-1.1-3.5,0-4.9c1.1-1.2,3.1-1.3,4.3-0.2c0.1,0.1,0.1,0.1,0.2,0.2
+		c1.1,1.5,1.1,3.5,0,4.9C177.5,133.2,176.7,133.6,175.8,133.5z M175.8,132.6c0.5,0,1.1-0.2,1.4-0.7c0.4-0.6,0.5-1.2,0.5-1.9
+		c0-0.7-0.1-1.3-0.5-1.9c-0.3-0.4-0.8-0.7-1.4-0.7c-0.5,0-1.1,0.2-1.4,0.7c-0.4,0.5-0.6,1.2-0.5,1.9c0,0.7,0.1,1.3,0.5,1.9
+		C174.7,132.4,175.2,132.6,175.8,132.6z"/>
+	<path class="chaining-mobile-1" d="M186.7,133.3l-1.1-6.5h1l0.6,4l0.2,0.9l0.2-0.9l1-4h1l1.2,4l0.2,0.9l0.1-0.9l0.6-4h0.8l-1.1,6.5h-1l-1.3-4.2
+		l-0.2-0.9l0,0l-0.2,0.9l-1.1,4.2H186.7z"/>
+	<path class="chaining-mobile-1" d="M195.8,133.5c-0.9,0-1.7-0.3-2.2-1c-1.1-1.5-1.1-3.5,0-4.9c0.6-0.7,1.4-1,2.2-1c0.9,0,1.7,0.3,2.2,1
+		c1.1,1.4,1.1,3.5,0,4.9C197.5,133.2,196.6,133.6,195.8,133.5z M195.8,132.6c0.5,0,1.1-0.2,1.4-0.7c0.4-0.6,0.5-1.2,0.5-1.9
+		c0-0.7-0.1-1.3-0.5-1.9c-0.6-0.8-1.7-0.9-2.5-0.3c-0.1,0.1-0.2,0.2-0.3,0.3c-0.4,0.5-0.6,1.2-0.5,1.9c0,0.7,0.1,1.3,0.5,1.9
+		C194.7,132.4,195.2,132.6,195.8,132.6z"/>
+	<path class="chaining-mobile-1" d="M200.3,133.3v-6.5h1.1v1.4c0.3-0.5,0.7-0.9,1.2-1.2c0.4-0.3,0.9-0.4,1.5-0.4c0.4,0,0.8,0.1,1.2,0.2v2.4h-1
+		v-1.5c-0.1,0-0.3,0-0.4,0c-0.4,0-0.9,0.2-1.2,0.5c-0.5,0.4-0.8,0.9-1.1,1.4v3.8L200.3,133.3z"/>
+	<path class="chaining-mobile-1" d="M208.2,133.3v-8.5h-2v-0.9h3.1v8.5h2v0.9L208.2,133.3z"/>
+	<path class="chaining-mobile-1" d="M217.4,131.9c-0.3,0.5-0.7,0.9-1.2,1.2c-0.4,0.3-0.8,0.4-1.3,0.4c-0.6,0-1.1-0.3-1.5-0.7
+		c-0.5-0.6-0.7-1.4-0.7-2.1c0-0.7,0.1-1.4,0.4-2c0.3-0.6,0.7-1.1,1.2-1.4c0.5-0.4,1.2-0.5,1.8-0.5c0.2,0,0.5,0,0.9,0.1h0.3v-2.9h1.1
+		v9.5h-1.1L217.4,131.9z M217.4,130.6v-2.8c-0.4-0.1-0.7-0.2-1.1-0.2c-0.6,0-1.3,0.3-1.7,0.8c-0.5,0.6-0.7,1.4-0.7,2.1
+		c0,0.5,0.1,1,0.4,1.5c0.2,0.3,0.5,0.5,0.8,0.5c0.4,0,0.8-0.2,1.1-0.5C216.8,131.6,217.2,131.1,217.4,130.6z"/>
+	<path class="chaining-mobile-1" d="M222.4,133.6c-0.5,0-0.8-0.4-0.8-0.8c0-0.5,0.3-0.8,0.8-0.8c0,0,0,0,0,0c0.5,0,0.8,0.4,0.8,0.8
+		c0,0.2-0.1,0.5-0.3,0.6C222.9,133.5,222.6,133.6,222.4,133.6z M221.9,130.7l-0.3-6.5h1.5l-0.3,6.5H221.9z"/>
+	<path class="chaining-mobile-1" d="M228.2,127.1h-0.8l-0.4-3.3h1.5L228.2,127.1z M230.7,127.1H230l-0.3-3.3h1.4L230.7,127.1z"/>
+	<path class="chaining-mobile-1" d="M238,129.6c-0.3-0.1-0.6-0.3-0.8-0.6c-0.2-0.2-0.3-0.4-0.4-0.6c-0.1-0.2-0.1-0.4-0.1-0.7c0-0.3,0-0.6,0.1-0.9
+		l0.1-0.7c0.1-0.3,0.1-0.5,0.1-0.8c0-0.2-0.1-0.5-0.3-0.6c-0.3-0.2-0.7-0.3-1.1-0.2h-0.9v-0.9h0.9c0.7-0.1,1.5,0.1,2.1,0.5
+		c0.3,0.3,0.5,0.7,0.5,1.2c0,0.3,0,0.5-0.1,0.8l-0.1,0.5l-0.1,0.5l-0.1,0.3c0,0.1,0,0.3,0,0.4c0,0.3,0.1,0.7,0.4,0.9
+		c0.4,0.3,0.8,0.4,1.3,0.4h0.5v0.9h-0.5c-0.5,0-0.9,0.1-1.3,0.4c-0.2,0.3-0.4,0.6-0.4,0.9c0,0.1,0,0.3,0,0.4l0.1,0.3l0.1,0.5
+		l0.1,0.5c0.1,0.2,0.1,0.5,0.1,0.8c0,0.4-0.2,0.8-0.5,1.2c-0.6,0.4-1.3,0.6-2.1,0.5h-0.9v-0.9h0.9c0.4,0,0.8,0,1.1-0.2
+		c0.2-0.2,0.3-0.4,0.3-0.6c0-0.3,0-0.5-0.1-0.8l-0.1-0.7c-0.1-0.3-0.1-0.6-0.1-0.9c0-0.2,0-0.5,0.1-0.7c0.1-0.2,0.2-0.4,0.4-0.6
+		C237.4,129.9,237.7,129.8,238,129.6z"/>
+</g>
+<g>
+	<path class="chaining-mobile-2" d="M241.8,612.5c0.1-2.3,0-4.6-0.2-6.9c-0.3-2.6-2.4-4.7-5-5c-2.4-0.2-4.7-0.3-7.1-0.2h-147
+		c-2.3-0.1-4.6,0-6.9,0.2c-2.6,0.3-4.7,2.4-5,5c-0.2,2.3-0.3,4.6-0.2,6.9v34.8l0,0c0.3,2.6,2.4,4.7,5,5c2.3,0.2,4.6,0.3,6.9,0.2h147
+		c2.4,0.1,4.7,0,7.1-0.2c2.6-0.3,4.7-2.4,5-5c0.2-2.4,0.3-4.7,0.2-7.1L241.8,612.5z"/>
+	<g>
+		<path class="chaining-mobile-3" d="M145.2,621.7c0.5-1.1,1.4-2,2.4-2.6c0.7-0.5,1.4-1.1,2.1-1.7c0.5-0.4,0.7-1.1,0.7-1.7c0-0.5-0.1-0.9-0.4-1.3
+			c-0.7-0.7-1.8-0.7-2.5,0c-0.1,0.1-0.1,0.2-0.2,0.3c-0.2,0.5-0.3,1-0.3,1.5h-2.3c0-0.9,0.2-1.7,0.6-2.5c0.7-1.2,2-1.9,3.4-1.8
+			c1.1,0,2.2,0.4,3.1,1.1c0.8,0.7,1.2,1.7,1.1,2.8c0,0.9-0.3,1.7-0.8,2.4c-0.5,0.6-1.1,1.1-1.7,1.6l-1,0.7c-0.4,0.3-0.8,0.6-1.2,0.9
+			c-0.2,0.2-0.4,0.4-0.6,0.7h5.3v2.1h-8.4C144.6,623.3,144.8,622.5,145.2,621.7z"/>
+		<path class="chaining-mobile-3" d="M161.7,613.4c0.7,1.5,1,3.1,0.9,4.7c0.1,1.6-0.2,3.2-0.9,4.6c-0.7,1.1-2,1.8-3.3,1.6
+			c-1.3,0.1-2.6-0.5-3.3-1.6c-0.7-1.4-1-3-0.9-4.6c-0.1-1.6,0.2-3.2,0.9-4.7c1.4-1.8,4.1-2.1,5.9-0.7
+			C161.2,612.9,161.5,613.1,161.7,613.4z M157,621.3c0.2,0.8,1,1.2,1.7,1.1c0.5-0.1,0.9-0.5,1.1-1.1c0.2-1,0.3-2.1,0.3-3.2
+			c0-1.1-0.1-2.2-0.3-3.3c-0.2-0.8-1-1.2-1.7-1.1c-0.5,0.1-0.9,0.5-1.1,1.1c-0.2,1.1-0.3,2.2-0.3,3.3
+			C156.6,619.1,156.7,620.2,157,621.3z"/>
+		<path class="chaining-mobile-3" d="M171.3,613.4c0.7,1.5,1,3.1,0.9,4.7c0.1,1.6-0.2,3.2-0.9,4.6c-0.7,1.1-2,1.8-3.3,1.6
+			c-1.3,0.1-2.6-0.5-3.3-1.6c-0.7-1.4-1-3-0.9-4.6c-0.1-1.6,0.2-3.2,0.9-4.7c0.7-1.1,2-1.8,3.3-1.6
+			C169.3,611.6,170.6,612.2,171.3,613.4z M166.6,621.3c0.2,0.8,1,1.2,1.7,1.1c0.5-0.1,0.9-0.5,1.1-1.1c0.2-1,0.3-2.1,0.3-3.2
+			c0-1.1-0.1-2.2-0.3-3.3c-0.2-0.8-1-1.2-1.7-1.1c-0.5,0.1-0.9,0.5-1.1,1.1c-0.2,1.1-0.3,2.2-0.3,3.3
+			C166.2,619.1,166.3,620.2,166.6,621.3z"/>
+	</g>
+	<path class="chaining-mobile-2" d="M231.7,611.4v-238h4.9c1.2,0,2.3-1,2.3-2.2c0-0.4-0.1-0.7-0.3-1.1l-6.8-12.4v-5h4.9c1.2,0,2.3-1,2.3-2.2
+		c0-0.4-0.1-0.7-0.3-1.1l-6.8-12.4v-3.3h4.9c1.2,0,2.3-1,2.3-2.2c0-0.4-0.1-0.7-0.3-1.1l-6.8-12.4V175.2h4.9c1.2,0,2.3-1,2.3-2.2
+		c0-0.4-0.1-0.7-0.3-1.1l-8.4-15.2c-0.3-0.6-1-0.8-1.5-0.5c-0.2,0.1-0.4,0.3-0.5,0.5l-8.4,15.2c-0.6,1.1-0.2,2.5,0.9,3
+		c0.3,0.2,0.7,0.3,1.1,0.3h4.9v142.6l-6.8,12.4c-0.6,1.1-0.2,2.5,0.9,3c0.3,0.2,0.7,0.3,1.1,0.3h4.9v3.3l-6.8,12.4
+		c-0.6,1.1-0.2,2.5,0.9,3c0.3,0.2,0.7,0.3,1.1,0.3h4.9v5l-6.8,12.4c-0.6,1.1-0.2,2.5,0.9,3c0.3,0.2,0.7,0.3,1.1,0.3h4.9v238
+		L231.7,611.4z"/>
+	<g>
+		<path class="chaining-mobile-3" d="M87.4,637.4c0.3,0.1,0.6,0.3,0.8,0.6c0.2,0.2,0.3,0.4,0.4,0.6c0.1,0.2,0.1,0.4,0.1,0.7c0,0.3,0,0.6-0.1,0.9
+			l-0.1,0.7c-0.1,0.3-0.1,0.5-0.1,0.8c0,0.2,0.1,0.5,0.3,0.6c0.3,0.2,0.7,0.3,1.2,0.2h0.9v0.9h-0.9c-0.7,0.1-1.5-0.1-2.1-0.5
+			c-0.3-0.3-0.5-0.7-0.5-1.2c0-0.3,0-0.5,0.1-0.8l0.1-0.5l0.1-0.5l0.1-0.3c0-0.1,0-0.3,0-0.4c0-0.3-0.1-0.7-0.4-0.9
+			c-0.4-0.3-0.8-0.4-1.3-0.4h-0.5V637h0.5c0.5,0,0.9-0.1,1.3-0.4c0.2-0.2,0.4-0.6,0.4-0.9c0-0.1,0-0.3,0-0.4l-0.1-0.3l-0.1-0.5
+			l-0.1-0.5c-0.1-0.2-0.1-0.5-0.1-0.8c0-0.4,0.2-0.8,0.5-1.2c0.6-0.4,1.3-0.6,2.1-0.5h0.9v0.9h-0.9c-0.4,0-0.8,0-1.2,0.2
+			c-0.2,0.2-0.3,0.4-0.3,0.6c0,0.3,0.1,0.5,0.1,0.8l0.1,0.7c0.1,0.3,0.1,0.6,0.1,0.9c0,0.2,0,0.5-0.1,0.7c-0.1,0.2-0.2,0.4-0.4,0.6
+			C88,637.1,87.7,637.3,87.4,637.4z"/>
+		<path class="chaining-mobile-3" d="M93.6,641.1v-6.5h1v1.5c0.2-0.5,0.5-0.9,0.8-1.3c0.2-0.2,0.5-0.4,0.8-0.4c0.3,0,0.6,0.1,0.8,0.4
+			c0.2,0.3,0.3,0.7,0.3,1.1v0.3c0.1-0.4,0.3-0.7,0.5-1c0.2-0.2,0.4-0.4,0.6-0.6c0.2-0.1,0.4-0.2,0.7-0.2c0.3,0,0.5,0.1,0.7,0.4
+			c0.2,0.4,0.4,0.9,0.3,1.4v5h-1v-4.5c0-0.2,0-0.5,0-0.8c0-0.1-0.1-0.2-0.1-0.3c-0.1-0.1-0.1-0.1-0.2-0.1c-0.2,0-0.4,0.2-0.7,0.5
+			c-0.3,0.5-0.6,1-0.7,1.5v3.6h-0.9v-4.5c0-0.3,0-0.7-0.2-1c-0.1-0.1-0.2-0.1-0.3-0.2c-0.2,0-0.4,0.2-0.6,0.5
+			c-0.3,0.4-0.5,0.9-0.7,1.3v3.8L93.6,641.1z"/>
+		<path class="chaining-mobile-3" d="M101.3,640.8v-1.2c0.4,0.3,0.9,0.5,1.4,0.6c0.4,0.1,0.8,0.2,1.2,0.2c0.4,0,0.8-0.1,1.2-0.3
+			c0.2-0.1,0.4-0.4,0.4-0.7c0-0.2-0.1-0.3-0.2-0.5c-0.3-0.2-0.5-0.4-0.8-0.5l-0.4-0.2l-0.8-0.3c-0.6-0.2-1.1-0.5-1.5-0.9
+			c-0.2-0.3-0.3-0.6-0.3-1c0-0.5,0.2-1,0.6-1.3c0.6-0.4,1.3-0.6,2-0.5c0.7,0,1.4,0.1,2,0.3v1c-0.6-0.2-1.3-0.4-2-0.4
+			c-0.4,0-0.8,0.1-1.1,0.2c-0.2,0.1-0.4,0.4-0.4,0.6c0,0.2,0.1,0.4,0.3,0.6c0.3,0.2,0.7,0.4,1.1,0.5l0.7,0.3c0.5,0.2,1,0.4,1.4,0.8
+			c0.3,0.3,0.4,0.7,0.4,1.1c0,0.5-0.2,1.1-0.7,1.4c-0.6,0.4-1.4,0.6-2.1,0.5C103,641.3,102.1,641.1,101.3,640.8z"/>
+		<path class="chaining-mobile-3" d="M112.3,639.7c-0.3,0.5-0.7,0.9-1.2,1.2c-0.4,0.3-0.8,0.4-1.3,0.4c-0.6,0-1.1-0.3-1.5-0.7
+			c-0.5-0.6-0.7-1.4-0.7-2.2c0-0.7,0.1-1.4,0.4-2c0.3-0.6,0.7-1.1,1.2-1.4c0.5-0.4,1.2-0.5,1.8-0.5c0.2,0,0.5,0,0.9,0.1h0.3h1.1v4.6
+			c0,1.1,0,1.8-0.1,2c0,0.3-0.1,0.5-0.1,0.7c-0.2,0.6-0.5,1.1-1.1,1.4c-0.6,0.3-1.3,0.5-2,0.5c-0.8,0-1.7-0.2-2.4-0.6v-1.1
+			c0.4,0.2,0.7,0.4,1.1,0.6c0.4,0.2,0.9,0.2,1.3,0.2c0.3,0,0.6-0.1,0.9-0.2c0.3-0.1,0.5-0.2,0.7-0.5c0.2-0.2,0.3-0.4,0.4-0.7
+			c0.1-0.3,0.1-0.7,0.1-1.1L112.3,639.7z M112.3,638.4v-2.8c-0.4-0.1-0.7-0.1-1.1-0.2c-0.7,0-1.3,0.3-1.7,0.8
+			c-0.5,0.6-0.7,1.4-0.7,2.1c0,0.5,0.1,1,0.4,1.5c0.2,0.3,0.5,0.5,0.8,0.5c0.4,0,0.8-0.2,1.1-0.5C111.6,639.4,112,638.9,112.3,638.4
+			z"/>
+		<path class="chaining-mobile-3" d="M117.2,636.3c-0.3,0-0.5-0.1-0.7-0.3c-0.5-0.2-0.7-0.9-0.4-1.3c0.2-0.5,0.9-0.7,1.3-0.4
+			c0.2,0.1,0.3,0.2,0.4,0.4c0.4,0.4,0.4,0.9,0,1.3c0,0,0,0,0,0C117.7,636.2,117.5,636.3,117.2,636.3z M117.2,641.4
+			c-0.5,0-0.9-0.4-1-1c0-0.3,0.1-0.5,0.3-0.7c0.4-0.4,1-0.4,1.3,0c0,0,0,0,0,0c0.2,0.2,0.3,0.4,0.3,0.7c0,0.3-0.1,0.5-0.3,0.7
+			C117.7,641.3,117.5,641.4,117.2,641.4z"/>
+		<path class="chaining-mobile-3" d="M128.3,635h-0.7l-0.4-3.3h1.5L128.3,635z M130.8,635H130l-0.3-3.3h1.4L130.8,635z"/>
+		<path class="chaining-mobile-3" d="M132.9,641.1V632h1.2v4h3.4v-4h1.2v9.1h-1.2v-4.3h-3.4v4.3L132.9,641.1z"/>
+		<path class="chaining-mobile-3" d="M145.2,640.7c-0.8,0.4-1.6,0.6-2.5,0.6c-0.6,0-1.1-0.1-1.6-0.4c-0.5-0.3-0.9-0.7-1.1-1.2
+			c-0.3-0.5-0.4-1.1-0.4-1.8c0-0.6,0.1-1.2,0.4-1.7c0.2-0.5,0.6-1,1.1-1.3c0.5-0.3,1-0.5,1.6-0.5c0.7,0,1.4,0.3,1.9,0.8
+			c0.5,0.7,0.8,1.7,0.7,2.6v0.2h-4.5c0,0.4,0.1,0.9,0.3,1.2c0.2,0.3,0.4,0.6,0.7,0.8c0.3,0.2,0.7,0.3,1.1,0.3c0.8,0,1.6-0.3,2.3-0.7
+			V640.7z M140.8,637.2h3.3v-0.2c0-0.5-0.1-0.9-0.4-1.3c-0.2-0.3-0.6-0.5-1-0.5c-0.4,0-0.8,0.2-1.1,0.5
+			C141.2,636.2,140.9,636.7,140.8,637.2z"/>
+		<path class="chaining-mobile-3" d="M148.2,641.1v-8.5h-2v-0.9h3v8.5h2v0.9H148.2z"/>
+		<path class="chaining-mobile-3" d="M154.8,641.1v-8.5h-2v-0.9h3v8.5h2v0.9H154.8z"/>
+		<path class="chaining-mobile-3" d="M162.4,641.3c-0.9,0-1.7-0.3-2.2-1c-1.1-1.5-1.1-3.5,0-5c0.6-0.7,1.4-1,2.2-1c0.9,0,1.7,0.3,2.2,1
+			c1.2,1.5,1.2,3.5,0,5C164.1,641,163.3,641.3,162.4,641.3z M162.4,640.4c0.5,0,1.1-0.2,1.4-0.7c0.7-1.2,0.7-2.6,0-3.7
+			c-0.6-0.8-1.7-0.9-2.5-0.3c-0.1,0.1-0.2,0.2-0.3,0.3c-0.7,1.1-0.7,2.6,0,3.7C161.4,640.2,161.9,640.4,162.4,640.4z"/>
+		<path class="chaining-mobile-3" d="M173.3,641.1l-1.1-6.5h1l0.6,4l0.2,0.9l0.2-0.9l1-4h1l1.2,4l0.2,0.9l0.1-0.9l0.6-4h0.8l-1.1,6.5h-1l-1.2-4.2
+			l-0.2-0.9l0,0l-0.2,0.9l-1.1,4.2L173.3,641.1z"/>
+		<path class="chaining-mobile-3" d="M182.4,641.3c-0.9,0-1.7-0.3-2.2-1c-1.2-1.5-1.2-3.5,0-5c1.1-1.2,3.1-1.3,4.3-0.2c0.1,0.1,0.1,0.1,0.2,0.2
+			c1.1,1.5,1.1,3.5,0,5C184.1,641,183.3,641.3,182.4,641.3z M182.4,640.4c0.5,0,1.1-0.2,1.4-0.7c0.7-1.1,0.7-2.6,0-3.7
+			c-0.3-0.4-0.8-0.7-1.4-0.7c-0.5,0-1.1,0.2-1.4,0.7c-0.7,1.2-0.7,2.6,0,3.7C181.3,640.2,181.9,640.4,182.4,640.4z"/>
+		<path class="chaining-mobile-3" d="M186.9,641.1v-6.5h1.1v1.4c0.3-0.5,0.7-0.9,1.2-1.2c0.4-0.3,1-0.4,1.5-0.4c0.4,0,0.8,0.1,1.2,0.2v2.4h-1.1
+			v-1.5c-0.1,0-0.3,0-0.4,0c-0.4,0-0.9,0.2-1.2,0.5c-0.5,0.4-0.8,0.9-1.1,1.5v3.8L186.9,641.1z"/>
+		<path class="chaining-mobile-3" d="M194.8,641.1v-8.5h-1.9v-0.9h3v8.5h2v0.9H194.8z"/>
+		<path class="chaining-mobile-3" d="M204.1,639.7c-0.3,0.5-0.7,0.9-1.2,1.2c-0.4,0.3-0.8,0.4-1.3,0.4c-0.6,0-1.1-0.3-1.5-0.7
+			c-0.5-0.6-0.7-1.4-0.6-2.2c0-0.7,0.1-1.4,0.4-2c0.3-0.6,0.7-1,1.2-1.4c0.5-0.4,1.2-0.5,1.8-0.5c0.2,0,0.5,0,0.9,0.1h0.3v-2.9h1.1
+			v9.5h-1.1L204.1,639.7z M204.1,638.4v-2.8c-0.4-0.1-0.7-0.1-1.1-0.2c-0.6,0-1.3,0.3-1.7,0.8c-0.5,0.6-0.7,1.4-0.7,2.1
+			c0,0.5,0.1,1,0.4,1.5c0.2,0.3,0.5,0.5,0.8,0.5c0.4,0,0.8-0.2,1.1-0.5C203.4,639.4,203.8,638.9,204.1,638.4z"/>
+		<path class="chaining-mobile-3" d="M209.1,641.4c-0.2,0-0.4-0.1-0.6-0.2c-0.2-0.2-0.3-0.4-0.2-0.6c0-0.5,0.4-0.8,0.8-0.8c0.5,0,0.8,0.4,0.8,0.8
+			C209.9,641,209.5,641.4,209.1,641.4C209.1,641.4,209.1,641.4,209.1,641.4L209.1,641.4z M208.5,638.5l-0.3-6.5h1.5l-0.3,6.5H208.5z
+			"/>
+		<path class="chaining-mobile-3" d="M214.8,635h-0.8l-0.4-3.3h1.5L214.8,635z M217.4,635h-0.8l-0.3-3.3h1.4L217.4,635z"/>
+		<path class="chaining-mobile-3" d="M224.6,637.4c-0.3-0.1-0.6-0.3-0.8-0.6c-0.2-0.2-0.3-0.4-0.4-0.6c-0.1-0.2-0.1-0.4-0.1-0.7
+			c0-0.3,0-0.6,0.1-0.9l0.1-0.7c0.1-0.3,0.1-0.5,0.1-0.8c0-0.2-0.1-0.5-0.3-0.6c-0.3-0.2-0.7-0.3-1.1-0.2h-0.9v-0.9h0.9
+			c0.7-0.1,1.5,0.1,2.1,0.5c0.3,0.3,0.5,0.7,0.5,1.2c0,0.3,0,0.5-0.1,0.8l-0.1,0.5l-0.1,0.5l-0.1,0.3c0,0.1,0,0.3,0,0.4
+			c0,0.3,0.1,0.7,0.4,0.9c0.4,0.3,0.8,0.4,1.3,0.4h0.5v0.9h-0.5c-0.5,0-0.9,0.1-1.3,0.4c-0.3,0.3-0.4,0.6-0.4,1c0,0.1,0,0.3,0,0.4
+			l0.1,0.3l0.1,0.5l0.1,0.5c0.1,0.2,0.1,0.5,0.1,0.8c0,0.4-0.2,0.9-0.5,1.2c-0.6,0.4-1.3,0.6-2.1,0.5h-0.9v-0.9h0.9
+			c0.4,0,0.8,0,1.1-0.2c0.2-0.2,0.3-0.4,0.3-0.6c0-0.3-0.1-0.5-0.1-0.8l-0.1-0.7c-0.1-0.3-0.1-0.6-0.1-0.9c0-0.2,0-0.5,0.1-0.7
+			c0.1-0.2,0.2-0.4,0.4-0.6C224.1,637.8,224.3,637.6,224.6,637.4z"/>
+	</g>
+</g>
+<g>
+	<path class="chaining-mobile-1" d="M25.6,558h-1.1l5.8-9.6h1L25.6,558z"/>
+	<path class="chaining-mobile-1" d="M32.1,557.8v-9.5h1.1v4.3c0.3-0.5,0.7-0.9,1.1-1.2c0.4-0.3,0.9-0.4,1.3-0.4c0.4,0,0.7,0.1,1,0.3
+		c0.3,0.2,0.5,0.4,0.6,0.7c0.1,0.2,0.2,0.4,0.2,0.7c0,0.5,0.1,1,0,1.4v3.7h-1.1V554c0-0.4,0-0.8-0.1-1.2c-0.1-0.2-0.2-0.4-0.3-0.5
+		c-0.1-0.1-0.3-0.2-0.5-0.2c-0.5,0-0.9,0.2-1.2,0.5c-0.5,0.4-0.8,0.9-1.1,1.4v3.8L32.1,557.8z"/>
+	<path class="chaining-mobile-1" d="M44.8,557.3c-0.8,0.4-1.6,0.6-2.5,0.6c-0.6,0-1.1-0.1-1.6-0.4c-0.5-0.3-0.9-0.7-1.1-1.3
+		c-0.3-0.5-0.4-1.1-0.4-1.8c0-0.6,0.1-1.2,0.4-1.7c0.2-0.5,0.6-1,1.1-1.3c0.5-0.3,1-0.5,1.6-0.5c0.7,0,1.4,0.3,1.9,0.8
+		c0.5,0.7,0.8,1.6,0.7,2.6v0.2h-4.5c0,0.4,0.1,0.9,0.3,1.2c0.2,0.3,0.4,0.6,0.8,0.8c0.3,0.2,0.6,0.3,1,0.3c0.8,0,1.6-0.3,2.3-0.7
+		L44.8,557.3z M40.4,553.9h3.3v-0.2c0-0.5-0.1-0.9-0.4-1.3c-0.2-0.3-0.6-0.5-1-0.5c-0.4,0-0.8,0.2-1.1,0.5
+		C40.8,552.8,40.5,553.3,40.4,553.9L40.4,553.9z"/>
+	<path class="chaining-mobile-1" d="M47.1,557.8v-8.5h-2v-0.9h3v8.5h2v0.9H47.1z"/>
+	<path class="chaining-mobile-1" d="M53.7,557.8v-8.5h-2v-0.9h3v8.5h2v0.9H53.7z"/>
+	<path class="chaining-mobile-1" d="M61.2,558c-0.9,0-1.7-0.3-2.2-1c-1.1-1.5-1.1-3.5,0-4.9c1.1-1.2,3.1-1.3,4.3-0.2c0.1,0.1,0.1,0.1,0.2,0.2
+		c1.1,1.4,1.1,3.5,0,4.9C62.9,557.7,62.1,558,61.2,558z M61.2,557.1c0.5,0,1.1-0.2,1.4-0.7c0.7-1.2,0.7-2.6,0-3.7
+		c-0.6-0.8-1.7-0.9-2.5-0.3c-0.1,0.1-0.2,0.2-0.3,0.3c-0.7,1.2-0.7,2.6,0,3.7C60.2,556.8,60.7,557.1,61.2,557.1L61.2,557.1z"/>
+</g>
+<g>
+	<path class="chaining-mobile-2" d="M155.9,296.1c-0.3-2.6-2.4-4.7-5-5c-2.4-0.2-4.7-0.3-7.1-0.2H40.1c-2.3-0.1-4.6,0-6.9,0.2
+		c-2.6,0.3-4.7,2.4-5,5c-0.2,2.3-0.3,4.6-0.2,6.9v10.1c-0.1,2.4,0,4.7,0.2,7.1c0.3,2.6,2.4,4.7,5,5c2.3,0.2,4.6,0.3,6.9,0.2h103.9
+		c2.4,0.1,4.7,0,7.1-0.2c2.4-0.3,4.4-2.1,4.9-4.5V296.1z"/>
+	<g>
+		<path class="chaining-mobile-3" d="M58.7,305.2c-0.1-0.7-0.6-1.3-1.3-1.6c-0.4-0.2-0.8-0.3-1.3-0.3c-0.9,0-1.7,0.3-2.3,1c-0.7,0.9-1,2.1-0.9,3.2
+			c-0.1,1.1,0.2,2.2,1,3c0.6,0.6,1.4,0.9,2.2,0.9c0.7,0,1.5-0.2,2-0.7c0.5-0.5,0.8-1.1,1-1.8h-2.7V307h4.8v6.2h-1.6l-0.4-1.5
+			l-1.2,1.2c-0.7,0.4-1.5,0.6-2.3,0.6c-1.4,0-2.8-0.5-3.8-1.6c-1.1-1.2-1.6-2.8-1.5-4.4c-0.1-1.6,0.4-3.2,1.5-4.5
+			c1.1-1.1,2.6-1.8,4.1-1.7c1.3-0.1,2.5,0.3,3.5,1.1c0.9,0.7,1.4,1.7,1.5,2.8L58.7,305.2z"/>
+		<path class="chaining-mobile-3" d="M71.9,303.7h-6.1v2.4h5.6v2h-5.6v3h6.4v2.1h-8.7v-11.6h8.4V303.7z"/>
+		<path class="chaining-mobile-3" d="M82.4,301.6v2h-3.4v9.5h-2.4v-9.5h-3.5v-2H82.4z"/>
+	</g>
+	<path class="chaining-mobile-2" d="M31.5,530.5l8.4-15.2c0.6-1.1,0.2-2.5-0.9-3c-0.3-0.2-0.7-0.3-1.1-0.3h-4.8V313.1l-5,0.1V512h-4.9
+		c-1.2,0-2.3,1-2.3,2.2c0,0.4,0.1,0.7,0.3,1.1l8.4,15.2c0.4,0.5,1.1,0.6,1.6,0.2C31.3,530.7,31.4,530.6,31.5,530.5z"/>
+	<g>
+		<path class="chaining-mobile-3" d="M94.8,313h-1.1l5.8-9.6h1L94.8,313z"/>
+		<path class="chaining-mobile-3" d="M101.5,312.8v-9.5h1.1v4.4c0.3-0.5,0.7-0.9,1.1-1.2c0.4-0.3,0.9-0.5,1.4-0.5c0.4,0,0.7,0.1,1,0.3
+			c0.3,0.2,0.5,0.4,0.7,0.7c0.1,0.2,0.2,0.4,0.2,0.7c0,0.5,0.1,1,0.1,1.4v3.7h-1.1V309c0-0.4,0-0.8-0.1-1.2
+			c-0.1-0.2-0.2-0.4-0.3-0.5c-0.1-0.1-0.3-0.2-0.5-0.2c-0.5,0-0.9,0.2-1.2,0.5c-0.5,0.4-0.8,0.9-1.1,1.4v3.8L101.5,312.8z"/>
+		<path class="chaining-mobile-3" d="M113.9,312.3c-0.8,0.4-1.6,0.6-2.5,0.6c-0.6,0-1.1-0.1-1.6-0.4c-0.5-0.3-0.9-0.7-1.1-1.2
+			c-0.3-0.5-0.4-1.1-0.4-1.8c0-0.6,0.1-1.2,0.4-1.7c0.2-0.5,0.6-1,1.1-1.3c0.5-0.3,1-0.5,1.6-0.5c0.7,0,1.4,0.3,1.9,0.8
+			c0.5,0.7,0.8,1.6,0.7,2.6v0.2h-4.5c0,0.4,0.1,0.9,0.3,1.2c0.2,0.3,0.4,0.6,0.8,0.8c0.3,0.2,0.6,0.3,1,0.3c0.8,0,1.6-0.3,2.3-0.7
+			L113.9,312.3z M109.5,308.9h3.3v-0.2c0-0.5-0.1-0.9-0.4-1.3c-0.2-0.3-0.6-0.5-1-0.5c-0.4,0-0.8,0.2-1.2,0.5
+			C109.8,307.8,109.6,308.3,109.5,308.9z"/>
+		<path class="chaining-mobile-3" d="M116.4,312.8v-8.5h-2v-0.9h3v8.5h2.1v0.9H116.4z"/>
+		<path class="chaining-mobile-3" d="M123.1,312.8v-8.5h-2v-0.9h3v8.5h2v0.9H123.1z"/>
+		<path class="chaining-mobile-3" d="M130.6,313c-0.9,0-1.7-0.3-2.2-1c-1.1-1.5-1.1-3.5,0-5c1.1-1.2,3.1-1.3,4.3-0.2c0.1,0.1,0.1,0.1,0.2,0.2
+			c1.2,1.5,1.2,3.5,0,5C132.3,312.7,131.4,313,130.6,313z M130.6,312.1c0.5,0,1.1-0.2,1.4-0.7c0.4-0.5,0.5-1.2,0.5-1.9
+			c0-0.7-0.1-1.3-0.5-1.9c-0.6-0.8-1.7-0.9-2.5-0.3c-0.1,0.1-0.2,0.2-0.3,0.3c-0.4,0.5-0.6,1.2-0.5,1.9c0,0.7,0.1,1.3,0.5,1.9
+			C129.5,311.8,130,312,130.6,312.1L130.6,312.1z"/>
+	</g>
+</g>
+</svg>
+
+
+      <div class="example--toggles">
+        <div js-code-toggle="chaining--public" class="example--toggle s-active"><span>PublicHelloService.js</span></div>
+        <div js-code-toggle="chaining--private" class="example--toggle"><span>PrivateHelloService.js</span></div>
+      </div>
+
+      <pre js-code-block="chaining--public" js-highlight-id="chaining-public" class="language-js example--code s-visible s-in">
+        <code> 
+const carbon = require('carbon-io')
+const __     = carbon.fibers.__(module)
+const o      = carbon.atom.o(module).main
+const _o     = carbon.bond._o(module)
+
+__(function() {
+  module.exports = o({
+    _type: carbon.carbond.Service,
+    port: 8888,
+<mark js-highlighted-code="chaining-public-1">    privateHelloService: <mark js-inline-highlight="chaining-public-1">_o</mark>('http://localhost:9999'),</mark>
+    
+    endpoints : {
+      hello: o({
+        _type: carbon.carbond.Endpoint,
+        
+        <mark class="no-highlight">get</mark>: {
+          responses: [
+            {
+              statusCode: 200,
+              description: 'Success',
+              schema: {
+                type: 'object',
+                properties: {
+                  msg: { type: 'string' }
+                },
+                required: [ 'msg' ],
+                additionalProperties: false
+              }
+            }
+          ],
+          
+          service: function(req, res) {
+            return this.getService().privateHelloService.getEndpoint('hello').<mark class="no-highlight">get</mark>().body
+          }
+        }
+
+      })
+    }
+
+  })
+})
+</code>
+      </pre>
+
+      <pre js-code-block="chaining--private" class="language-js example--code">
+        <code>
+const carbon = require('carbon-io')
+const __     = carbon.fibers.__(module)
+const o      = carbon.atom.o(module).main
+
+__(function() {
+  module.exports = o({
+
+    _type: carbon.carbond.Service,
+    port: 9999,
+
+    endpoints : {
+      hello: o({
+        _type: carbon.carbond.Endpoint,
+        
+        <mark class="no-highlight">get</mark>: {
+          responses: [
+            {
+              statusCode: 200,
+              description: "Success",
+              schema: {
+                type: 'object',
+                properties: {
+                  msg: { type: 'string' }
+                },
+                required: [ 'msg' ],
+                additionalProperties: false
+              }
+            }
+          ],
+          
+          service: function(req, res) {
+            return { msg: "Hello world!" }
+          }
+        }
+
+      })
+    }
+
+  })
+})
+</code>
+      </pre>
+
+    </div>
+  </section>
+
+  <section js-example-section class="example" id="authentication-example">
+    <div class="example--left">
+      <h1 class="example--header">Authentication & Access Control</h1>
+      <a class="example--link" href="https://github.com/carbon-io-guides/example__hello-world-service-aac/" target="_blank" title="Authentication & access control example">View example on GitHub</a>
+    </div>
+
+    <div class="example--right">
+      <p class="example--body">
+        Every Carbon.io Service can be configured with an Authenticator. You can configure your own instance of the Authenticator class or use one of the several built-in Authenticators:
+
+        <ul>
+          <li>
+            <strong>HttpBasicAuthenticator</strong>: Base class for implementing HTTP basic authentication
+
+            <ul>
+              <li><strong>MongoDBHttpBasicAuthenticator</strong>: An HttpBasicAuthenticator backed by MongoDB</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>ApiKeyAuthenticator</strong>: Base class for implementing API-key based authentication
+
+            <ul>
+              <li><strong>MongoDBApiKeyAuthenticator</strong>: An ApiKeyAuthenticator backed by MongoDB</li>
+            </ul>
+          </li>
+        </ul>
+      </p>
+
+      <p>Endpoints can configure an Access Control List (ACL) to govern which users can perform each HTTP operation.</p>
+
+      <div class="example--toggles">
+        <div js-code-toggle="hello-service" class="example--toggle s-active">HelloService.js</div>
+        <div js-code-toggle="hello-endpoint" class="example--toggle">HelloEndpoint.js</div>
+      </div>
+      
+      <pre js-code-block="hello-service" class="language-js example--code s-visible s-in" js-highlight-id="hello-service">
+        <code>
+const carbon = require('carbon-io')
+const __     = carbon.fibers.__(module)
+const o      = carbon.atom.o(module).main
+const _o     = carbon.bond._o(module)
+
+__(function() {
+  module.exports = o({
+    _type: carbon.carbond.Service,
+    port: 8888,
+    authenticator: o({
+      _type: carbon.carbond.security.MongoDBApiKeyAuthenticator,
+      apiKeyParameterName: 'api_key',
+      apiKeyLocation: 'header', // can be 'header' or 'query'
+      userCollection: 'users',  // MongoDB collection where user objects are stored
+      apiKeyField: 'apiKey'     // field that contains user api keys
+    }),
+    dbUri: 'mongodb://localhost:27017/mydb',
+    endpoints : {
+<mark js-highlighted-code="hello-service-1">      hello: <mark js-inline-highlight="hello-service-1">_o</mark>('./HelloEndpoint')</mark>
+    }
+  })
+})
+</code>
+      </pre>
+
+      <pre js-code-block="hello-endpoint" class="language-js example--code">
+        <code>
+const carbon = require('carbon-io')
+const __     = carbon.fibers.__(module)
+const o      = carbon.atom.o(module).main
+
+module.exports = o({
+  _type: carbon.carbond.Endpoint,
+  acl: o({
+    _type: carbon.carbond.security.EndpointAcl,
+    groupDefinitions: { // This ACL defines a group called 'role'.
+      role: 'role'      // We define a group called 'role' based on the user property named 'role'.
+    },
+    entries: [
+      {
+        user: { role: 'Writer' },
+        permissions: {
+          <mark class="no-highlight">get</mark>: true,
+          post: true
+        }
+      },
+      {
+        user: { role: 'Reader' },
+        permissions: {
+          <mark class="no-highlight">get</mark>: true,
+          post: false
+        }
+      }
+    ]
+  }),
+  <mark class="no-highlight">get</mark>: function(req) {
+    return { msg: 'Hello World!' }
+  },
+  post: function(req) {
+    return { msg: `Hello ${req.body.message}!` }
+  }
+})
+</code>
+      </pre>
+    </div>
+  </section>
+
+  <section js-example-section class="example" id="testing-example">
+    <div class="example--left">
+      <h1 class="example--header">Testing</h1>
+      <a class="example--link" href="https://github.com/carbon-io-guides/example__test-suites" target="_blank" title="Testing example">View example on GitHub</a>
+    </div>
+
+    <div class="example--right">
+      <p class="example--body">Carbon.io comes with a testing library that makes it easy to manage large test suites. Here's an example of a HTTP-based test.</p>
+      
+      <pre class="language-js example--code">
+        <code>
+const carbon = require('carbon-io')
+const __     = carbon.fibers.__(module)
+const o      = carbon.atom.o(module).main
+
+__(function() {
+  module.exports = o({
+    _type: testtube.HttpTest,
+    name: 'HttpTests',
+    description: 'Http tests',
+    baseUrl: 'http://localhost:8888',
+    tests: [
+      {
+        reqSpec: {
+          url: '/hello',
+          method: 'GET'
+        },
+        resSpec: {
+          statusCode: 200,
+          body: 'Hello world!'
+        }
+      },
+    ]
+  })
+})
+</code>
+      </pre>
+    </div>
+  </section>
+
+  <section js-example-section class="example" id="documentation-example">
+    <div class="example--left">
+      <h1 class="example--header">Documentation Generation</h1>
+      <a class="example--link" href="https://github.com/carbon-io-guides/example__contact-service" target="_blank" title="Documentation generation example">Check out our official tutorial</a>
+    </div>
+
+    <div class="example--right">
+      <p class="example--body">Every Carbon.io Service is capable of generating its own docs. You can currently choose between Github-flavored Markdown or static HTML using Aglio. The docs here are auto generated from <a href="https://github.com/carbon-io-guides/example__contact-service" target="_blank" title="Carbon.io tutorial">our official tutorial</a>.</p>
+      
+      <div class="example--docs-image"></div>
+    </div>
+  </section>
+
+  
+<footer class="footer">
+    <div class="footer--cta">
+      <a href="https://docs.carbon.io/en/latest" class="footer--cta-primary" title="Carbon.io documentation">Read the Documentation</a>
+      <a href="https://github.com/carbon-io/carbon-io/" class="footer--cta-secondary" title="Carbon.io on Github">View Carbon.io on GitHub</a>
+    </div>
+
+    <div class="footer--content">
+      <div class="footer--top-row">
+        <a href="/" title="Carbon.io home"><?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg class="footer--logo" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 168 34" style="enable-background:new 0 0 168 34;" xml:space="preserve">
+<style type="text/css">
+	.svg-logo--dark{fill:#747E8B;}
+</style>
+<g>
+	<g>
+		<path class="svg-logo--dark" d="M19.9,18.5v-3.2c0-2.6,1.1-3.3,3.8-3.3c1.8,0,3,0.4,4,0.9V8.5c-1-0.4-2.3-0.9-4.1-0.9c-5.5,0-8.3,3-8.3,7.6
+			v3.4c0,4.9,2.6,7.6,8.5,7.6c1.7,0,2.9-0.4,4.3-0.8v-4.3c-1.3,0.4-2.5,0.7-4,0.7C21.1,21.9,19.9,21.1,19.9,18.5z M36.4,7.7
+			c-1.8,0-3.5,0.2-4.7,0.6v4c1-0.4,2.9-0.7,5-0.7c2.2,0,3.6,0.3,3.6,2.2v1.3h-3.5c-4.1,0-7.1,1.4-7.1,5.5c0,3.7,2.2,5.6,7.6,5.6
+			s7.6-1.9,7.6-5.7v-6.8C44.9,9.1,41.6,7.7,36.4,7.7z M40.4,20.3c0,2-1.5,2.1-3.1,2.1s-3-0.1-3-1.8c0-1.3,0.8-1.9,2.5-1.9h3.6V20.3z
+			 M48,14.1v11.7h4.6V14.5c0-1.6,0.4-2.4,2.7-2.4c0.9,0,1.7,0.1,2.2,0.3V7.9c-0.7-0.2-1.2-0.3-2.2-0.3C50.4,7.7,48,9.9,48,14.1z
+			 M69.1,7.7c-2.4,0-3.9,0.8-4.8,2V1h-4.5v17.5c0,5.6,3.7,7.8,8.3,7.8c5.2,0,8.3-2.2,8.3-7.8v-2.8C76.4,10.6,74,7.7,69.1,7.7z
+			 M71.9,18.4c0,2.3-0.5,3.5-3.7,3.5c-3.1,0-3.8-1.2-3.8-3.5v-2.8c0-2.3,0.7-3.5,3.8-3.5c3.1,0,3.7,1.2,3.7,3.5V18.4z M87.5,7.7
+			c-5.4,0-8.4,2.8-8.4,7.9v2.8c0,5.2,2.6,7.9,8.4,7.9c5.4,0,8.3-2.8,8.3-7.9v-2.8C95.8,10.3,93.2,7.7,87.5,7.7z M91.2,18.4
+			c0,2.3-0.6,3.5-3.7,3.5s-3.8-1.2-3.8-3.5v-2.8c0-2.3,0.7-3.5,3.8-3.5c3.1,0,3.7,1.2,3.7,3.5V18.4z M106.8,7.7
+			c-5.3,0-7.9,2.5-7.9,7.2v11h4.6v-11c0-1.8,0.5-2.8,3.4-2.8s3.3,1,3.3,2.8v11h4.6v-11C114.7,10.1,112.3,7.7,106.8,7.7z M120.6,7.6
+			c-1.5,0-2.7,1.2-2.7,2.8c0,1.5,1.2,2.8,2.7,2.8s2.7-1.3,2.7-2.8C123.3,8.9,122.1,7.6,120.6,7.6z M120.6,20.7
+			c-1.5,0-2.7,1.2-2.7,2.8c0,1.5,1.2,2.8,2.7,2.8s2.7-1.2,2.7-2.8C123.3,22,122.1,20.7,120.6,20.7z M126.8,25.8h4.5V8.1h-4.5V25.8z
+			 M129.1,0c-1.5,0-2.7,1.2-2.7,2.8c0,1.5,1.2,2.8,2.7,2.8s2.7-1.3,2.7-2.8S130.6,0,129.1,0z M143.2,7.7c-5.4,0-8.4,2.8-8.4,7.9v2.8
+			c0,5.2,2.6,7.9,8.4,7.9c5.4,0,8.3-2.8,8.3-7.9v-2.8C151.5,10.3,148.9,7.7,143.2,7.7z M146.9,18.4c0,2.3-0.6,3.5-3.7,3.5
+			c-3.1,0-3.8-1.2-3.8-3.5v-2.8c0-2.3,0.7-3.5,3.8-3.5s3.7,1.2,3.7,3.5V18.4z M165.8,14.8c-1.9,0-2.9-2-2.9-5.1V7.4
+			c0-4.6-2.6-7.1-6.4-7.1h-2.1v3.8h1.6c1.9,0,2.7,1.3,2.7,4.1v2.2c0,2.4,0.6,5,2.9,6.3c-2.3,1.2-2.9,3.8-2.9,6.3v2.9
+			c0,2.8-0.8,4.1-2.7,4.1h-1.6v3.8h2.1c3.7,0,6.4-2.5,6.4-7.1v-3c0-3.1,1-5.1,2.9-5.1h1.1v-3.8C166.9,14.8,165.8,14.8,165.8,14.8z
+			 M4,7.4v2.3c0,3.1-1,5.1-2.9,5.1H0v3.8h1.1C3,18.6,4,20.5,4,23.7v3c0,4.6,2.7,7.1,6.4,7.1h2.1V30h-1.6c-1.9,0-2.7-1.3-2.7-4.1V23
+			c0-2.5-0.6-5.2-2.9-6.3c2.4-1.3,2.9-3.9,2.9-6.3V8.2c0-2.8,0.8-4.1,2.7-4.1h1.6V0.3h-2.1C6.6,0.3,4,2.7,4,7.4z"/>
+	</g>
+</g>
+</svg>
+</a>
+
+        <div class="footer--links">
+          <a class="footer--link" href="https://docs.carbon.io/en/latest" target="_blank" title="Carbon.io documentation">Documentation</a>
+          <a class="footer--link" href="https://github.com/carbon-io/carbon-io/" target="_blank" title="Carbon.io on GitHub">GitHub</a>
+          <a class="footer--link" href="https://docs.carbon.io/en/latest/support.html" target="_blank" title="Carbon.io support">Support</a>
+        </div>
+      </div>
+
+      <div class="footer--bottom-row">
+        <div>
+          This software is licensed under the <a href="https://github.com/carbon-io/carbon-io/blob/master/LICENSE.txt" title="MIT open source license">MIT open-source license</a>.
+        </div>
+
+        <div class="footer--license">
+          Made by <a href="https://mlab.com/" target="_blank" title="mLab's Website">mLab</a>
+        </div>
+      </div>
+    </div>
+</footer>
+
+
+  <script type="application/javascript" src="/js/lib/three.min.js"></script>
+  <script type="application/javascript" src="/js/lib/jquery-3.0.0.slim.min.js"></script>
+  <script type="application/javascript" src="/js/lib/prism.min.js"></script>
+  <script type="application/javascript" src="/js/lib/fastclick.min.js"></script>
+  <script type="application/javascript" src="js/index.js"></script>
+</body>
+
+</html>
