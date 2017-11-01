@@ -79,16 +79,17 @@
   <section class="carousel">
     <div class="carousel--triple-feature">
       <div class="carousel--triple-feature-group s-active" js-page-indicator="0">
-        <img class="carousel--triple-feature-icon" src="/images/beautiful-code.svg" alt="">
+        <%- include("images/beautiful-code.svg", { className: "carousel--triple-feature-icon" })%>
         Beautiful Code
       </div>
 
       <div class="carousel--triple-feature-group" js-page-indicator="1">
-        <img class="carousel--triple-feature-icon" src="/images/beautiful-tests.svg" alt="">
+        <%- include("images/beautiful-tests.svg", { className: "carousel--triple-feature-icon" })%>
         Beautiful Tests
       </div>
 
       <div class="carousel--triple-feature-group" js-page-indicator="2">
+        <%- include("images/beautiful-docs.svg", { className: "carousel--triple-feature-icon" })%>
         <img class="carousel--triple-feature-icon" src="/images/beautiful-docs.svg" alt="">
         Beautiful Docs
       </div>
@@ -407,10 +408,11 @@
 
   <%- include components/_footer %>
 
-  <script type="application/javascript" src="/js/lib/three.min.js"></script>
-  <script type="application/javascript" src="/js/lib/jquery-3.0.0.slim.min.js"></script>
-  <script type="application/javascript" src="/js/lib/prism.min.js"></script>
-  <script type="application/javascript" src="/js/lib/fastclick.min.js"></script>
+  <!-- TODO: Change these url's to `/js/**` when hosted at carbon.io -->
+  <script type="application/javascript" src="js/lib/three.min.js"></script>
+  <script type="application/javascript" src="js/lib/jquery-3.0.0.slim.min.js"></script>
+  <script type="application/javascript" src="js/lib/prism.min.js"></script>
+  <script type="application/javascript" src="js/lib/fastclick.min.js"></script>
   <script type="application/javascript" src="js/index.js"></script>
 </body>
 
