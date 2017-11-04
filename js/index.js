@@ -161,14 +161,14 @@ function positionParticles () {
 }
 
 
+
 // Renders animated terminal windows
 function Terminal (terminalEl, options) {
   options = options || {};
   this.options = options;
   this.state = {
     started: false,
-    complete: false,
-    $cursor: null
+    complete: false
   };
   this.queue = [];
 
@@ -228,7 +228,7 @@ Terminal.prototype = {
 
 
   renderCommand: function (options) {
-    string = this.processCommandString(options.string);
+    var string = this.processCommandString(options.string);
     var $commandEl = $("<div class='terminal--command s-active s-blink'></div>");
     $commandEl.css({ "white-space": "normal" });
 
@@ -321,7 +321,7 @@ Terminal.prototype = {
 
 
 function initTerminals () {
-  if (!window.terminalsAreInitialized) {
+  if (!window.terminalsInitialized) {
     window.beautifulCodeTerminal =
       new Terminal($("[js-terminal='code']")[0], {
         onComplete: function () {
@@ -358,135 +358,133 @@ function initTerminals () {
       }
     );
 
-    window.terminalsAreInitialized = true;
+    window.terminalsInitialized = true;
   }
 }
 
 
-// function setActiveFeature (feature) {
-//   $features = $("[js-carousel-feature]");
-//   $feature = $("[js-carousel-feature='" + feature + "']");
+function beautifulCodeContent () {
+  this.command({
+    string: "ls"
+  });
+  this.feedback({
+    string: "docs&nbsp;&nbsp;&nbsp;lib&nbsp;&nbsp;&nbsp;test&nbsp;&nbsp;&nbsp;package.json",
+    waitBefore: 10
+  });
+  this.command({
+    string: "node lib/ZipcodeService & "
+  });
+  this.feedback({
+    string: "[2017-10-06T21:27:34] Service starting...",
+    waitBefore: 500
+  });
+  this.feedback({
+    string: "[2017-10-06T21:27:34] Service creating http server",
+    waitBefore: 500
+  });
+  this.feedback({
+    string: "[2017-10-06T21:27:34] Service listening on port 8888",
+    waitBefore: 1500
+  });
+  this.command({
+    string: [ "curl localhost:8888/zipcodes \\",
+              "<br />",
+              "-H \"Content-Type: application/json\" \\",
+              "<br />",
+              "-d '{\"_id\":\"94110\", \"state\":\"CA\"}'" ]
+  });
+  this.command({
+    string: "curl localhost:8888/zipcodes/94110"
+  });
+  this.feedback({ string: "{\"_id\":\"94110\", \"state\":\"CA\"}" });
+  this.finish();
+}
 
-//   $features.not($feature).removeClass("s-active");
-//   $feature.addClass("s-active");
-// }
+
+function beautifulTestsContent () {
+  this.command({
+    string: "node test/ZipcodeServiceTest"
+  });
+  this.feedback({ string: "<strong>Running ZipcodeServiceTest...</strong>" });
+  this.feedback({
+    string: "&nbsp;[<span class='terminal--check'>*</span>] POST /zipcodes (130ms)",
+    waitBefore: 260
+  });
+  this.feedback({
+    string: "&nbsp;[<span class='terminal--check'>*</span>] POST /zipcodes (12ms)",
+    waitBefore: 24
+  });
+  this.feedback({
+    string: "&nbsp;[<span class='terminal--check'>*</span>] ZipcodeServiceTest (142ms)",
+    waitBefore: 284
+  });
+
+  this.feedback({ string: "<br><strong>Test Report</strong>" });
+  this.feedback({
+    string: "[<span class='terminal--check'>*</span>] Test: ZipcodeServiceTest (142ms)",
+    waitBefore: 0
+  });
+  this.feedback({
+    string: "&nbsp;[<span class='terminal--check'>*</span>] Test: POST /zipcodes (130ms)",
+    waitBefore: 0
+  });
+  this.feedback({
+    string: "&nbsp;[<span class='terminal--check'>*</span>] Test: POST /zipcodes (12ms)",
+    waitBefore: 0
+  });
+  this.finish();
+}
+
+
+function beautifulDocsContent () {
+  this.command({
+    string: "node lib/ZipcodeService gen-static-docs --flavor aglio --out docs/index.html"
+  });
+  this.feedback({ string: "<strong>carbon-io.carbond.Service:INFO:</strong> Service creating http server" });
+  this.feedback({
+    string: "<strong>carbon-io.carbond.Service:INFO:</strong> Writing API documentation to docs/index.html",
+    waitBefore: 1000
+  });
+
+  this.finish();
+}
+
+
 
 function initCarousel () {
-  if (!window.carouselIsInitialized) {
-    window.featureCarousel = new Carousel($("[js-feature-carousel]"), {
-      autoRotate: false,
-      afterTransition: [
-        {
-          $el: $("[js-carousel-group='code']"),
-          callback: function (node) {
-            window.beautifulCodeTerminal.start(function () {
-              this.command({
-                string: "ls"
-              });
-              this.feedback({
-                string: "docs&nbsp;&nbsp;&nbsp;lib&nbsp;&nbsp;&nbsp;test&nbsp;&nbsp;&nbsp;package.json",
-                waitBefore: 10
-              });
-              this.command({
-                string: "node lib/ZipcodeService & "
-              });
-              this.feedback({
-                string: "[2017-10-06T21:27:34] Service starting...",
-                waitBefore: 500
-              });
-              this.feedback({
-                string: "[2017-10-06T21:27:34] Service creating http server",
-                waitBefore: 500
-              });
-              this.feedback({
-                string: "[2017-10-06T21:27:34] Service listening on port 8888",
-                waitBefore: 1500
-              });
-              this.command({
-                string: [ "curl localhost:8888/zipcodes \\",
-                          "<br />",
-                          "-H \"Content-Type: application/json\" \\",
-                          "<br />",
-                          "-d '{\"_id\":\"94110\", \"state\":\"CA\"}'" ]
-              });
-              this.command({
-                string: "curl localhost:8888/zipcodes/94110"
-              });
-              this.feedback({ string: "{\"_id\":\"94110\", \"state\":\"CA\"}" });
-              this.finish();
-            });
-          }
-        
-        }, {
-          $el: $("[js-carousel-group='tests']"),
-          callback: function (node) {
-            window.beautifulTestsTerminal.start(function () {
-              this.command({
-                string: "node test/ZipcodeServiceTest"
-              });
-              this.feedback({ string: "<strong>Running ZipcodeServiceTest...</strong>" });
-              this.feedback({
-                string: "&nbsp;[<span class='terminal--check'>*</span>] POST /zipcodes (130ms)",
-                waitBefore: 260
-              });
-              this.feedback({
-                string: "&nbsp;[<span class='terminal--check'>*</span>] POST /zipcodes (12ms)",
-                waitBefore: 24
-              });
-              this.feedback({
-                string: "&nbsp;[<span class='terminal--check'>*</span>] ZipcodeServiceTest (142ms)",
-                waitBefore: 284
-              });
-
-              this.feedback({ string: "<br><strong>Test Report</strong>" });
-              this.feedback({
-                string: "[<span class='terminal--check'>*</span>] Test: ZipcodeServiceTest (142ms)",
-                waitBefore: 0
-              });
-              this.feedback({
-                string: "&nbsp;[<span class='terminal--check'>*</span>] Test: POST /zipcodes (130ms)",
-                waitBefore: 0
-              });
-              this.feedback({
-                string: "&nbsp;[<span class='terminal--check'>*</span>] Test: POST /zipcodes (12ms)",
-                waitBefore: 0
-              });
-              this.finish();
-            });
-          }
-
-        }, {
-          $el: $("[js-carousel-group='docs']"),
-          callback: function (node) {
-            window.beautifulDocsTerminal.start(function () {
-              this.command({
-                string: "node lib/ZipcodeService gen-static-docs --flavor aglio --out docs/index.html"
-              });
-              this.feedback({ string: "<strong>carbon-io.carbond.Service:INFO:</strong> Service creating http server" });
-              this.feedback({
-                string: "<strong>carbon-io.carbond.Service:INFO:</strong> Writing API documentation to docs/index.html",
-                waitBefore: 1000
-              });
-
-              this.finish();
-            });
-          }
+  window.featureCarousel = new Carousel($("[js-feature-carousel]"), {
+    autoRotate: false,
+    afterTransition: [
+      {
+        $el: $("[js-carousel-group='code']"),
+        callback: function () {
+          window.beautifulCodeTerminal.start(beautifulCodeContent);
         }
-      ]
-    });
-    
-    window.featureCarousel.start();
+      }, {
+        $el: $("[js-carousel-group='tests']"),
+        callback: function () {
+          window.beautifulTestsTerminal.start(beautifulTestsContent);
+        }
+      }, {
+        $el: $("[js-carousel-group='docs']"),
+        callback: function () {
+          window.beautifulDocsTerminal.start(beautifulDocsContent);
+        }
+      }
+    ]
+  });
+  
+  window.featureCarousel.start();
 
-    $("[js-carousel-previous]").click(function () {
-      window.featureCarousel.previous(true);
-    });
+  $("[js-carousel-previous]").click(function () {
+    window.featureCarousel.previous(true);
+  });
 
-    $("[js-carousel-next]").click(function () {
-      window.featureCarousel.next(true);
-    });
+  $("[js-carousel-next]").click(function () {
+    window.featureCarousel.next(true);
+  });
 
-    window.carouselIsInitialized = true;
-  }
+  window.carouselInitialized = true;
 }
 
 
@@ -546,16 +544,15 @@ Carousel.prototype = {
     this.$el.parent().append($pagination);
 
     $("[js-page-indicator]").click(function (e) {
-      var nextIndex = parseInt($(e.target).attr("js-page-indicator"));
-      this.transition(nextIndex);
-      this.state.currentIndex = nextIndex;
+      var selectedIndex = parseInt($(e.currentTarget).attr("js-page-indicator"));
+
+      this.state.autonomousRotate = false;
+      this.changeIndex(selectedIndex);
     }.bind(this));
   },
 
 
-  transition: function (nextIndex) {
-    var childrenCount = this.$children.length;
-
+  transition: function (nextIndex, callback) {
     this.positionContent(nextIndex);
 
     this.$children.not(this.$children[nextIndex]).each(function (index, node) {
@@ -570,10 +567,12 @@ Carousel.prototype = {
     $("[js-page-indicator]").removeClass("s-active");
     $("[js-page-indicator='" + nextIndex + "']").addClass("s-active");
 
-    this.toggleLinearControls(nextIndex);
-
     var $nextActiveChild = $(this.$children[nextIndex]);
     this.afterTransitionCallback($nextActiveChild);
+
+    if (callback) {
+      callback()
+    }
   },
 
 
@@ -626,19 +625,13 @@ Carousel.prototype = {
     }
     
     var nextIndex;
-
     if (this.state.currentIndex - 1 < 0) {
       nextIndex = this.$children.length - 1;
     } else {
       nextIndex = this.state.currentIndex - 1;
     }
 
-    this.transition(nextIndex);
-
-    var $nextActiveChild = $(this.$children[nextIndex]);
-    this.afterTransitionCallback($nextActiveChild);
-
-    this.state.currentIndex = nextIndex;
+    this.changeIndex(nextIndex);
   },
 
 
@@ -655,9 +648,7 @@ Carousel.prototype = {
       nextIndex = this.state.currentIndex + 1;
     }
 
-    this.transition(nextIndex);
-
-    this.state.currentIndex = nextIndex;
+    this.changeIndex(nextIndex);
   },
 
 
@@ -668,6 +659,23 @@ Carousel.prototype = {
         this.autoRotate();
 
       }.bind(this), this.options.delay);
+    }
+  },
+
+  changeIndex: function (newIndex) {
+    if (isNaN(newIndex)) {
+      return;
+    }
+
+    if (this.state.changingIndex) {
+      setTimeout(function () { this.changeIndex(newIndex) }.bind(this), 10);
+    } else {
+      this.state.changingIndex = true;
+      this.transition(newIndex, function () {
+        this.toggleLinearControls(newIndex);
+        this.state.currentIndex = newIndex;
+        this.state.changingIndex = false
+      }.bind(this));
     }
   }
 }
@@ -680,7 +688,7 @@ var $scrollHeaderClone = $scrollHeader.clone().addClass("m-fixed");
 var scrollHeaderVisible = false;
 
 function scrollHandler () {
-  if ($carousel.isVisible(true) && (!window.carouselIsInitialized || window.terminalsAreInitialized)) {
+  if ($carousel.isVisible(true) && (!window.carouselInitialized || window.terminalsInitialized)) {
     initTerminals();
     initCarousel();
   }
