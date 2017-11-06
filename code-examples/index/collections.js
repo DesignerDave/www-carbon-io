@@ -1,4 +1,3 @@
-
 const carbon = require('carbon-io')
 const __     = carbon.fibers.__(module)
 const o      = carbon.atom.o(module).main
@@ -11,7 +10,8 @@ __(function() {
     endpoints: {
       articles: o({
         _type: carbon.carbond.mongodb.MongoDBCollection,
-        collection: 'articles'
+        collection: 'articles',
+        enabled: { '*': true }
       })
     }
   })

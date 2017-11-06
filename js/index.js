@@ -386,17 +386,26 @@ function beautifulCodeContent () {
     string: "[2017-10-06T21:27:34] Service listening on port 8888",
     waitBefore: 1500
   });
-  this.command({
-    string: [ "curl localhost:8888/zipcodes \\",
-              "<br />",
-              "-H \"Content-Type: application/json\" \\",
-              "<br />",
-              "-d '{\"_id\":\"94110\", \"state\":\"CA\"}'" ]
+  this.command({ string: "curl localhost:8888/zipcode" });
+  this.feedback({
+    string: "[{\"_id\":\"10159\",\"state\":\"NY\"},{\"_id\":\"94110\",\"state\":\"CA\"}]",
+    waitBefore: 400
   });
-  this.command({
-    string: "curl localhost:8888/zipcodes/94110"
+  this.command({ string: "curl localhost:8888/zipcodes/94110" });
+  this.feedback({
+    string: "{\"_id\":\"94110\", \"state\":\"CA\"}",
+    waitBefore: 400
   });
-  this.feedback({ string: "{\"_id\":\"94110\", \"state\":\"CA\"}" });
+  this.command({ string: "curl -X 'DELETE' localhost:8888/zipcodes/94110" });
+  this.feedback({
+    string: "{\"n\":1}",
+    waitBefore: 400
+  });
+  this.command({ string: "curl localhost:8888/zipcodes" });
+  this.feedback({
+    string: "[{\"_id\":\"10159\",\"state\":\"NY\"}]",
+    waitBefore: 400
+  });
   this.finish();
 }
 
@@ -407,29 +416,29 @@ function beautifulTestsContent () {
   });
   this.feedback({ string: "<strong>Running ZipcodeServiceTest...</strong>" });
   this.feedback({
-    string: "&nbsp;[<span class='terminal--check'>*</span>] POST /zipcodes (130ms)",
-    waitBefore: 260
+    string: "&nbsp;[<span class='terminal--check'>*</span>] PUT /zipcodes/94114 (254ms)",
+    waitBefore: 508
   });
   this.feedback({
-    string: "&nbsp;[<span class='terminal--check'>*</span>] POST /zipcodes (12ms)",
-    waitBefore: 24
+    string: "&nbsp;[<span class='terminal--check'>*</span>] GET /zipcodes/94114 (14ms)",
+    waitBefore: 28
   });
   this.feedback({
-    string: "&nbsp;[<span class='terminal--check'>*</span>] ZipcodeServiceTest (142ms)",
-    waitBefore: 284
+    string: "&nbsp;[<span class='terminal--check'>*</span>] ZipcodeServiceTest (268ms)",
+    waitBefore: 536
   });
 
   this.feedback({ string: "<br><strong>Test Report</strong>" });
   this.feedback({
-    string: "[<span class='terminal--check'>*</span>] Test: ZipcodeServiceTest (142ms)",
+    string: "[<span class='terminal--check'>*</span>] Test: ZipcodeServiceTest (268ms)",
     waitBefore: 0
   });
   this.feedback({
-    string: "&nbsp;[<span class='terminal--check'>*</span>] Test: POST /zipcodes (130ms)",
+    string: "&nbsp;[<span class='terminal--check'>*</span>] Test: PUT /zipcodes/94114 (254ms)",
     waitBefore: 0
   });
   this.feedback({
-    string: "&nbsp;[<span class='terminal--check'>*</span>] Test: POST /zipcodes (12ms)",
+    string: "&nbsp;[<span class='terminal--check'>*</span>] Test: GET /zipcodes (14ms)",
     waitBefore: 0
   });
   this.finish();

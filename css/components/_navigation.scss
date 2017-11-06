@@ -68,7 +68,7 @@
   }
 
   &--mobile-toggle {
-    @include box-shadow--large($color--black, true)
+    @include box-shadow--large($color--black, true);
     transition: transform 0.1s ease-out, background-color 0.1s ease-out;
     display: none;
     height: $toggle-button-size;

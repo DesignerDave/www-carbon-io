@@ -1,16 +1,6 @@
 
 @import "../lib/prism";
 
-.landscape-test {
-  @include media--mobile-landscape {
-    &:after {
-      content: "Hello Landscape";
-      display: block;
-      font-size: 50px;
-    }
-  }
-}
-
 .splash {
   min-height: 110vh;
   display: flex;
@@ -228,7 +218,6 @@
     &.s-active:after {
       content: "";
       width: 7px;
-      height: $font-size--normal;
       display: inline-block;
       height: $font-size--normal * 0.9;
       margin-top: auto;
@@ -702,7 +691,7 @@
       overflow-x: hidden;
     }
 
-    > code {
+    & > code {
       max-height: 100%;
       align-self: flex-end;
       overflow-y: auto;
