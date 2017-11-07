@@ -386,7 +386,7 @@ function beautifulCodeContent () {
     string: "[2017-10-06T21:27:34] Service listening on port 8888",
     waitBefore: 1500
   });
-  this.command({ string: "curl localhost:8888/zipcode" });
+  this.command({ string: "curl localhost:8888/zipcodes" });
   this.feedback({
     string: "[{\"_id\":\"10159\",\"state\":\"NY\"},{\"_id\":\"94110\",\"state\":\"CA\"}]",
     waitBefore: 400
