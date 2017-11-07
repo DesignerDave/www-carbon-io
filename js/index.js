@@ -228,31 +228,46 @@ Terminal.prototype = {
 
 
   renderCommand: function (options) {
+    this.typeQueue = [];
+    var requiresModifier = "~!@#$%^&*()_+QWERTYUIOP{}|ASDFGHJKL:\"ZXCVBNM<>?".split("");
     var string = this.processCommandString(options.string);
     var $commandEl = $("<div class='terminal--command s-active s-blink'></div>");
-    $commandEl.css({ "white-space": "normal" });
-
+    
     this.$el.append($commandEl);
     this.scrollToBottom();
 
     setTimeout(function () {
-      $commandEl.removeClass("s-blink");
-
       string.forEach(function (item, index) {
-        var timeout = index * 70 + Math.random() * 50;
+        var isModified = requiresModifier.includes(item);
+        var wait = (Math.random() + 1) * (isModified ? 100 : 40) + 30;
+
+        this.typeQueue.push({
+          character: item,
+          wait: wait
+        });
+      }.bind(this));
+
+      function renderCharacter (index) {
+        var item = this.typeQueue[index];
 
         setTimeout(function () {
           var currentText = $commandEl.text();
 
-          $commandEl.append(item);
+          $commandEl.append(item.character);
           this.scrollToBottom();
 
-          if (index === string.length - 1) {
+          if (index === this.typeQueue.length - 1) {
             $commandEl.removeClass("s-active");
-            this.advanceQueue();
+            setTimeout(function () {
+              this.advanceQueue();
+            }.bind(this), 300);
+          } else {
+            renderCharacter.apply(this, [index + 1]);
           }
-        }.bind(this), timeout);
-      }.bind(this));
+        }.bind(this), item.wait);
+      }
+
+      renderCharacter.apply(this, [0]);
     }.bind(this), 2000);
   },
 
@@ -425,7 +440,7 @@ function beautifulTestsContent () {
   });
   this.feedback({
     string: "&nbsp;[<span class='terminal--check'>*</span>] ZipcodeServiceTest (268ms)",
-    waitBefore: 536
+    waitBefore: 0
   });
 
   this.feedback({ string: "<br><strong>Test Report</strong>" });
