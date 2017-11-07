@@ -239,7 +239,7 @@ Terminal.prototype = {
     setTimeout(function () {
       string.forEach(function (item, index) {
         var isModified = requiresModifier.includes(item);
-        var wait = (Math.random() + 1) * (isModified ? 100 : 40) + 30;
+        var wait = (Math.random() + 1) * (isModified ? 100 : 40) + 20;
 
         this.typeQueue.push({
           character: item,
@@ -249,16 +249,18 @@ Terminal.prototype = {
 
       function renderCharacter (index) {
         var item = this.typeQueue[index];
-
+        
         setTimeout(function () {
           var currentText = $commandEl.text();
+          $commandEl.removeClass("s-blink");
 
           $commandEl.append(item.character);
           this.scrollToBottom();
 
           if (index === this.typeQueue.length - 1) {
-            $commandEl.removeClass("s-active");
+            $commandEl.addClass("s-blink");
             setTimeout(function () {
+              $commandEl.removeClass("s-active");
               this.advanceQueue();
             }.bind(this), 300);
           } else {
