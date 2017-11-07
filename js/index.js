@@ -262,7 +262,7 @@ Terminal.prototype = {
             setTimeout(function () {
               $commandEl.removeClass("s-active");
               this.advanceQueue();
-            }.bind(this), 300);
+            }.bind(this), 200);
           } else {
             renderCharacter.apply(this, [index + 1]);
           }
