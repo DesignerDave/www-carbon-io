@@ -1,6 +1,5 @@
-
-const carbon = require('carbon-io')  
-const __     = carbon.fibers.__(module) 
+const carbon = require('carbon-io')
+const __     = carbon.fibers.__(module)
 const o      = carbon.atom.o(module).main
 
 __(function() {
@@ -13,7 +12,7 @@ __(function() {
         _type: carbon.carbond.mongodb.MongoDBCollection,
         collection: 'zipcodes',
 
-        // JSON schema objects managed by this endpoint must conform to. 
+        // JSON schema objects managed by this endpoint must conform to.
         schema: {
           type: 'object',
           properties: {
@@ -22,7 +21,11 @@ __(function() {
           },
           required: ['_id', 'state'],
           additionalProperties: false
-        }
+        },
+
+        // Enable all HTTP methods on this collection.
+        enabled: { '*': true },
+
       })
     }
   })

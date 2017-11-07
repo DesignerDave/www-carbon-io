@@ -325,9 +325,8 @@
           <div class="carousel--code-wrapper">
             <pre class="carousel--code language-js">
               <code>
-                
-const carbon = require('carbon-io')  
-const __     = carbon.fibers.__(module) 
+                const carbon = require('carbon-io')
+const __     = carbon.fibers.__(module)
 const o      = carbon.atom.o(module).main
 
 __(function() {
@@ -340,7 +339,7 @@ __(function() {
         _type: carbon.carbond.mongodb.MongoDBCollection,
         collection: 'zipcodes',
 
-        // JSON schema objects managed by this endpoint must conform to. 
+        // JSON schema objects managed by this endpoint must conform to.
         schema: {
           type: 'object',
           properties: {
@@ -349,11 +348,16 @@ __(function() {
           },
           required: ['_id', 'state'],
           additionalProperties: false
-        }
+        },
+
+        // Enable all HTTP methods on this collection.
+        enabled: { '*': true },
+
       })
     }
   })
 })
+
               <br>
             </code>
             </pre>
@@ -395,11 +399,11 @@ __(function() {
           <div class="carousel--code-wrapper">
             <pre class="carousel--code language-js">
               <code>
-                
-const carbon = require('carbon-io')  
-const __     = carbon.fibers.__(module) 
-const o      = carbon.atom.o(module).main
+                const carbon = require('carbon-io')
+const __     = carbon.fibers.__(module)
 const _o     = carbon.bond._o(module)
+const o      = carbon.atom.o(module).main
+const assert = require('assert')
 
 __(function() {
   module.exports = o({
@@ -408,27 +412,27 @@ __(function() {
     service: _o('../lib/ZipcodeService'),
 
     tests: [
-      // Test POST by inserting some zipcodes
+      // Test PUT by inserting some zipcodes
       {
         reqSpec: {
-          url: '/zipcodes',
-          method: 'POST',
-          body: { _id: '94110', state: 'CA' }
+          url: '/zipcodes/94114',
+          method: 'PUT',
+          body: { _id: '94114', state: 'CA' }
         },
         resSpec: {
           statusCode: 201,
         }
       },
 
-      // Test invalid POST. These should get a 400 status code (Bad Request)
+      // Test GET by looking up single zipcode
       {
         reqSpec: {
-          url: '/zipcodes',
-          method: 'POST',
-          body: { _id: '1', state: 'NY' } // Malformed zipcode
+          url: '/zipcodes/94114',
+          method: 'GET'
         },
         resSpec: {
-          statusCode: 400
+          statusCode: 200,
+          body: { _id: '94114', state: 'CA' }
         }
       }
     ],
@@ -526,8 +530,7 @@ __(function() {
     <div class="example--right">
       <p class="example--body">With Carbon.io, APIs are defined via Services. A Service is an HTTP server that exposes a JSON REST API and which is defined as a tree of Endpoints. This Service defines a HTTP GET method on an Endpoint called "hello".</p>
       <pre class="language-js example--code" js-highlight-id="hello-world">
-        <code>
-const carbon = require('carbon-io')
+        <code>const carbon = require('carbon-io')
 const __     = carbon.fibers.__(module)
 const o      = carbon.atom.o(module).main
 
@@ -544,8 +547,7 @@ const o      = carbon.atom.o(module).main
       })
     }
   })
-})
-</code>
+})</code>
       </pre>
     </div>
   </section>
@@ -560,8 +562,7 @@ const o      = carbon.atom.o(module).main
       <p class="example--body">Each Endpoint is made up of Operations, which can formally define request parameters and responses. Operation definitions can use JSON Schemas to automatically validate input parameters and output responses.</p>
       
       <pre class="language-js example--code">
-        <code>
-const carbon = require('carbon-io')
+        <code>const carbon = require('carbon-io')
 const __     = carbon.fibers.__(module)
 const o      = carbon.atom.o(module).main
 
@@ -604,8 +605,7 @@ __(function() {
       })
     }
   })
-})
-</code>
+})</code>
       </pre>
     </div>
   </section>
@@ -620,8 +620,7 @@ __(function() {
       <p class="example--body">Collections are a high-level abstraction on top of Endpoints that provide a higher-level interface for implementing access to a collection of resources. You can easily implement full database CRUD with virtually no code.</p>
 
       <pre class="language-js example--code">
-        <code>
-const carbon = require('carbon-io')
+        <code>const carbon = require('carbon-io')
 const __     = carbon.fibers.__(module)
 const o      = carbon.atom.o(module).main
 
@@ -633,12 +632,12 @@ __(function() {
     endpoints: {
       articles: o({
         _type: carbon.carbond.mongodb.MongoDBCollection,
-        collection: 'articles'
+        collection: 'articles',
+        enabled: { '*': true }
       })
     }
   })
-})
-</code>
+})</code>
       </pre>
 
       <p>
@@ -1080,8 +1079,7 @@ __(function() {
       </div>
 
       <pre js-code-block="chaining--public" js-highlight-id="chaining-public" class="language-js example--code s-visible s-in">
-        <code> 
-const carbon = require('carbon-io')
+        <code> const carbon = require('carbon-io')
 const __     = carbon.fibers.__(module)
 const o      = carbon.atom.o(module).main
 const _o     = carbon.bond._o(module)
@@ -1121,13 +1119,11 @@ __(function() {
     }
 
   })
-})
-</code>
+})</code>
       </pre>
 
       <pre js-code-block="chaining--private" class="language-js example--code">
-        <code>
-const carbon = require('carbon-io')
+        <code>const carbon = require('carbon-io')
 const __     = carbon.fibers.__(module)
 const o      = carbon.atom.o(module).main
 
@@ -1166,8 +1162,7 @@ __(function() {
     }
 
   })
-})
-</code>
+})</code>
       </pre>
 
     </div>
@@ -1210,8 +1205,7 @@ __(function() {
       </div>
       
       <pre js-code-block="hello-service" class="language-js example--code s-visible s-in" js-highlight-id="hello-service">
-        <code>
-const carbon = require('carbon-io')
+        <code>const carbon = require('carbon-io')
 const __     = carbon.fibers.__(module)
 const o      = carbon.atom.o(module).main
 const _o     = carbon.bond._o(module)
@@ -1232,13 +1226,11 @@ __(function() {
 <mark js-highlighted-code="hello-service-1">      hello: <mark js-inline-highlight="hello-service-1">_o</mark>('./HelloEndpoint')</mark>
     }
   })
-})
-</code>
+})</code>
       </pre>
 
       <pre js-code-block="hello-endpoint" class="language-js example--code">
-        <code>
-const carbon = require('carbon-io')
+        <code>const carbon = require('carbon-io')
 const __     = carbon.fibers.__(module)
 const o      = carbon.atom.o(module).main
 
@@ -1272,8 +1264,7 @@ module.exports = o({
   post: function(req) {
     return { msg: `Hello ${req.body.message}!` }
   }
-})
-</code>
+})</code>
       </pre>
     </div>
   </section>
@@ -1288,8 +1279,7 @@ module.exports = o({
       <p class="example--body">Carbon.io comes with a testing library that makes it easy to manage large test suites. Here's an example of a HTTP-based test.</p>
       
       <pre class="language-js example--code">
-        <code>
-const carbon = require('carbon-io')
+        <code>const carbon = require('carbon-io')
 const __     = carbon.fibers.__(module)
 const o      = carbon.atom.o(module).main
 
@@ -1312,8 +1302,7 @@ __(function() {
       },
     ]
   })
-})
-</code>
+})</code>
       </pre>
     </div>
   </section>
