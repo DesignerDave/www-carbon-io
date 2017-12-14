@@ -4,22 +4,22 @@ const o      = carbon.atom.o(module).main
 
 __(function() {
   module.exports = o({
-    _type: carbon.carbond.Service,
+<mark js-highlighted-code="endpoints-operations-1">    _type: carbon.carbond.<mark js-inline-highlight="endpoints-operations-1">Service</mark>,</mark>
     port: 8888,
     endpoints : {
       hello: o({
-        _type: carbon.carbond.Endpoint,
+<mark js-highlighted-code="endpoints-operations-2">        _type: carbon.carbond.<mark js-inline-highlight="endpoints-operations-2">Endpoint</mark>,</mark>
 
-        <mark class="no-highlight">get</mark>: {
-          parameters: { 
+<mark js-highlighted-code="endpoints-operations-3">        <mark class="no-highlight" js-inline-highlight="endpoints-operations-3">get</mark>: {</mark>
+  <mark js-highlighted-code="endpoints-operations-4">        <mark js-inline-highlight="endpoints-operations-4">parameters</mark>: {</mark>
             who: {
               location: 'query',  // Parameters can be query, header, path, or body
               required: false,
               <mark class="no-highlight">default</mark>: 'world',
-              schema: { type: 'string' } 
-            }           
+              schema: { type: 'string' }
+            }
           },
-          responses: [
+<mark js-highlighted-code="endpoints-operations-5">          <mark js-inline-highlight="endpoints-operations-5">responses</mark>: [</mark>
             {
               statusCode: 200,
               description: 'Success',
@@ -33,8 +33,8 @@ __(function() {
               }
             }
           ],
-          
-          service: function(req, res) {
+
+<mark js-highlighted-code="endpoints-operations-6">          <mark js-inline-highlight="endpoints-operations-6">service</mark>: function(req, res) {</mark>
             return { msg: `Hello ${req.parameters.who}!` }
           }
         }

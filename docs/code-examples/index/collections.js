@@ -11,7 +11,7 @@ __(function() {
       articles: o({
         _type: carbon.carbond.mongodb.MongoDBCollection,
         collection: 'articles',
-        enabled: { '*': true }
+<mark js-highlighted-code="mongodb-collections-1">        <mark js-inline-highlight="mongodb-collections-1">enabled</mark>: { '*': true }</mark>
       })
     }
   })

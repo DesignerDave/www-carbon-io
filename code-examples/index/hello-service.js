@@ -7,7 +7,7 @@ __(function() {
   module.exports = o({
     _type: carbon.carbond.Service,
     port: 8888,
-    authenticator: o({
+<mark js-highlighted-code="hello-service-1">    <mark js-inline-highlight="hello-service-1">authenticator</mark>: o({</mark>
       _type: carbon.carbond.security.MongoDBApiKeyAuthenticator,
       apiKeyParameterName: 'api_key',
       apiKeyLocation: 'header', // can be 'header' or 'query'
@@ -16,7 +16,7 @@ __(function() {
     }),
     dbUri: 'mongodb://localhost:27017/mydb',
     endpoints : {
-<mark js-highlighted-code="hello-service-1">      hello: <mark js-inline-highlight="hello-service-1">_o</mark>('./HelloEndpoint')</mark>
+      hello: _o('./HelloEndpoint')
     }
   })
 })

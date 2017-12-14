@@ -54,7 +54,7 @@
 <body ontouchstart="">
   <section class="splash" id="splash">
     <div class="splash--particles" id="particles"></div>
-    
+
     <%- include components/_navigation %>
 
     <div class="splash--content-section">
@@ -173,7 +173,7 @@
             </div>
           </div>
         </div>
-        
+
         <div class="carousel--column m-small">
           <h2 class="carousel--header">
             <div class="carousel--header-keyline"></div>
@@ -253,8 +253,8 @@
 
     <div class="example--right">
       <p class="example--body">Each Endpoint is made up of Operations, which can formally define request parameters and responses. Operation definitions can use JSON Schemas to automatically validate input parameters and output responses.</p>
-      
-      <pre class="language-js example--code">
+
+      <pre class="language-js example--code" js-highlight-id="endpoints-operations">
         <code><%-include code-examples/index/endpoints-operations.js%></code>
       </pre>
     </div>
@@ -269,7 +269,7 @@
     <div class="example--right">
       <p class="example--body">Collections are a high-level abstraction on top of Endpoints that provide a higher-level interface for implementing access to a collection of resources. You can easily implement full database CRUD with virtually no code.</p>
 
-      <pre class="language-js example--code">
+      <pre class="language-js example--code" js-highlight-id="mongodb-collections">
         <code><%-include code-examples/index/collections.js%></code>
       </pre>
 
@@ -291,7 +291,7 @@
             <div class="example--triple-detail-list-item"><code>PATCH</code></div>
             <div class="example--triple-detail-list-item"><code>DELETE</code></div>
         </div>
-        
+
       </p>
     </div>
   </section>
@@ -367,7 +367,7 @@
         <div js-code-toggle="hello-service" class="example--toggle s-active">HelloService.js</div>
         <div js-code-toggle="hello-endpoint" class="example--toggle">HelloEndpoint.js</div>
       </div>
-      
+
       <pre js-code-block="hello-service" class="language-js example--code s-visible s-in" js-highlight-id="hello-service">
         <code><%-include code-examples/index/hello-service.js%></code>
       </pre>
@@ -386,8 +386,8 @@
 
     <div class="example--right">
       <p class="example--body">Carbon.io comes with a testing library that makes it easy to manage large test suites. Here's an example of a HTTP-based test.</p>
-      
-      <pre class="language-js example--code">
+
+      <pre class="language-js example--code" js-highlight-id="testing">
         <code><%-include code-examples/index/testing.js%></code>
       </pre>
     </div>
@@ -400,8 +400,8 @@
     </div>
 
     <div class="example--right">
-      <p class="example--body">Every Carbon.io Service is capable of generating its own docs. You can currently choose between Github-flavored Markdown or static HTML using Aglio. The docs here are auto generated from <a href="https://github.com/carbon-io-guides/example__contact-service" target="_blank" title="Carbon.io tutorial">our official tutorial</a>.</p>
-      
+      <p class="example--body">Every Carbon.io Service is capable of generating its own docs. You can currently choose between Github-flavored Markdown or static HTML using Aglio. The docs here are auto generated from <a href="https://github.com/carbon-io-examples/contacts-service-simple" target="_blank" title="Carbon.io tutorial">our official tutorial</a>.</p>
+
       <div class="example--docs-image"></div>
     </div>
   </section>

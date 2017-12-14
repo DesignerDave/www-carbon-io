@@ -54,7 +54,7 @@
 <body ontouchstart="">
   <section class="splash" id="splash">
     <div class="splash--particles" id="particles"></div>
-    
+
     
 <nav js-navigation class="navigation">
   <a href="/" title="Carbon.io home">
@@ -463,7 +463,7 @@ __(function() {
             </div>
           </div>
         </div>
-        
+
         <div class="carousel--column m-small">
           <h2 class="carousel--header">
             <div class="carousel--header-keyline"></div>
@@ -540,7 +540,7 @@ const o      = carbon.atom.o(module).main
     port: 8888,
     endpoints : {
 <mark js-highlighted-code="hello-2">      hello: <mark js-inline-highlight="hello-2">o</mark>({</mark>
-        _type: carbon.carbond.Endpoint,
+  <mark js-highlighted-code="hello-3">        <mark js-inline-highlight="hello-3">_type:</mark> carbon.carbond.Endpoint,</mark>
         <mark class="no-highlight">get</mark>: function(req, res) {
           return { msg: 'Hello, world!' }
         }
@@ -560,30 +560,30 @@ const o      = carbon.atom.o(module).main
 
     <div class="example--right">
       <p class="example--body">Each Endpoint is made up of Operations, which can formally define request parameters and responses. Operation definitions can use JSON Schemas to automatically validate input parameters and output responses.</p>
-      
-      <pre class="language-js example--code">
+
+      <pre class="language-js example--code" js-highlight-id="endpoints-operations">
         <code>const carbon = require('carbon-io')
 const __     = carbon.fibers.__(module)
 const o      = carbon.atom.o(module).main
 
 __(function() {
   module.exports = o({
-    _type: carbon.carbond.Service,
+<mark js-highlighted-code="endpoints-operations-1">    _type: carbon.carbond.<mark js-inline-highlight="endpoints-operations-1">Service</mark>,</mark>
     port: 8888,
     endpoints : {
       hello: o({
-        _type: carbon.carbond.Endpoint,
+<mark js-highlighted-code="endpoints-operations-2">        _type: carbon.carbond.<mark js-inline-highlight="endpoints-operations-2">Endpoint</mark>,</mark>
 
-        <mark class="no-highlight">get</mark>: {
-          parameters: { 
+<mark js-highlighted-code="endpoints-operations-3">        <mark class="no-highlight" js-inline-highlight="endpoints-operations-3">get</mark>: {</mark>
+  <mark js-highlighted-code="endpoints-operations-4">        <mark js-inline-highlight="endpoints-operations-4">parameters</mark>: {</mark>
             who: {
               location: 'query',  // Parameters can be query, header, path, or body
               required: false,
               <mark class="no-highlight">default</mark>: 'world',
-              schema: { type: 'string' } 
-            }           
+              schema: { type: 'string' }
+            }
           },
-          responses: [
+<mark js-highlighted-code="endpoints-operations-5">          <mark js-inline-highlight="endpoints-operations-5">responses</mark>: [</mark>
             {
               statusCode: 200,
               description: 'Success',
@@ -597,8 +597,8 @@ __(function() {
               }
             }
           ],
-          
-          service: function(req, res) {
+
+<mark js-highlighted-code="endpoints-operations-6">          <mark js-inline-highlight="endpoints-operations-6">service</mark>: function(req, res) {</mark>
             return { msg: `Hello ${req.parameters.who}!` }
           }
         }
@@ -619,7 +619,7 @@ __(function() {
     <div class="example--right">
       <p class="example--body">Collections are a high-level abstraction on top of Endpoints that provide a higher-level interface for implementing access to a collection of resources. You can easily implement full database CRUD with virtually no code.</p>
 
-      <pre class="language-js example--code">
+      <pre class="language-js example--code" js-highlight-id="mongodb-collections">
         <code>const carbon = require('carbon-io')
 const __     = carbon.fibers.__(module)
 const o      = carbon.atom.o(module).main
@@ -633,7 +633,7 @@ __(function() {
       articles: o({
         _type: carbon.carbond.mongodb.MongoDBCollection,
         collection: 'articles',
-        enabled: { '*': true }
+<mark js-highlighted-code="mongodb-collections-1">        <mark js-inline-highlight="mongodb-collections-1">enabled</mark>: { '*': true }</mark>
       })
     }
   })
@@ -658,7 +658,7 @@ __(function() {
             <div class="example--triple-detail-list-item"><code>PATCH</code></div>
             <div class="example--triple-detail-list-item"><code>DELETE</code></div>
         </div>
-        
+
       </p>
     </div>
   </section>
@@ -1203,7 +1203,7 @@ __(function() {
         <div js-code-toggle="hello-service" class="example--toggle s-active">HelloService.js</div>
         <div js-code-toggle="hello-endpoint" class="example--toggle">HelloEndpoint.js</div>
       </div>
-      
+
       <pre js-code-block="hello-service" class="language-js example--code s-visible s-in" js-highlight-id="hello-service">
         <code>const carbon = require('carbon-io')
 const __     = carbon.fibers.__(module)
@@ -1214,7 +1214,7 @@ __(function() {
   module.exports = o({
     _type: carbon.carbond.Service,
     port: 8888,
-    authenticator: o({
+<mark js-highlighted-code="hello-service-1">    <mark js-inline-highlight="hello-service-1">authenticator</mark>: o({</mark>
       _type: carbon.carbond.security.MongoDBApiKeyAuthenticator,
       apiKeyParameterName: 'api_key',
       apiKeyLocation: 'header', // can be 'header' or 'query'
@@ -1223,7 +1223,7 @@ __(function() {
     }),
     dbUri: 'mongodb://localhost:27017/mydb',
     endpoints : {
-<mark js-highlighted-code="hello-service-1">      hello: <mark js-inline-highlight="hello-service-1">_o</mark>('./HelloEndpoint')</mark>
+      hello: _o('./HelloEndpoint')
     }
   })
 })</code>
@@ -1277,25 +1277,25 @@ module.exports = o({
 
     <div class="example--right">
       <p class="example--body">Carbon.io comes with a testing library that makes it easy to manage large test suites. Here's an example of a HTTP-based test.</p>
-      
-      <pre class="language-js example--code">
+
+      <pre class="language-js example--code" js-highlight-id="testing">
         <code>const carbon = require('carbon-io')
 const __     = carbon.fibers.__(module)
 const o      = carbon.atom.o(module).main
 
 __(function() {
   module.exports = o({
-    _type: testtube.HttpTest,
+<mark js-highlighted-code="testing-1">    _type: testtube.<mark js-inline-highlight="testing-1">HttpTest</mark>,</mark>
     name: 'HttpTests',
     description: 'Http tests',
     baseUrl: 'http://localhost:8888',
-    tests: [
+<mark js-highlighted-code="testing-2">    <mark js-inline-highlight="testing-2">tests</mark>: [</mark>
       {
-        reqSpec: {
+<mark js-highlighted-code="testing-3">        <mark js-inline-highlight="testing-3">reqSpec</mark>: {</mark>
           url: '/hello',
           method: 'GET'
         },
-        resSpec: {
+<mark js-highlighted-code="testing-4">        <mark js-inline-highlight="testing-4">resSpec</mark>: {</mark>
           statusCode: 200,
           body: 'Hello world!'
         }
@@ -1314,8 +1314,8 @@ __(function() {
     </div>
 
     <div class="example--right">
-      <p class="example--body">Every Carbon.io Service is capable of generating its own docs. You can currently choose between Github-flavored Markdown or static HTML using Aglio. The docs here are auto generated from <a href="https://github.com/carbon-io-guides/example__contact-service" target="_blank" title="Carbon.io tutorial">our official tutorial</a>.</p>
-      
+      <p class="example--body">Every Carbon.io Service is capable of generating its own docs. You can currently choose between Github-flavored Markdown or static HTML using Aglio. The docs here are auto generated from <a href="https://github.com/carbon-io-examples/contacts-service-simple" target="_blank" title="Carbon.io tutorial">our official tutorial</a>.</p>
+
       <div class="example--docs-image"></div>
     </div>
   </section>

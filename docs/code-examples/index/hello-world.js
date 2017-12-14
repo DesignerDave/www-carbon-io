@@ -8,7 +8,7 @@ const o      = carbon.atom.o(module).main
     port: 8888,
     endpoints : {
 <mark js-highlighted-code="hello-2">      hello: <mark js-inline-highlight="hello-2">o</mark>({</mark>
-        _type: carbon.carbond.Endpoint,
+  <mark js-highlighted-code="hello-3">        <mark js-inline-highlight="hello-3">_type:</mark> carbon.carbond.Endpoint,</mark>
         <mark class="no-highlight">get</mark>: function(req, res) {
           return { msg: 'Hello, world!' }
         }

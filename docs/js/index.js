@@ -130,7 +130,7 @@ function render() {
   // Stop looping once camera is positioned correctly
   if (!((mouseX - camera.position.x) < 2) && !((-mouseY - camera.position.y) < 2)) {
     renderer.render(scene, camera);
-  
+
   }
 
   // If animation is within 100px of completion, show content
@@ -232,7 +232,7 @@ Terminal.prototype = {
     var requiresModifier = "~!@#$%^&*()_+QWERTYUIOP{}|ASDFGHJKL:\"ZXCVBNM<>?".split("");
     var string = this.processCommandString(options.string);
     var $commandEl = $("<div class='terminal--command s-active s-blink'></div>");
-    
+
     this.$el.append($commandEl);
     this.scrollToBottom();
 
@@ -249,7 +249,7 @@ Terminal.prototype = {
 
       function renderCharacter (index) {
         var item = this.typeQueue[index];
-        
+
         setTimeout(function () {
           var currentText = $commandEl.text();
           $commandEl.removeClass("s-blink");
@@ -279,7 +279,7 @@ Terminal.prototype = {
 
     if (typeof string === "string") {
       string = string.split("");
-    
+
     } else {
       string.forEach(function (val, i) {
         if (val.charAt(0) !== "<") string[i] = val.split("");
@@ -351,7 +351,7 @@ function initTerminals () {
       }
     );
 
-    window.beautifulTestsTerminal = 
+    window.beautifulTestsTerminal =
       new Terminal($("[js-terminal='tests']")[0], {
         onComplete: function () {
           if (window.featureCarousel.state.autonomousRotate) {
@@ -499,7 +499,7 @@ function initCarousel () {
       }
     ]
   });
-  
+
   window.featureCarousel.start();
 
   $("[js-carousel-previous]").click(function () {
@@ -649,7 +649,7 @@ Carousel.prototype = {
     if (stopRotate) {
       this.state.autonomousRotate = false;
     }
-    
+
     var nextIndex;
     if (this.state.currentIndex - 1 < 0) {
       nextIndex = this.$children.length - 1;
@@ -745,7 +745,7 @@ function Highlight (options) {
       !options.lines ||
       !options.title ||
       !options.body) {
-    
+
     console.error("Highlight requires 'preID', 'lines', 'title', and 'body' as options.");
   }
 
@@ -778,7 +778,7 @@ Highlight.prototype = {
     this.$highlightedCode.hover(boundOnHover, boundOffHover);
     this.$inlineHighlights.hover(boundOnHover, boundOffHover);
 
-    
+
     var boundToggleActive = this.toggleActive.bind(this);
     this.$lineHighlight.click(boundToggleActive);
     this.$highlightedCode.click(boundToggleActive);
@@ -945,30 +945,114 @@ var codeHighlights = [
     preID: "hello-world",
     highlightID: "hello-1",
     lines: "5",
-    title: "Fibers",
-    body: "Fibers allow you to write code that is logically synchronous.",
+    title: "__: Fibers",
+    body: "Fibers (`__`) add co-routine support to Node.js, which allows you to write asynchronous code in a logically synchronous way. In Carbon.io we wrap our Services in Fibers.",
     readMore: "https://docs.carbon.io/en/latest/packages/carbon-core/docs/packages/fibers/docs/guide/index.html"
   }, {
     preID: "hello-world",
     highlightID: "hello-2",
     lines: "10",
-    title: "Atom",
-    body: "Atom is the universal object factory, used to instantiate objects and create components."
+    title: "o: Atom",
+    body: "Atom (`o`) is a powerful tool for creating and configuring objects. Here, atom is defining an instance of the `Service` class (see `_type: carbon.carbond.Service`).",
+    readMore: "https://docs.carbon.io/en/latest/packages/carbon-core/docs/packages/atom/docs/index.html"
+  }, {
+    preID: "hello-world",
+    highlightID: "hello-3",
+    lines: "11",
+    title: "_type",
+    body: "When constructing an object with Atom (`o`), you can define the class of the object with the `_type` property. The `_type` can be a class constructor or another object. The instantiated object will inherit methods, properties, and the prototype chain from this value.",
+    readMore: "https://docs.carbon.io/en/latest/packages/carbon-core/docs/packages/atom/docs/index.html"
+  }, {
+    preID: "endpoints-operations",
+    highlightID: "endpoints-operations-1",
+    lines: "7",
+    title: "Service",
+    body: "A Service defines an HTTP server that exposes a RESTful JSON API. Instances of Service define a tree of Endpoints which define the API’s URLs. The `Service` class comes with several built-in conveniences such as a command-line interface, authentication mechanisms, and documentation generation.",
+    readMore: "https://docs.carbon.io/en/latest/packages/carbond/docs/guide/services.html"
+  }, {
+    preID: "endpoints-operations",
+    highlightID: "endpoints-operations-2",
+    lines: "11",
+    title: "Endpoint",
+    body: "An Endpoint defines HTTP methods for a single path. Endpoints can also formally define expected the request parameters and responses associated with each HTTP method, as well as the handler code that defines the method’s implementation.",
+    readMore: "https://docs.carbon.io/en/latest/packages/carbond/docs/guide/endpoints.html"
+  }, {
+    preID: "endpoints-operations",
+    highlightID: "endpoints-operations-3",
+    lines: "13",
+    title: "get",
+    body: "Endpoints have properties corresponding to the HTTP methods: `get`, `post`, `put`, `patch`, `delete`, `head`, and `options`. You can define request parameters (`parameters`), response objects (`responses`), and a handler (`service`) for each HTTP method.",
+    readMore: "https://docs.carbon.io/en/latest/packages/carbond/docs/guide/endpoints.html"
+  }, {
+    preID: "endpoints-operations",
+    highlightID: "endpoints-operations-4",
+    lines: "14",
+    title: "parameters",
+    body: "Each Operation can define the set of parameters it takes, including a JSON schema for that parameter, whether the parameter is required, as well as a default value.",
+    readMore: "https://docs.carbon.io/en/latest/packages/carbond/docs/guide/operations.html#operation-responses"
+  }, {
+    preID: "endpoints-operations",
+    highlightID: "endpoints-operations-5",
+    lines: "22",
+    title: "responses",
+    body: "Operations can formally define their responses by HTTP status code and specify JSON schemas that are automatically enforced.",
+    readMore: "https://docs.carbon.io/en/master/packages/carbond/docs/guide/operations.html#operation-responses"
+  }, {
+    preID: "endpoints-operations",
+    highlightID: "endpoints-operations-6",
+    lines: "37",
+    title: "service (operation handler)",
+    body: "The `service` method defines the handler for a particular HTTP verb. It takes in an Express request object and returns the response body. [Read more](link to Operations/service)"
+  }, {
+    preID: "mongodb-collections",
+    highlightID: "mongodb-collections-1",
+    lines: "14",
+    title: "enabled",
+    body: "You may explicitly enable / disable Collection operations via the enabled property.",
+    readMore: "https://docs.carbon.io/en/latest/packages/carbond/docs/guide/collections.html?navScrollTop=236"
   }, {
     preID: "chaining-public",
     highlightID: "chaining-public-1",
     lines: "10",
-    title: "Bond",
-    body: "Bond is the name resolver component that allows for objects to be resolved from names in a variety of \
-          namespaces. Here we resolve the URL of the private microservice (PrivateHelloService)."
+    title: "`_o` Bond",
+    body: "Bond is a convenient universal name resolver component for Carbon.io. Bond allows for objects to be resolved from names in a variety of namespaces. Examples: (_o(“env:FOO”))",
+    readMore: "https://docs.carbon.io/en/latest/packages/carbon-core/docs/packages/bond/docs/index.html"
   }, {
     preID: "hello-service",
     highlightID: "hello-service-1",
-    lines: "19",
-    title: "Bond",
-    body: "Bond is the name resolver component that allows for objects to be resolved from names in a variety of \
-          namespaces. Here we resolve the filename that contains the Endpoint for our Service."
-  } 
+    lines: "10",
+    title: "authenticator",
+    body: "You can define your own custom authenticator by creating an instance of the Authenticator class (or a subclass) with a customer authenticate method.",
+    readMore: "https://docs.carbon.io/en/latest/packages/carbond/docs/guide/aac/authentication.html?navScrollTop=89"
+  }, {
+    preID: "testing",
+    highlightID: "testing-1",
+    lines: "7",
+    title: "HttpTest",
+    body: "The HttpTest class allows you to easily test endpoints by issuing requests to a service and validating the responses to those requests.",
+    readMore: "https://docs.carbon.io/en/latest/packages/carbon-core/docs/packages/test-tube/docs/guide/index.html"
+  }, {
+    preID: "testing",
+    highlightID: "testing-2",
+    lines: "11",
+    title: "tests",
+    body: "The tests property allows you to implement a test suite. Simply override the tests property with an array of tests.",
+    readMore: "https://docs.carbon.io/en/latest/packages/carbon-core/docs/packages/test-tube/docs/guide/index.html"
+  }, {
+    preID: "testing",
+    highlightID: "testing-3",
+    lines: "13",
+    title: "reqSpec",
+    body: "The reqSpec property provides a shorthand for issuing requests to a service. Additionally, you can specify query parameters, headers, or a body.",
+    readMore: "https://docs.carbon.io/en/latest/packages/carbon-core/docs/packages/test-tube/docs/guide/index.html"
+  }, {
+    preID: "testing",
+    highlightID: "testing-4",
+    lines: "17",
+    title: "resSpec",
+    body: "The resSpec property provides a shorthand for validating responses to requests.",
+    readMore: "https://docs.carbon.io/en/latest/packages/carbon-core/docs/packages/test-tube/docs/guide/index.html"
+  }
 ];
 
 
@@ -997,7 +1081,7 @@ $(document).ready(function () {
 
   $("[js-code-toggle]").click(function () {
     var $this = $(this);
-    
+
     if (!$this.hasClass("s-active")) {
       var $parent = $this.parent();
       var $selectedExample = $parent.siblings("[js-code-block='" + $this.attr("js-code-toggle") + "']");
