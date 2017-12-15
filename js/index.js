@@ -945,14 +945,14 @@ var codeHighlights = [
     preID: "hello-world",
     highlightID: "hello-1",
     lines: "5",
-    title: "__: Fibers",
+    title: "`__`: Fibers",
     body: "Fibers (`__`) add co-routine support to Node.js, which allows you to write asynchronous code in a logically synchronous way. In Carbon.io we wrap our Services in Fibers.",
     readMore: "https://docs.carbon.io/en/latest/packages/carbon-core/docs/packages/fibers/docs/guide/index.html"
   }, {
     preID: "hello-world",
     highlightID: "hello-2",
     lines: "10",
-    title: "o: Atom",
+    title: "`o`: Atom",
     body: "Atom (`o`) is a powerful tool for creating and configuring objects. Here, atom is defining an instance of the `Service` class (see `_type: carbon.carbond.Service`).",
     readMore: "https://docs.carbon.io/en/latest/packages/carbon-core/docs/packages/atom/docs/index.html"
   }, {
@@ -1002,7 +1002,8 @@ var codeHighlights = [
     highlightID: "endpoints-operations-6",
     lines: "37",
     title: "service (operation handler)",
-    body: "The `service` method defines the handler for a particular HTTP verb. It takes in an Express request object and returns the response body. [Read more](link to Operations/service)"
+    body: "The `service` method defines the handler for a particular HTTP verb. It takes in an Express request object and returns the response body.",
+    readMore: "https://docs.carbon.io/en/latest/packages/carbond/docs/guide/operations.html#operation-responses"
   }, {
     preID: "mongodb-collections",
     highlightID: "mongodb-collections-1",
@@ -1014,7 +1015,7 @@ var codeHighlights = [
     preID: "chaining-public",
     highlightID: "chaining-public-1",
     lines: "10",
-    title: "`_o` Bond",
+    title: "`_o`: Bond",
     body: "Bond is a convenient universal name resolver component for Carbon.io. Bond allows for objects to be resolved from names in a variety of namespaces. Examples: (_o(“env:FOO”))",
     readMore: "https://docs.carbon.io/en/latest/packages/carbon-core/docs/packages/bond/docs/index.html"
   }, {

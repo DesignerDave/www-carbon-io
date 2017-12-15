@@ -13,7 +13,7 @@ __(function() {
 <mark js-highlighted-code="endpoints-operations-3">        <mark class="no-highlight" js-inline-highlight="endpoints-operations-3">get</mark>: {</mark>
   <mark js-highlighted-code="endpoints-operations-4">        <mark js-inline-highlight="endpoints-operations-4">parameters</mark>: {</mark>
             who: {
-              location: 'query',  // Parameters can be query, header, path, or body
+              location: 'query',  // can be query, header, path, or body
               required: false,
               <mark class="no-highlight">default</mark>: 'world',
               schema: { type: 'string' }
