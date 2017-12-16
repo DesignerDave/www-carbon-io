@@ -16,6 +16,7 @@ $.fn.isVisible = function(partial) {
   return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
 };
 
+
 function throttle (fn, threshhold, scope) {
   threshhold || (threshhold = 250);
   var last,
@@ -51,9 +52,6 @@ var container;
 var camera, scene, renderer;
 
 var particles, particle, count = 0;
-
-var mouseX = 200,
-    mouseY = -320;
 
 var windowHalfX = window.innerWidth / 2;
 var windowHalfY = window.innerHeight / 2;
@@ -103,13 +101,16 @@ function init () {
 
 
 function onWindowResize() {
-  windowHalfX = window.innerWidth / 2;
-  windowHalfY = window.innerHeight / 2;
+  var innerWidth = window.innerWidth
+  var innerHeight = window.innerHeight
 
-  camera.aspect = window.innerWidth / window.innerHeight;
+  windowHalfX = innerWidth / 2;
+  windowHalfY = innerHeight / 2;
+
+  camera.aspect = innerWidth / innerHeight;
   camera.updateProjectionMatrix();
 
-  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setSize(innerWidth, innerHeight);
 
   positionParticles();
 }
@@ -127,23 +128,25 @@ function animate() {
 
 var classAdded
 function render() {
-  camera.position.x += (mouseX - camera.position.x) * .05;
-  camera.position.y += (-mouseY - camera.position.y) * .05;
+  var posX = 200 - camera.position.x
+  var posY = 320 - camera.position.y
+
+  camera.position.x += posX * .05;
+  camera.position.y += posY * .05;
   camera.lookAt(scene.position);
 
   // Stop looping once camera is positioned correctly
-  if (!((mouseX - camera.position.x) < 2) && !((-mouseY - camera.position.y) < 2)) {
+  if (posX >= 2 && posY >= 2) {
     renderer.render(scene, camera);
   }
 
   // If animation is within 100px of completion, show content
-  if (!classAdded && (mouseX - camera.position.x) < 100 && (-mouseY - camera.position.y) < 100) {
+  if (!classAdded && posX < 100 && posY < 100) {
     classAdded = true
     $("[js-header-group]").addClass("s-visible");
 
     setTimeout(function () {
-      $("[js-header-cta]").addClass("s-visible");
-      $("[js-navigation]").addClass("s-visible");
+      $("[js-header-cta], [js-navigation]").addClass("s-visible");
     }, 500);
   }
 }
@@ -154,14 +157,16 @@ function positionParticles () {
   for (var ix = 0; ix < AMOUNTX; ix++) {
     for (var iy = 0; iy < AMOUNTY; iy++) {
       particle = particles[i++];
-      particle.position.y = (Math.sin((ix + count) * 0.3) * 50) + (Math.sin((iy + count) * 0.5) * 50);
-      particle.scale.x = particle.scale.y = (Math.sin((ix + count) * 0.3) + 1) * 2 + (Math.sin((iy + count) * 0.5) + 2) * 2;
+
+      var xSin = Math.sin((ix + count) * 0.3)
+      var ySin = Math.sin((iy + count) * 0.5)
+
+      particle.position.y = xSin * 50 + ySin * 50;
+      particle.scale.x = particle.scale.y = (xSin + 1) * 2 + (ySin + 2) * 2;
     }
   }
 
   renderer.render(scene, camera);
-
-  count += 0;
 }
 
 
