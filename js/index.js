@@ -95,6 +95,9 @@ function init () {
   renderer.setSize(window.innerWidth, window.innerHeight);
   container.appendChild(renderer.domElement);
 
+  var $rendererParent = $('#particles')
+  $rendererParent.css("opacity", 0.7)
+
   window.addEventListener('resize', onWindowResize, false);
 }
 
@@ -113,7 +116,7 @@ function onWindowResize() {
 
 var frames = 0
 function animate() {
-  if (frames < 120) {
+  if (frames < 100) {
     requestAnimationFrame(animate);
     frames++
 
@@ -122,7 +125,7 @@ function animate() {
 
 }
 
-
+var classAdded
 function render() {
   camera.position.x += (mouseX - camera.position.x) * .05;
   camera.position.y += (-mouseY - camera.position.y) * .05;
@@ -134,7 +137,8 @@ function render() {
   }
 
   // If animation is within 100px of completion, show content
-  if ((mouseX - camera.position.x) < 100 && (-mouseY - camera.position.y) < 100) {
+  if (!classAdded && (mouseX - camera.position.x) < 100 && (-mouseY - camera.position.y) < 100) {
+    classAdded = true
     $("[js-header-group]").addClass("s-visible");
 
     setTimeout(function () {
@@ -708,25 +712,32 @@ Carousel.prototype = {
 
 
 var $carousel = $("[js-feature-carousel]");
-var $examples = $("[js-example-section]");
 var $scrollHeader = $("[js-scroll-header]");
 var $scrollHeaderClone = $scrollHeader.clone().addClass("m-fixed");
 var scrollHeaderVisible = false;
+var $examples = $("[js-example-section]:not(.s-visible)");
 
-function scrollHandler () {
+var scrollHandler = throttle(function () {
+
   if ($carousel.isVisible(true) && (!window.carouselInitialized || window.terminalsInitialized)) {
     initTerminals();
     initCarousel();
   }
 
-  $examples.each(function (i, node) {
-    var $el = $(node);
+  if ($examples.length) {
+    $examples.each(function (i, node) {
+      var $el = $(node);
 
-    if ($el.isVisible(true)) {
-      $el.addClass("s-visible");
-    }
-  });
-}
+      if ($el.isVisible(true)) {
+        $el.addClass("s-visible");
+        $examples = $("[js-example-section]:not(.s-visible)");
+      }
+    });
+  } else {
+    $(window).off('scroll', scrollHandler)
+  }
+
+}, 200)
 
 
 function isMobile () {
@@ -1065,17 +1076,14 @@ function initCodeHighlights () {
 
 
 $(document).ready(function () {
-  init();
-  positionParticles();
-  animate();
+  // Give client a second to breathe
+  setTimeout(function () {
+    init();
+    positionParticles();
+    animate();
+  }, 100)
 
   initCodeHighlights();
-
-  // Fire once on page load to ensure content in
-  // viewport is visible
-  if (!isMobile()) {
-    scrollHandler();
-  }
 
   // Initialize fastclick on mobile
   // FastClick.attach(document.body);
@@ -1111,8 +1119,4 @@ $(document).ready(function () {
     $(this).toggleClass("s-active");
     $("[js-mobile-navigation]").toggleClass("s-active");
   });
-
-  if (!isMobile()) {
-    $(window).scroll(scrollHandler);
-  }
 });
