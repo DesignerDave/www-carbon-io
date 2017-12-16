@@ -19,7 +19,7 @@
 	&.deleted {
 		color: $syntax--yellow;
 	}
-	
+
 	&.number {
 		color: $syntax--blue;
 	}
@@ -177,13 +177,13 @@ pre[js-highlight-id] {
 	box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 	transform: translate3d($horizontal-spacing--medium, 0, 0);
 	padding: $vertical-spacing--normal $horizontal-spacing--normal;
-	border-radius: $border-radius--small;
+	border-radius: $border-radius--large;
 	width: 300px;
 	cursor: default;
 	pointer-events: none;
 
 	@include media--small {
-		position: absolute;	
+		position: absolute;
 		top: auto;
 		top: calc(100% + #{$vertical-spacing--normal});
 		left: 0;

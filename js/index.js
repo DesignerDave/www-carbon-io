@@ -111,11 +111,15 @@ function onWindowResize() {
   positionParticles();
 }
 
-
+var frames = 0
 function animate() {
-  requestAnimationFrame(animate);
+  if (frames < 120) {
+    requestAnimationFrame(animate);
+    frames++
 
-  render();
+    render();
+  }
+
 }
 
 
@@ -124,13 +128,9 @@ function render() {
   camera.position.y += (-mouseY - camera.position.y) * .05;
   camera.lookAt(scene.position);
 
-  // Uncomment to animate
-  // positionParticles();
-
   // Stop looping once camera is positioned correctly
   if (!((mouseX - camera.position.x) < 2) && !((-mouseY - camera.position.y) < 2)) {
     renderer.render(scene, camera);
-
   }
 
   // If animation is within 100px of completion, show content
