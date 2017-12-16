@@ -715,36 +715,6 @@ Carousel.prototype = {
   }
 }
 
-
-var $carousel = $("[js-feature-carousel]");
-var $scrollHeader = $("[js-scroll-header]");
-var $scrollHeaderClone = $scrollHeader.clone().addClass("m-fixed");
-var scrollHeaderVisible = false;
-var $examples = $("[js-example-section]:not(.s-visible)");
-
-var scrollHandler = throttle(function () {
-
-  if ($carousel.isVisible(true) && (!window.carouselInitialized || window.terminalsInitialized)) {
-    initTerminals();
-    initCarousel();
-  }
-
-  if ($examples.length) {
-    $examples.each(function (i, node) {
-      var $el = $(node);
-
-      if ($el.isVisible(true)) {
-        $el.addClass("s-visible");
-        $examples = $("[js-example-section]:not(.s-visible)");
-      }
-    });
-  } else {
-    $(window).off('scroll', scrollHandler)
-  }
-
-}, 200)
-
-
 function isMobile () {
   window.isMobileDevice = window.isMobileDevice || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
@@ -788,25 +758,19 @@ Highlight.prototype = {
       this.$tooltip.toggleClass("s-active");
     }
 
-    var boundOnHover = this.onHover.bind(this);
-    var boundOffHover = this.offHover.bind(this);
-    this.$lineHighlight.hover(boundOnHover, boundOffHover);
-    this.$highlightedCode.hover(boundOnHover, boundOffHover);
-    this.$inlineHighlights.hover(boundOnHover, boundOffHover);
+    this.boundOnHover = this.onHover.bind(this);
+    this.boundOffHover = this.offHover.bind(this);
+    this.$lineHighlight.hover(this.boundOnHover, this.boundOffHover);
+    this.$highlightedCode.hover(this.boundOnHover, this.boundOffHover);
+    this.$inlineHighlights.hover(this.boundOnHover, this.boundOffHover);
 
 
-    var boundToggleActive = this.toggleActive.bind(this);
-    this.$lineHighlight.click(boundToggleActive);
-    this.$highlightedCode.click(boundToggleActive);
-    this.$inlineHighlights.click(boundToggleActive);
+    this.boundToggleActive = this.toggleActive.bind(this);
+    this.$lineHighlight.click(this.boundToggleActive);
+    this.$highlightedCode.click(this.boundToggleActive);
+    this.$inlineHighlights.click(this.boundToggleActive);
 
-    var boundDeactivate = this.deactivate.bind(this);
-    $("body").click(boundDeactivate);
-    $(window).on("keydown", function (e) {
-      if (e.keyCode == 27 || e.key === "Escape") {
-        this.deactivate(e);
-      }
-    }.bind(this));
+    this.boundDeactivate = this.deactivate.bind(this);
   },
 
 
@@ -961,29 +925,29 @@ var codeHighlights = [
     preID: "hello-world",
     highlightID: "hello-1",
     lines: "5",
-    title: "`__`: Fibers",
-    body: "Fibers (`__`) add co-routine support to Node.js, which allows you to write asynchronous code in a logically synchronous way. In Carbon.io we wrap our Services in Fibers.",
+    title: "<code>__</code>: Fibers",
+    body: "Fibers (<code>__</code>) add co-routine support to Node.js, which allows you to write asynchronous code in a logically synchronous way. In Carbon.io we wrap our Services in Fibers.",
     readMore: "https://docs.carbon.io/en/latest/packages/carbon-core/docs/packages/fibers/docs/guide/index.html"
   }, {
     preID: "hello-world",
     highlightID: "hello-2",
     lines: "10",
-    title: "`o`: Atom",
-    body: "Atom (`o`) is a powerful tool for creating and configuring objects. Here, atom is defining an instance of the `Service` class (see `_type: carbon.carbond.Service`).",
+    title: "<code>o</code>: Atom",
+    body: "Atom (<code>o</code>) is a powerful tool for creating and configuring objects. Here, atom is defining an instance of the <code>Service</code> class (see <code>_type: carbon.carbond.Service</code>).",
     readMore: "https://docs.carbon.io/en/latest/packages/carbon-core/docs/packages/atom/docs/index.html"
   }, {
     preID: "hello-world",
     highlightID: "hello-3",
     lines: "11",
     title: "_type",
-    body: "When constructing an object with Atom (`o`), you can define the class of the object with the `_type` property. The `_type` can be a class constructor or another object. The instantiated object will inherit methods, properties, and the prototype chain from this value.",
+    body: "When constructing an object with Atom (<code>o</code>), you can define the class of the object with the <code>_type</code> property. The <code>_type</code> can be a class constructor or another object. The instantiated object will inherit methods, properties, and the prototype chain from this value.",
     readMore: "https://docs.carbon.io/en/latest/packages/carbon-core/docs/packages/atom/docs/index.html"
   }, {
     preID: "endpoints-operations",
     highlightID: "endpoints-operations-1",
     lines: "7",
     title: "Service",
-    body: "A Service defines an HTTP server that exposes a RESTful JSON API. Instances of Service define a tree of Endpoints which define the API’s URLs. The `Service` class comes with several built-in conveniences such as a command-line interface, authentication mechanisms, and documentation generation.",
+    body: "A Service defines an HTTP server that exposes a RESTful JSON API. Instances of Service define a tree of Endpoints which define the API’s URLs. The<code>Service</code> class comes with several built-in conveniences such as a command-line interface, authentication mechanisms, and documentation generation.",
     readMore: "https://docs.carbon.io/en/latest/packages/carbond/docs/guide/services.html"
   }, {
     preID: "endpoints-operations",
@@ -997,7 +961,7 @@ var codeHighlights = [
     highlightID: "endpoints-operations-3",
     lines: "13",
     title: "get",
-    body: "Endpoints have properties corresponding to the HTTP methods: `get`, `post`, `put`, `patch`, `delete`, `head`, and `options`. You can define request parameters (`parameters`), response objects (`responses`), and a handler (`service`) for each HTTP method.",
+    body: "Endpoints have properties corresponding to the HTTP methods: <code>get</code>, <code>post</code>, <code>put</code>, <code>patch</code>, <code>delete</code>, <code>head</code>, and <code>options</code>. You can define request parameters (<code>parameters</code>), response objects (<code>responses</code>), and a handler (<code>service</code>) for each HTTP method.",
     readMore: "https://docs.carbon.io/en/latest/packages/carbond/docs/guide/endpoints.html"
   }, {
     preID: "endpoints-operations",
@@ -1018,7 +982,7 @@ var codeHighlights = [
     highlightID: "endpoints-operations-6",
     lines: "37",
     title: "service (operation handler)",
-    body: "The `service` method defines the handler for a particular HTTP verb. It takes in an Express request object and returns the response body.",
+    body: "The<code>service</code> method defines the handler for a particular HTTP verb. It takes in an Express request object and returns the response body.",
     readMore: "https://docs.carbon.io/en/latest/packages/carbond/docs/guide/operations.html#operation-responses"
   }, {
     preID: "mongodb-collections",
@@ -1031,8 +995,8 @@ var codeHighlights = [
     preID: "chaining-public",
     highlightID: "chaining-public-1",
     lines: "10",
-    title: "`_o`: Bond",
-    body: "Bond is a convenient universal name resolver component for Carbon.io. Bond allows for objects to be resolved from names in a variety of namespaces. Examples: (_o(“env:FOO”))",
+    title: "<code>_o</code>: Bond",
+    body: "Bond is a convenient universal name resolver component for Carbon.io. Bond allows for objects to be resolved from names in a variety of namespaces. Examples: <code>_o(“env:FOO”)</code>",
     readMore: "https://docs.carbon.io/en/latest/packages/carbon-core/docs/packages/bond/docs/index.html"
   }, {
     preID: "hello-service",
@@ -1074,8 +1038,10 @@ var codeHighlights = [
 
 
 function initCodeHighlights () {
+  window.codeHighlightInstances = []
   codeHighlights.forEach(function (options) {
     var highlight = new Highlight(options);
+    window.codeHighlightInstances.push(highlight);
   });
 }
 
@@ -1088,7 +1054,23 @@ $(document).ready(function () {
     animate();
   }, 100)
 
+
   initCodeHighlights();
+
+  $("body").click(function (e) {
+    window.codeHighlightInstances.forEach(function (highlight) {
+      highlight.boundDeactivate(e)
+    })
+  });
+
+  $(window).on("keydown", function (e) {
+    if (e.keyCode == 27 || e.key === "Escape") {
+      window.codeHighlightInstances.forEach(function (highlight) {
+        highlight.boundDeactivate(e)
+      })
+    }
+  });
+
 
   // Initialize fastclick on mobile
   // FastClick.attach(document.body);
@@ -1106,7 +1088,6 @@ $(document).ready(function () {
       $parent.siblings("[js-code-block]").not($selectedExample).removeClass("s-visible");
 
       $selectedExample.addClass("s-visible");
-
     }
   });
 
