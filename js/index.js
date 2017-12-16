@@ -738,6 +738,7 @@ function Highlight (options) {
   this["$preWrapper"] = $("pre[js-highlight-id='" + options.preID + "']");
   this["$inlineHighlights"] = options.highlightID ? $("[js-inline-highlight='" + options.highlightID + "']") : null;
   this["$highlightedCode"] = $("[js-highlighted-code='" + options.highlightID + "']");
+  this["highlightID"] = options.highlightID;
   this["lines"] = options.lines;
   this["title"] = options.title;
   this["body"] = options.body;
@@ -767,8 +768,8 @@ Highlight.prototype = {
 
     this.boundToggleActive = this.toggleActive.bind(this);
     this.$lineHighlight.click(this.boundToggleActive);
-    this.$highlightedCode.click(this.boundToggleActive);
-    this.$inlineHighlights.click(this.boundToggleActive);
+    // this.$highlightedCode.click(this.boundToggleActive);
+    // this.$inlineHighlights.click(this.boundToggleActive);
 
     this.boundDeactivate = this.deactivate.bind(this);
   },
@@ -1070,6 +1071,22 @@ $(document).ready(function () {
       })
     }
   });
+
+
+  $("body").on('click', "[js-inline-highlights], [js-highlighted-code]", function (e) {
+    var $node = $(e.currentTarget);
+
+    var inlineAttr = $node.attr("js-inline-highlights")
+    var highlightAttr = $node.attr("js-highlighted-code")
+
+    var highlightId = inlineAttr || highlightAttr
+
+    window.codeHighlightInstances.forEach(function (highlight) {
+      if (highlight.highlightID === highlightId) {
+        highlight.boundToggleActive(e)
+      }
+    })
+  })
 
 
   // Initialize fastclick on mobile
