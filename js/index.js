@@ -485,6 +485,16 @@ function beautifulDocsContent () {
 }
 
 
+var $carousel = $("[js-feature-carousel]");
+var scrollHandler = throttle(function () {
+  if ($carousel.isVisible(true) && (!window.carouselInitialized || window.terminalsInitialized)) {
+    initTerminals();
+    initCarousel();
+  } else if (window.carouselInitialized) {
+    $(window).off('scroll', scrollHandler)
+  }
+}, 200)
+
 
 function initCarousel () {
   window.featureCarousel = new Carousel($("[js-feature-carousel]"), {
@@ -510,15 +520,6 @@ function initCarousel () {
   });
 
   window.featureCarousel.start();
-
-  $("[js-carousel-previous]").click(function () {
-    window.featureCarousel.previous(true);
-  });
-
-  $("[js-carousel-next]").click(function () {
-    window.featureCarousel.next(true);
-  });
-
   window.carouselInitialized = true;
 }
 
@@ -534,7 +535,8 @@ function Carousel (carouselEl, options) {
       autoRotate: options.autoRotate,
       afterTransition: options.afterTransition || null
     };
-
+    this.$nextCtrl = $("[js-carousel-next]");
+    this.$previousCtrl = $("[js-carousel-previous]");
     this.state = {
       currentIndex: 0,
       autonomousRotate: this.options.autoRotate || true,
@@ -558,6 +560,14 @@ Carousel.prototype = {
       }
 
       this.state.started = true;
+    }
+
+    if (this.$previousCtrl) {
+      this.$previousCtrl.click(this.previous.bind(this))
+    }
+
+    if (this.$nextCtrl) {
+      this.$nextCtrl.click(this.next.bind(this))
     }
 
     $(window).resize(function () {
@@ -1055,6 +1065,8 @@ $(document).ready(function () {
     animate();
   }, 100)
 
+  // Fire once to init the carousel if it's visible
+  scrollHandler()
 
   initCodeHighlights();
 
@@ -1072,6 +1084,7 @@ $(document).ready(function () {
     }
   });
 
+  $(window).on('scroll', scrollHandler)
 
   $("body").on('click', "[js-inline-highlights], [js-highlighted-code]", function (e) {
     var $node = $(e.currentTarget);

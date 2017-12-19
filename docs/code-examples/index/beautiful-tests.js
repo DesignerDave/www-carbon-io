@@ -2,7 +2,6 @@ const carbon = require('carbon-io')
 const __     = carbon.fibers.__(module)
 const _o     = carbon.bond._o(module)
 const o      = carbon.atom.o(module).main
-const assert = require('assert')
 
 __(function() {
   module.exports = o({
