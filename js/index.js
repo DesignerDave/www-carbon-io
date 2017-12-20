@@ -1017,7 +1017,7 @@ var codeHighlights = [
     body: "You can define your own custom authenticator by creating an instance of the Authenticator class (or a subclass) with a customer authenticate method.",
     readMore: "https://docs.carbon.io/en/latest/packages/carbond/docs/guide/aac/authentication.html?navScrollTop=89"
   }, {
-    preID: "hello-service",
+    preID: "hello-endpoint",
     highlightID: "hello-service-2",
     lines: "7",
     title: "Access Control Lists",
