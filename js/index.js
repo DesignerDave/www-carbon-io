@@ -965,7 +965,7 @@ var codeHighlights = [
     highlightID: "endpoints-operations-2",
     lines: "11",
     title: "Endpoint",
-    body: "An Endpoint defines HTTP methods for a single path. Endpoints can also formally define expected the request parameters and responses associated with each HTTP method, as well as the handler code that defines the method’s implementation.",
+    body: "An Endpoint defines how to handle HTTP methods for a single path. Endpoints can formally define the expected request parameters and responses associated with each HTTP method.",
     readMore: "https://docs.carbon.io/en/latest/packages/carbond/docs/guide/endpoints.html"
   }, {
     preID: "endpoints-operations",
@@ -979,7 +979,7 @@ var codeHighlights = [
     highlightID: "endpoints-operations-4",
     lines: "14",
     title: "parameters",
-    body: "Each Operation can define the set of parameters it takes, including a JSON schema for that parameter, whether the parameter is required, as well as a default value.",
+    body: "Each Operation can define the set of parameters it takes, JSON schemas for those parameters, whether parameters are required, as well as default values.",
     readMore: "https://docs.carbon.io/en/latest/packages/carbond/docs/guide/operations.html#operation-responses"
   }, {
     preID: "endpoints-operations",
@@ -993,7 +993,7 @@ var codeHighlights = [
     highlightID: "endpoints-operations-6",
     lines: "37",
     title: "service (operation handler)",
-    body: "The<code>service</code> method defines the handler for a particular HTTP verb. It takes in an Express request object and returns the response body.",
+    body: "The<code>service</code> method defines the handler for a particular HTTP verb. It takes in Express request and response objects and returns the response body.",
     readMore: "https://docs.carbon.io/en/latest/packages/carbond/docs/guide/operations.html#operation-responses"
   }, {
     preID: "mongodb-collections",
@@ -1016,6 +1016,13 @@ var codeHighlights = [
     title: "authenticator",
     body: "You can define your own custom authenticator by creating an instance of the Authenticator class (or a subclass) with a customer authenticate method.",
     readMore: "https://docs.carbon.io/en/latest/packages/carbond/docs/guide/aac/authentication.html?navScrollTop=89"
+  }, {
+    preID: "hello-service",
+    highlightID: "hello-service-2",
+    lines: "7",
+    title: "Access Control Lists",
+    body: "ACLs allow powerful and granular access control to resources. An ACL maps users and groups to a set of permissions on a resource.",
+    readMore: "https://docs.carbon.io/en/latest/packages/carbond/docs/guide/aac/access-control.html?navScrollTop=89"
   }, {
     preID: "testing",
     highlightID: "testing-1",
