@@ -4,7 +4,7 @@ const o      = carbon.atom.o(module).main
 
 module.exports = o({
   _type: carbon.carbond.Endpoint,
-  acl: o({
+  <mark js-highlighted-code="hello-service-1">  <mark js-inline-highlight="hello-service-1">acl</mark>: o({</mark>
     _type: carbon.carbond.security.EndpointAcl,
     groupDefinitions: { // This ACL defines a group called 'role'.
       role: 'role'      // We define a group called 'role' based on the user property named 'role'.
