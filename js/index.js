@@ -987,7 +987,7 @@ var codeHighlights = [
     lines: "22",
     title: "responses",
     body: "Operations can formally define their responses by HTTP status code and specify JSON schemas that are automatically enforced.",
-    readMore: "https://docs.carbon.io/en/master/packages/carbond/docs/guide/operations.html#operation-responses"
+    readMore: "https://docs.carbon.io/en/latest/packages/carbond/docs/guide/operations.html#operation-responses"
   }, {
     preID: "endpoints-operations",
     highlightID: "endpoints-operations-6",
@@ -1021,7 +1021,7 @@ var codeHighlights = [
     highlightID: "hello-service-2",
     lines: "7",
     title: "Access Control Lists",
-    body: "ACLs allow powerful and granular access control to resources. An ACL maps users and groups to a set of permissions on a resource.",
+    body: "ACLs allow granular access control to resources. An ACL maps users and groups to a set of permissions on a resource.",
     readMore: "https://docs.carbon.io/en/latest/packages/carbond/docs/guide/aac/access-control.html?navScrollTop=89"
   }, {
     preID: "testing",
