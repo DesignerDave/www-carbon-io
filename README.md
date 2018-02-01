@@ -7,7 +7,7 @@
 $ npm install -g harp
 
 # Start the harp server
-$ harp server
+$ harp server src/ --port=9000
 ```
 
 ## To compile...
