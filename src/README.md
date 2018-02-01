@@ -11,8 +11,9 @@ $ harp server
 ```
 
 ## To compile...
+*At the project root directory, run:*
 ```bash
-$ harp compile . docs/
+$ . ./compile-docs.sh
 ```
 
 [Harp Documentation](http://http://harpjs.com/)
