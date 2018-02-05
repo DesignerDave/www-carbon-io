@@ -191,6 +191,15 @@ function Terminal (terminalEl, options) {
 
 Terminal.prototype = {
   start: function (callback) {
+    this.$el.on('wheel', function (e) {
+      if (this.$el.scrollTop() + this.$el.innerHeight() >= this.$el[0].scrollHeight) {
+        this.state.userScrolled = false
+      }
+      else {
+        this.state.userScrolled = true
+      }
+    }.bind(this))
+
     if (!this.state.started) {
       this.$el.addClass("terminal");
       this.state.started = true;
@@ -204,7 +213,9 @@ Terminal.prototype = {
 
 
   scrollToBottom: function () {
-    this.$el.scrollTop(this.$el.parent().prop("scrollHeight"));
+    if (!this.state.userScrolled) {
+      this.$el.scrollTop(this.$el.parent().prop("scrollHeight"));
+    }
   },
 
 
