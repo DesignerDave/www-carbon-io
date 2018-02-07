@@ -56,7 +56,6 @@ var particles, particle, count = 0;
 var windowHalfX = window.innerWidth / 2;
 var windowHalfY = window.innerHeight / 2;
 
-
 function init () {
   container = document.getElementById("particles");
 
@@ -126,7 +125,7 @@ function animate() {
 
 }
 
-var classAdded
+var contentShown
 function render() {
   var posX = 200 - camera.position.x
   var posY = 320 - camera.position.y
@@ -141,8 +140,8 @@ function render() {
   }
 
   // If animation is within 100px of completion, show content
-  if (!classAdded && posX < 100 && posY < 100) {
-    classAdded = true
+  if (!contentShown && posX < 100 && posY < 100) {
+    contentShown = true
     $("[js-header-group]").addClass("s-visible");
 
     setTimeout(function () {
@@ -498,17 +497,24 @@ function beautifulDocsContent () {
 
 var $carousel = $("[js-feature-carousel]");
 var scrollHandler = throttle(function () {
-  if ($carousel.isVisible(true) && (!window.carouselInitialized || window.terminalsInitialized)) {
-    initTerminals();
-    initCarousel();
-  } else if (window.carouselInitialized) {
+  if (window.carouselInitialized && window.terminalsInitialized) {
     $(window).off('scroll', scrollHandler)
   }
-}, 200)
+  else {
+    var visible = $carousel.isVisible(true)
+    if (visible && !window.carouselInitialized) {
+      initCarousel();
+    }
+
+    if (visible && !window.terminalsInitialized) {
+      initTerminals();
+    }
+  }
+}, 250)
 
 
 function initCarousel () {
-  window.featureCarousel = new Carousel($("[js-feature-carousel]"), {
+  window.featureCarousel = new Carousel($carousel, {
     autoRotate: false,
     afterTransition: [
       {
@@ -1076,22 +1082,28 @@ function initCodeHighlights () {
 
 
 $(document).ready(function () {
-  // Give client a second to breathe
-  setTimeout(function () {
-    init();
-    positionParticles();
-    animate();
-  }, 100)
+  init();
+  positionParticles();
+  animate();
 
   // Fire once to init the carousel if it's visible
   scrollHandler()
 
-  initCodeHighlights();
+  // Give client a second to breathe
+  setTimeout(function () {
+    initCodeHighlights();
+  }, 100)
 
   $("body").click(function (e) {
     window.codeHighlightInstances.forEach(function (highlight) {
       highlight.boundDeactivate(e)
     })
+
+    var $mobileNav = $("[js-toggle-mobile-navigation]");
+    if ($mobileNav.hasClass("s-active")) {
+      $mobileNav.removeClass("s-active");
+      $("[js-mobile-navigation]").removeClass("s-active");
+    }
   });
 
   $(window).on("keydown", function (e) {
@@ -1119,10 +1131,6 @@ $(document).ready(function () {
     })
   })
 
-
-  // Initialize fastclick on mobile
-  // FastClick.attach(document.body);
-
   $("[js-code-toggle]").click(function () {
     var $this = $(this);
 
@@ -1136,14 +1144,6 @@ $(document).ready(function () {
       $parent.siblings("[js-code-block]").not($selectedExample).removeClass("s-visible");
 
       $selectedExample.addClass("s-visible");
-    }
-  });
-
-  $("body").click(function () {
-    var $mobileNav = $("[js-toggle-mobile-navigation]");
-    if ($mobileNav.hasClass("s-active")) {
-      $mobileNav.removeClass("s-active");
-      $("[js-mobile-navigation]").removeClass("s-active");
     }
   });
 
