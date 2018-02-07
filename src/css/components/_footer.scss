@@ -83,7 +83,7 @@
       @include media--small {
         width: 100%;
       }
-      
+
       @include media--mobile-landscape {
         max-width: 300px;
       }
@@ -110,9 +110,10 @@
     }
   }
 
-  &--heart {
-    height: $font-size--normal;
-    position: relative;
-    top: 2px;
+  &--copyright {
+    text-align: center;
+    color: $color--gray-tint;
+    font-size: $font-size--normal * 0.9;
+    margin-top: $vertical-spacing--normal;
   }
 }
