@@ -1,31 +1,31 @@
-
+<% var docsRoot = 'https://docs.carbon.io/en/v0.7.14/' %>
 <footer class="footer">
-    <div class="footer--cta">
-      <a href="https://docs.carbon.io/en/latest" class="footer--cta-primary" title="Carbon.io documentation">Read the Documentation</a>
-      <a href="https://github.com/carbon-io/carbon-io/" class="footer--cta-secondary" title="Carbon.io on Github">View Carbon.io on GitHub</a>
+  <div class="footer--cta">
+    <a href="https://docs.carbon.io/" class="footer--cta-primary" title="Carbon.io documentation">Read the Documentation</a>
+    <a href="https://github.com/carbon-io/carbon-io/" class="footer--cta-secondary" title="Carbon.io on Github">View Carbon.io on GitHub</a>
+  </div>
+
+  <div class="footer--content">
+    <div class="footer--top-row">
+      <a href="/" title="Carbon.io home"><%- include("images/logo--dark.svg", { className: "footer--logo" }) %></a>
+
+      <div class="footer--links">
+        <a class="footer--link" href="https://docs.carbon.io/" target="_blank" title="Carbon.io documentation">Documentation</a>
+        <a class="footer--link" href="https://github.com/carbon-io/carbon-io/" target="_blank" title="Carbon.io on GitHub">GitHub</a>
+        <a class="footer--link" href="<%= docsRoot %>support.html" target="_blank" title="Carbon.io support">Support</a>
+      </div>
     </div>
 
-    <div class="footer--content">
-      <div class="footer--top-row">
-        <a href="/" title="Carbon.io home"><%- include("images/logo--dark.svg", { className: "footer--logo" }) %></a>
-
-        <div class="footer--links">
-          <a class="footer--link" href="https://docs.carbon.io/en/latest" target="_blank" title="Carbon.io documentation">Documentation</a>
-          <a class="footer--link" href="https://github.com/carbon-io/carbon-io/" target="_blank" title="Carbon.io on GitHub">GitHub</a>
-          <a class="footer--link" href="https://docs.carbon.io/en/latest/support.html" target="_blank" title="Carbon.io support">Support</a>
-        </div>
+    <div class="footer--bottom-row">
+      <div>
+        This software is licensed under the <a href="https://github.com/carbon-io/carbon-io/blob/master/LICENSE.txt" title="MIT open source license">MIT open-source license</a>.
       </div>
 
-      <div class="footer--bottom-row">
-        <div>
-          This software is licensed under the <a href="https://github.com/carbon-io/carbon-io/blob/master/LICENSE.txt" title="MIT open source license">MIT open-source license</a>.
-        </div>
-
-        <div class="footer--license">
-          Made by <a href="https://mlab.com/" target="_blank" title="mLab's Website">mLab</a>
-        </div>
+      <div class="footer--license">
+        Made by <a href="https://mlab.com/" target="_blank" title="mLab's Website">mLab</a>
       </div>
-
-      <div class="footer--copyright">&copy; <%= new Date().getFullYear() %> ObjectLabs Corporation</div>
     </div>
+
+    <div class="footer--copyright">&copy; <%= new Date().getFullYear() %> ObjectLabs Corporation</div>
+  </div>
 </footer>

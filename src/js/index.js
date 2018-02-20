@@ -947,7 +947,7 @@ Highlight.prototype = {
   }
 }
 
-
+var docsRoot = 'https://docs.carbon.io/en/v0.7.14/'
 var codeHighlights = [
   {
     preID: "hello-world",
@@ -955,119 +955,119 @@ var codeHighlights = [
     lines: "5",
     title: "<code>__</code>: Fibers",
     body: "Fibers (<code>__</code>) add co-routine support to Node.js, which allows you to write asynchronous code in a logically synchronous way. In Carbon.io we wrap our Services in Fibers.",
-    readMore: "https://docs.carbon.io/en/latest/packages/carbon-core/docs/packages/fibers/docs/guide/index.html"
+    readMore: docsRoot + "packages/carbon-core/docs/packages/fibers/docs/guide/index.html"
   }, {
     preID: "hello-world",
     highlightID: "hello-2",
     lines: "10",
     title: "<code>o</code>: Atom",
     body: "Atom (<code>o</code>) is a powerful tool for creating and configuring objects. Here, atom is defining an instance of the <code>Service</code> class (see <code>_type: carbon.carbond.Service</code>).",
-    readMore: "https://docs.carbon.io/en/latest/packages/carbon-core/docs/packages/atom/docs/index.html"
+    readMore: docsRoot + "packages/carbon-core/docs/packages/atom/docs/index.html"
   }, {
     preID: "hello-world",
     highlightID: "hello-3",
     lines: "11",
     title: "_type",
     body: "When constructing an object with Atom (<code>o</code>), you can define the class of the object with the <code>_type</code> property. The <code>_type</code> can be a class constructor or another object. The instantiated object will inherit methods, properties, and the prototype chain from this value.",
-    readMore: "https://docs.carbon.io/en/latest/packages/carbon-core/docs/packages/atom/docs/index.html"
+    readMore: docsRoot + "packages/carbon-core/docs/packages/atom/docs/index.html"
   }, {
     preID: "endpoints-operations",
     highlightID: "endpoints-operations-1",
     lines: "7",
     title: "Service",
     body: "A Service defines an HTTP server that exposes a RESTful JSON API. Instances of Service define a tree of Endpoints which define the API’s URLs. The<code>Service</code> class comes with several built-in conveniences such as a command-line interface, authentication mechanisms, and documentation generation.",
-    readMore: "https://docs.carbon.io/en/latest/packages/carbond/docs/guide/services.html"
+    readMore: docsRoot + "packages/carbond/docs/guide/services.html"
   }, {
     preID: "endpoints-operations",
     highlightID: "endpoints-operations-2",
     lines: "11",
     title: "Endpoint",
     body: "An Endpoint defines how to handle HTTP methods for a single path. Endpoints can formally define the expected request parameters and responses associated with each HTTP method.",
-    readMore: "https://docs.carbon.io/en/latest/packages/carbond/docs/guide/endpoints.html"
+    readMore: docsRoot + "packages/carbond/docs/guide/endpoints.html"
   }, {
     preID: "endpoints-operations",
     highlightID: "endpoints-operations-3",
     lines: "13",
     title: "get",
     body: "Endpoints have properties corresponding to the HTTP methods: <code>get</code>, <code>post</code>, <code>put</code>, <code>patch</code>, <code>delete</code>, <code>head</code>, and <code>options</code>. You can define request parameters (<code>parameters</code>), response objects (<code>responses</code>), and a handler (<code>service</code>) for each HTTP method.",
-    readMore: "https://docs.carbon.io/en/latest/packages/carbond/docs/guide/endpoints.html"
+    readMore: docsRoot + "packages/carbond/docs/guide/endpoints.html"
   }, {
     preID: "endpoints-operations",
     highlightID: "endpoints-operations-4",
     lines: "14",
     title: "parameters",
     body: "Each Operation can define the set of parameters it takes, JSON schemas for those parameters, whether parameters are required, as well as default values.",
-    readMore: "https://docs.carbon.io/en/latest/packages/carbond/docs/guide/operations.html#operation-responses"
+    readMore: docsRoot + "packages/carbond/docs/guide/operations.html#operation-responses"
   }, {
     preID: "endpoints-operations",
     highlightID: "endpoints-operations-5",
     lines: "22",
     title: "responses",
     body: "Operations can formally define their responses by HTTP status code and specify JSON schemas that are automatically enforced.",
-    readMore: "https://docs.carbon.io/en/latest/packages/carbond/docs/guide/operations.html#operation-responses"
+    readMore: docsRoot + "packages/carbond/docs/guide/operations.html#operation-responses"
   }, {
     preID: "endpoints-operations",
     highlightID: "endpoints-operations-6",
     lines: "37",
     title: "service (operation handler)",
     body: "The<code>service</code> method defines the handler for a particular HTTP verb. It takes in Express request and response objects and returns the response body.",
-    readMore: "https://docs.carbon.io/en/latest/packages/carbond/docs/guide/operations.html#operation-responses"
+    readMore: docsRoot + "packages/carbond/docs/guide/operations.html#operation-responses"
   }, {
     preID: "mongodb-collections",
     highlightID: "mongodb-collections-1",
     lines: "14",
     title: "enabled",
     body: "You may explicitly enable / disable Collection operations via the enabled property.",
-    readMore: "https://docs.carbon.io/en/latest/packages/carbond/docs/guide/collections.html?navScrollTop=236"
+    readMore: docsRoot + "packages/carbond/docs/guide/collections.html?navScrollTop=236"
   }, {
     preID: "chaining-public",
     highlightID: "chaining-public-1",
     lines: "10",
     title: "<code>_o</code>: Bond",
     body: "Bond is a convenient universal name resolver component for Carbon.io. Bond allows for objects to be resolved from names in a variety of namespaces. Examples: <code>_o(“env:FOO”)</code>",
-    readMore: "https://docs.carbon.io/en/latest/packages/carbon-core/docs/packages/bond/docs/index.html"
+    readMore: docsRoot + "packages/carbon-core/docs/packages/bond/docs/index.html"
   }, {
     preID: "hello-service",
     highlightID: "hello-service-1",
     lines: "10",
     title: "authenticator",
     body: "You can define your own custom authenticator by creating an instance of the Authenticator class (or a subclass) with a customer authenticate method.",
-    readMore: "https://docs.carbon.io/en/latest/packages/carbond/docs/guide/aac/authentication.html?navScrollTop=89"
+    readMore: docsRoot + "packages/carbond/docs/guide/aac/authentication.html?navScrollTop=89"
   }, {
     preID: "hello-endpoint",
     highlightID: "hello-service-2",
     lines: "7",
     title: "Access Control Lists",
     body: "ACLs allow granular access control to resources. An ACL maps users and groups to a set of permissions on a resource.",
-    readMore: "https://docs.carbon.io/en/latest/packages/carbond/docs/guide/aac/access-control.html?navScrollTop=89"
+    readMore: docsRoot + "packages/carbond/docs/guide/aac/access-control.html?navScrollTop=89"
   }, {
     preID: "testing",
     highlightID: "testing-1",
     lines: "7",
     title: "HttpTest",
     body: "The HttpTest class allows you to easily test endpoints by issuing requests to a service and validating the responses to those requests.",
-    readMore: "https://docs.carbon.io/en/latest/packages/carbon-core/docs/packages/test-tube/docs/guide/index.html"
+    readMore: docsRoot + "packages/carbon-core/docs/packages/test-tube/docs/guide/index.html"
   }, {
     preID: "testing",
     highlightID: "testing-2",
     lines: "11",
     title: "tests",
     body: "The tests property allows you to implement a test suite. Simply override the tests property with an array of tests.",
-    readMore: "https://docs.carbon.io/en/latest/packages/carbon-core/docs/packages/test-tube/docs/guide/index.html"
+    readMore: docsRoot + "packages/carbon-core/docs/packages/test-tube/docs/guide/index.html"
   }, {
     preID: "testing",
     highlightID: "testing-3",
     lines: "13",
     title: "reqSpec",
     body: "The reqSpec property provides a shorthand for issuing requests to a service. Additionally, you can specify query parameters, headers, or a body.",
-    readMore: "https://docs.carbon.io/en/latest/packages/carbon-core/docs/packages/test-tube/docs/guide/index.html"
+    readMore: docsRoot + "packages/carbon-core/docs/packages/test-tube/docs/guide/index.html"
   }, {
     preID: "testing",
     highlightID: "testing-4",
     lines: "17",
     title: "resSpec",
     body: "The resSpec property provides a shorthand for validating responses to requests.",
-    readMore: "https://docs.carbon.io/en/latest/packages/carbon-core/docs/packages/test-tube/docs/guide/index.html"
+    readMore: docsRoot + "packages/carbon-core/docs/packages/test-tube/docs/guide/index.html"
   }
 ];
 
