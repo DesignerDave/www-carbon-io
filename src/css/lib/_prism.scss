@@ -136,7 +136,6 @@
 }
 
 pre[js-highlight-id] {
-	overflow: initial;
 	position: relative;
 	z-index: 2;
 }
@@ -166,43 +165,23 @@ pre[js-highlight-id] {
   cursor: pointer;
 }
 
-.highlight-tooltip {
+.highlight-tooltip,
+.highlight-mobile-tooltip {
 	transition: all 0.1s ease-in-out;
 	font-family: $font-family--sans-serif;
-	position: absolute;
-	top: 0;
-	right: calc(100% + #{$horizontal-spacing--large});
 	background-color: lighten($syntax--background, 15%);
 	opacity: 0;
 	box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-	transform: translate3d($horizontal-spacing--medium, 0, 0);
 	padding: $vertical-spacing--normal $horizontal-spacing--normal;
 	border-radius: $border-radius--large;
 	width: 300px;
 	cursor: default;
 	pointer-events: none;
 
-	@include media--small {
-		position: absolute;
-		top: auto;
-		top: calc(100% + #{$vertical-spacing--normal});
-		left: 0;
-		right: 0;
-		margin: auto;
-		z-index: 5;
-		transform: translate3d(0, -$vertical-spacing--medium, 0);
-		box-shadow:  0 2px 3px -2px rgba(0, 0, 0, 0.5), 0 0 0 100vh rgba(255, 255, 255, 0);
-	}
-
 	&.s-active {
-		@include box-shadow--small();
 		opacity: 1;
 		transform: translate3d(0, 0, 0);
 		pointer-events: auto;
-
-		@include media--small {
-			box-shadow:  0 2px 3px -2px rgba(0, 0, 0, 0.5), 0 0 0 100vh rgba(black, 0.8);
-		}
 	}
 
 	label {
@@ -239,6 +218,39 @@ pre[js-highlight-id] {
 		}
 		font-family: $font-family--monospace;
 		font-weight: normal;
+	}
+}
+
+.highlight-tooltip {
+	@include box-shadow--small();
+	position: absolute;
+	top: 0;
+	right: calc(100% + #{$horizontal-spacing--large});
+	transform: translate3d($horizontal-spacing--medium, 0, 0);
+
+	@include media--small {
+		display: none;
+	}
+}
+
+.highlight-mobile-tooltip {
+	position: fixed;
+	bottom: $vertical-spacing--normal;
+	left: 0;
+	right: 0;
+	margin: auto;
+	z-index: 10;
+	transform: translate3d(0, $vertical-spacing--medium, 0);
+	box-shadow:  0 2px 3px -2px rgba(0, 0, 0, 0.5), 0 0 0 100vh rgba(0, 0, 0, 0.8);
+	opacity: 0;
+	display: none;
+
+	&.s-active {
+		opacity: 1;
+	}
+
+	@include media--small {
+		display: block;
 	}
 }
 

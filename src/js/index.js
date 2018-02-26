@@ -748,7 +748,7 @@ function isMobile () {
   var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
   var isSmall = width < 480;
 
-  return window.isMobileDevice;
+  return (window.isMobileDevice || isSmall);
 }
 
 
@@ -784,6 +784,7 @@ Highlight.prototype = {
       this.$inlineHighlights.toggleClass("s-active");
       this.$highlightedCode.toggleClass("s-active");
       this.$tooltip.toggleClass("s-active");
+      this.$mobileTooltip.toggleClass("s-active");
     }
 
     this.boundOnHover = this.onHover.bind(this);
@@ -830,6 +831,7 @@ Highlight.prototype = {
     this.$inlineHighlights.addClass("s-active");
     this.$highlightedCode.addClass("s-active");
     this.$tooltip.addClass("s-active");
+    this.$mobileTooltip.addClass("s-active");
 
     setTimeout(function () {
       this.active = true;
@@ -843,6 +845,7 @@ Highlight.prototype = {
       this.$inlineHighlights.removeClass("s-active");
       this.$highlightedCode.removeClass("s-active");
       this.$tooltip.removeClass("s-active");
+      this.$mobileTooltip.removeClass("s-active");
 
       setTimeout(function () {
         this.active = false;
@@ -868,7 +871,7 @@ Highlight.prototype = {
 
       $line.text(Array(end - start + 2).join(' \n'));
 
-      //if the line-numbers plugin is enabled, then there is no reason for this plugin to display the line numbers
+      // if the line-numbers plugin is enabled, then there is no reason for this plugin to display the line numbers
       if (!this.$preWrapper.hasClass('line-numbers')) {
         $line.attr('data-start', start);
 
@@ -877,10 +880,14 @@ Highlight.prototype = {
         }
       }
 
+      console.log(start, offset, lineHeight)
+
       $line.css("top", (start - offset - 1) * lineHeight + 'px');
 
       $line.append(this.createHighlightArrow());
       $line.append(this.createTooltip());
+
+      $('[js-mobile-tooltip-root]').append(this.createMobileTooltip())
 
       this.$lineHighlight = $line;
 
@@ -915,11 +922,23 @@ Highlight.prototype = {
 
   createTooltip: function () {
     this.$tooltip = $("<div class='highlight-tooltip'><label>" + this.title + "</label><p>" + this.body + "</p></label>");
+
     if (this.readMore) {
       this.$tooltip.append($("<a class='highlight-read-more' target='_blank' href='" + this.readMore + "'>Read More</a>"));
     }
 
     return this.$tooltip;
+  },
+
+
+  createMobileTooltip: function () {
+    this.$mobileTooltip = $("<div class='highlight-mobile-tooltip'><label>" + this.title + "</label><p>" + this.body + "</p></label>");
+
+    if (this.readMore) {
+      this.$mobileTooltip.append($("<a class='highlight-read-more' target='_blank' href='" + this.readMore + "'>Read More</a>"));
+    }
+
+    return this.$mobileTooltip;
   },
 
 
@@ -1114,7 +1133,9 @@ $(document).ready(function () {
     }
   });
 
-  $(window).on('scroll', scrollHandler)
+  if (!isMobile()) {
+    $(window).on('scroll', scrollHandler)
+  }
 
   $("body").on('click', "[js-inline-highlights], [js-highlighted-code]", function (e) {
     var $node = $(e.currentTarget);

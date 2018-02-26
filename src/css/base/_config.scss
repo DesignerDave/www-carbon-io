@@ -63,23 +63,27 @@ $horizontal-spacing--medium: $horizontal-spacing--normal * $multiplier--medium;
 $horizontal-spacing--large:  $horizontal-spacing--normal * $multiplier--large;
 $horizontal-spacing--xlarge:  $horizontal-spacing--normal * $multiplier--xlarge;
 
-
 // Container size
 $container-width--small:  calc(100vw - #{$horizontal-spacing--small} * 2);
 $container-width--medium: 768px;
-$container-width--large:  992px;
-$container-width--xlarge: 1170px;
+$container-width--large:  1024px;
+$container-width--xlarge: 1250px;
 
 
 // Device media query strings
-$device--small:  "screen and (min-width: 319px) and (max-width: 480px), screen and (min-device-height: 319px) and (max-device-height: 480px)";
-$device--medium: "screen and (min-width: #{$container-width--medium}) and (max-width: #{$container-width--large - 1px}) and (min-device-height: 481px)";
-$device--large:  "screen and (min-width: #{$container-width--large}) and (max-width: #{$container-width--xlarge - 1px})";
-$device--xlarge: "screen and (min-width: #{$container-width--xlarge})";
-$device--tall:   "screen and (min-height: 955px)";
+$device-query-modifier: $horizontal-spacing--normal;
+$device-min--medium: $container-width--medium + $device-query-modifier;
+$device-min--large: $container-width--large + $device-query-modifier;
+$device-min--xlarge: $container-width--xlarge + $device-query-modifier;
 
+$device--small:  "screen and (max-width: #{$device-min--medium - 1})";
+$device--medium: "screen and (min-width: #{$device-min--medium}) and (max-width: #{$device-min--large - 1px}) and (min-device-height: 481px)";
+$device--large: "screen and (min-width: #{$device-min--large}) and (max-width: #{$device-min--xlarge - 1px})";
+$device--xlarge: "screen and (min-width: #{$device-min--xlarge})";
+$device--tall:   "screen and (min-height: 955px)";
 $device--retina: "screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi)";
 $device--mobile-landscape: "screen and (orientation: landscape) and (min-device-width: 319px) and (max-device-width: 480px)";
+
 
 // Device size multipliers
 $media-multiplier--small: $multiplier--small;

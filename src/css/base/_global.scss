@@ -116,7 +116,10 @@ ul {
 
 li {
   @include media--small {
-    margin-top: $vertical-spacing--normal;
+    margin: {
+      top: $vertical-spacing--small;
+      bottom: $vertical-spacing--small;
+    }
 
     & + & {
       margin-top: 0;
@@ -128,6 +131,7 @@ li {
 pre {
   display: flex;
   font-size: $font-size--normal * 0.85;
+  -webkit-text-size-adjust: none;
   padding: $vertical-spacing--small $horizontal-spacing--normal;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
@@ -137,9 +141,7 @@ pre {
   @include media--small {
     margin-left: -$horizontal-spacing--normal;
     margin-right: -$horizontal-spacing--normal;
-  }
-
-  @include media--small {
+    overflow-y: hidden;
     display: block;
     font-size: $font-size--normal * 0.9;
   }
@@ -155,7 +157,7 @@ pre {
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
-  line-height: 1.5;
+  line-height: 1.5em;
   tab-size: 4;
   hyphens: none;
 
@@ -163,12 +165,18 @@ pre {
   & ::selection {
     background: #b3d4fc;
   }
+
+  @include media--medium {
+    & > code {
+      overflow-x: auto;
+    }
+  }
 }
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
   @include box-shadow--large();
-  
+
   background-color: $syntax--background;
   background-image: linear-gradient($syntax--background, lighten($syntax--background, 5%));
 }
