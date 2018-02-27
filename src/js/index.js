@@ -981,14 +981,14 @@ var codeHighlights = [
     lines: "10",
     title: "<code>o</code>: Atom",
     body: "Atom (<code>o</code>) is a powerful tool for creating and configuring objects. Here, atom is defining an instance of the <code>Service</code> class (see <code>_type: carbon.carbond.Service</code>).",
-    readMore: docsRoot + "packages/carbon-core/docs/packages/atom/docs/index.html"
+    readMore: docsRoot + "packages/carbon-core/docs/packages/atom/docs/guide/index.html"
   }, {
     preID: "hello-world",
     highlightID: "hello-3",
     lines: "11",
     title: "_type",
     body: "When constructing an object with Atom (<code>o</code>), you can define the class of the object with the <code>_type</code> property. The <code>_type</code> can be a class constructor or another object. The instantiated object will inherit methods, properties, and the prototype chain from this value.",
-    readMore: docsRoot + "packages/carbon-core/docs/packages/atom/docs/index.html"
+    readMore: docsRoot + "packages/carbon-core/docs/packages/atom/docs/guide/index.html"
   }, {
     preID: "endpoints-operations",
     highlightID: "endpoints-operations-1",
@@ -1037,14 +1037,14 @@ var codeHighlights = [
     lines: "14",
     title: "enabled",
     body: "You may explicitly enable / disable Collection operations via the enabled property.",
-    readMore: docsRoot + "packages/carbond/docs/guide/collections.html?navScrollTop=236"
+    readMore: docsRoot + "packages/carbond/docs/guide/collections/index.html"
   }, {
     preID: "chaining-public",
     highlightID: "chaining-public-1",
     lines: "10",
     title: "<code>_o</code>: Bond",
     body: "Bond is a convenient universal name resolver component for Carbon.io. Bond allows for objects to be resolved from names in a variety of namespaces. Examples: <code>_o(“env:FOO”)</code>",
-    readMore: docsRoot + "packages/carbon-core/docs/packages/bond/docs/index.html"
+    readMore: docsRoot + "packages/carbon-core/docs/packages/bond/docs/guide/index.html"
   }, {
     preID: "hello-service",
     highlightID: "hello-service-1",
