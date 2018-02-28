@@ -966,7 +966,7 @@ Highlight.prototype = {
   }
 }
 
-var docsRoot = 'https://docs.carbon.io/en/v0.7.14/'
+var docsRoot = 'https://docs.carbon.io/en/v0.7/'
 var codeHighlights = [
   {
     preID: "hello-world",
